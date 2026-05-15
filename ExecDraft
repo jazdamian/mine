@@ -1,0 +1,460 @@
+import React, { useState, useEffect } from "react";
+import { 
+  Copy, 
+  Check, 
+  Send, 
+  AlertCircle, 
+  Loader2, 
+  Mail, 
+  ExternalLink, 
+  ChevronDown, 
+  Sparkles,
+  History,
+  Trash2,
+  Settings2
+} from "lucide-react";
+
+// --- Configuration & Constants ---
+const apiKey = ""; // Environment provides the key at runtime
+const MODEL = "gemini-2.5-flash-preview-09-2025";
+
+const EMAIL_TYPES = [
+  "Upward update to my boss",
+  "Task assignment to my team",
+  "Cross-functional request",
+  "Bad news with solution attached",
+  "Follow-up nudge (no response)",
+  "Meeting request",
+  "Thank you / recognition",
+  "Declining a request diplomatically",
+  "Escalation to leadership",
+  "Cold internal introduction",
+];
+
+const TONES = ["Formal", "Friendly", "Urgent", "Diplomatic", "Direct"];
+
+const SYSTEM_PROMPT = `You are a VP at a top-tier firm who writes emails that get read, get responses, and get results.
+In a high-volume inbox, wrong tone or length means your email gets ignored.
+
+Write a ready-to-send professional email in this exact plain text format:
+
+SUBJECT: [subject line here]
+
+[full email body here]
+
+Rules:
+- Match the tone specified exactly.
+- Be direct. No filler sentences (e.g., "I hope this finds you well" unless the tone is specifically 'Friendly').
+- No em dashes. No asterisks. No markdown.
+- For upward emails: concise, confident, competent.
+- For bad news: lead with the solution, not the problem.
+- For escalations: factual, no blame, clear ask.
+- For follow-up nudges: polite but firm, acknowledge the prior message.
+- For declining requests: say no clearly but protect the relationship.
+- End with one clear next step or ask.
+- Plain text only.
+- Sign off with a professional closing appropriate for the tone.`;
+
+// --- Main Application Component ---
+export default function App() {
+  const [emailType, setEmailType] = useState(EMAIL_TYPES[0]);
+  const [tone, setTone] = useState(TONES[0]);
+  const [recipient, setRecipient] = useState("");
+  const [situation, setSituation] = useState("");
+  const [ask, setAsk] = useState("");
+  const [output, setOutput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [copied, setCopied] = useState(false);
+  const [history, setHistory] = useState([]);
+
+  // Load history from local storage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem("exec_draft_history");
+    if (saved) {
+      try {
+        setHistory(JSON.parse(saved));
+      } catch (e) {
+        console.error("Failed to parse history");
+      }
+    }
+  }, []);
+
+  // Save history when it changes
+  useEffect(() => {
+    localStorage.setItem("exec_draft_history", JSON.stringify(history.slice(0, 10)));
+  }, [history]);
+
+  const generateWithRetry = async (prompt, retries = 0) => {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${apiKey}`;
+    
+    const payload = {
+      contents: [{ parts: [{ text: prompt }] }],
+      systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] }
+    };
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error?.message || "Generation failed");
+      }
+
+      const data = await response.json();
+      return data.candidates?.[0]?.content?.parts?.[0]?.text;
+    } catch (err) {
+      if (retries < 5) {
+        const delay = Math.pow(2, retries) * 1000;
+        await new Promise(resolve => setTimeout(resolve, delay));
+        return generateWithRetry(prompt, retries + 1);
+      }
+      throw err;
+    }
+  };
+
+  const handleGenerate = async () => {
+    if (!situation.trim()) {
+      setError("Please describe the context for your email.");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+    
+    const userPrompt = `
+      SCENARIO: ${emailType}
+      TONE: ${tone}
+      RECIPIENT: ${recipient || "General Professional"}
+      SITUATION: ${situation}
+      PRIMARY GOAL/ASK: ${ask || "Professional conclusion"}
+    `;
+
+    try {
+      const result = await generateWithRetry(userPrompt);
+      if (!result) throw new Error("No draft returned.");
+      
+      setOutput(result);
+      
+      // Update History
+      const newEntry = {
+        id: Date.now(),
+        type: emailType,
+        subject: result.match(/^SUBJECT:\s*(.*)/m)?.[1] || "Untitled Draft",
+        content: result,
+        timestamp: new Date().toLocaleTimeString()
+      };
+      setHistory(prev => [newEntry, ...prev]);
+      
+    } catch (err) {
+      setError("The drafting engine encountered a temporary error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleCopy = () => {
+    if (!output) return;
+    const textArea = document.createElement("textarea");
+    textArea.value = output;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Copy failed', err);
+    }
+    document.body.removeChild(textArea);
+  };
+
+  const handleOpenGmail = () => {
+    if (!output) return;
+    const subjectMatch = output.match(/^SUBJECT:\s*(.*)/m);
+    const subjectLine = subjectMatch ? subjectMatch[1] : "Business Update";
+    const bodyText = output.replace(/^SUBJECT:.*\n?/, "").trim();
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&su=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(bodyText)}`;
+    window.open(gmailUrl, '_blank');
+  };
+
+  const clearHistory = () => {
+    setHistory([]);
+    localStorage.removeItem("exec_draft_history");
+  };
+
+  return (
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans p-4 md:p-8 lg:p-12">
+      <div className="max-w-6xl mx-auto">
+        {/* Header Section */}
+        <header className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6">
+          <div className="space-y-1">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 bg-[#4B286D] rounded-xl shadow-lg shadow-[#4B286D]/20">
+                <Mail className="w-6 h-6 text-white" />
+              </div>
+              <h1 className="text-3xl font-black text-[#4B286D] tracking-tighter">
+                EXEC<span className="text-slate-400">DRAFT</span>
+              </h1>
+            </div>
+            <p className="text-slate-500 font-medium">Precision AI for corporate communication.</p>
+          </div>
+          
+          <div className="flex items-center gap-6">
+             <div className="hidden sm:flex flex-col items-end">
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Model Status</span>
+                <div className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span className="text-xs font-semibold text-slate-600">Gemini 2.5 Active</span>
+                </div>
+             </div>
+          </div>
+        </header>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Controls Panel */}
+          <section className="lg:col-span-5 space-y-6">
+            <div className="bg-white p-6 md:p-8 rounded-3xl border border-slate-200 shadow-sm">
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.15em] ml-1">
+                    Scenario Template
+                  </label>
+                  <div className="relative">
+                    <select
+                      value={emailType}
+                      onChange={(e) => setEmailType(e.target.value)}
+                      className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3.5 text-sm font-semibold text-slate-700 focus:ring-4 focus:ring-[#4B286D]/5 focus:border-[#4B286D] outline-none transition-all appearance-none cursor-pointer pr-10"
+                    >
+                      {EMAIL_TYPES.map(type => <option key={type} value={type}>{type}</option>)}
+                    </select>
+                    <ChevronDown className="w-4 h-4 text-slate-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.15em] ml-1">
+                    Directive Tone
+                  </label>
+                  <div className="flex flex-wrap gap-2">
+                    {TONES.map(t => (
+                      <button
+                        key={t}
+                        onClick={() => setTone(t)}
+                        className={`px-4 py-2 rounded-full text-xs font-bold transition-all border ${
+                          tone === t
+                          ? 'bg-[#4B286D] text-white border-[#4B286D] shadow-md shadow-[#4B286D]/20'
+                          : 'bg-white text-slate-500 border-slate-200 hover:border-slate-300'
+                        }`}
+                      >
+                        {t}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.15em] ml-1">
+                    Stakeholder
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g., Sarah (CFO) or Product Team"
+                    value={recipient}
+                    onChange={(e) => setRecipient(e.target.value)}
+                    className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3.5 text-sm font-medium focus:ring-4 focus:ring-[#4B286D]/5 focus:border-[#4B286D] outline-none transition-all"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.15em] ml-1">
+                    Context & Data Points
+                  </label>
+                  <textarea
+                    rows={4}
+                    placeholder="Describe the situation, roadblocks, or updates clearly..."
+                    value={situation}
+                    onChange={(e) => setSituation(e.target.value)}
+                    className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3.5 text-sm font-medium focus:ring-4 focus:ring-[#4B286D]/5 focus:border-[#4B286D] outline-none transition-all resize-none leading-relaxed"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.15em] ml-1">
+                    Primary Call-to-Action
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="What do you need them to do?"
+                    value={ask}
+                    onChange={(e) => setAsk(e.target.value)}
+                    className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3.5 text-sm font-medium focus:ring-4 focus:ring-[#4B286D]/5 focus:border-[#4B286D] outline-none transition-all"
+                  />
+                </div>
+
+                <button
+                  onClick={handleGenerate}
+                  disabled={loading || !situation.trim()}
+                  className={`w-full flex items-center justify-center gap-3 py-4 rounded-2xl font-black text-sm transition-all shadow-xl tracking-tight uppercase ${
+                    loading || !situation.trim()
+                    ? 'bg-slate-100 text-slate-400 cursor-not-allowed shadow-none border border-slate-200'
+                    : 'bg-[#4B286D] text-white hover:bg-[#3a1f54] active:scale-[0.98] hover:shadow-[#4B286D]/30 border border-[#4B286D]'
+                  }`}
+                >
+                  {loading ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Drafting...
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="w-5 h-5" />
+                      Generate Draft
+                    </>
+                  )}
+                </button>
+
+                {error && (
+                  <div className="flex items-start gap-3 p-4 bg-red-50 border border-red-100 rounded-2xl text-red-600 text-sm animate-in fade-in slide-in-from-top-2">
+                    <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                    <p className="font-semibold leading-relaxed">{error}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* History Panel */}
+            {history.length > 0 && (
+              <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                    <History className="w-3.5 h-3.5" />
+                    Recent Drafts
+                  </h3>
+                  <button 
+                    onClick={clearHistory}
+                    className="text-[10px] text-slate-400 hover:text-red-500 font-bold uppercase transition-colors"
+                  >
+                    Clear
+                  </button>
+                </div>
+                <div className="space-y-3">
+                  {history.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => setOutput(item.content)}
+                      className="w-full text-left p-3 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all group"
+                    >
+                      <div className="text-xs font-bold text-slate-700 truncate">{item.subject}</div>
+                      <div className="text-[10px] text-slate-400 mt-1 flex justify-between">
+                        <span>{item.type}</span>
+                        <span>{item.timestamp}</span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </section>
+
+          {/* Output Display Area */}
+          <section className="lg:col-span-7 h-full">
+            {!output && !loading ? (
+              <div className="h-full min-h-[600px] border-2 border-dashed border-slate-200 rounded-[2.5rem] flex flex-col items-center justify-center text-center p-12 space-y-6 bg-slate-50/30">
+                <div className="w-20 h-20 bg-white shadow-inner rounded-full flex items-center justify-center border border-slate-100">
+                  <Send className="w-10 h-10 text-slate-200" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-slate-900 font-black text-2xl tracking-tight">Ready for Output</h3>
+                  <p className="text-slate-400 font-medium max-w-sm mx-auto leading-relaxed">
+                    Once you provide the context, your AI-refined executive communication will appear here.
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <div className="flex flex-col h-full bg-white rounded-[2.5rem] shadow-2xl shadow-slate-200/50 border border-slate-100 overflow-hidden animate-in zoom-in-95 duration-500">
+                <div className="px-8 py-6 border-b border-slate-100 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-400/50"></div>
+                    <div className="w-3 h-3 rounded-full bg-amber-400/50"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-400/50"></div>
+                    <span className="ml-4 text-[10px] font-black text-slate-300 uppercase tracking-[0.3em]">
+                      Draft Generated
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={handleCopy}
+                      className="flex items-center gap-2 text-[11px] font-bold text-[#4B286D] bg-[#4B286D]/5 hover:bg-[#4B286D]/10 px-4 py-2.5 rounded-xl transition-all uppercase tracking-wider"
+                    >
+                      {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                      {copied ? "Copied" : "Copy"}
+                    </button>
+                    <button
+                      onClick={handleOpenGmail}
+                      className="flex items-center gap-2 text-[11px] font-bold text-white bg-slate-900 hover:bg-black px-4 py-2.5 rounded-xl transition-all uppercase tracking-wider shadow-lg shadow-black/10"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Send via Gmail
+                    </button>
+                  </div>
+                </div>
+                
+                <div className="flex-1 p-10 overflow-y-auto bg-[#FAFAFA]">
+                  {loading ? (
+                    <div className="space-y-6 animate-pulse">
+                      <div className="h-6 bg-slate-200 rounded-lg w-1/4"></div>
+                      <div className="space-y-3">
+                        <div className="h-4 bg-slate-200 rounded-lg w-full"></div>
+                        <div className="h-4 bg-slate-200 rounded-lg w-full"></div>
+                        <div className="h-4 bg-slate-200 rounded-lg w-4/5"></div>
+                      </div>
+                      <div className="h-4 bg-slate-200 rounded-lg w-1/3"></div>
+                      <div className="h-10 bg-slate-200 rounded-lg w-1/4 mt-12"></div>
+                    </div>
+                  ) : (
+                    <div className="max-w-2xl mx-auto">
+                      <pre className="whitespace-pre-wrap font-mono text-sm md:text-base leading-relaxed text-slate-700 selection:bg-[#4B286D]/10 bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+                        {output}
+                      </pre>
+                    </div>
+                  )}
+                </div>
+                
+                <div className="px-8 py-4 bg-white border-t border-slate-100 flex items-center justify-between">
+                   <p className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">
+                     Internal Use Only • Confidential
+                   </p>
+                   <div className="flex items-center gap-2 opacity-50">
+                     <Settings2 className="w-3 h-3 text-slate-400" />
+                     <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">VP Logic v2.1</span>
+                   </div>
+                </div>
+              </div>
+            )}
+          </section>
+        </div>
+
+        {/* Footer */}
+        <footer className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6 opacity-60">
+          <div className="flex items-center gap-4">
+            <div className="bg-[#4B286D] px-2 py-1 rounded text-[10px] font-black text-white uppercase tracking-tighter">
+              EXEC
+            </div>
+            <div className="h-4 w-[1px] bg-slate-300"></div>
+            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+              Business Intelligence & Communications
+            </p>
+          </div>
+          <p className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] text-center md:text-right">
+            Drafter v2.5.0 • Powered by Google Gemini 2.5 • Session Encrypted
+          </p>
+        </footer>
+      </div>
+    </div>
+  );
+}
