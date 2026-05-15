@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nestlé Chile TIR — Batch 1 Focus View</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --telus-purple: #4B286D;
+  --telus-green: #66CC00;
+  --telus-accessible-green: #2B8000;
+  --telus-dark: #2A1A3E;
+  --telus-light-purple: #7C53A5;
+  --telus-thunder-grey: #2C2E30;
+  --phase-complete: #4B286D;
+  --phase-active: #66CC00;
+  --phase-upcoming: #E65100;
+  --phase-critical: #D32F2F;
+  --bg-white: #FFFFFF;
+  --bg-card: #FAFAFA;
+  --bg-section: #F5F5F5;
+  --border-light: #EEEEEE;
+  --text-primary: #1a1a2e;
+  --text-body: #333333;
+  --text-muted: #888888;
+  --text-subtle: #AAAAAA;
+  --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --page-max: 1060px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: #fff;
+  color: var(--text-body);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.page-wrap {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 32px 36px 40px;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--telus-purple);
+  margin-bottom: 24px;
+}
+.header-left h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--telus-purple);
+  letter-spacing: -0.3px;
+}
+.header-left .subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 3px;
+  font-weight: 500;
+}
+.header-right { text-align: right; }
+.header-right .as-of {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.header-right .date-val {
+  font-size: 14px;
+  color: var(--telus-purple);
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* TAB NAV */
+.tab-nav {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid var(--border-light);
+  margin-bottom: 24px;
+}
+.tab-btn {
+  padding: 8px 16px;
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.tab-btn:hover { color: var(--telus-purple); }
+.tab-btn.active {
+  color: var(--telus-purple);
+  border-bottom-color: var(--telus-purple);
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* STATUS DOTS */
+.dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+.dot-complete  { background: var(--phase-complete); }
+.dot-active    { background: var(--phase-active); }
+.dot-upcoming  { background: var(--phase-upcoming); }
+.dot-not-started { background: #CCCCCC; }
+
+/* BADGES */
+.phase-badge {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  min-width: 90px;
+  text-align: center;
+  display: inline-block;
+}
+.badge-complete   { background: #EDE7F6; color: var(--telus-purple); }
+.badge-active     { background: #E8F5E9; color: var(--telus-accessible-green); }
+.badge-upcoming   { background: #FFF3E0; color: var(--phase-upcoming); }
+.badge-not-started { background: #F5F5F5; color: #999; }
+
+/* GO-LIVE GRID */
+.golive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.golive-card {
+  background: var(--bg-card);
+  border: 2px solid var(--telus-purple);
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.golive-card.active-card { border-color: var(--telus-green); }
+.golive-icon { font-size: 20px; }
+.golive-details .golive-name {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--telus-purple);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.golive-card.active-card .golive-name { color: var(--telus-accessible-green); }
+.golive-details .golive-date {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+.golive-details .golive-status {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+/* SECTION TITLE */
+.section-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--telus-purple);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* TABLE WRAP (Go-Live Activity) */
+.table-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid var(--border-light);
+  margin-bottom: 28px;
+}
+.table-wrap table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table-wrap thead tr { background: var(--telus-purple); color: #fff; }
+.table-wrap thead th {
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+.table-wrap thead th:first-child { text-align: left; }
+.table-wrap tbody tr { border-bottom: 1px solid var(--border-light); }
+.table-wrap tbody tr:last-child { border-bottom: none; }
+.table-wrap tbody td {
+  padding: 9px 14px;
+  text-align: center;
+  font-weight: 500;
+  color: var(--text-body);
+}
+.table-wrap tbody td:first-child { text-align: left; font-weight: 700; color: var(--telus-purple); }
+.in-progress-val { font-weight: 700; color: #E65100; }
+.zero-val { color: var(--text-subtle); }
+
+/* GANTT */
+.gantt-wrap { overflow-x: auto; }
+.gantt-table { width: 100%; min-width: 900px; border-collapse: collapse; }
+.gantt-table th {
+  background: var(--telus-purple);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 8px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+.gantt-table th.label-th { text-align: left; }
+.gantt-table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 11px;
+  vertical-align: middle;
+}
+.gantt-table td.month-cell { padding: 3px 2px; position: relative; }
+.gantt-table tr.phase-header td {
+  background: #F0EAF7;
+  font-weight: 800;
+  color: var(--telus-purple);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.gantt-bar {
+  height: 16px;
+  border-radius: 3px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 4px;
+}
+.bar-complete    { background: var(--phase-complete); opacity: 0.85; }
+.bar-active      { background: var(--phase-active); }
+.bar-upcoming    { background: var(--phase-upcoming); opacity: 0.75; }
+.bar-not-started { background: #CCCCCC; }
+.today-line {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: var(--telus-green);
+  z-index: 10;
+}
+.gantt-cell-wrap { position: relative; width: 100%; height: 26px; }
+
+/* BATCH PLANNER */
+.batch-section { margin-bottom: 28px; }
+.batch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: var(--telus-accessible-green);
+  border-radius: 8px 8px 0 0;
+  color: white;
+}
+.batch-header .b-name { font-size: 13px; font-weight: 800; letter-spacing: 0.3px; }
+.batch-header .b-dates { font-size: 11px; opacity: 0.85; }
+.batch-body {
+  border: 1px solid var(--border-light);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+.batch-task-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+.batch-task-row:last-child { border-bottom: none; }
+.batch-task-row.sub  { padding-left: 32px; background: var(--bg-card); }
+.batch-task-row.sub2 { padding-left: 52px; background: #FDFDFD; }
+.batch-task-row .bt-name { flex: 1; font-size: 12px; color: var(--text-body); }
+.batch-task-row.sub  .bt-name { font-size: 11px; color: var(--text-muted); }
+.batch-task-row.sub2 .bt-name { font-size: 11px; color: var(--text-muted); }
+.batch-task-row .bt-dates {
+  font-size: 11px;
+  color: var(--text-muted);
+  min-width: 150px;
+  text-align: right;
+}
+.batch-task-row .bt-assigned {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: #EDE7F6;
+  color: var(--telus-purple);
+  white-space: nowrap;
+}
+.batch-golive {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #F0EAF7;
+  border-bottom: 1px solid var(--border-light);
+  font-weight: 800;
+  color: var(--telus-purple);
+  font-size: 12px;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 36px;
+  padding-top: 14px;
+  border-top: 2px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-left { display: flex; align-items: center; gap: 14px; }
+.telus-badge {
+  background: var(--telus-purple);
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.legend { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.footer-right { text-align: right; font-size: 10px; color: var(--text-subtle); }
+.footer-right .project-id { font-weight: 700; color: var(--text-muted); font-size: 11px; }
+
+@media print {
+  body { font-size: 11px; background: white !important; }
+  .page-wrap { padding: 16px 20px; max-width: 100%; min-height: 0 !important; height: auto !important; }
+  .tab-nav { display: none !important; }
+  .tab-panel { display: none !important; overflow: hidden !important; max-height: 0 !important; }
+  .tab-panel.active { display: block !important; overflow: visible !important; max-height: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Nestlé Chile — TIR Implementation</h1>
+      <div class="subtitle"></div>
+    </div>
+    <div class="header-right">
+      <div class="as-of">As of</div>
+      <div class="date-val">May 5, 2026</div>
+    </div>
+  </div>
+
+  <!-- TAB NAV -->
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('golive', this)">Executive Summary</button>
+    <button class="tab-btn" onclick="showTab('activity', this)">Go-Live Activity</button>
+    <button class="tab-btn" onclick="showTab('gantt', this)">Gantt Chart</button>
+    <button class="tab-btn" onclick="showTab('batch1', this)">Batch 1 Planner</button>
+  </div>
+
+  <!-- ======================== TAB 1: EXECUTIVE SUMMARY ======================== -->
+  <div id="tab-golive" class="tab-panel active">
+
+    <style>
+      /* Executive Summary specific styles */
+      .es-header-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 24px;
+        background: var(--bg-section);
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 16px 20px;
+      }
+      .es-header-field { display: flex; flex-direction: column; gap: 2px; }
+      .es-header-label {
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: var(--text-muted);
+      }
+      .es-header-value {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+
+      .es-section { margin-bottom: 24px; }
+
+      .es-item-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 9px 14px;
+        border-bottom: 1px solid var(--border-light);
+        background: var(--bg-white);
+      }
+      .es-item-row:first-child { border-top: 1px solid var(--border-light); border-radius: 6px 6px 0 0; }
+      .es-item-row:last-child  { border-radius: 0 0 6px 6px; border-bottom: none; }
+      .es-item-row:only-child  { border-radius: 6px; }
+
+      .es-item-num {
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--telus-purple);
+        min-width: 18px;
+        padding-top: 1px;
+      }
+      .es-item-body { flex: 1; }
+      .es-item-text {
+        font-size: 12px;
+        color: var(--text-body);
+        line-height: 1.5;
+      }
+      .es-item-date {
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--telus-purple);
+        background: #EDE7F6;
+        padding: 2px 7px;
+        border-radius: 3px;
+        white-space: nowrap;
+        align-self: center;
+      }
+      .es-item-owner {
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--telus-accessible-green);
+        background: #E8F5E9;
+        padding: 2px 7px;
+        border-radius: 3px;
+        white-space: nowrap;
+        align-self: center;
+      }
+
+      .es-empty-row {
+        padding: 10px 14px;
+        font-size: 12px;
+        color: var(--text-muted);
+        font-style: italic;
+        border: 1px solid var(--border-light);
+        border-radius: 6px;
+        background: var(--bg-card);
+      }
+
+      .es-check { color: var(--telus-accessible-green); font-size: 13px; flex-shrink: 0; padding-top: 1px; }
+      .es-arrow { color: var(--telus-purple); font-size: 13px; flex-shrink: 0; padding-top: 1px; }
+      .es-warn  { color: #E65100; font-size: 13px; flex-shrink: 0; padding-top: 1px; }
+    </style>
+
+    <!-- Header Information -->
+    <div class="section-title">Executive Summary</div>
+
+    <!-- Project meta row -->
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:16px; background:var(--bg-section); border:1px solid var(--border-light); border-radius:8px; padding:14px 20px;">
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; color:var(--text-muted);">Project Name</span>
+        <span style="font-size:13px; font-weight:700; color:var(--text-primary);">Nestlé Chile TIR Implementation</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; color:var(--text-muted);">Reporting Period</span>
+        <span style="font-size:13px; font-weight:700; color:var(--text-primary);">Week Ending 5 May 2026</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; color:var(--text-muted);">Prepared By</span>
+        <span style="font-size:13px; font-weight:700; color:var(--text-primary);">TELUS Agriculture &amp; Consumer Goods</span>
+      </div>
+    </div>
+
+    <!-- Go-Live Date Cards -->
+    <div class="section-title">Go-Live Schedule</div>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:28px;">
+
+      <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-accessible-green); border-radius:10px; padding:14px 12px; text-align:center;">
+        <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-accessible-green); margin-bottom:6px;">First Category</div>
+        <div style="font-size:18px; font-weight:800; color:var(--telus-accessible-green); line-height:1.1;">15 Apr</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Lacteous Culinaros</div>
+        <div style="margin-top:8px; display:inline-block; background:#E8F5E9; color:var(--telus-accessible-green); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">✔ Complete</div>
+      </div>
+
+      <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-purple); border-radius:10px; padding:14px 12px; text-align:center;">
+        <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-purple); margin-bottom:6px;">Batch 1</div>
+        <div style="font-size:18px; font-weight:800; color:var(--telus-purple); line-height:1.1;">23 Jun</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Chocolates + Galletas</div>
+        <div style="margin-top:8px; display:inline-block; background:#EDE8F3; color:var(--telus-purple); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">In Progress</div>
+      </div>
+
+      <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-purple); border-radius:10px; padding:14px 12px; text-align:center;">
+        <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-purple); margin-bottom:6px;">Batch 2</div>
+        <div style="font-size:18px; font-weight:800; color:var(--telus-purple); line-height:1.1;">30 Jul</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Cafe + Culinarios</div>
+        <div style="margin-top:8px; display:inline-block; background:#F0EDF4; color:var(--text-muted); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">Not Started</div>
+      </div>
+
+      <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-purple); border-radius:10px; padding:14px 12px; text-align:center;">
+        <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-purple); margin-bottom:6px;">Batch 3</div>
+        <div style="font-size:18px; font-weight:800; color:var(--telus-purple); line-height:1.1;">24 Aug</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">6 Categories</div>
+        <div style="margin-top:8px; display:inline-block; background:#F0EDF4; color:var(--text-muted); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">Not Started</div>
+      </div>
+
+      <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-purple); border-radius:10px; padding:14px 12px; text-align:center;">
+        <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-purple); margin-bottom:6px;">Batch 4</div>
+        <div style="font-size:18px; font-weight:800; color:var(--telus-purple); line-height:1.1;">16 Sep</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Purina</div>
+        <div style="margin-top:8px; display:inline-block; background:#F0EDF4; color:var(--text-muted); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">Not Started</div>
+      </div>
+
+    </div>
+
+    <!-- Accomplishments -->
+    <div class="es-section">
+      <div class="section-title">Accomplishments This Week</div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Completed product catalogue analysis for Batch 1</div>
+        </div>
+        <span class="es-item-owner">TELUS</span>
+        <span class="es-item-date">27 Apr – 1 May</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Completed review and sign-off of vendor feedback and clarifications</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">5 May</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Reviewed TELUS feedback with field users regarding Puzzle Photo taking training issues</div>
+        </div>
+        <span class="es-item-owner">Nestlé LATAM / Nestlé Chile</span>
+        <span class="es-item-date">1 May</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Reporting configured in Production — data validation underway</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">1 May</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Sign-off of Batch 1 scope freeze</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">5 May</span>
+      </div>
+
+    </div>
+
+    <!-- Upcoming Activities -->
+    <div class="es-section">
+      <div class="section-title">Upcoming Activities</div>
+
+      <div class="es-item-row">
+        <span class="es-arrow">▸</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Start dataset preparation for NN model training</div>
+        </div>
+        <span class="es-item-owner">TELUS</span>
+        <span class="es-item-date">6 May</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-arrow">▸</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Commence data annotation — labeling, model training and results</div>
+        </div>
+        <span class="es-item-owner">TELUS</span>
+        <span class="es-item-date">7 May – 3 Jun</span>
+      </div>
+    </div>
+
+    <!-- Key Market Actions -->
+    <div class="es-section">
+      <div class="section-title">Key Market Actions</div>
+
+      <div class="es-item-row">
+        <span class="es-arrow">▸</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Continue to provide feedback on training of Puzzle functionality</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-arrow">▸</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Continue to verify reporting to ensure market needs are met</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile</span>
+      </div>
+
+    </div>
+
+    <!-- Topics with Nestlé Globe -->
+    <div class="es-section">
+      <div class="section-title">Discussion Topics with Nestlé Globe</div>
+
+      <div class="es-item-row">
+        <span class="es-arrow">▸</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Future of the Wednesday session — no longer available at this timeslot starting next week. Can we move 30 minutes later and rename the meeting to "Nestlé Project Status Report" with updated invitees?</div>
+          <div style="margin-top:6px; font-size:12px; color:var(--telus-accessible-green); font-weight:600;">In agreement with Agata, David will cancel the current meeting series and schedule a new meeting with updated invites.</div>
+        </div>
+        <span class="es-item-owner">All</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-arrow">▸</span>
+        <div class="es-item-body">
+          <div class="es-item-text">David to communicate the schedule of the monthly F1 report, after internal communications</div>
+        </div>
+        <span class="es-item-owner">TELUS</span>
+      </div>
+
+    </div>
+
+    <!-- Key Risks -->
+    <div class="es-section">
+      <div class="section-title">Key Risks</div>
+      <div class="es-empty-row">No active risks at this time.</div>
+    </div>
+
+  </div>
+
+  <!-- ======================== TAB 2: GO-LIVE ACTIVITY DASHBOARD ======================== -->
+  <div id="tab-activity" class="tab-panel">
+
+    <div class="page-header">
+      <div class="left">
+        <h1>Nestlé Chile TIR | Go-Live Activity Dashboard</h1>
+        <div class="sub">Go-Live Activity Report &nbsp;|&nbsp; Apr 15 – May 5, 2026</div>
+      </div>
+      <div class="right">
+        <div class="badge">TELUS ACG</div>
+        <div>Go-Live: April 15, 2026</div>
+        <div>Status: Production</div>
+      </div>
+    </div>
+
+    <!-- WEEKLY SUMMARY CARDS -->
+    <div class="section-label">Weekly Summary</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px;">
+
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-purple);border-radius:10px;padding:16px;">
+        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);margin-bottom:10px;">Week 1 &nbsp;<span style="font-weight:500;color:var(--text-muted);">Apr 15–17</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">74</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-accessible-green);">99%</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Complete</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">69</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:#E65100;">1</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Progress</div></div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:16px;">
+        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);margin-bottom:10px;">Week 2 &nbsp;<span style="font-weight:500;color:var(--text-muted);">Apr 20–24</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">87</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Complete</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">82</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Progress</div></div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:16px;">
+        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);margin-bottom:10px;">Week 3 &nbsp;<span style="font-weight:500;color:var(--text-muted);">Apr 27–30</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">58</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Complete</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">58</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Progress</div></div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:16px;">
+        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);margin-bottom:10px;">Week 4 &nbsp;<span style="font-weight:500;color:var(--text-muted);">May 4–5</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">15</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Complete</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">15</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Progress</div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DAILY BREAKDOWN -->
+    <div class="section-label">Daily Breakdown</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Customers</th>
+            <th>Visits</th>
+            <th>Answered Monitorings</th>
+            <th>Finished</th>
+            <th>In Progress</th>
+            <th>Users</th>
+            <th>Scenes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#F5F0FA;">
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week 1 &mdash; Apr 15–17</td>
+          </tr>
+          <tr><td>Apr 15</td><td>32</td><td>33</td><td>33</td><td>33</td><td class="zero-val">0</td><td>18</td><td>45</td></tr>
+          <tr><td>Apr 16</td><td>14</td><td>16</td><td>16</td><td>16</td><td class="zero-val">0</td><td>9</td><td>21</td></tr>
+          <tr><td>Apr 17</td><td>23</td><td>25</td><td>25</td><td>24</td><td class="in-progress-val">1</td><td>13</td><td>32</td></tr>
+          <tr style="background:#F5F0FA;">
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week 2 &mdash; Apr 20–24</td>
+          </tr>
+          <tr><td>Apr 20</td><td>27</td><td>29</td><td>29</td><td>29</td><td class="zero-val">0</td><td>13</td><td>45</td></tr>
+          <tr><td>Apr 21</td><td>19</td><td>19</td><td>19</td><td>19</td><td class="zero-val">0</td><td>11</td><td>27</td></tr>
+          <tr><td>Apr 22</td><td>18</td><td>20</td><td>20</td><td>20</td><td class="zero-val">0</td><td>11</td><td>33</td></tr>
+          <tr><td>Apr 23</td><td>10</td><td>11</td><td>11</td><td>11</td><td class="zero-val">0</td><td>7</td><td>15</td></tr>
+          <tr><td>Apr 24</td><td>8</td><td>8</td><td>8</td><td>8</td><td class="zero-val">0</td><td>6</td><td>15</td></tr>
+          <tr style="background:#F5F0FA;">
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week 3 &mdash; Apr 27–30</td>
+          </tr>
+          <tr><td>Apr 27</td><td>21</td><td>21</td><td>21</td><td>21</td><td class="zero-val">0</td><td>10</td><td>30</td></tr>
+          <tr><td>Apr 28</td><td>19</td><td>19</td><td>19</td><td>19</td><td class="zero-val">0</td><td>12</td><td>25</td></tr>
+          <tr><td>Apr 29</td><td>15</td><td>15</td><td>15</td><td>15</td><td class="zero-val">0</td><td>6</td><td>30</td></tr>
+          <tr><td>Apr 30</td><td>3</td><td>3</td><td>3</td><td>3</td><td class="zero-val">0</td><td>1</td><td>10</td></tr>
+          <tr style="background:#F5F0FA;">
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week 4 &mdash; May 4–5</td>
+          </tr>
+          <tr><td>May 4</td><td>10</td><td>10</td><td>10</td><td>10</td><td class="zero-val">0</td><td>6</td><td>15</td></tr>
+          <tr><td>May 5</td><td>5</td><td>5</td><td>5</td><td>5</td><td class="zero-val">0</td><td>4</td><td>9</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MONTHLY PACE -->
+    <div class="section-label">Monthly Visit Pace vs Target</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+
+      <!-- APRIL (CLOSED) -->
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-radius:10px;padding:20px;">
+        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.7px;color:var(--telus-purple);margin-bottom:14px;">April (Closed) &mdash; Pro-Rated from Apr 15</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;">
+          <div style="text-align:center;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Pro-Rated Target</div>
+            <div style="font-size:28px;font-weight:800;color:var(--telus-purple);">245</div>
+            <div style="font-size:10px;color:var(--text-muted);">12 of 22 working days</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Actual Visits</div>
+            <div style="font-size:28px;font-weight:800;color:#E65100;">219</div>
+            <div style="font-size:10px;color:var(--text-muted);">89% of target</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Gap</div>
+            <div style="font-size:28px;font-weight:800;color:#D32F2F;">-26</div>
+            <div style="font-size:10px;color:var(--text-muted);">visits short</div>
+          </div>
+        </div>
+        <div style="background:var(--border-light);border-radius:6px;height:20px;overflow:hidden;">
+          <div style="height:100%;width:89%;background:var(--telus-purple);border-radius:6px;display:flex;align-items:center;padding-left:8px;">
+            <span style="font-size:10px;font-weight:800;color:#fff;">219 visits</span>
+          </div>
+        </div>
+        <div style="margin-top:6px;font-size:11px;color:var(--text-muted);">89% of 245 pro-rated target &mdash; 26 visits short at month close.</div>
+      </div>
+
+      <!-- MAY (IN PROGRESS) -->
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-radius:10px;padding:20px;">
+        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.7px;color:var(--telus-purple);margin-bottom:14px;">May (In Progress) &mdash; 2 Days Recorded</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;">
+          <div style="text-align:center;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Full Month Target</div>
+            <div style="font-size:28px;font-weight:800;color:var(--telus-purple);">450</div>
+            <div style="font-size:10px;color:var(--text-muted);">21 working days</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Visits So Far</div>
+            <div style="font-size:28px;font-weight:800;color:var(--telus-purple);">15</div>
+            <div style="font-size:10px;color:var(--text-muted);">2 of 21 working days</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Daily Avg Needed</div>
+            <div style="font-size:28px;font-weight:800;color:var(--telus-accessible-green);">22.9</div>
+            <div style="font-size:10px;color:var(--text-muted);">visits/day to hit 450</div>
+          </div>
+        </div>
+        <div style="background:var(--border-light);border-radius:6px;height:20px;overflow:hidden;">
+          <div style="height:100%;width:3.3%;background:var(--telus-purple);border-radius:6px;min-width:6px;"></div>
+        </div>
+        <div style="margin-top:6px;font-size:11px;color:var(--text-muted);">Too early to project. Need 22.9 visits/day across remaining 19 days to hit 450 target.</div>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <div class="footer-left">
+        <div class="footer-badge">TELUS ACG</div>
+        <div class="footer-tagline">Let's make the future friendly</div>
+      </div>
+      <div class="footer-right">
+        Nestlé Chile TIR Implementation &nbsp;|&nbsp; TELUS Agriculture &amp; Consumer Goods | Confidential
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ======================== TAB 3: GANTT CHART ======================== -->
+  <div id="tab-gantt" class="tab-panel">
+    <div class="gantt-wrap">
+      <table class="gantt-table">
+        <thead>
+          <tr>
+            <th class="label-th" style="width:240px;">Phase / Task</th>
+            <th style="width:40px;">Done</th>
+            <th>Nov 25</th>
+            <th>Dec 25</th>
+            <th>Jan 26</th>
+            <th>Feb 26</th>
+            <th>Mar 26</th>
+            <th>Apr 26</th>
+            <th>May 26</th>
+            <th>Jun 26</th>
+            <th>Jul 26</th>
+            <th>Aug 26</th>
+            <th>Sep 26</th>
+          </tr>
+        </thead>
+        <tbody id="ganttBody"></tbody>
+      </table>
+    </div>
+    <div style="margin-top:10px; font-size:11px; color:var(--text-muted); display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+      <span>Today: <span style="color:var(--telus-accessible-green); font-weight:700;">Apr 27, 2026</span></span>
+      <span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:4px;background:var(--telus-purple);border-radius:2px;opacity:0.85;"></span> Complete</span>
+      <span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:4px;background:var(--telus-green);border-radius:2px;"></span> In Progress</span>
+      <span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:4px;background:var(--phase-upcoming);border-radius:2px;opacity:0.75;"></span> Upcoming</span>
+      <span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:4px;background:#CCC;border-radius:2px;"></span> Not Started</span>
+    </div>
+  </div>
+
+  <!-- ======================== TAB 3: BATCH 1 PLANNER ======================== -->
+  <div id="tab-batch1" class="tab-panel">
+    <div class="batch-section">
+      <div class="batch-header">
+        <div class="b-name">Batch 1 — Chocolates + Galletas</div>
+        <div class="b-dates">Mar 19, 2026 – Jun 23, 2026 &nbsp;|&nbsp; Status: In Progress</div>
+      </div>
+      <div class="batch-body">
+
+        <!-- Market Categories Analysis -->
+        <div class="batch-task-row">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name" style="font-weight:700;">Market Categories Analysis</div>
+          <div class="bt-dates">Mar 19 – Apr 24, 2026</div>
+          <span class="bt-assigned">NESTLE / TELUS / SS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Preparation of base catalog per category</div>
+          <div class="bt-dates">Mar 19, 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Dataset preparation per category</div>
+          <div class="bt-dates">Mar 19, 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Defining business rules of the categories</div>
+          <div class="bt-dates">Apr 8 – 24, 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">KPI validation per category</div>
+          <div class="bt-dates">Apr 24, 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Category for batch plan sign-off</div>
+          <div class="bt-dates">Apr 24, 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+
+        <!-- Scope Definition -->
+        <div class="batch-task-row" style="background:#f9f9f9;">
+          <div class="dot dot-active"></div>
+          <div class="bt-name" style="font-weight:700;">Batch 1 — Scope Definition &amp; Category Analysis</div>
+          <div class="bt-dates">Apr 27 – Jun 10, 2026</div>
+          <span class="bt-assigned">SS / TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-active"></div>
+          <div class="bt-name">Scope for NN Model Training</div>
+          <div class="bt-dates">Apr 27 – May 5, 2026</div>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Provide SKU catalogue</div>
+          <div class="bt-dates">Apr 27, 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Provide Photos for training</div>
+          <div class="bt-dates">Apr 27 – 28, 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Product catalogue analysis</div>
+          <div class="bt-dates">Apr 27 – May 1, 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Review changes in product catalogue scope</div>
+          <div class="bt-dates">May 4 – 5, 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Scope freeze for Batch 1</div>
+          <div class="bt-dates">May 5, 2026</div>
+          <span class="bt-assigned">NESTLE / TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">NN Model Training — First Iteration</div>
+          <div class="bt-dates">May 6 – Jun 10, 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Dataset Preparation for Training</div>
+          <div class="bt-dates">May 6, 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Data Annotation (Labeling, model training, results)</div>
+          <div class="bt-dates">May 7 – Jun 3, 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Internal recognition testing</div>
+          <div class="bt-dates">Jun 4, 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Model prepared for 1st iteration</div>
+          <div class="bt-dates">Jun 4, 2026</div>
+          <span class="bt-assigned">NESTLE / TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Error Analysis &amp; Scope Update + Next Steps</div>
+          <div class="bt-dates">Jun 5 – 9, 2026</div>
+          <span class="bt-assigned">NESTLE / SS / TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Next Iteration Planning</div>
+          <div class="bt-dates">Jun 10, 2026</div>
+          <span class="bt-assigned">SS / NESTLE / TELUS</span>
+        </div>
+
+        <!-- Model Testing in UAT -->
+        <div class="batch-task-row" style="background:#f9f9f9;">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name" style="font-weight:700;">Model Testing in UAT and Approval</div>
+          <div class="bt-dates">Jun 11 – 17, 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Deploy Model to UAT</div>
+          <div class="bt-dates">Jun 11, 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Master Data Update (Product Category Setup)</div>
+          <div class="bt-dates">Jun 11 – 12, 2026</div>
+          <span class="bt-assigned">TELUS / NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Integration Testing from SOFTSERVE</div>
+          <div class="bt-dates">Jun 15, 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Integration Testing from TELUS</div>
+          <div class="bt-dates">Jun 15, 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">FE Full Cycle Testing</div>
+          <div class="bt-dates">Jun 16, 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Release Batch for Nestle Verification</div>
+          <div class="bt-dates">Jun 16, 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Nestle Chile Testing and Sign Off</div>
+          <div class="bt-dates">Jun 17, 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+
+        <!-- Production Deployment -->
+        <div class="batch-task-row" style="background:#f9f9f9;">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name" style="font-weight:700;">Production Deployment</div>
+          <div class="bt-dates">Jun 18 – 22, 2026</div>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Confirm Go Live Date</div>
+          <div class="bt-dates">Jun 18, 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Deploy Model to Production</div>
+          <div class="bt-dates">Jun 19, 2026</div>
+          <span class="bt-assigned">TELUS / SS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Master Data Update — Production</div>
+          <div class="bt-dates">Jun 19 – 22, 2026</div>
+          <span class="bt-assigned">TELUS / NESTLE CHILE</span>
+        </div>
+
+        <!-- Go-Live -->
+        <div class="batch-golive">
+          <span>🚀</span> Go-Live — Batch 1 &nbsp;
+          <span style="font-size:13px; color:var(--telus-accessible-green);">June 23, 2026</span>
+          <span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLE</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <div class="telus-badge">TELUS</div>
+      <div class="legend">
+        <div class="legend-item"><span class="dot dot-complete"></span>Complete</div>
+        <div class="legend-item"><span class="dot dot-active"></span>In Progress</div>
+        <div class="legend-item"><span class="dot dot-upcoming"></span>Upcoming</div>
+        <div class="legend-item"><span class="dot dot-not-started"></span>Not Started</div>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="project-id">Nestlé Chile TIR — Weekly Status Report</div>
+      <div>TELUS Agriculture &amp; Consumer Goods &nbsp;|&nbsp; Confidential</div>
+      <div style="margin-top:2px; font-style:italic;">Let's make the future friendly</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+  if (name === 'gantt') buildGantt();
+}
+
+// GANTT
+const MONTHS = [
+  { year: 2025, month: 11, label: 'Nov 25' },
+  { year: 2025, month: 12, label: 'Dec 25' },
+  { year: 2026, month: 1,  label: 'Jan 26' },
+  { year: 2026, month: 2,  label: 'Feb 26' },
+  { year: 2026, month: 3,  label: 'Mar 26' },
+  { year: 2026, month: 4,  label: 'Apr 26' },
+  { year: 2026, month: 5,  label: 'May 26' },
+  { year: 2026, month: 6,  label: 'Jun 26' },
+  { year: 2026, month: 7,  label: 'Jul 26' },
+  { year: 2026, month: 8,  label: 'Aug 26' },
+  { year: 2026, month: 9,  label: 'Sep 26' },
+];
+
+const PROJECT_START = new Date(2025, 10, 1);
+const PROJECT_END   = new Date(2026, 8, 30);
+const TODAY         = new Date(2026, 3, 27);
+const TOTAL_DAYS    = (PROJECT_END - PROJECT_START) / 86400000;
+
+const GANTT_TASKS = [
+  { label: 'Testing Scope & Planning',              start: '2025-11-07', end: '2026-01-16', status: 'Complete',     isPhase: true },
+  { label: 'PoC — NN Training (1 Category)',        start: '2025-11-03', end: '2025-12-09', status: 'Complete' },
+  { label: 'UAT Environment Configuration',         start: '2026-01-05', end: '2026-01-30', status: 'Complete' },
+  { label: '1st Category Go Live (Pilot)',           start: '2026-01-28', end: '2026-04-07', status: 'Complete',     isPhase: true },
+  { label: 'Market Training',                        start: '2026-02-11', end: '2026-02-13', status: 'Complete' },
+  { label: 'Nestle Chile Pilot Execution',           start: '2026-02-13', end: '2026-04-03', status: 'Complete' },
+  { label: 'Market Prioritization',                  start: '2026-02-19', end: '2026-03-18', status: 'Complete' },
+  { label: 'Pilot Review & Sign Off',                start: '2026-04-07', end: '2026-04-07', status: 'Complete' },
+  { label: 'Full Rollout — Lacteous Culinaros',      start: '2026-04-08', end: '2026-04-21', status: 'Complete',     isPhase: true },
+  { label: 'Market Go Live — Production',            start: '2026-04-15', end: '2026-04-15', status: 'Complete' },
+  { label: 'Batch 1 — Chocolates + Galletas',        start: '2026-03-19', end: '2026-06-23', status: 'In Progress',  isPhase: true },
+  { label: 'Categories Analysis (B1)',               start: '2026-03-19', end: '2026-04-24', status: 'Complete' },
+  { label: 'Scope Definition &amp; Catalogue Analysis', start: '2026-04-27', end: '2026-05-05', status: 'Complete' },
+  { label: 'NN Model Training — First Iteration',    start: '2026-05-06', end: '2026-06-10', status: 'In Progress' },
+  { label: 'Model Testing in UAT',                   start: '2026-06-11', end: '2026-06-17', status: 'Not Started' },
+  { label: 'Production Deployment',                  start: '2026-06-18', end: '2026-06-22', status: 'Not Started' },
+  { label: '🚀 Go-Live — Batch 1',                   start: '2026-06-23', end: '2026-06-23', status: 'Not Started',  isPhase: true },
+  { label: 'Batch 2 — Cafe + Culinarios',            start: '2026-05-20', end: '2026-07-30', status: 'Not Started',  isPhase: true },
+  { label: 'Categories Analysis + Scope (B2)',       start: '2026-05-20', end: '2026-07-17', status: 'Not Started' },
+  { label: 'Model Testing & Deployment (B2)',        start: '2026-07-20', end: '2026-07-29', status: 'Not Started' },
+  { label: '🚀 Go-Live — Batch 2',                   start: '2026-07-30', end: '2026-07-30', status: 'Not Started',  isPhase: true },
+  { label: 'Batch 3 — 6 Categories',                 start: '2026-06-12', end: '2026-08-24', status: 'Not Started',  isPhase: true },
+  { label: 'Categories Analysis + Scope (B3)',       start: '2026-06-12', end: '2026-08-11', status: 'Not Started' },
+  { label: 'Model Testing & Deployment (B3)',        start: '2026-08-12', end: '2026-08-21', status: 'Not Started' },
+  { label: '🚀 Go-Live — Batch 3',                   start: '2026-08-24', end: '2026-08-24', status: 'Not Started',  isPhase: true },
+  { label: 'Batch 4 — Purina',                       start: '2026-07-07', end: '2026-09-16', status: 'Not Started',  isPhase: true },
+  { label: 'Categories Analysis + Scope (B4)',       start: '2026-07-07', end: '2026-09-03', status: 'Not Started' },
+  { label: 'Model Testing & Deployment (B4)',        start: '2026-09-04', end: '2026-09-15', status: 'Not Started' },
+  { label: '🚀 Go-Live — Batch 4 (Final)',            start: '2026-09-16', end: '2026-09-16', status: 'Not Started',  isPhase: true },
+];
+
+function barClass(status) {
+  if (status === 'Complete')     return 'bar-complete';
+  if (status === 'In Progress')  return 'bar-active';
+  if (status === 'Upcoming')     return 'bar-upcoming';
+  return 'bar-not-started';
+}
+
+function buildGantt() {
+  const tbody = document.getElementById('ganttBody');
+  if (tbody.children.length > 0) return;
+
+  const todayOffset = (TODAY - PROJECT_START) / 86400000;
+
+  GANTT_TASKS.forEach(t => {
+    const tr = document.createElement('tr');
+    if (t.isPhase) tr.classList.add('phase-header');
+
+    const start = new Date(t.start);
+    const end   = new Date(t.end);
+    const s = Math.max(0, (start - PROJECT_START) / 86400000);
+    const e = Math.min(TOTAL_DAYS, (end - PROJECT_START) / 86400000 + 1);
+
+    // label cell
+    const labelTd = document.createElement('td');
+    labelTd.innerHTML = t.label;
+    labelTd.style.paddingLeft = t.isPhase ? '8px' : '16px';
+    tr.appendChild(labelTd);
+
+    // done cell
+    const doneTd = document.createElement('td');
+    doneTd.style.textAlign = 'center';
+    doneTd.style.fontSize = '10px';
+    doneTd.style.color = 'var(--text-muted)';
+    doneTd.textContent = t.status === 'Complete' ? '✓' : '';
+    tr.appendChild(doneTd);
+
+    // month cells
+    MONTHS.forEach(m => {
+      const td = document.createElement('td');
+      td.className = 'month-cell';
+
+      const mStart     = new Date(m.year, m.month - 1, 1);
+      const mEnd       = new Date(m.year, m.month, 0, 23, 59, 59);
+      const cellStart  = Math.max(0, (mStart - PROJECT_START) / 86400000);
+      const cellEnd    = Math.min(TOTAL_DAYS, (mEnd - PROJECT_START) / 86400000);
+      const cellSpan   = cellEnd - cellStart;
+
+      const wrap = document.createElement('div');
+      wrap.className = 'gantt-cell-wrap';
+
+      // today line
+      if (todayOffset >= cellStart && todayOffset <= cellEnd) {
+        const pct = ((todayOffset - cellStart) / cellSpan) * 100;
+        const line = document.createElement('div');
+        line.className = 'today-line';
+        line.style.left = pct + '%';
+        wrap.appendChild(line);
+      }
+
+      // bar segment
+      const barStart = Math.max(cellStart, s);
+      const barEnd   = Math.min(cellEnd, e);
+      if (barEnd > barStart) {
+        const leftPct  = ((barStart - cellStart) / cellSpan) * 100;
+        const widthPct = ((barEnd - barStart) / cellSpan) * 100;
+        const bar = document.createElement('div');
+        bar.className = 'gantt-bar ' + barClass(t.status);
+        bar.style.left  = leftPct + '%';
+        bar.style.width = widthPct + '%';
+        wrap.appendChild(bar);
+      }
+
+      td.appendChild(wrap);
+      tr.appendChild(td);
+    });
+
+    tbody.appendChild(tr);
+  });
+}
+</script>
+</body>
+</html>
