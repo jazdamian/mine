@@ -1,1339 +1,2147 @@
 <!DOCTYPE html>
-<html lang="en"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
-        window.__firebase_config = firebaseConfig;
-        window.__initial_auth_token = initialAuthToken;
-        window.__app_id = appId;
-            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjZjYTg2MDA3YjlmMTU0MmYyNDZlYjA0YmUwMzY0MWU2Njc3MTUzMTQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwMDI5MDQ2MzE5MjM0NDc5MzMxMSIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzcxMjY3ZTUwMTgzMWM3YmFfc3RhdHVzX3JlcG9ydC5odG1sLTE4In0sImV4cCI6MTc4MTI5NDAyNiwiaWF0IjoxNzgxMjkwNDI2LCJhbGciOiJSUzI1NiJ9.OgMEYjTdaSGZH--HjWseRE3fU08ZyJjvD_hfJfX9ff55f4pMF9IsoVr2XTz8V6iNcj3_x5P3IrW-V86_Gj4SzG9OSNhZ59Trk6nimPByghGUedAYhVrNiYft7nadFFRngBTN9nUoXReW4Kf9Rz1vZooMAYsfviifkkXw6SEog_e5xFOQBbOo15CJfUqFIBsaavUC3Hl47KmOZpjZchuL4A9OXdsbEphmMYRqzz9bKIL9SoDOsToO1Ht26wff2IKx8XwFC3k9r_AvCfSh51PSSYCYSjxtK4sa3FaPVOkdy_9egCZQFYhAJeiyegnuFQ1yG4zmLZkHP6j2ZonTKg0xAw","c_71267e501831c7ba_status_report.html-18")</script><script>(function(){'use strict';window.addEventListener("message",a=>{a.data&&a.data.type==="SUPPLEMENTAL_DATA_UPDATE"&&window.dispatchEvent(new CustomEvent("supplementaldataupdate",{detail:a.data.data}))});}).call(this);
-</script><script>(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
-function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
-p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
-
- MIT License
-
- Copyright (c) 2017-2023 W.Y.
-
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
-
-*/
-function u(a,b){var d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);var c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{var a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){var b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
-function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{var c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
-function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
-function D(a,b,d){return t(function*(){var c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
-var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{var c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
-function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){var c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);var e=yield c.blob();return new Promise((f,g)=>{var k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){var c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
-function L(a,b,d){return t(function*(){var c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());try{let f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});var e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){var b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");let c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
-function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
-function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;var c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
-return b})}function ea(a,b,d){var c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{var g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
-function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
-function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){let g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
-c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
-function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){var b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
-function la(a,b,d,c){return t(function*(){try{let e=d?(new URL(b,d||void 0)).toString():b,f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){let [c,,e]=ia.exec(d)||[];if(!e)return"";if(e===b)return`src: ${c};`}}):a}
-function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;var c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c,e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
-function oa(a,b){return t(function*(){var d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
-function pa(a,b){return t(function*(){var d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){var d=a.cssText,c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){var g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
-function X(a){if(a==null)return[];var b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
-d.lastIndex;b.push(e[0])}return b}
-function qa(a,b){return t(function*(){var d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){let g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
-{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
-function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}var d=new Set;b(a);return d}function ua(a,b){return t(function*(){var d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
-function va(a,b){return t(function*(){var d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){let c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){var {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
-function xa(a,b={}){return t(function*(){var {width:d,height:c}=A(a,b),e=yield wa(a,b);e=yield B(e);var f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384));
-f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;let c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
-function Aa(){return t(function*(){var a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
-function Ba(a){return t(function*(){var b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){var b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
-window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
-})();</script><script>(function() {
-  // Ensure this script is executed only once
-  if (window.firebaseAuthBridgeScriptLoaded) {
-    return;
-  }
-  window.firebaseAuthBridgeScriptLoaded = true;
-
-  let nextTokenPromiseId = 0;
-
-  // Stores { resolve, reject } for ongoing token requests
-  const pendingTokenPromises = {};
-
-  // Listen for messages from the Host Application
-  window.addEventListener('message', function(event) {
-
-    const messageData = event.data;
-
-  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
-      const { success, token, error, promiseId } = messageData ?? {};
-      if (pendingTokenPromises[promiseId]) {
-        if (success) {
-          pendingTokenPromises[promiseId].resolve(token);
-        } else {
-          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
-        }
-        delete pendingTokenPromises[promiseId];
-      }
-    }
-  });
-
-  // Expose a function for the Generated App to request a new Firebase token
-  window.requestNewFirebaseToken = function() {
-    const currentPromiseId = nextTokenPromiseId++;
-    const promise = new Promise((resolve, reject) => {
-      pendingTokenPromises[currentPromiseId] = { resolve, reject };
-    });
-    if (window.parent && window.parent !== window) {
-      window.parent.postMessage({
-        type: 'REQUEST_NEW_FIREBASE_TOKEN',
-        promiseId: currentPromiseId
-      }, '*');
-    } else {
-      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
-      delete pendingTokenPromises[currentPromiseId];
-    }
-    return promise;
-  };
-})();</script><script>
-let realOriginalGetUserMedia = null;
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nestlé Chile TIR — Batch 1 Focus View</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --telus-purple: #4B286D;
+  --telus-green: #66CC00;
+  --telus-accessible-green: #2B8000;
+  --telus-dark: #2A1A3E;
+  --telus-light-purple: #7C53A5;
+  --telus-thunder-grey: #2C2E30;
+  --phase-complete: #4B286D;
+  --phase-active: #66CC00;
+  --phase-upcoming: #E65100;
+  --phase-critical: #D32F2F;
+  --bg-white: #FFFFFF;
+  --bg-card: #FAFAFA;
+  --bg-section: #F5F5F5;
+  --border-light: #EEEEEE;
+  --text-primary: #1a1a2e;
+  --text-body: #333333;
+  --text-muted: #888888;
+  --text-subtle: #AAAAAA;
+  --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --page-max: 1060px;
 }
 
-(function() {
-  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
-    try {
-      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
-        get: function() {
-          return undefined; // Or throw an error
-        },
-        configurable: false
-      });
-    } catch (error) {
-      console.error("Error defining prototype getter:", error);
-    }
-  }
-})();
-
-(function() {
-  const pendingMediaResolvers = {};
-  let nextMediaPromiseId = 0;
-
-  function requestMediaPermissions(constraints) {
-    const mediaPromiseId = nextMediaPromiseId++;
-    const promise = new Promise((resolve, reject) => {
-      pendingMediaResolvers[mediaPromiseId] = (granted) => {
-        delete pendingMediaResolvers[mediaPromiseId];
-        resolve(granted);
-      };
-    });
-
-    window.parent.postMessage({
-      type: 'requestMediaPermission',
-      constraints: constraints,
-      promiseId: mediaPromiseId,
-    }, '*');
-
-    return promise;
-  }
-
-  let originalGetUserMedia = realOriginalGetUserMedia;
-
-  function interceptGetUserMedia() {
-    if (navigator.mediaDevices) {
-      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
-        value: function(constraints) {
-          return requestMediaPermissions(constraints).then((granted) => {
-            if (granted) {
-              if (originalGetUserMedia) {
-                return originalGetUserMedia(constraints);
-              } else {
-                throw new Error("Original getUserMedia not available.");
-              }
-            } else {
-              throw new DOMException('Permission denied', 'NotAllowedError');
-            }
-          });
-        },
-        writable: false,
-        configurable: false
-      });
-    }
-  }
-
-  interceptGetUserMedia();
-
-  const observer = new MutationObserver(function(mutationsList, observer) {
-    for (const mutation of mutationsList) {
-      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
-        interceptGetUserMedia();
-      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
-        interceptGetUserMedia();
-      } else if (mutation.type === 'childList' && mutation.addedNodes) {
-        mutation.addedNodes.forEach(node => {
-          if (node === navigator.mediaDevices) {
-            interceptGetUserMedia();
-          }
-        });
-      }
-    }
-  });
-
-  function interceptSpeechRecognition() {
-    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
-      return;
-    }
-
-    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-    const SpeechRecognitionWrapper = function(...args) {
-      const recognizer = new OriginalSpeechRecognition(...args);
-      const originalStart = recognizer.start.bind(recognizer);
-
-      recognizer.start = function() {
-        requestMediaPermissions({ audio: true }).then(granted => {
-          if (granted) {
-            originalStart();
-          } else {
-            const errorEvent = new SpeechRecognitionErrorEvent('error');
-            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
-            recognizer.dispatchEvent(errorEvent);
-          }
-        });
-      };
-
-      return recognizer;
-    };
-
-    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
-    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
-
-    if (window.SpeechRecognition) {
-      window.SpeechRecognition = SpeechRecognitionWrapper;
-    }
-    if (window.webkitSpeechRecognition) {
-      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
-    }
-  }
-
-  interceptSpeechRecognition();
-
-  window.addEventListener('message', function(event) {
-    if (event.data) {
-      if (event.data.type === 'resolveMediaPermission') {
-        const { promiseId, granted } = event.data;
-        if (pendingMediaResolvers[promiseId]) {
-          pendingMediaResolvers[promiseId](granted);
-        }
-      }
-    }
-  });
-
-})();</script><script ws-interception-config="{&quot;parentOrigin&quot;:&quot;https://gemini.google.com&quot;,&quot;proxiedDomains&quot;:[]}">(function(){'use strict';var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,d,e){if(b==Array.prototype||b==Object.prototype)return b;b[d]=e.value;return b};function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var d=0;d<b.length;++d){var e=b[d];if(e&&e.Math==Math)return e}throw Error("Cannot find global object");}var w=v(this);
-function y(b,d){if(d)a:{var e=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var k=b[h];if(!(k in e))break a;e=e[k]}b=b[b.length-1];h=e[b];d=d(h);d!=h&&d!=null&&u(e,b,{configurable:!0,writable:!0,value:d})}}function z(b){function d(h){return b.next(h)}function e(h){return b.throw(h)}return new Promise(function(h,k){function m(n){n.done?h(n.value):Promise.resolve(n.value).then(d,e).then(m,k)}m(b.next())})}y("globalThis",function(b){return b||w});/*
-
- Copyright The Closure Library Authors.
- SPDX-License-Identifier: Apache-2.0
-*/
-function A(b,d){function e(){}e.prototype=d.prototype;b.i=d.prototype;b.prototype=new e;b.prototype.constructor=b;b.g=function(h,k,m){for(var n=Array(arguments.length-2),p=2;p<arguments.length;p++)n[p-2]=arguments[p];return d.prototype[k].apply(h,n)}};function B(b,d,e="*"){function h(a){if(typeof a==="string")return F.encode(a).buffer;if(a instanceof ArrayBuffer)return a.slice(0);if(ArrayBuffer.isView(a))return a.buffer.slice(a.byteOffset,a.byteOffset+a.byteLength);throw Error("Invalid data type");}function k(a){a=h(a);var f={type:"send",data:new Uint8Array(a)},g;(g=r)==null||g.postMessage(f,[a])}function m(){if(!r)throw Error("Data port not captured yet.");r.onmessage=a=>{if(a.data.type==="message"){a=new MessageEvent("message",{data:G.decode(a.data.data)});
-let f;(f=c.onmessage)==null||f.call(c,a);c.dispatchEvent(a)}}}function n(){if(!t)throw Error("Control port not captured yet.");t.onmessage=a=>{switch(a.data.type){case "open":l=1;var f=new Event("open"),g;(g=c.onopen)==null||g.call(c,f);c.dispatchEvent(f);q.forEach(H=>{k(H)});q=[];break;case "close":g=a.data;l=3;g=new CloseEvent("close",{code:g.code,reason:g.reason,wasClean:g.wasClean});(f=c.onclose)==null||f.call(c,g);c.dispatchEvent(g);break;case "error":l=3;f=new Event("error");let x;(x=c.onerror)==
-null||x.call(c,f);c.dispatchEvent(f)}}}function p(a){return z(function*(){var f=new MessageChannel;t=f.port1;var g=new MessageChannel;r=g.port1;n();m();window.parent.postMessage({type:"websocket_open",portOrdering:["control","data"],url:b,protocols:a||[],connectionId:I},e,[f.port2,g.port2])}())}var c=Reflect.construct(EventTarget,[],new.target);c.CONNECTING=0;c.OPEN=1;c.CLOSING=2;c.CLOSED=3;c.url=b;c.binaryType="arraybuffer";c.protocol="";c.h="";var l=0,t=null,r=null,q=[],F=new TextEncoder,G=new TextDecoder;
-c.onopen=null;c.onmessage=null;c.onclose=null;c.onerror=null;Object.defineProperty(c,"readyState",{get:()=>l,enumerable:!0,configurable:!0});Object.defineProperty(c,"bufferedAmount",{get:()=>{var a=0;q.forEach(f=>{a+=typeof f==="string"?f.length:f.byteLength});return a},enumerable:!0,configurable:!0});var I=function(){var a;return((a=globalThis.crypto)==null?0:a.randomUUID)?globalThis.crypto.randomUUID():"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,f=>{var g=Math.random()*16|0;return(f===
-"x"?g:g&3|8).toString(16)})}();c.send=a=>{if(l===1)a instanceof Blob?a.arrayBuffer().then(f=>{k(f)}):k(a);else if(l===0)if(typeof a==="string")q.push(a);else if(a instanceof ArrayBuffer||ArrayBuffer.isView(a))q.push(h(a));else throw Error("Sending Blob is not supported before the connection is open.");else console.debug("WebSocket send called in CLOSING or CLOSED state; ignored.")};c.close=(a=1E3,f="")=>{if(l!==2&&l!==3){l=2;a={type:"close",code:a,reason:f,wasClean:a===1E3};var g;(g=t)==null||g.postMessage(a)}};
-Promise.resolve().then(()=>p(d));return c}A(B,EventTarget);var C=document.currentScript,D=C==null?void 0:C.getAttribute("ws-interception-config");if(!D)throw Error("WebSocket Interceptor: Missing ws-interception-config attribute in the script tag.");var E=JSON.parse(D);if(!E.parentOrigin||typeof E.parentOrigin!=="string")throw Error("WebSocket Interceptor: Invalid parentOrigin in ws-interception-config");
-(function(b){var d=Object.getOwnPropertyDescriptor(window,"WebSocket");if(!d||d.writable||d.configurable)d=Object.assign(function(e,h){try{let k=(new URL(e)).hostname;if(b.proxiedDomains.some(m=>k===m||k.endsWith(`.${m}`)))return new B(e,h,b.parentOrigin)}catch(k){throw window.parent.postMessage({type:"websocket_blocked",url:e,reason:"blocked_invalid_url"},b.parentOrigin),new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");}window.parent.postMessage({type:"websocket_blocked",
-url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");},{CONNECTING:0,OPEN:1,CLOSING:2,CLOSED:3}),Object.defineProperty(window,"WebSocket",{value:d,writable:!1,configurable:!1})})({proxiedDomains:E.proxiedDomains||[],parentOrigin:E.parentOrigin});}).call(this);
-</script><script>((function(modelInformation) {
-  const originalFetch = window.fetch;
-  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
-  let googleLlmBaseApiUrls = [
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
-  ];
-  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-    );
-  });
-  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-    );
-  });
-  modelInformation.deprecatedGenerateImageModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-    );
-  });
-
-  const pendingFetchResolvers = {};
-  let nextPromiseId = 0;
-
-  function handleStringInput(input, optionsArgument) {
-    const actualUrl = input;
-    const fetchCallArgs = [actualUrl, optionsArgument];
-    const effectiveOptions = optionsArgument || {};
-    const bodyForApiKeyCheck = effectiveOptions.body;
-    const bodyForPostMessage = effectiveOptions.body;
-    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
-  }
-
-  function handleRequestInput(input, optionsArgument) {
-    const actualUrl = input.url;
-    const fetchCallArgs = [input, optionsArgument];
-    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
-    let bodyForApiKeyCheck;
-    let bodyForPostMessage;
-
-    if (optionsArgument) {
-      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
-      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
-      if ('body' in optionsArgument) {
-        bodyForApiKeyCheck = optionsArgument.body;
-        bodyForPostMessage = optionsArgument.body;
-      } else {
-        bodyForApiKeyCheck = undefined;
-        bodyForPostMessage = input.body;
-      }
-    } else {
-      bodyForApiKeyCheck = undefined;
-      bodyForPostMessage = input.body;
-    }
-    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
-  }
-
-  window.fetch = function(input, optionsArgument) {
-    let actualUrl;
-    let fetchCallArgs;
-    let effectiveOptions = {};
-    let bodyForApiKeyCheck;
-    let bodyForPostMessage;
-
-    if (typeof input === 'string') {
-      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
-    } else if (input instanceof Request) {
-      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
-    } else {
-      return originalFetch.apply(window, [input, optionsArgument]);
-    }
-
-    effectiveOptions.method = effectiveOptions.method || 'GET';
-    if (!effectiveOptions.headers) {
-      effectiveOptions.headers = new Headers();
-    }
-
-
-    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
-      let apiKeyIsNull = true;
-
-      const regex = new RegExp("models/([^:]+)");
-      const modelNameMatch = actualUrl.match(regex);
-      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
-
-
-      try {
-        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
-        const apiKeyParam = urlObject.searchParams.get('key');
-        if (apiKeyParam) {
-          apiKeyIsNull = false;
-        }
-      } catch (e) {
-        // Continue checks even if URL parsing fails
-      }
-
-      if (apiKeyIsNull && effectiveOptions.headers) {
-        const h = new Headers(effectiveOptions.headers);
-        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
-        if (apiKeyHeaderValue) {
-          apiKeyIsNull = false;
-          return originalFetch.apply(window, fetchCallArgs);
-        }
-      }
-
-      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
-        try {
-          const bodyData = JSON.parse(bodyForApiKeyCheck);
-          if (bodyData && bodyData.apiKey) {
-            apiKeyIsNull = false;
-            return originalFetch.apply(window, fetchCallArgs);
-          }
-        } catch (e) {
-          // Ignore JSON parsing errors
-        }
-      }
-
-      if(apiKeyIsNull) {
-        const promiseId = nextPromiseId++;
-        const promise = new Promise((resolve) => {
-          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
-            delete pendingFetchResolvers[promiseId];
-            resolve(resolvedResponse);
-          };
-        });
-
-        let serializedBodyForPostMessage;
-        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
-            serializedBodyForPostMessage = bodyForPostMessage;
-        } else if (bodyForPostMessage instanceof ReadableStream) {
-            serializedBodyForPostMessage = null;
-        } else {
-            try {
-                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
-            } catch (e) {
-                serializedBodyForPostMessage = null;
-            }
-        }
-
-        const messageOptions = {
-            method: effectiveOptions.method,
-            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
-            body: serializedBodyForPostMessage
-        };
-
-        window.parent.postMessage({
-          type: 'requestFetch',
-          url: actualUrl,
-          modelName: modelName,
-          options: messageOptions,
-          promiseId: promiseId,
-        }, '*');
-
-        return promise;
-      }
-      return originalFetch.apply(window, fetchCallArgs);
-    }
-    return originalFetch.apply(window, fetchCallArgs);
-  };
-
-  window.addEventListener('message', function(event) {
-    if (event.data && event.data.type === 'resolveFetch') {
-      const { promiseId, response } = event.data;
-      if (pendingFetchResolvers[promiseId]) {
-        try {
-          const reconstructedResponse = new Response(response.body, {
-            status: response.status,
-            statusText: response.statusText,
-            headers: new Headers(response.headers),
-          });
-          pendingFetchResolvers[promiseId](reconstructedResponse);
-        } catch (error) {
-          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
-        }
-      }
-    }
-  });
-
-}))({"textModelName":"gemini-3-flash-preview","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-3.1-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"],"deprecatedGenerateImageModelNames":["gemini-2.5-flash-image-preview","gemini-2.5-flash-image"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
-</script><script>(function() {
-  const originalConsoleLog = console.log;
-  const originalConsoleError = console.error;
-
-    /**
-   * Normalizes an error event or a promise rejection reason into a structured error object.
-   * @param {*} errorEventOrReason The error object or reason.
-   * @return {object} Structured error data { message, name, stack }.
-   */
-  function getErrorObject(errorEventOrReason) {
-    if (errorEventOrReason instanceof Error) {
-      return {
-        message: errorEventOrReason.message,
-        name: errorEventOrReason.name,
-        stack: errorEventOrReason.stack,
-      };
-    }
-    // Fallback for non-Error objects.
-    try {
-      return {
-        message: JSON.stringify(errorEventOrReason),
-        name: 'UnknownErrorType',
-        stack: null,
-      };
-    } catch (e) {
-      return {
-        message: String(errorEventOrReason),
-        name: 'UnknownErrorTypeNonStringifiable',
-        stack: null,
-      };
-    }
-  }
-
-  /**
-   * Converts an array of arguments (from log/error) into a single string.
-   * Handles Error objects specially to include their message and stack.
-   * @param {Array<*>} args - Arguments passed to console methods.
-   * @return {string} A string representation of the arguments.
-   */
-  function stringifyArgs(args) {
-    return args
-      .map((arg) => {
-        if (arg instanceof Error) {
-          const {message, stack} = arg;
-          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
-        }
-        if (typeof arg === 'object' && arg !== null) {
-          try {
-            return JSON.stringify(arg);
-          } catch (error) {
-            return '[Circular Object]';
-          }
-        } else {
-          return String(arg);
-        }
-      })
-      .join(' ');
-  }
-
-  console.log = function(...args) {
-    const logString = stringifyArgs(args);
-    window.parent.postMessage({ type: 'log', message: logString }, '*');
-    originalConsoleLog.apply(console, args);
-  };
-
-  console.error = function(...args) {
-    let errorData;
-    if (args.length > 0 && args[0] instanceof Error) {
-      const err = args[0];
-      // If the first arg is an Error, capture its details.
-      errorData = {
-        type: 'error',
-        source: 'CONSOLE_ERROR',
-        ...getErrorObject(err),
-        rawArgsString: stringifyArgs(args.slice(1)),
-        timestamp: new Date().toISOString(),
-      };
-    } else {
-      // If not an Error object, treat all args as a general error message.
-      errorData = {
-        type: 'error',
-        source: 'CONSOLE_ERROR',
-        message: stringifyArgs(args),
-        name: 'ConsoleLoggedError',
-        stack: null,
-        timestamp: new Date().toISOString(),
-      };
-    }
-    window.parent.postMessage(errorData, '*');
-    originalConsoleError.apply(console, args);
-  };
-
-  // Listen for global unhandled synchronous errors.
-  window.addEventListener('error', function(event) {
-    const errorDetails = event.error ? getErrorObject(event.error) : {
-      message: event.message,
-      name: 'GlobalError',
-      stack: null,
-      filename: event.filename,
-      lineno: event.lineno,
-      colno: event.colno,
-    };
-
-    window.parent.postMessage({
-      type: 'error',
-      source: 'global',
-      ...errorDetails,
-      message: errorDetails.message || event.message,
-      timestamp: new Date().toISOString(),
-    }, '*');
-  });
-
-  // Listen for unhandled promise rejections (asynchronous errors).
-  window.addEventListener('unhandledrejection', function(event) {
-    const errorDetails = getErrorObject(event.reason);
-
-    window.parent.postMessage({
-      type: 'error',
-      source: 'unhandledrejection',
-      ...errorDetails,
-      message: errorDetails.message || 'Unhandled Promise Rejection',
-      timestamp: new Date().toISOString(),
-    }, '*');
-  });
-
-})();</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nestle Chile TIR Implementation Status Report</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-    <!-- Include html2canvas for browser-side image generation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --telus-purple: #4B286D;
-            --telus-light-purple: #7C53A5;
-            --telus-green: #66CC00;
-            --telus-accessible-green: #2B8000;
-            --telus-thunder-grey: #2C2E30;
-            --bg-card: #FFFFFF;
-            --bg-page: #F9FAFB;
-            --border-light: #E5E7EB;
-            --text-muted: #6B7280;
-            
-            /* Visual Section Vars */
-            --pu-p: #F2EEF7;
-            --gy: #2C2E30;
-            --gm: #6B6E70;
-            --gb: #DEDEDE;
-            --am: #E8920A;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #f5f7fa;
-            padding: 30px 20px;
-            color: var(--telus-thunder-grey);
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        
-        .header {
-            background: var(--telus-purple);
-            color: white;
-            padding: 24px 30px;
-            border-bottom: 4px solid #321c4a;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .header-title-area {
-            flex-grow: 1;
-        }
-        
-        .header h1 {
-            font-size: 22px;
-            margin-bottom: 4px;
-            font-weight: 600;
-        }
-        
-        .header .date {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        /* ── ACTION BUTTONS ── */
-        .btn-group {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-export {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 8px 14px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-
-        .btn-export:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .btn-export.primary {
-            background: var(--telus-green);
-            border-color: var(--telus-green);
-            color: #331d4a;
-        }
-
-        .btn-export.primary:hover {
-            background: #7beb0a;
-            border-color: #7beb0a;
-        }
-
-        .btn-export svg {
-            width: 14px;
-            height: 14px;
-            fill: currentColor;
-        }
-        
-        .content {
-            padding: 30px;
-        }
-        
-        .summary-section {
-            background: #f0fff4; /* Light green tint for GREEN STATUS */
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 24px;
-            border-left: 5px solid var(--telus-green);
-        }
-        
-        .summary-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #c6f6d5;
-        }
-        
-        .summary-icon {
-            font-size: 20px;
-            margin-right: 10px;
-        }
-        
-        .summary-header h2 {
-            font-size: 16px;
-            color: var(--telus-accessible-green);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .summary-content {
-            color: #2d3748;
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
-        /* ── SECTION HEADERS ── */
-        .section-header-visual {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-
-        .section-title-visual {
-            font-size: 12px;
-            font-weight: 800;
-            color: var(--telus-purple);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section-line {
-            flex-grow: 1;
-            height: 1px;
-            background: var(--border-light);
-        }
-
-        /* ── KPI SECTION ── */
-        .kpi-wrapper {
-            margin-bottom: 24px;
-        }
-        .kpi-main-grid {
-            display: flex;
-            gap: 20px;
-        }
-        .kpi-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .kpi-group.adoption {
-            flex: 2;
-        }
-        .kpi-group.tracking {
-            flex: 3;
-        }
-        .kpi-group-label {
-            font-size: 10px;
-            font-weight: 800;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding-left: 2px;
-        }
-        .kpi-group-content {
-            display: grid;
-            gap: 12px;
-            height: 100%;
-        }
-        .adoption .kpi-group-content {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        .tracking .kpi-group-content {
-            grid-template-columns: repeat(3, 1fr);
-            margin-bottom: 8px;
-        }
-        .kpi-card {
-            background: #fff;
-            border: 1px solid var(--border-light);
-            border-radius: 10px;
-            padding: 14px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .kpi-value {
-            font-size: 24px;
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-        .kpi-label {
-            font-size: 10px;
-            font-weight: 700;
-            color: var(--telus-thunder-grey);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 2px;
-            white-space: nowrap;
-        }
-        .kpi-subtext {
-            font-size: 9px;
-            color: var(--text-muted);
-            font-weight: 500;
-            line-height: 1.2;
-        }
-
-        /* ── INTEGRATED PROGRESS STRIP ── */
-        .progress-strip {
-            background: #fff;
-            border: 1px solid var(--border-light);
-            border-radius: 10px;
-            padding: 10px 14px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-        .ps-label {
-            font-size: 10px;
-            font-weight: 800;
-            color: #331d4a;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-        .ps-bar-bg {
-            flex-grow: 1;
-            height: 10px;
-            background: #f0f0f0;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .ps-bar-fill {
-            height: 100%;
-            background: var(--telus-purple);
-            width: 40.2%; /* Calculated progress: 181 / 450 for June mid-point */
-            border-radius: 5px;
-        }
-        .ps-note {
-            font-size: 10px;
-            color: var(--text-muted);
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        /* ── GO-LIVE VISUAL SECTION ── */
-        .gl-wrapper {
-            margin-bottom: 24px;
-        }
-        .gl-card {
-            background: #fff;
-            border: 1px solid var(--gb);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .gl-card-header {
-            background: var(--pu-p);
-            padding: 10px 20px;
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--telus-purple);
-            border-bottom: 1px solid var(--gb);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .gl-card-body {
-            padding: 16px 20px;
-            display: flex;
-            align-items: stretch;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .gl-tile {
-            flex: 1;
-            min-width: 145px;
-            background: var(--pu-p);
-            border-left: 3px solid var(--telus-purple);
-            border-radius: 6px;
-            padding: 12px 14px;
-        }
-        .gl-tile.first {
-            border-left-color: var(--telus-green);
-            background: #f0fff4;
-        }
-        .gl-tile.delayed {
-            border-left-color: var(--am);
-        }
-        .gl-tile-label {
-            font-size: 9px;
-            font-weight: 700;
-            color: var(--telus-purple);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 4px;
-        }
-        .gl-tile.first .gl-tile-label { color: var(--telus-accessible-green); }
-        .gl-tile-date {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--gy);
-            line-height: 1.2;
-        }
-        .gl-tile-range {
-            font-size: 9px;
-            color: var(--gm);
-            margin-top: 4px;
-            font-weight: 500;
-        }
-
-        /* GRID LAYOUT */
-        .status-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 24px;
-        }
-        
-        .section {
-            background: #f8f9fa;            
-            border-radius: 6px;
-            padding: 20px;
-            border-left: 4px solid var(--telus-purple);
-        }
-        
-        .section.accomplishments {
-            border-left-color: #38ef7d;
-        }
-        
-        .section.tasks {
-            border-left-color: #4facfe;
-        }
-        
-        .section.risks {
-            grid-column: 1 / -1;
-            background: #f0fff4; /* Success green background for resolved/no active risks */
-            border-left-color: var(--telus-green); /* Positive closure border */
-        }
-        
-        .section-header-main {
-            display: flex;
-            align-items: center;
-            margin-bottom: 14px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-        
-        .section-icon {
-            font-size: 18px;
-            margin-right: 8px;
-        }
-        
-        .section-header-main h2 {
-            font-size: 16px;
-            color: var(--telus-purple);
-            font-weight: 600;
-        }
-        
-        .item {
-            padding: 8px 0;
-            color: #2d3748;
-            font-size: 14px;
-            line-height: 1.5;
-            display: flex;
-            align-items: baseline;
-        }
-        
-        .item::before {
-            content: "•";
-            margin-right: 8px;
-            color: var(--telus-purple);
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-        
-        .item-date {
-            color: var(--telus-purple);
-            font-weight: 600;
-            margin-left: auto; 
-            padding-left: 15px;
-            white-space: nowrap;
-            font-size: 13px;
-        }
-        
-        .tasks-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-        }
-        
-        .tasks-table thead {
-            background: #e2e8f0;
-        }
-        
-        .tasks-table th {
-            padding: 10px 12px;
-            text-align: left;
-            font-weight: 600;
-            color: var(--telus-purple);
-            border-bottom: 2px solid #cbd5e0;
-        }
-        
-        .tasks-table td {
-            padding: 10px 12px;
-            border-bottom: 1px solid #e2e8f0;
-            color: #2d3748;
-            line-height: 1.4;
-        }
-        
-        .date-cell {
-            font-weight: 600;
-            color: #4facfe;
-            white-space: nowrap;
-        }
-
-        .risk-content {
-            color: #2d3748;
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-        .risk-highlight-green {
-            background: #ecfdf5;
-            padding: 10px 15px;
-            border-radius: 4px;
-            font-weight: 500;
-            border-left: 4px solid var(--telus-green);
-            display: block;
-            color: var(--telus-accessible-green);
-        }
-
-        /* ── PRINT & PDF STYLES ── */
-        @media print {
-            body {
-                background: white !important;
-                padding: 0 !important;
-                color: var(--telus-thunder-grey) !important;
-            }
-            .container {
-                box-shadow: none !important;
-                border: none !important;
-                max-width: 100% !important;
-                border-radius: 0 !important;
-            }
-            .no-print {
-                display: none !important;
-            }
-            * {
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            .kpi-main-grid {
-                display: flex !important;
-                flex-direction: row !important;
-            }
-            .gl-card-body {
-                display: flex !important;
-                flex-direction: row !important;
-            }
-            .status-grid {
-                display: grid !important;
-                grid-template-columns: 1fr 1fr !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .kpi-main-grid { flex-direction: column; }
-            .status-grid { grid-template-columns: 1fr; }
-            .gl-card-body { flex-direction: column; }
-            .gl-tile { min-width: 100%; }
-            .progress-strip { flex-direction: column; align-items: flex-start; }
-            .ps-bar-bg { width: 100%; }
-        }
-    </style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: #fff;
+  color: var(--text-body);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.page-wrap {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 32px 36px 40px;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--telus-purple);
+  margin-bottom: 24px;
+}
+.header-left h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--telus-purple);
+  letter-spacing: -0.3px;
+}
+.header-left .subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 3px;
+  font-weight: 500;
+}
+.header-right { text-align: right; }
+.header-right .as-of {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.header-right .date-val {
+  font-size: 14px;
+  color: var(--telus-purple);
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* TAB NAV */
+.tab-nav {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid var(--border-light);
+  margin-bottom: 24px;
+}
+.tab-btn {
+  padding: 8px 16px;
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.tab-btn:hover { color: var(--telus-purple); }
+.tab-btn.active {
+  color: var(--telus-purple);
+  border-bottom-color: var(--telus-purple);
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* STATUS DOTS */
+.dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+.dot-complete  { background: var(--phase-active); }
+.dot-active    { background: var(--phase-complete); }
+.dot-upcoming  { background: var(--phase-upcoming); }
+.dot-not-started { background: #CCCCCC; }
+
+/* BADGES */
+.phase-badge {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  min-width: 90px;
+  text-align: center;
+  display: inline-block;
+}
+.badge-complete   { background: #EDE7F6; color: var(--telus-purple); }
+.badge-active     { background: #E8F5E9; color: var(--telus-accessible-green); }
+.badge-upcoming   { background: #FFF3E0; color: var(--phase-upcoming); }
+.badge-not-started { background: #F5F5F5; color: #999; }
+
+/* GO-LIVE GRID */
+.golive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.golive-card {
+  background: var(--bg-card);
+  border: 2px solid var(--telus-purple);
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.golive-card.active-card { border-color: var(--telus-green); }
+.golive-icon { font-size: 20px; }
+.golive-details .golive-name {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--telus-purple);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.golive-card.active-card .golive-name { color: var(--telus-accessible-green); }
+.golive-details .golive-date {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+.golive-details .golive-status {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+/* SECTION TITLE */
+.section-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--telus-purple);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* TABLE WRAP (Go-Live Activity) */
+.table-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid var(--border-light);
+  margin-bottom: 28px;
+}
+.table-wrap table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table-wrap thead tr { background: var(--telus-purple); color: #fff; }
+.table-wrap thead th {
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+.table-wrap thead th:first-child { text-align: left; }
+.table-wrap tbody tr { border-bottom: 1px solid var(--border-light); }
+.table-wrap tbody tr:last-child { border-bottom: none; }
+.table-wrap tbody td {
+  padding: 9px 14px;
+  text-align: center;
+  font-weight: 500;
+  color: var(--text-body);
+}
+.table-wrap tbody td:first-child { text-align: left; font-weight: 700; color: var(--telus-purple); }
+.in-progress-val { font-weight: 700; color: #E65100; }
+.zero-val { color: var(--text-subtle); }
+
+/* GANTT */
+.gantt-wrap { overflow-x: auto; }
+.gantt-table { width: 100%; min-width: 900px; border-collapse: collapse; }
+.gantt-table th {
+  background: var(--telus-purple);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 8px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+.gantt-table th.label-th { text-align: left; }
+.gantt-table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 11px;
+  vertical-align: middle;
+}
+.gantt-table td.month-cell { padding: 3px 2px; position: relative; }
+.gantt-table tr.phase-header td {
+  background: #F0EAF7;
+  font-weight: 800;
+  color: var(--telus-purple);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.gantt-bar {
+  height: 16px;
+  border-radius: 3px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 4px;
+}
+.bar-complete    { background: var(--phase-active); opacity: 0.85; }
+.bar-active      { background: var(--phase-complete); }
+.bar-upcoming    { background: var(--phase-upcoming); opacity: 0.75; }
+.bar-not-started { background: #CCCCCC; }
+.today-line {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: var(--telus-green);
+  z-index: 10;
+}
+.gantt-cell-wrap { position: relative; width: 100%; height: 26px; }
+
+/* BATCH PLANNER */
+.batch-section { margin-bottom: 28px; }
+.batch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: var(--telus-accessible-green);
+  border-radius: 8px 8px 0 0;
+  color: white;
+}
+.batch-header .b-name { font-size: 13px; font-weight: 800; letter-spacing: 0.3px; }
+.batch-header .b-dates { font-size: 11px; opacity: 0.85; }
+.batch-body {
+  border: 1px solid var(--border-light);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+.batch-task-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+.batch-task-row:last-child { border-bottom: none; }
+.batch-task-row.sub  { padding-left: 32px; background: var(--bg-card); }
+.batch-task-row.sub2 { padding-left: 52px; background: #FDFDFD; }
+.batch-task-row .bt-name { flex: 1; font-size: 12px; color: var(--text-body); }
+.batch-task-row.sub  .bt-name { font-size: 11px; color: var(--text-muted); }
+.batch-task-row.sub2 .bt-name { font-size: 11px; color: var(--text-muted); }
+.batch-task-row .bt-dates {
+  font-size: 11px;
+  color: var(--text-muted);
+  min-width: 150px;
+  text-align: right;
+}
+.batch-task-row .bt-assigned {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: #EDE7F6;
+  color: var(--telus-purple);
+  white-space: nowrap;
+}
+.batch-golive {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #F0EAF7;
+  border-bottom: 1px solid var(--border-light);
+  font-weight: 800;
+  color: var(--telus-purple);
+  font-size: 12px;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 36px;
+  padding-top: 14px;
+  border-top: 2px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-left { display: flex; align-items: center; gap: 14px; }
+.telus-badge {
+  background: var(--telus-purple);
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.legend { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.footer-right { text-align: right; font-size: 10px; color: var(--text-subtle); }
+.footer-right .project-id { font-weight: 700; color: var(--text-muted); font-size: 11px; }
+
+@media print {
+  body { font-size: 11px; background: white !important; }
+  .page-wrap { padding: 16px 20px; max-width: 100%; min-height: 0 !important; height: auto !important; }
+  .tab-nav { display: none !important; }
+  .tab-panel { display: none !important; overflow: hidden !important; max-height: 0 !important; }
+  .tab-panel.active { display: block !important; overflow: visible !important; max-height: none !important; }
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="header-title-area">
-                <h1>Nestlé Chile TIR Implementation</h1>
-                <div class="date">Week Ending 12th June, 2026</div>
-            </div>
-            <!-- ACTION BUTTONS -->
-            <div class="btn-group no-print">
-                <button onclick="downloadJPG()" class="btn-export primary" title="Download report as JPG image">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"></path>
-                    </svg>
-                    Save as JPG
-                </button>
-                <button onclick="downloadHTML()" class="btn-export" title="Download dynamic HTML report">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"></path>
-                    </svg>
-                    Download HTML
-                </button>
-                <button onclick="printReport()" class="btn-export" title="Save as PDF using browser Print">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"></path>
-                    </svg>
-                    Print / PDF
-                </button>
-            </div>
-        </div>
-        
-        <div class="content">
-            <!-- Weekly Summary -->
-            <div class="summary-section">
-                <div class="summary-header">
-                    <span class="summary-icon">✅</span>
-                    <h2>Weekly Summary (GREEN STATUS)</h2>
-                </div>
-                <div class="summary-content">
-                    <strong>Status: Green</strong><br>
-                    The Nestlé Chile TIR implementation is stable following go-live. All three batches are in motion: Batch 1 and Batch 2 are actively underway and Batch 3 activities are scheduled to begin next week. Photo submission volume from Nestlé Chile came in above expectations, which is a positive signal heading into the next phase. This week required focused effort to address data quality issues traced back to Nestlé Chile's submissions. Those gaps impacted the project schedule and required a formal adjustment. The market team took ownership of the remediation and brought the data to the required standard, allowing SSBS tasks to resume. TELUS and SSBS are now aligning on the revised schedule before it is presented to Nestlé Chile.
-                </div>
-            </div>
+<div class="page-wrap">
 
-            <!-- GO-LIVE DATES VISUAL -->
-            <div class="gl-wrapper">
-                <div class="gl-card">
-                    <div class="gl-card-header">Go-live dates</div>
-                    <div class="gl-card-body">
-                        <div class="gl-tile first">
-                            <div class="gl-tile-label">First category (Lacteous Culinaros)</div>
-                            <div class="gl-tile-date">15 Apr 2026 (completed)</div>
-                        </div>
-                        <div class="gl-tile delayed">
-                            <div class="gl-tile-label">Batch 1 — Chocolates + Galletas</div>
-                            <div class="gl-tile-date">23 Jun 2026</div>
-                            <div class="gl-tile-range">19 Mar → 23 Jun 2026</div>
-                        </div>
-                        <div class="gl-tile">
-                            <div class="gl-tile-label">Batch 2 — Cafe + Culinarios</div>
-                            <div class="gl-tile-date">30 Jul 2026</div>
-                            <div class="gl-tile-range">14 May → 30 Jul 2026</div>
-                        </div>
-                        <div class="gl-tile">
-                            <div class="gl-tile-label">Batch 3 — 6 Categories</div>
-                            <div class="gl-tile-date">24 Aug 2026</div>
-                            <div class="gl-tile-range">08 Jun → 24 Aug 2026</div>
-                        </div>
-                        <div class="gl-tile">
-                            <div class="gl-tile-label">Batch 4 — Purina</div>
-                            <div class="gl-tile-date">16 Sep 2026</div>
-                            <div class="gl-tile-range">01 Jul → 16 Sep 2026</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Nestlé Chile — TIR Implementation</h1>
+      <div class="subtitle"></div>
+    </div>
+    <div class="header-right">
+      <div class="as-of">As of</div>
+      <div class="date-val">June 23, 2026</div>
+    </div>
+  </div>
 
-            <!-- CONDENSED & GROUPED KPI SECTION -->
-            <div class="kpi-wrapper">
-                <div class="section-header-visual">
-                    <span class="section-title-visual">Key Performance Indicators</span>
-                    <div class="section-line"></div>
-                </div>
-                
-                <div class="kpi-main-grid">
-                    <!-- GROUP: USER ADOPTION (Matched word-for-word to image_c4ca75.png with updated counts) -->
-                    <div class="kpi-group adoption">
-                        <div class="kpi-group-label">User Adoption</div>
-                        <div class="kpi-group-content">
-                            <div class="kpi-card" style="border-top: 3px solid var(--telus-green);">
-                                <div class="kpi-value" style="color: var(--telus-green);">44</div>
-                                <div class="kpi-label">LIVE USERS</div>
-                                <div class="kpi-subtext">At least 1 visit recorded</div>
-                            </div>
-                            <div class="kpi-card" style="border-top: 3px solid var(--am);">
-                                <div class="kpi-value" style="color: var(--am);">1</div>
-                                <div class="kpi-label">ZERO VISITS</div>
-                                <div class="kpi-subtext">No activity recorded</div>
-                            </div>
-                        </div>
-                    </div>
+  <!-- TAB NAV -->
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('golive', this)">Executive Summary</button>
+    <button class="tab-btn" onclick="showTab('activity', this)">Go-Live Activity</button>
+    <button class="tab-btn" onclick="showTab('useractivity', this)">User Activity</button>
+    <button class="tab-btn" onclick="showTab('gantt', this)">Gantt Chart</button>
+    <button class="tab-btn" onclick="showTab('batch1', this)">Batch 1 Planner</button>
+    <button class="tab-btn" onclick="showTab('batch2', this)">Batch 2 Planner</button>
+    <button class="tab-btn" onclick="showTab('batch3', this)">Batch 3 Planner</button>
+    <button class="tab-btn" onclick="showTab('qc', this)">QC</button>
+  </div>
 
-                    <!-- GROUP: VISIT TRACKING (Including June Progress) -->
-                    <div class="kpi-group tracking">
-                        <div class="kpi-group-label">Visit Tracking (June)</div>
-                        <div class="kpi-group-content">
-                            <div class="kpi-card" style="border-top: 3px solid #ccc;">
-                                <div class="kpi-value" style="color: #331d4a;">450</div>
-                                <div class="kpi-label">June Target</div>
-                                <div class="kpi-subtext">Visits (21 Days)</div>
-                            </div>
-                            <div class="kpi-card" style="border-top: 3px solid #ccc;">
-                                <div class="kpi-value" style="color: #331d4a;">181</div>
-                                <div class="kpi-label">Visits So Far</div>
-                                <div class="kpi-subtext">10 of 21 Days</div>
-                            </div>
-                            <div class="kpi-card" style="border-top: 3px solid var(--telus-accessible-green);">
-                                <div class="kpi-value" style="color: var(--telus-accessible-green);">24.5</div>
-                                <div class="kpi-label">Daily Avg Needed</div>
-                                <div class="kpi-subtext">To hit 450 Target</div>
-                            </div>
-                        </div>
-                        <!-- Progress bar integrated with visit tracking -->
-                        <div class="progress-strip">
-                            <div class="ps-label">June Progress</div>
-                            <div class="ps-bar-bg">
-                                <div class="ps-bar-fill"></div>
-                            </div>
-                            <div class="ps-note">181 / 450 visits (40.2%)</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="status-grid">
-                <!-- Accomplishments -->
-                <div class="section accomplishments">
-                    <div class="section-header-main">
-                        <span class="section-icon">✓</span>
-                        <h2>Accomplishments</h2>
-                    </div>
-                    <div class="item">Completed On Shelf Photo capture for Batch 1 products, enabling Product Training activities to resume. <span class="item-date">(June 10)</span></div>
-                    <div class="item">Delivered revised Nestlé SKU dimensions to SSBS for competitor dimension calculations. <span class="item-date">(June 10)</span></div>
-                    <div class="item">Revised and aligned the Project Plan to reflect activities that were paused or delayed. <span class="item-date">(June 12)</span></div>
-                </div>
-                
-                <!-- Next Week's Priorities -->
-                <div class="section tasks">
-                    <div class="section-header-main">
-                        <span class="section-icon">→</span>
-                        <h2>Next Week's Priorities</h2>
-                    </div>
-                    <table class="tasks-table">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Milestone / Task</th>
-                                <th>Impact</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="date-cell">June 15</td>
-                                <td>Deliver Batch 3 Product SKU and Catalog Photos to SoftServe.</td>
-                                <td>Triggers the start of Batch 3 activities.</td>
-                            </tr>
-                            <tr>
-                                <td class="date-cell">June 16</td>
-                                <td>SoftServe delivers Detailed Product Analysis for Batch 2.</td>
-                                <td>Required to achieve Scope Freeze milestone ahead of Product Training.</td>
-                            </tr>
-                            <tr>
-                                <td class="date-cell">June 19</td>
-                                <td>Complete Product Training for Batch 1.</td>
-                                <td>Closes a key milestone before moving into Validation and Go Live.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <!-- Critical Risk -->
-                <div class="section risks">
-                    <div class="section-header-main">
-                        <span class="section-icon">✅</span>
-                        <h2>Critical Risk</h2>
-                    </div>
-                    <div class="risk-content">
-                        <div class="risk-highlight-green">
-                            There are no critical risks at this time.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- ======================== TAB 1: EXECUTIVE SUMMARY ======================== -->
+  <div id="tab-golive" class="tab-panel active">
+
+    <style>
+      /* Executive Summary specific styles */
+      .es-header-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 24px;
+        background: var(--bg-section);
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 16px 20px;
+      }
+      .es-header-field { display: flex; flex-direction: column; gap: 2px; }
+      .es-header-label {
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: var(--text-muted);
+      }
+      .es-header-value {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+
+      .es-section { margin-bottom: 24px; }
+
+      .es-item-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 9px 14px;
+        border-bottom: 1px solid var(--border-light);
+        background: var(--bg-white);
+      }
+      .es-item-row:first-child { border-top: 1px solid var(--border-light); border-radius: 6px 6px 0 0; }
+      .es-item-row:last-child  { border-radius: 0 0 6px 6px; border-bottom: none; }
+      .es-item-row:only-child  { border-radius: 6px; }
+
+      .es-item-num {
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--telus-purple);
+        min-width: 18px;
+        padding-top: 1px;
+      }
+      .es-item-body { flex: 1; }
+      .es-item-text {
+        font-size: 12px;
+        color: var(--text-body);
+        line-height: 1.5;
+      }
+      .es-item-date {
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--telus-purple);
+        background: #EDE7F6;
+        padding: 2px 7px;
+        border-radius: 3px;
+        white-space: nowrap;
+        align-self: center;
+      }
+      .es-item-owner {
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--telus-accessible-green);
+        background: #E8F5E9;
+        padding: 2px 7px;
+        border-radius: 3px;
+        white-space: nowrap;
+        align-self: center;
+      }
+
+      .es-empty-row {
+        padding: 10px 14px;
+        font-size: 12px;
+        color: var(--text-muted);
+        font-style: italic;
+        border: 1px solid var(--border-light);
+        border-radius: 6px;
+        background: var(--bg-card);
+      }
+
+      .es-check { color: var(--telus-accessible-green); font-size: 13px; flex-shrink: 0; padding-top: 1px; }
+      .es-arrow { color: var(--telus-purple); font-size: 13px; flex-shrink: 0; padding-top: 1px; }
+      .es-warn  { color: #E65100; font-size: 13px; flex-shrink: 0; padding-top: 1px; }
+    </style>
+
+    <!-- Header Information -->
+    <div class="section-title">Executive Summary</div>
+
+    <!-- Project meta row -->
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:16px; background:var(--bg-section); border:1px solid var(--border-light); border-radius:8px; padding:14px 20px;">
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; color:var(--text-muted);">Project Name</span>
+        <span style="font-size:13px; font-weight:700; color:var(--text-primary);">Nestlé Chile TIR Implementation</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; color:var(--text-muted);">Reporting Period</span>
+        <span style="font-size:13px; font-weight:700; color:var(--text-primary);">Week Ending 23 Jun 2026</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; color:var(--text-muted);">Prepared By</span>
+        <span style="font-size:13px; font-weight:700; color:var(--text-primary);">TELUS Agriculture &amp; Consumer Goods</span>
+      </div>
     </div>
 
-    <!-- DYNAMIC EXPORT LOGIC -->
-    <script>
-        function downloadJPG() {
-            const btnGroup = document.querySelector('.btn-group');
-            // Hide action buttons during image generation so they aren't part of the final image
-            btnGroup.style.display = 'none';
+    <!-- Go-Live Date Cards -->
+    <div class="section-title">Go-Live Schedule</div>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:28px;">
 
-            html2canvas(document.querySelector(".container"), {
-                scale: 2, // Scale to 2x for a much higher quality/crisp image
-                useCORS: true,
-                backgroundColor: "#f5f7fa"
-            }).then(canvas => {
-                btnGroup.style.display = 'flex';
+      <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-accessible-green); border-radius:10px; padding:14px 12px; text-align:center;">
+        <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-accessible-green); margin-bottom:6px;">First Category</div>
+        <div style="font-size:18px; font-weight:800; color:var(--telus-accessible-green); line-height:1.1;">15 Apr</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Lacteous Culinaros</div>
+        <div style="margin-top:8px; display:inline-block; background:#E8F5E9; color:var(--telus-accessible-green); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">✔ Complete</div>
+      </div>
 
-                const link = document.createElement('a');
-                link.download = 'Nestle_Chile_TIR_Status_Report_June_12_2026.jpg';
-                link.href = canvas.toDataURL('image/jpeg', 0.95); // High quality Jpeg output
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }).catch(err => {
-                btnGroup.style.display = 'flex';
-                console.error("Failed to generate image:", err);
-            });
-        }
+      <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-purple); border-radius:10px; padding:14px 12px; text-align:center;">
+        <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-purple); margin-bottom:6px;">Batch 1</div>
+        <div style="font-size:18px; font-weight:800; color:var(--telus-purple); line-height:1.1;">9 Jul</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Chocolates + Galletas</div>
+        <div style="margin-top:8px; display:inline-block; background:#EDE8F3; color:var(--telus-purple); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">In Progress</div>
+      </div>
 
-        function downloadHTML() {
-            const fullHTML = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-            const blob = new Blob([fullHTML], { type: 'text/html' });
-            const tempUrl = URL.createObjectURL(blob);
-            
-            const tempAnchor = document.createElement('a');
-            tempAnchor.href = tempUrl;
-            tempAnchor.download = 'Nestle_Chile_TIR_Status_Report_June_12_2026.html';
-            
-            document.body.appendChild(tempAnchor);
-            tempAnchor.click();
-            document.body.removeChild(tempAnchor);
-            URL.revokeObjectURL(tempUrl);
-        }
+      <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-purple); border-radius:10px; padding:14px 12px; text-align:center;">
+        <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-purple); margin-bottom:6px;">Batch 2</div>
+        <div style="font-size:18px; font-weight:800; color:var(--telus-purple); line-height:1.1;">11 Aug</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Cafe + Culinarios</div>
+        <div style="margin-top:8px; display:inline-block; background:#EDE8F3; color:var(--telus-purple); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">In Progress</div>
+      </div>
 
-        function printReport() {
-            window.print();
-        }
-    </script>
+      <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-purple); border-radius:10px; padding:14px 12px; text-align:center;">
+        <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-purple); margin-bottom:6px;">Batch 3</div>
+        <div style="font-size:18px; font-weight:800; color:var(--telus-purple); line-height:1.1;">1 Sep</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">6 Categories</div>
+        <div style="margin-top:8px; display:inline-block; background:#EDE8F3; color:var(--telus-purple); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">In Progress</div>
+      </div>
 
-</body></html>
+      <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-purple); border-radius:10px; padding:14px 12px; text-align:center;">
+        <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-purple); margin-bottom:6px;">Batch 4</div>
+        <div style="font-size:18px; font-weight:800; color:var(--telus-purple); line-height:1.1;">24 Sep</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Purina</div>
+        <div style="margin-top:8px; display:inline-block; background:#F0EDF4; color:var(--text-muted); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">Not Started</div>
+      </div>
+
+    </div>
+
+    <!-- Accomplishments -->
+    <div class="es-section">
+      <div class="section-title">Accomplishments This Week</div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Completed Batch 1 Product Neural Network Training</div>
+        </div>
+        <span class="es-item-owner">SoftServe</span>
+        <span class="es-item-date">19 Jun</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Delivered Batch 2 product analysis to Nestlé Chile</div>
+        </div>
+        <span class="es-item-owner">SoftServe / TELUS</span>
+        <span class="es-item-date">17 Jun</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Assembled and delivered Batch 3 product SKU list and catalogue photos to TIR Vendor</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile / TELUS</span>
+        <span class="es-item-date">18 Jun</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Completed calculations for dimensions for Batch 1 competitor products</div>
+        </div>
+        <span class="es-item-owner">TELUS</span>
+        <span class="es-item-date">22 Jun</span>
+      </div>
+
+    </div>
+
+    <!-- Discussion Topics -->
+    <div class="es-section">
+      <div class="section-title">Discussion Topics</div>
+
+      <div class="es-item-row">
+        <span class="es-arrow">▸</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Batch 1: Analysis for product training and go-forward decision</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-arrow">▸</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Batch 2: Responses to product analysis (due today)</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">23 Jun</span>
+      </div>
+
+    </div>
+
+    <!-- Key Market Actions -->
+    <div class="es-section">
+      <div class="section-title">Key Market Actions</div>
+      <div class="es-empty-row">No outstanding market actions at this time.</div>
+    </div>
+
+    <!-- Upcoming Activities -->
+    <div class="es-section">
+      <div class="section-title">Upcoming Activities</div>
+
+      <div class="es-item-row">
+        <span class="es-arrow">▸</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Batch 1 — Chocolates &amp; Galletas</div>
+        </div>
+      </div>
+
+      <div class="es-item-row" style="padding-left:28px;">
+        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">1.</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Go-forward decision based on 2nd training results</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">23 Jun</span>
+      </div>
+
+      <div class="es-item-row" style="padding-left:28px;">
+        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">2.</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Preparation of Master Data (product categories, monitorings, etc.) for UAT</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">26 Jun</span>
+      </div>
+
+      <div class="es-item-row" style="padding-left:28px;">
+        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">3.</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Preparation of UAT Model</div>
+        </div>
+        <span class="es-item-owner">SoftServe</span>
+        <span class="es-item-date">26 Jun</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-arrow">▸</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Batch 2 — Cafe &amp; Culinarios</div>
+        </div>
+      </div>
+
+      <div class="es-item-row" style="padding-left:28px;">
+        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">1.</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Batch 2: Responses to product analysis (due today)</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">23 Jun</span>
+      </div>
+
+      <div class="es-item-row" style="padding-left:28px;">
+        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">2.</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Scope freeze for Batch 2</div>
+        </div>
+        <span class="es-item-owner">Nestlé / TELUS</span>
+        <span class="es-item-date">23 Jun</span>
+      </div>
+
+      <div class="es-item-row" style="padding-left:28px;">
+        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">3.</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Model training</div>
+        </div>
+        <span class="es-item-owner">SoftServe</span>
+        <span class="es-item-date">24 Jun</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-arrow">▸</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Batch 3 — 6 Categories</div>
+        </div>
+      </div>
+
+      <div class="es-item-row" style="padding-left:28px;">
+        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">1.</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Defining the business rules of the categories in a batch</div>
+        </div>
+        <span class="es-item-owner">SoftServe</span>
+        <span class="es-item-date">25 Jun</span>
+      </div>
+
+      <div class="es-item-row" style="padding-left:28px;">
+        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">2.</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Meeting all together to discuss Batch 3 Analysis Results</div>
+        </div>
+        <span class="es-item-owner">All</span>
+        <span class="es-item-date">30 Jun</span>
+      </div>
+
+    </div>
+
+    <!-- Key Risks -->
+    <div class="es-section">
+      <div class="section-title">Key Risks</div>
+      <div class="es-empty-row">No outstanding risks at this time.</div>
+    </div>
+
+    <!-- Key Issues -->
+    <div class="es-section">
+      <div class="section-title">Key Issues</div>
+      <div class="es-empty-row">No active issues at this time.</div>
+    </div>
+
+  </div>
+
+  <!-- ======================== TAB 2: GO-LIVE ACTIVITY DASHBOARD ======================== -->
+  <div id="tab-activity" class="tab-panel">
+
+    <div class="page-header">
+      <div class="left">
+        <h1>Nestlé Chile TIR | Go-Live Activity Dashboard</h1>
+        <div class="sub">Go-Live Activity Report &nbsp;|&nbsp; Apr 15 – Jun 22, 2026</div>
+      </div>
+    </div>
+
+    <!-- WEEKLY SUMMARY CARDS -->
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:28px;">
+
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-purple);border-radius:10px;padding:12px;">
+        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">April &nbsp;<span style="font-weight:500;color:var(--text-muted);">Apr 15–30</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-purple);">221</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-accessible-green);">99%</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Done</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-purple);">211</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:#E65100;">1</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Prog</div></div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:12px;">
+        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">May &nbsp;<span style="font-weight:500;color:var(--text-muted);">Full month</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-purple);">370</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Done</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-purple);">362</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:#E65100;">1</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Prog</div></div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:12px;">
+        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">Jun 1–5 &nbsp;<span style="font-weight:500;color:var(--text-muted);">Week</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-purple);">85</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Done</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-purple);">83</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Prog</div></div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:12px;">
+        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">Jun 8–12 &nbsp;<span style="font-weight:500;color:var(--text-muted);">Week</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-purple);">104</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Done</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-purple);">104</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Prog</div></div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:12px;">
+        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">Jun 15–19 &nbsp;<span style="font-weight:500;color:var(--text-muted);">Week</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-purple);">85</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Done</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-purple);">85</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Prog</div></div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-purple);border-radius:10px;padding:12px;">
+        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">Jun 22 &nbsp;<span style="font-weight:500;color:var(--text-muted);">Mon</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-purple);">8</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Done</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--telus-purple);">8</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
+          <div><div style="font-size:18px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Prog</div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DAILY BREAKDOWN -->
+    <div class="section-label">Daily Breakdown</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Customers</th>
+            <th>Visits</th>
+            <th>Answered Monitorings</th>
+            <th>Finished</th>
+            <th>In Progress</th>
+            <th>Users</th>
+            <th>Scenes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#F5F0FA;">
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">April &mdash; Apr 15–30</td>
+          </tr>
+          <tr style="font-style:italic;">
+            <td>Apr 15–30</td><td>211</td><td>221</td><td>221</td><td>220</td><td class="in-progress-val">1</td><td>119</td><td>332</td>
+          </tr>
+          <tr style="background:#F5F0FA;">
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">May &mdash; Full month summary</td>
+          </tr>
+          <tr style="font-style:italic;">
+            <td>May</td><td>362</td><td>370</td><td>370</td><td>368</td><td class="in-progress-val">1</td><td>—</td><td>—</td>
+          </tr>
+          <tr style="background:#F5F0FA;">
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week &mdash; Jun 1–5</td>
+          </tr>
+          <tr style="font-style:italic;">
+            <td>Jun 1–5</td><td>83</td><td>85</td><td>85</td><td>85</td><td class="zero-val">0</td><td>—</td><td>146</td>
+          </tr>
+          <tr style="background:#F5F0FA;">
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week &mdash; Jun 8–12</td>
+          </tr>
+          <tr style="font-style:italic;">
+            <td>Jun 8–12</td><td>104</td><td>104</td><td>104</td><td>104</td><td class="zero-val">0</td><td>—</td><td>153</td>
+          </tr>
+          <tr style="background:#F5F0FA;">
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week &mdash; Jun 15–19</td>
+          </tr>
+          <tr><td>Jun 15</td><td>21</td><td>21</td><td>21</td><td>21</td><td class="zero-val">0</td><td>13</td><td>39</td></tr>
+          <tr><td>Jun 16</td><td>22</td><td>22</td><td>22</td><td>22</td><td class="zero-val">0</td><td>15</td><td>36</td></tr>
+          <tr><td>Jun 17</td><td>22</td><td>22</td><td>22</td><td>22</td><td class="zero-val">0</td><td>14</td><td>28</td></tr>
+          <tr><td>Jun 18</td><td>10</td><td>10</td><td>10</td><td>10</td><td class="zero-val">0</td><td>6</td><td>17</td></tr>
+          <tr><td>Jun 19</td><td>10</td><td>10</td><td>10</td><td>10</td><td class="zero-val">0</td><td>7</td><td>11</td></tr>
+          <tr style="background:#F5F0FA;">
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week &mdash; Jun 22 (1 day recorded)</td>
+          </tr>
+          <tr><td>Jun 22</td><td>8</td><td>8</td><td>8</td><td>8</td><td class="zero-val">0</td><td>4</td><td>13</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MONTHLY PACE -->
+    <div class="section-label">Monthly Visit Pace vs Target</div>
+    <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;">
+
+      <!-- JUNE (IN PROGRESS) -->
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-radius:10px;padding:20px;">
+        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.7px;color:var(--telus-purple);margin-bottom:14px;">June (In Progress) &mdash; 16 Days Recorded</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;">
+          <div style="text-align:center;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Full Month Target</div>
+            <div style="font-size:28px;font-weight:800;color:var(--telus-purple);">450</div>
+            <div style="font-size:10px;color:var(--text-muted);">21 working days</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Visits So Far</div>
+            <div style="font-size:28px;font-weight:800;color:var(--telus-purple);">282</div>
+            <div style="font-size:10px;color:var(--text-muted);">16 of 21 working days</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Daily Avg Needed</div>
+            <div style="font-size:28px;font-weight:800;color:#E65100;">33.6</div>
+            <div style="font-size:10px;color:var(--text-muted);">visits/day to hit 450</div>
+          </div>
+        </div>
+        <div style="background:var(--border-light);border-radius:6px;height:20px;overflow:hidden;">
+          <div style="height:100%;width:62.7%;background:var(--telus-purple);border-radius:6px;display:flex;align-items:center;padding-left:8px;">
+            <span style="font-size:10px;font-weight:800;color:#fff;">282 visits</span>
+          </div>
+        </div>
+        <div style="margin-top:6px;font-size:11px;color:var(--text-muted);">Need 33.6 visits/day across remaining 5 days to hit 450 target. Current avg: 17.6/day.</div>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <div class="footer-left">
+        <div class="footer-badge">TELUS ACG</div>
+        <div class="footer-tagline">Let's make the future friendly</div>
+      </div>
+      <div class="footer-right">
+        Nestlé Chile TIR Implementation &nbsp;|&nbsp; TELUS Agriculture &amp; Consumer Goods | Confidential
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ======================== TAB 3: USER ACTIVITY ======================== -->
+  <div id="tab-useractivity" class="tab-panel">
+
+    <style>
+      .ua-metric-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 8px; }
+      .ua-metric-card { background: var(--bg-card); border: 1.5px solid var(--border-light); border-top: 3px solid var(--telus-purple); border-radius: 10px; padding: 18px 16px 16px; }
+      .ua-metric-card.green { border-top-color: var(--telus-green); }
+      .ua-metric-card.amber { border-top-color: #E65100; }
+      .ua-metric-val { font-size: 38px; font-weight: 800; color: var(--telus-purple); line-height: 1; }
+      .ua-metric-card.green .ua-metric-val { color: var(--telus-accessible-green); }
+      .ua-metric-card.amber .ua-metric-val { color: #E65100; }
+      .ua-metric-lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-top: 6px; }
+      .ua-metric-sub { font-size: 11px; color: var(--text-subtle); margin-top: 4px; font-weight: 500; }
+
+      .ua-progress-card { background: var(--bg-card); border: 1.5px solid var(--border-light); border-top: 3px solid var(--telus-purple); border-radius: 10px; padding: 18px 16px 16px; margin-bottom: 28px; }
+      .ua-progress-card-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; color: var(--telus-purple); margin-bottom: 14px; }
+      .ua-progress-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-size: 12px; }
+      .ua-progress-row:last-child { margin-bottom: 0; }
+      .ua-progress-label { width: 130px; flex-shrink: 0; font-weight: 600; color: var(--text-body); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .ua-progress-bar-bg { flex: 1; background: var(--border-light); border-radius: 4px; height: 8px; overflow: hidden; }
+      .ua-progress-bar-fill { height: 100%; border-radius: 4px; background: var(--telus-purple); }
+      .ua-progress-count { width: 28px; text-align: right; font-weight: 700; color: var(--telus-purple); font-size: 12px; }
+
+      .ua-gauge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+      .ua-gauge-card { background: var(--bg-card); border: 1.5px solid var(--border-light); border-radius: 10px; padding: 20px; }
+      .ua-gauge-card-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; color: var(--telus-purple); margin-bottom: 16px; }
+      .ua-gauge-big { font-size: 48px; font-weight: 800; line-height: 1; }
+      .ua-gauge-big.purple { color: var(--telus-purple); }
+      .ua-gauge-big.amber { color: #E65100; }
+      .ua-gauge-sub { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; font-weight: 500; }
+      .ua-gauge-track { height: 10px; background: var(--border-light); border-radius: 5px; overflow: hidden; }
+      .ua-gauge-fill { height: 100%; border-radius: 5px; }
+      .ua-gauge-fill.purple { background: var(--telus-purple); }
+      .ua-gauge-fill.amber { background: #E65100; }
+
+      .ua-legend-row { display: flex; gap: 16px; margin-bottom: 10px; flex-wrap: wrap; }
+      .ua-legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-muted); font-weight: 500; }
+      .ua-legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+
+      .ua-table-wrap { border-radius: 10px; overflow: hidden; border: 1.5px solid var(--border-light); margin-bottom: 28px; }
+      .ua-table-wrap table { width: 100%; border-collapse: collapse; font-size: 13px; }
+      .ua-table-wrap thead tr { background: var(--telus-purple); color: #fff; }
+      .ua-table-wrap thead th { padding: 10px 14px; font-weight: 700; font-size: 12px; text-align: center; letter-spacing: 0.3px; }
+      .ua-table-wrap thead th:first-child { text-align: left; }
+      .ua-table-wrap tbody tr { border-bottom: 1px solid var(--border-light); }
+      .ua-table-wrap tbody tr:last-child { border-bottom: none; }
+      .ua-table-wrap tbody tr:nth-child(even) { background: var(--bg-section); }
+      .ua-table-wrap tbody td { padding: 9px 14px; text-align: center; font-weight: 500; color: var(--text-body); }
+      .ua-table-wrap tbody td:first-child { text-align: left; font-weight: 600; color: var(--text-primary); }
+      .ua-table-wrap tbody tr.zero-row { background: #fffbea; }
+      .ua-table-wrap tbody tr.zero-row td:first-child { color: var(--text-muted); }
+      .ua-table-wrap tbody tr.total-row { background: var(--bg-section); border-top: 2px solid var(--telus-purple); }
+      .ua-table-wrap tbody tr.total-row td { font-weight: 800; color: var(--telus-purple); }
+    </style>
+
+    <div class="page-header">
+      <div class="left">
+        <h1>Nestlé Chile TIR | Visits by User</h1>
+        <div class="sub">Field Execution Activity Report &nbsp;|&nbsp; April – May 2026</div>
+      </div>
+    </div>
+
+    <!-- SUMMARY METRICS -->
+    <div class="section-label">Summary</div>
+    <div class="ua-metric-grid">
+      <div class="ua-metric-card"><div class="ua-metric-val">44</div><div class="ua-metric-lbl">Total users</div><div class="ua-metric-sub">Provisioned in system</div></div>
+      <div class="ua-metric-card green"><div class="ua-metric-val">43</div><div class="ua-metric-lbl">Live users</div><div class="ua-metric-sub">At least 1 visit recorded</div></div>
+      <div class="ua-metric-card amber"><div class="ua-metric-val">1</div><div class="ua-metric-lbl">Zero visits</div><div class="ua-metric-sub">No activity recorded</div></div>
+      <div class="ua-metric-card"><div class="ua-metric-val">709</div><div class="ua-metric-lbl">Total visits</div><div class="ua-metric-sub">223 Apr &nbsp;|&nbsp; 372 May &nbsp;|&nbsp; 114 Jun</div></div>
+    </div>
+
+    <!-- USER ADOPTION GAUGES -->
+    <div class="section-label">User adoption</div>
+    <div class="ua-gauge-grid">
+      <div class="ua-gauge-card">
+        <div class="ua-gauge-card-title">% of total users live</div>
+        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:10px;">
+          <span class="ua-gauge-big purple">98%</span>
+        </div>
+        <div class="ua-gauge-sub">43 of 44 provisioned users have recorded at least one visit</div>
+        <div class="ua-gauge-track"><div class="ua-gauge-fill purple" style="width:98%"></div></div>
+      </div>
+      <div class="ua-gauge-card">
+        <div class="ua-gauge-card-title">Users with zero visits</div>
+        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:10px;">
+          <span class="ua-gauge-big amber">2%</span>
+        </div>
+        <div class="ua-gauge-sub">1 user provisioned but has no recorded visit activity</div>
+        <div class="ua-gauge-track"><div class="ua-gauge-fill amber" style="width:2%"></div></div>
+      </div>
+    </div>
+
+    <!-- TOP 10 USERS -->
+    <!-- USERS WITH NO VISITS -->
+    <div class="section-label">Users with No Visits</div>
+    <div class="ua-table-wrap" style="margin-bottom:10px;">
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Apr</th><th>May</th><th>Jun</th><th>Total Visits</th></tr>
+        </thead>
+        <tbody>
+          <tr class="zero-row"><td>Torrejon, Laura</td><td class="zero-val">0</td><td class="zero-val">0</td><td class="zero-val">0</td><td>0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:11px; color:var(--text-muted); font-style:italic; margin-bottom:28px; padding:8px 12px; background:var(--bg-section); border-radius:6px; border-left:3px solid var(--border-light);">
+      Note: Cecilia Farias has a user ID but is an admin and is not included in the total users list. &nbsp;|&nbsp; Laura Torrejon is awaiting a new device before she can start using TIR.
+    </div>
+
+    <!-- TOP 10 USERS -->
+    <div class="section-label">Top 10 users by total visits</div>
+    <div class="ua-progress-card">
+      <div class="ua-progress-card-title">Visit distribution — active users</div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Brebi, Samuel</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:100%"></div></div><div class="ua-progress-count">39</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Jerez, Nolfa</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:82%"></div></div><div class="ua-progress-count">32</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Castillo, Luis</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:64%"></div></div><div class="ua-progress-count">25</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Ogaz, Cristian</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:56%"></div></div><div class="ua-progress-count">22</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Duran Sanhueza, C.</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:56%"></div></div><div class="ua-progress-count">22</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Muñoz Hidalgo, Cesar</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:54%"></div></div><div class="ua-progress-count">21</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Ulloa, Daniel</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:54%"></div></div><div class="ua-progress-count">21</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Carvallo Escobar, W.</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:46%"></div></div><div class="ua-progress-count">18</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Diaz, Norka Andrea</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:46%"></div></div><div class="ua-progress-count">18</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Rios, Raul</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:41%"></div></div><div class="ua-progress-count">16</div></div>
+    </div>
+
+    <!-- FULL USER TABLE -->
+    <div class="section-label">Full user breakdown</div>
+    <div class="ua-legend-row">
+      <div class="ua-legend-item">
+        <div class="ua-legend-swatch" style="background:#fffbea;border:0.5px solid #d97706;"></div>
+        <span>Zero visits — no activity recorded</span>
+      </div>
+    </div>
+    <div class="ua-table-wrap">
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Apr</th><th>May</th><th>Jun</th><th>Total Visits</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Alarcon, Miguel</td><td>5</td><td>10</td><td>1</td><td>16</td></tr>
+          <tr><td>Armijo, Katherine</td><td class="zero-val">0</td><td>6</td><td class="zero-val">0</td><td>6</td></tr>
+          <tr><td>Baeza, Jorge</td><td>3</td><td>6</td><td class="zero-val">0</td><td>9</td></tr>
+          <tr><td>Barria Sandoval, Juan Marcelo</td><td>1</td><td>8</td><td class="zero-val">0</td><td>9</td></tr>
+          <tr><td>Barrientos, Marcelo</td><td>4</td><td>10</td><td class="zero-val">0</td><td>14</td></tr>
+          <tr><td>Brebi, Samuel</td><td>19</td><td>19</td><td>1</td><td>39</td></tr>
+          <tr><td>Campos, Juan</td><td>6</td><td>11</td><td class="zero-val">0</td><td>17</td></tr>
+          <tr><td>Canas, Guillermo</td><td>1</td><td>13</td><td class="zero-val">0</td><td>14</td></tr>
+          <tr><td>Carvallo Escobar, Williams Eduardo</td><td>8</td><td>9</td><td>1</td><td>18</td></tr>
+          <tr><td>Castillo, Luis</td><td>11</td><td>13</td><td>1</td><td>25</td></tr>
+          <tr><td>Chacon, Andreina</td><td>6</td><td class="zero-val">0</td><td class="zero-val">0</td><td>6</td></tr>
+          <tr><td>Cisterna Marchesani, Marcela</td><td class="zero-val">0</td><td>2</td><td class="zero-val">0</td><td>2</td></tr>
+          <tr><td>Diaz, Norka Andrea</td><td>10</td><td>8</td><td class="zero-val">0</td><td>18</td></tr>
+          <tr><td>Díaz Calderón, Arturo David</td><td class="zero-val">0</td><td>10</td><td class="zero-val">0</td><td>10</td></tr>
+          <tr><td>Duran Sanhueza, Claudio</td><td>10</td><td>12</td><td class="zero-val">0</td><td>22</td></tr>
+          <tr><td>Espinoza Vega, Mario Fernando</td><td>1</td><td>9</td><td class="zero-val">0</td><td>10</td></tr>
+          <tr><td>Flores, Claudio</td><td>5</td><td>10</td><td class="zero-val">0</td><td>15</td></tr>
+          <tr><td>Gallegos, Hector</td><td>6</td><td>11</td><td class="zero-val">0</td><td>17</td></tr>
+          <tr><td>Gonzalez, Carlos</td><td class="zero-val">0</td><td>7</td><td class="zero-val">0</td><td>7</td></tr>
+          <tr><td>Gonzalez Moya, Marcelo Eduardo</td><td>1</td><td>10</td><td class="zero-val">0</td><td>11</td></tr>
+          <tr><td>Heger Artega, Hans Cristian</td><td>8</td><td>7</td><td class="zero-val">0</td><td>15</td></tr>
+          <tr><td>Jaspe, Maria</td><td>3</td><td>8</td><td class="zero-val">0</td><td>11</td></tr>
+          <tr><td>Jerez, Nolfa</td><td>17</td><td>14</td><td>1</td><td>32</td></tr>
+          <tr><td>Martínez Gutiérrez, Carlos Patricio</td><td>6</td><td>8</td><td class="zero-val">0</td><td>14</td></tr>
+          <tr><td>Miranda, Carlos</td><td>5</td><td>6</td><td class="zero-val">0</td><td>11</td></tr>
+          <tr><td>Muñoz Hidalgo, Cesar Antonio</td><td>15</td><td>6</td><td class="zero-val">0</td><td>21</td></tr>
+          <tr><td>Ocares, Raul</td><td class="zero-val">0</td><td>7</td><td class="zero-val">0</td><td>7</td></tr>
+          <tr><td>Ogaz, Cristian</td><td>13</td><td>9</td><td class="zero-val">0</td><td>22</td></tr>
+          <tr><td>Pasten, Miguel</td><td class="zero-val">0</td><td>10</td><td class="zero-val">0</td><td>10</td></tr>
+          <tr><td>Pereira, Marcelo</td><td>2</td><td>8</td><td class="zero-val">0</td><td>10</td></tr>
+          <tr><td>Reyes, Mariana</td><td>8</td><td>8</td><td class="zero-val">0</td><td>16</td></tr>
+          <tr><td>Rios, Raul</td><td>7</td><td>9</td><td class="zero-val">0</td><td>16</td></tr>
+          <tr><td>Rodriguez, Maravithova</td><td>2</td><td>8</td><td class="zero-val">0</td><td>10</td></tr>
+          <tr><td>Rozas, David</td><td>7</td><td>10</td><td class="zero-val">0</td><td>17</td></tr>
+          <tr><td>Sepulveda, Alberto</td><td>9</td><td>2</td><td class="zero-val">0</td><td>11</td></tr>
+          <tr><td>Silva Leiva, Yesenia Ximena</td><td class="zero-val">0</td><td>8</td><td class="zero-val">0</td><td>8</td></tr>
+          <tr><td>Soto, Catherine Andrea del Carmen</td><td class="zero-val">0</td><td>8</td><td class="zero-val">0</td><td>8</td></tr>
+          <tr><td>Soza Navarro, Rodrigo Javier</td><td>8</td><td>8</td><td class="zero-val">0</td><td>16</td></tr>
+          <tr><td>Torres, Oscar</td><td>2</td><td>9</td><td class="zero-val">0</td><td>11</td></tr>
+          <tr><td>Ulloa, Daniel</td><td>12</td><td>9</td><td class="zero-val">0</td><td>21</td></tr>
+          <tr><td>Ulloa Moscoso, Cristian Alejandro</td><td class="zero-val">0</td><td>7</td><td class="zero-val">0</td><td>7</td></tr>
+          <tr><td>Vega, Carlos</td><td class="zero-val">0</td><td>10</td><td>1</td><td>11</td></tr>
+          <tr><td>Vega, Jocelyn</td><td>2</td><td>7</td><td class="zero-val">0</td><td>9</td></tr>
+          <tr class="zero-row"><td>Torrejon, Laura</td><td class="zero-val">0</td><td class="zero-val">0</td><td class="zero-val">0</td><td>0</td></tr>
+          <tr class="total-row"><td>Total</td><td>223</td><td>370</td><td>6</td><td>599</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <div class="footer-left">
+        <div class="footer-badge">TELUS ACG</div>
+        <div class="footer-tagline">Let's make the future friendly</div>
+      </div>
+      <div class="footer-right">
+        Nestlé Chile TIR Implementation &nbsp;|&nbsp; TELUS Agriculture &amp; Consumer Goods | Confidential
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ======================== TAB 3: GANTT CHART ======================== -->
+  <div id="tab-gantt" class="tab-panel">
+    <div class="gantt-wrap">
+      <table class="gantt-table">
+        <thead>
+          <tr>
+            <th class="label-th" style="width:240px;">Phase / Task</th>
+            <th style="width:40px;">Done</th>
+            <th>Nov 25</th>
+            <th>Dec 25</th>
+            <th>Jan 26</th>
+            <th>Feb 26</th>
+            <th>Mar 26</th>
+            <th>Apr 26</th>
+            <th>May 26</th>
+            <th>Jun 26</th>
+            <th>Jul 26</th>
+            <th>Aug 26</th>
+            <th>Sep 26</th>
+          </tr>
+        </thead>
+        <tbody id="ganttBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ======================== TAB 3: BATCH 1 PLANNER ======================== -->
+  <div id="tab-batch1" class="tab-panel">
+    <div class="batch-section">
+      <div class="batch-header">
+        <div class="b-name">Batch 1 — Chocolates + Galletas</div>
+        <div class="b-dates">19 Mar 2026 – 9 Jul 2026 &nbsp;|&nbsp; Status: In Progress</div>
+      </div>
+      <div class="batch-body">
+
+        <div class="batch-task-row">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name" style="font-weight:700;">Market Categories Analysis</div>
+          <div class="bt-dates">19 Mar – 24 Apr 2026</div>
+          <span class="bt-assigned">NESTLE / TELUS / SS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Preparation of base catalogue per category — final SKU list and competitors</div>
+          <div class="bt-dates">19 Mar 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Dataset preparation per category</div>
+          <div class="bt-dates">19 Mar 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Defining the business rules of the categories</div>
+          <div class="bt-dates">8 – 24 Apr 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">KPI validation per category</div>
+          <div class="bt-dates">24 Apr 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Category for batch plan sign-off</div>
+          <div class="bt-dates">24 Apr 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+
+        <div class="batch-task-row" style="background:#f9f9f9;">
+          <div class="dot dot-active"></div>
+          <div class="bt-name" style="font-weight:700;">Batch 1 — Scope Definition &amp; Category Analysis</div>
+          <div class="bt-dates">27 Apr – 26 Jun 2026</div>
+          <span class="bt-assigned">SS / TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Scope for NN Model Training</div>
+          <div class="bt-dates">27 Apr – 5 May 2026</div>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Provide SKU catalogue</div>
+          <div class="bt-dates">27 Apr 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Provide photos for training</div>
+          <div class="bt-dates">27 – 28 Apr 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Product catalogue analysis</div>
+          <div class="bt-dates">27 Apr – 1 May 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Review changes in product catalogue scope — catalogue sign-off</div>
+          <div class="bt-dates">4 – 5 May 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Scope freeze for Batch 1</div>
+          <div class="bt-dates">5 May 2026</div>
+          <span class="bt-assigned">NESTLE / TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-active"></div>
+          <div class="bt-name">NN Model Training — First Iteration</div>
+          <div class="bt-dates">6 May – 26 Jun 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Dataset Preparation for Training</div>
+          <div class="bt-dates">6 May 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Capture photos for products not meeting 100 minimum facings</div>
+          <div class="bt-dates">3 – 10 Jun 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Data Annotation (Labeling, model training, statistic results)</div>
+          <div class="bt-dates">7 May – 19 Jun 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Internal recognition testing</div>
+          <div class="bt-dates">22 Jun 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Model prepared for 1st iteration</div>
+          <div class="bt-dates">22 Jun 2026</div>
+          <span class="bt-assigned">NESTLE / TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Error Analysis &amp; Scope Update + Next Steps Definition</div>
+          <div class="bt-dates">23 – 25 Jun 2026</div>
+          <span class="bt-assigned">NESTLE / SS / TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-active"></div>
+          <div class="bt-name">Next Iteration Planning</div>
+          <div class="bt-dates">26 Jun 2026</div>
+          <span class="bt-assigned">SS / NESTLE / TELUS</span>
+        </div>
+
+        <div class="batch-task-row" style="background:#f9f9f9;">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name" style="font-weight:700;">Model Testing in UAT and Approval</div>
+          <div class="bt-dates">29 Jun – 3 Jul 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Deploy SSBS Model to UAT</div>
+          <div class="bt-dates">29 Jun 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Master Data Update (Product Category Setup)</div>
+          <div class="bt-dates">29 – 30 Jun 2026</div>
+          <span class="bt-assigned">TELUS / NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Integration Testing from SSBS</div>
+          <div class="bt-dates">1 Jul 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Integration Testing from TELUS</div>
+          <div class="bt-dates">1 Jul 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">FE Full Cycle Testing</div>
+          <div class="bt-dates">2 Jul 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Release Batch for Nestl&eacute; Verification</div>
+          <div class="bt-dates">2 Jul 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Nestl&eacute; Chile Testing and Sign-Off</div>
+          <div class="bt-dates">3 Jul 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+
+        <div class="batch-task-row" style="background:#f9f9f9;">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name" style="font-weight:700;">Production Deployment</div>
+          <div class="bt-dates">6 – 8 Jul 2026</div>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Confirm Go-Live Date</div>
+          <div class="bt-dates">6 Jul 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Deploy SSBS Model to Production</div>
+          <div class="bt-dates">7 Jul 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Master Data Update — Production</div>
+          <div class="bt-dates">7 – 8 Jul 2026</div>
+          <span class="bt-assigned">TELUS / NESTLE CHILE</span>
+        </div>
+
+        <div class="batch-golive">
+          <span>&#128640;</span> Go-Live — Batch 1 &nbsp;
+          <span style="font-size:13px; color:var(--telus-accessible-green);">9 Jul 2026</span>
+          <span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLE</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div id="tab-batch2" class="tab-panel">
+    <div class="batch-section">
+      <div class="batch-header" style="background:var(--telus-purple);">
+        <div class="b-name">Batch 2 — Cafe + Culinarios</div>
+        <div class="b-dates">20 May 2026 – 11 Aug 2026 &nbsp;|&nbsp; Status: In Progress</div>
+      </div>
+      <div class="batch-body">
+
+        <div class="batch-task-row">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name" style="font-weight:700;">Market Categories Analysis</div>
+          <div class="bt-dates">20 – 29 May 2026</div>
+          <span class="bt-assigned">NESTLE / TELUS / SS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Preparation of base catalogue per category — final SKU list and competitors</div>
+          <div class="bt-dates">20 May 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Dataset preparation per category</div>
+          <div class="bt-dates">20 May 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Defining business rules of the categories</div>
+          <div class="bt-dates">21 – 25 May 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">KPI validation per category</div>
+          <div class="bt-dates">26 May 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Category for batch plan sign-off</div>
+          <div class="bt-dates">27 – 29 May 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+
+        <div class="batch-task-row" style="background:#f9f9f9;">
+          <div class="dot dot-active"></div>
+          <div class="bt-name" style="font-weight:700;">Batch 2 — Scope Definition &amp; Category Analysis</div>
+          <div class="bt-dates">1 Jun – 29 Jul 2026</div>
+          <span class="bt-assigned">SS / TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-active"></div>
+          <div class="bt-name">Scope for NN Model Training</div>
+          <div class="bt-dates">1 – 23 Jun 2026</div>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Provide SKU catalogue</div>
+          <div class="bt-dates">1 Jun 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Provide photos for training</div>
+          <div class="bt-dates">1 – 2 Jun 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Product catalogue analysis</div>
+          <div class="bt-dates">3 – 17 Jun 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-active"></div>
+          <div class="bt-name">Review changes in product catalogue scope — catalogue sign-off</div>
+          <div class="bt-dates">18 – 23 Jun 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Scope freeze for Batch 2</div>
+          <div class="bt-dates">23 Jun 2026</div>
+          <span class="bt-assigned">NESTLE / TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">NN Model Training — First Iteration</div>
+          <div class="bt-dates">24 Jun – 29 Jul 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Dataset Preparation for Training</div>
+          <div class="bt-dates">24 Jun 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Data Annotation (Labeling, model training, statistic results)</div>
+          <div class="bt-dates">25 Jun – 22 Jul 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Internal recognition testing</div>
+          <div class="bt-dates">23 Jul 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Model prepared for 1st iteration</div>
+          <div class="bt-dates">23 Jul 2026</div>
+          <span class="bt-assigned">NESTLE / TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Error Analysis &amp; Scope Update + Next Steps Definition</div>
+          <div class="bt-dates">24 – 28 Jul 2026</div>
+          <span class="bt-assigned">NESTLE / SS / TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Next Iteration Planning</div>
+          <div class="bt-dates">29 Jul 2026</div>
+          <span class="bt-assigned">SS / NESTLE / TELUS</span>
+        </div>
+
+        <div class="batch-task-row" style="background:#f9f9f9;">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name" style="font-weight:700;">Model Testing and Approval</div>
+          <div class="bt-dates">30 Jul – 5 Aug 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Deploy SSBS Model to UAT</div>
+          <div class="bt-dates">30 Jul 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Master Data Update — Product Category Setup</div>
+          <div class="bt-dates">30 – 31 Jul 2026</div>
+          <span class="bt-assigned">TELUS / NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Integration Testing from SSBS</div>
+          <div class="bt-dates">3 Aug 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Integration Testing from TELUS</div>
+          <div class="bt-dates">3 Aug 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">FE Full Cycle Testing</div>
+          <div class="bt-dates">4 Aug 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Release Batch for Nestl&eacute; Verification</div>
+          <div class="bt-dates">4 Aug 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Nestl&eacute; Chile Testing and Sign-Off</div>
+          <div class="bt-dates">5 Aug 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+
+        <div class="batch-task-row" style="background:#f9f9f9;">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name" style="font-weight:700;">Production Deployment</div>
+          <div class="bt-dates">6 – 10 Aug 2026</div>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Confirm Go-Live Date</div>
+          <div class="bt-dates">6 Aug 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Deploy SSBS Model to Production</div>
+          <div class="bt-dates">7 Aug 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Master Data Update — Production</div>
+          <div class="bt-dates">7 – 10 Aug 2026</div>
+          <span class="bt-assigned">TELUS / NESTLE CHILE</span>
+        </div>
+
+        <div class="batch-golive">
+          <span>&#128640;</span> Go-Live — Batch 2 &nbsp;
+          <span style="font-size:13px; color:var(--telus-purple);">11 Aug 2026</span>
+          <span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLE</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div id="tab-batch3" class="tab-panel">
+    <div class="batch-section">
+      <div class="batch-header" style="background:var(--telus-purple);">
+        <div class="b-name">Batch 3 — 6 Categories</div>
+        <div class="b-dates">12 Jun 2026 – 1 Sep 2026 &nbsp;|&nbsp; Status: In Progress</div>
+      </div>
+      <div class="batch-body">
+
+        <div class="batch-task-row">
+          <div class="dot dot-active"></div>
+          <div class="bt-name" style="font-weight:700;">Market Categories Analysis</div>
+          <div class="bt-dates">12 Jun – 1 Jul 2026</div>
+          <span class="bt-assigned">NESTLE / TELUS / SS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Provide final SKU list for each category in the batch</div>
+          <div class="bt-dates">12 – 17 Jun 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Preparation of base catalogue per category — final SKU list and competitors</div>
+          <div class="bt-dates">18 Jun 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Dataset preparation per category</div>
+          <div class="bt-dates">18 Jun 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-active"></div>
+          <div class="bt-name">Defining business rules of the categories</div>
+          <div class="bt-dates">19 – 25 Jun 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">KPI validation per category</div>
+          <div class="bt-dates">26 Jun 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Category for batch plan sign-off</div>
+          <div class="bt-dates">29 Jun – 1 Jul 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+
+        <div class="batch-task-row" style="background:#f9f9f9;">
+          <div class="dot dot-active"></div>
+          <div class="bt-name" style="font-weight:700;">Batch 3 — Scope Definition &amp; Category Analysis</div>
+          <div class="bt-dates">2 Jul – 19 Aug 2026</div>
+          <span class="bt-assigned">SS / TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-active"></div>
+          <div class="bt-name">Scope for NN Model Training</div>
+          <div class="bt-dates">2 – 14 Jul 2026</div>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Provide SKU catalogue</div>
+          <div class="bt-dates">2 Jul 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Provide photos for training</div>
+          <div class="bt-dates">2 – 3 Jul 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Product catalogue analysis</div>
+          <div class="bt-dates">6 – 10 Jul 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Review changes in product catalogue scope — catalogue sign-off</div>
+          <div class="bt-dates">13 – 14 Jul 2026</div>
+          <span class="bt-assigned">ALL</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Scope freeze for Batch 3</div>
+          <div class="bt-dates">14 Jul 2026</div>
+          <span class="bt-assigned">NESTLE / TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">NN Model Training — First Iteration</div>
+          <div class="bt-dates">15 Jul – 19 Aug 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Dataset Preparation for Training</div>
+          <div class="bt-dates">15 Jul 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Data Annotation (Labeling, model training, statistic results)</div>
+          <div class="bt-dates">16 Jul – 12 Aug 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Internal recognition testing</div>
+          <div class="bt-dates">13 Aug 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Model prepared for 1st iteration</div>
+          <div class="bt-dates">13 Aug 2026</div>
+          <span class="bt-assigned">NESTLE / TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Error Analysis &amp; Scope Update + Next Steps Definition</div>
+          <div class="bt-dates">14 – 18 Aug 2026</div>
+          <span class="bt-assigned">NESTLE / SS / TELUS</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Next Iteration Planning</div>
+          <div class="bt-dates">19 Aug 2026</div>
+          <span class="bt-assigned">SS / NESTLE / TELUS</span>
+        </div>
+
+        <div class="batch-task-row" style="background:#f9f9f9;">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name" style="font-weight:700;">Model Testing and Approval</div>
+          <div class="bt-dates">20 – 26 Aug 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Deploy SSBS Model to UAT</div>
+          <div class="bt-dates">20 Aug 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Master Data Update — Product Category Setup</div>
+          <div class="bt-dates">20 – 21 Aug 2026</div>
+          <span class="bt-assigned">TELUS / NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Integration Testing from SSBS</div>
+          <div class="bt-dates">24 Aug 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Integration Testing from TELUS</div>
+          <div class="bt-dates">24 Aug 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">FE Full Cycle Testing</div>
+          <div class="bt-dates">25 Aug 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Release Batch for Nestl&eacute; Verification</div>
+          <div class="bt-dates">25 Aug 2026</div>
+          <span class="bt-assigned">TELUS</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Nestl&eacute; Chile Testing and Sign-Off</div>
+          <div class="bt-dates">26 Aug 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+
+        <div class="batch-task-row" style="background:#f9f9f9;">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name" style="font-weight:700;">Production Deployment</div>
+          <div class="bt-dates">27 – 31 Aug 2026</div>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Confirm Go-Live Date</div>
+          <div class="bt-dates">27 Aug 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Deploy SSBS Model to Production</div>
+          <div class="bt-dates">28 Aug 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub">
+          <div class="dot dot-not-started"></div>
+          <div class="bt-name">Master Data Update — Production</div>
+          <div class="bt-dates">28 – 31 Aug 2026</div>
+          <span class="bt-assigned">TELUS / NESTLE CHILE</span>
+        </div>
+
+        <div class="batch-golive">
+          <span>&#128640;</span> Go-Live — Batch 3 &nbsp;
+          <span style="font-size:13px; color:var(--telus-purple);">1 Sep 2026</span>
+          <span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLE</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== TAB 7: QC ======================== -->
+  <div id="tab-qc" class="tab-panel">
+
+    <style>
+      .qc-hero { display:grid; grid-template-columns:1fr 2fr; gap:20px; margin-bottom:28px; }
+      .qc-f1 { background:var(--bg-card); border:2px solid var(--telus-purple); border-radius:10px; padding:24px 20px; text-align:center; display:flex; flex-direction:column; justify-content:center; }
+      .qc-f1 .qc-f1-label { font-size:11px; font-weight:800; color:var(--telus-purple); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
+      .qc-f1 .qc-f1-score { font-size:60px; font-weight:800; color:var(--telus-purple); line-height:1; }
+      .qc-f1 .qc-f1-caption { font-size:11px; font-weight:600; color:var(--text-muted); margin-top:6px; }
+      .qc-f1 .qc-f1-target { display:inline-block; background:var(--telus-light-green,#D4F7B0); color:var(--telus-accessible-green); font-size:10px; font-weight:800; padding:3px 8px; border-radius:4px; margin-top:10px; letter-spacing:0.6px; }
+      .qc-summary { background:var(--bg-card); border-left:4px solid var(--telus-purple); border-radius:10px; padding:18px 20px; }
+      .qc-summary .qc-summary-title { font-size:11px; font-weight:800; color:var(--telus-purple); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:14px; }
+      .qc-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+      .qc-stat { text-align:center; padding:10px 6px; background:var(--bg-white); border-radius:6px; }
+      .qc-stat .qc-num { font-size:24px; font-weight:800; color:var(--telus-purple); line-height:1; }
+      .qc-stat .qc-lbl { font-size:10px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.4px; margin-top:4px; }
+
+      .qc-dist-table { width:100%; border-collapse:collapse; margin-bottom:28px; font-size:12px; }
+      .qc-dist-table thead th { background:var(--telus-purple); color:#fff; font-weight:700; padding:10px 12px; text-align:center; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; }
+      .qc-dist-table thead th:first-child { text-align:left; }
+      .qc-dist-table tbody td { padding:10px 12px; border-bottom:1px solid var(--border-light); text-align:center; font-weight:600; color:var(--text-body); }
+      .qc-dist-table tbody td:first-child { text-align:left; font-weight:700; color:var(--telus-thunder-grey,#2C2E30); }
+      .qc-dist-table .band-header { font-size:10px; font-weight:800; display:block; margin-top:2px; opacity:0.85; }
+      .qc-dist-table tr.total-row td { background:var(--bg-section); font-weight:800; color:var(--telus-purple); border-bottom:none; }
+      .cell-strong { color:var(--telus-accessible-green); }
+      .cell-warn { color:#E65100; }
+      .cell-low { color:#D32F2F; }
+      .cell-zero { color:var(--text-subtle); }
+
+      .qc-findings-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:24px; }
+      .qc-finding { background:var(--bg-card); border-left:3px solid var(--telus-light-purple,#7C53A5); border-radius:6px; padding:10px 12px; }
+      .qc-finding-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
+      .qc-finding-title { font-size:12px; font-weight:700; color:var(--telus-purple); }
+      .qc-finding-count { background:var(--telus-purple); color:#fff; font-size:10px; font-weight:800; padding:2px 8px; border-radius:10px; letter-spacing:0.4px; }
+      .qc-finding-desc { font-size:11px; color:var(--text-body); line-height:1.45; }
+
+      .qc-outlook { background:var(--bg-card); border:2px solid var(--telus-purple); border-radius:10px; padding:18px 20px; margin-bottom:24px; }
+      .qc-outlook-title { font-size:12px; font-weight:800; color:var(--telus-purple); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px; }
+      .qc-outlook-lead { font-size:12px; color:var(--text-body); margin-bottom:12px; font-weight:500; }
+      .qc-outlook-list { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+      .qc-outlook-item { background:#fff; padding:10px; border-radius:6px; border-left:3px solid var(--telus-green); }
+      .qc-outlook-item .icon { font-size:14px; font-weight:800; color:var(--telus-accessible-green); }
+      .qc-outlook-item .txt { font-size:11px; font-weight:600; color:var(--telus-thunder-grey,#2C2E30); margin-top:4px; line-height:1.4; }
+    </style>
+
+    <div class="page-header">
+      <div class="left">
+        <h1>Nestlé Chile TIR | Monthly Quality Report</h1>
+        <div class="sub">Image Recognition Quality Report &nbsp;|&nbsp; 15 Apr – 15 May 2026</div>
+      </div>
+      <div class="right">
+        <div class="badge">TELUS ACG</div>
+        <div>F1 Score Target: ≥ 95%</div>
+        <div>Status: Above Target</div>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="qc-hero">
+      <div class="qc-f1">
+        <div class="qc-f1-label">Overall F1 Score</div>
+        <div class="qc-f1-score">97%</div>
+        <div class="qc-f1-caption">Recognition accuracy across all SKUs</div>
+        <div class="qc-f1-target">Above 95% target</div>
+      </div>
+      <div class="qc-summary">
+        <div class="qc-summary-title">SKU Performance Distribution</div>
+        <div class="qc-stats">
+          <div class="qc-stat"><div class="qc-num">78</div><div class="qc-lbl">Total SKUs</div></div>
+          <div class="qc-stat"><div class="qc-num" style="color:var(--telus-accessible-green);">55</div><div class="qc-lbl">Above 95%</div></div>
+          <div class="qc-stat"><div class="qc-num">17</div><div class="qc-lbl">80% to 94%</div></div>
+          <div class="qc-stat"><div class="qc-num" style="color:#D32F2F;">6</div><div class="qc-lbl">Below 80%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Distribution table -->
+    <div class="section-label">SKU Distribution by Performance Band</div>
+    <table class="qc-dist-table">
+      <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Total SKUs</th>
+          <th>&gt; 95%</th>
+          <th>90% – 94%</th>
+          <th>80% – 89%</th>
+          <th>&lt; 80%</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nestlé SKUs</td>
+          <td>21</td>
+          <td class="cell-strong">20</td>
+          <td class="cell-zero">0</td>
+          <td class="cell-zero">0</td>
+          <td class="cell-low">1</td>
+        </tr>
+        <tr>
+          <td>Competitor SKUs</td>
+          <td>57</td>
+          <td class="cell-strong">35</td>
+          <td class="cell-warn">15</td>
+          <td class="cell-warn">2</td>
+          <td class="cell-low">5</td>
+        </tr>
+        <tr class="total-row">
+          <td>Total</td>
+          <td>78</td>
+          <td>55</td>
+          <td>15</td>
+          <td>2</td>
+          <td>6</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Findings -->
+    <div class="section-label">Drivers of Lower Performance Cases</div>
+    <div class="qc-findings-grid">
+
+      <div class="qc-finding">
+        <div class="qc-finding-header">
+          <div class="qc-finding-title">Shelf Visibility</div>
+          <div class="qc-finding-count">8 SKUs</div>
+        </div>
+        <div class="qc-finding-desc">Products partially covered by neighboring items in shelf photos. Score improves as more facings are collected.</div>
+      </div>
+
+      <div class="qc-finding">
+        <div class="qc-finding-header">
+          <div class="qc-finding-title">Similar Design, Different Volumes</div>
+          <div class="qc-finding-count">8 SKUs</div>
+        </div>
+        <div class="qc-finding-desc">SKUs share visual identity with same-line products in different volumes. Reviewed individually and addressed in the next iteration.</div>
+      </div>
+
+      <div class="qc-finding">
+        <div class="qc-finding-header">
+          <div class="qc-finding-title">Outside QC Photo Sample</div>
+          <div class="qc-finding-count">3 SKUs</div>
+        </div>
+        <div class="qc-finding-desc">SKUs did not appear in the QC photo sample for this iteration. Sampling artifact, not a model performance issue.</div>
+      </div>
+
+      <div class="qc-finding">
+        <div class="qc-finding-header">
+          <div class="qc-finding-title">Rare Edge Cases</div>
+          <div class="qc-finding-count">2 SKUs</div>
+        </div>
+        <div class="qc-finding-desc">Uncommon recognition scenarios with limited examples. Performance improves as additional samples are collected.</div>
+      </div>
+
+      <div class="qc-finding">
+        <div class="qc-finding-header">
+          <div class="qc-finding-title">Back Side Packaging</div>
+          <div class="qc-finding-count">1 SKU</div>
+        </div>
+        <div class="qc-finding-desc">Product appeared from its back side on the shelf. Recognition improves as more back-facing samples are added.</div>
+      </div>
+
+      <div class="qc-finding">
+        <div class="qc-finding-header">
+          <div class="qc-finding-title">New Products</div>
+          <div class="qc-finding-count">1 SKU</div>
+        </div>
+        <div class="qc-finding-desc">Recently introduced design with a smaller sample base at this stage. Score normalises as photo coverage expands.</div>
+      </div>
+
+    </div>
+
+    <!-- Outlook -->
+    <div class="qc-outlook">
+      <div class="qc-outlook-title">Outlook</div>
+      <div class="qc-outlook-lead">No structural issues identified with the model or the data collection process. Performance is expected to improve naturally as the dataset matures.</div>
+      <div class="qc-outlook-list">
+        <div class="qc-outlook-item"><div class="icon">→</div><div class="txt">More shelf photos collected from the field</div></div>
+        <div class="qc-outlook-item"><div class="icon">→</div><div class="txt">Dataset coverage continues to expand</div></div>
+        <div class="qc-outlook-item"><div class="icon">→</div><div class="txt">Edge cases become better represented</div></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-left">
+        <div class="footer-badge">TELUS ACG</div>
+        <div class="footer-tagline">Let's make the future friendly</div>
+      </div>
+      <div class="footer-right">
+        Nestlé Chile TIR Implementation &nbsp;|&nbsp; TELUS Agriculture &amp; Consumer Goods | Confidential
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <div class="telus-badge">TELUS</div>
+      <div class="legend">
+        <div class="legend-item"><span class="dot dot-complete"></span>Complete</div>
+        <div class="legend-item"><span class="dot dot-active"></span>In Progress</div>
+        <div class="legend-item"><span class="dot dot-upcoming"></span>Upcoming</div>
+        <div class="legend-item"><span class="dot dot-not-started"></span>Not Started</div>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="project-id">Nestlé Chile TIR — Weekly Status Report</div>
+      <div>TELUS Agriculture &amp; Consumer Goods &nbsp;|&nbsp; Confidential</div>
+      <div style="margin-top:2px; font-style:italic;">Let's make the future friendly</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+  if (name === 'gantt') buildGantt();
+}
+
+// GANTT
+const MONTHS = [
+  { year: 2025, month: 11, label: 'Nov 25' },
+  { year: 2025, month: 12, label: 'Dec 25' },
+  { year: 2026, month: 1,  label: 'Jan 26' },
+  { year: 2026, month: 2,  label: 'Feb 26' },
+  { year: 2026, month: 3,  label: 'Mar 26' },
+  { year: 2026, month: 4,  label: 'Apr 26' },
+  { year: 2026, month: 5,  label: 'May 26' },
+  { year: 2026, month: 6,  label: 'Jun 26' },
+  { year: 2026, month: 7,  label: 'Jul 26' },
+  { year: 2026, month: 8,  label: 'Aug 26' },
+  { year: 2026, month: 9,  label: 'Sep 26' },
+];
+
+const PROJECT_START = new Date(2025, 10, 1);
+const PROJECT_END   = new Date(2026, 8, 30);
+const TODAY         = new Date(2026, 5, 23);
+const TOTAL_DAYS    = (PROJECT_END - PROJECT_START) / 86400000;
+
+const GANTT_TASKS = [
+  { label: 'Testing Scope & Planning',              start: '2025-11-07', end: '2026-01-16', status: 'Complete',     isPhase: true },
+  { label: 'PoC — NN Training (1 Category)',        start: '2025-11-03', end: '2025-12-09', status: 'Complete' },
+  { label: 'UAT Environment Configuration',         start: '2026-01-05', end: '2026-01-30', status: 'Complete' },
+  { label: '1st Category Go Live (Pilot)',           start: '2026-01-28', end: '2026-04-07', status: 'Complete',     isPhase: true },
+  { label: 'Market Training',                        start: '2026-02-11', end: '2026-02-13', status: 'Complete' },
+  { label: 'Nestle Chile Pilot Execution',           start: '2026-02-13', end: '2026-04-03', status: 'Complete' },
+  { label: 'Market Prioritization',                  start: '2026-02-19', end: '2026-03-18', status: 'Complete' },
+  { label: 'Pilot Review & Sign Off',                start: '2026-04-07', end: '2026-04-07', status: 'Complete' },
+  { label: 'Full Rollout — Lacteous Culinaros',      start: '2026-04-08', end: '2026-04-21', status: 'Complete',     isPhase: true },
+  { label: 'Market Go Live — Production',            start: '2026-04-15', end: '2026-04-15', status: 'Complete' },
+  { label: 'Batch 1 — Chocolates + Galletas',        start: '2026-03-19', end: '2026-07-09', status: 'In Progress',  isPhase: true },
+  { label: 'Categories Analysis (B1)',               start: '2026-03-19', end: '2026-04-24', status: 'Complete' },
+  { label: 'Scope Definition & Catalogue Analysis', start: '2026-04-27', end: '2026-05-05', status: 'Complete' },
+  { label: 'NN Model Training — First Iteration',    start: '2026-05-06', end: '2026-06-26', status: 'In Progress' },
+  { label: 'Model Testing in UAT',                   start: '2026-06-29', end: '2026-07-03', status: 'Not Started' },
+  { label: 'Production Deployment',                  start: '2026-07-06', end: '2026-07-08', status: 'Not Started' },
+  { label: '🚀 Go-Live — Batch 1',                   start: '2026-07-09', end: '2026-07-09', status: 'Not Started',  isPhase: true },
+  { label: 'Batch 2 — Cafe + Culinarios',            start: '2026-05-20', end: '2026-08-11', status: 'In Progress',  isPhase: true },
+  { label: 'Market Categories Analysis (B2)',        start: '2026-05-20', end: '2026-05-29', status: 'Complete' },
+  { label: 'Scope Definition & Catalogue (B2)',      start: '2026-06-01', end: '2026-07-29', status: 'In Progress' },
+  { label: 'Model Testing & Deployment (B2)',        start: '2026-07-30', end: '2026-08-10', status: 'Not Started' },
+  { label: '🚀 Go-Live — Batch 2',                   start: '2026-08-11', end: '2026-08-11', status: 'Not Started',  isPhase: true },
+  { label: 'Batch 3 — 6 Categories',                 start: '2026-06-12', end: '2026-09-01', status: 'In Progress',  isPhase: true },
+  { label: 'Categories Analysis (B3)',               start: '2026-06-12', end: '2026-07-01', status: 'In Progress' },
+  { label: 'Scope Definition & Catalogue (B3)',      start: '2026-07-02', end: '2026-08-19', status: 'In Progress' },
+  { label: 'Model Testing & Deployment (B3)',        start: '2026-08-20', end: '2026-08-31', status: 'Not Started' },
+  { label: '🚀 Go-Live — Batch 3',                   start: '2026-09-01', end: '2026-09-01', status: 'Not Started',  isPhase: true },
+  { label: 'Batch 4 — Purina',                       start: '2026-07-15', end: '2026-09-24', status: 'Not Started',  isPhase: true },
+  { label: 'Categories Analysis + Scope (B4)',       start: '2026-07-15', end: '2026-09-11', status: 'Not Started' },
+  { label: 'Model Testing & Deployment (B4)',        start: '2026-09-14', end: '2026-09-23', status: 'Not Started' },
+  { label: '🚀 Go-Live — Batch 4 (Final)',            start: '2026-09-24', end: '2026-09-24', status: 'Not Started',  isPhase: true },
+];
+
+function barClass(status) {
+  if (status === 'Complete')     return 'bar-complete';
+  if (status === 'In Progress')  return 'bar-active';
+  if (status === 'Upcoming')     return 'bar-upcoming';
+  return 'bar-not-started';
+}
+
+function buildGantt() {
+  const tbody = document.getElementById('ganttBody');
+  if (tbody.children.length > 0) return;
+
+  const todayOffset = (TODAY - PROJECT_START) / 86400000;
+
+  GANTT_TASKS.forEach(t => {
+    const tr = document.createElement('tr');
+    if (t.isPhase) tr.classList.add('phase-header');
+
+    const start = new Date(t.start);
+    const end   = new Date(t.end);
+    const s = Math.max(0, (start - PROJECT_START) / 86400000);
+    const e = Math.min(TOTAL_DAYS, (end - PROJECT_START) / 86400000 + 1);
+
+    // label cell
+    const labelTd = document.createElement('td');
+    labelTd.innerHTML = t.label;
+    labelTd.style.paddingLeft = t.isPhase ? '8px' : '16px';
+    tr.appendChild(labelTd);
+
+    // done cell
+    const doneTd = document.createElement('td');
+    doneTd.style.textAlign = 'center';
+    doneTd.style.fontSize = '10px';
+    doneTd.style.color = 'var(--text-muted)';
+    doneTd.textContent = t.status === 'Complete' ? '✓' : '';
+    tr.appendChild(doneTd);
+
+    // month cells
+    MONTHS.forEach(m => {
+      const td = document.createElement('td');
+      td.className = 'month-cell';
+
+      const mStart     = new Date(m.year, m.month - 1, 1);
+      const mEnd       = new Date(m.year, m.month, 0, 23, 59, 59);
+      const cellStart  = Math.max(0, (mStart - PROJECT_START) / 86400000);
+      const cellEnd    = Math.min(TOTAL_DAYS, (mEnd - PROJECT_START) / 86400000);
+      const cellSpan   = cellEnd - cellStart;
+
+      const wrap = document.createElement('div');
+      wrap.className = 'gantt-cell-wrap';
+
+      // today line
+      if (todayOffset >= cellStart && todayOffset <= cellEnd) {
+        const pct = ((todayOffset - cellStart) / cellSpan) * 100;
+        const line = document.createElement('div');
+        line.className = 'today-line';
+        line.style.left = pct + '%';
+        wrap.appendChild(line);
+      }
+
+      // bar segment
+      const barStart = Math.max(cellStart, s);
+      const barEnd   = Math.min(cellEnd, e);
+      if (barEnd > barStart) {
+        const leftPct  = ((barStart - cellStart) / cellSpan) * 100;
+        const widthPct = ((barEnd - barStart) / cellSpan) * 100;
+        const bar = document.createElement('div');
+        bar.className = 'gantt-bar ' + barClass(t.status);
+        bar.style.left  = leftPct + '%';
+        bar.style.width = widthPct + '%';
+        wrap.appendChild(bar);
+      }
+
+      td.appendChild(wrap);
+      tr.appendChild(td);
+    });
+
+    tbody.appendChild(tr);
+  });
+}
+</script>
+</body>
+</html>
