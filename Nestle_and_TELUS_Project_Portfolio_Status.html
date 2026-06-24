@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 
-/* ============== GLOBAL RESET ============== */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -18,7 +17,6 @@ body {
   color: #2C2E30;
 }
 
-/* ============== TOP NAV ============== */
 .portfolio-nav {
   position: sticky;
   top: 0;
@@ -79,7 +77,6 @@ body {
   color: white;
 }
 
-/* ============== SECTIONS ============== */
 .portfolio-section {
   display: none;
   scroll-margin-top: 80px;
@@ -88,8 +85,6 @@ body {
   display: block;
 }
 
-/* Each project section gets its own body-equivalent styling via its scoped CSS.
-   But we need to make sure the section element behaves like a body. */
 #section-home, #section-chile, #section-nhs, #section-froneri, #section-brazil {
   display: none;
 }
@@ -97,7 +92,6 @@ body {
   display: block;
 }
 
-/* Print: show all sections when printing */
 @media print {
   .portfolio-nav { display: none; }
   #section-home, #section-chile, #section-nhs, #section-froneri, #section-brazil {
@@ -438,7 +432,9 @@ body {
 
   #section-home .pill.complete{ background: #F0E8F5; color: var(--telus-purple); }
   #section-home .pill.in-progress{ background: var(--telus-light-green); color: var(--telus-accessible-green); }
+  #section-home .pill.in-progress-warning{ background: #FFF3E0; color: #C75300; }
   #section-home .pill.not-started{ background: #FFF3E0; color: var(--phase-upcoming); }
+  #section-home .pill.not-started-neutral{ background: #EEEEEE; color: #666666; }
 
   #section-home .pill .dot{
     width: 5px;
@@ -448,7 +444,9 @@ body {
 
   #section-home .pill.complete .dot{ background: var(--telus-purple); }
   #section-home .pill.in-progress .dot{ background: var(--telus-green); }
+  #section-home .pill.in-progress-warning .dot{ background: #E65100; }
   #section-home .pill.not-started .dot{ background: var(--phase-upcoming); }
+  #section-home .pill.not-started-neutral .dot{ background: #AAAAAA; }
 
   /* FOOTER */
   #section-home .page-footer{
@@ -656,8 +654,8 @@ body {
   margin-right: 5px;
   flex-shrink: 0;
 }
-#section-chile .dot-complete{ background: var(--phase-complete); }
-#section-chile .dot-active{ background: var(--phase-active); }
+#section-chile .dot-complete{ background: var(--phase-active); }
+#section-chile .dot-active{ background: var(--phase-complete); }
 #section-chile .dot-upcoming{ background: var(--phase-upcoming); }
 #section-chile .dot-not-started{ background: #CCCCCC; }
 
@@ -1045,6 +1043,46 @@ body {
       #section-chile .ua-table-wrap tbody tr.zero-row td:first-child{ color: var(--text-muted); }
       #section-chile .ua-table-wrap tbody tr.total-row{ background: var(--bg-section); border-top: 2px solid var(--telus-purple); }
       #section-chile .ua-table-wrap tbody tr.total-row td{ font-weight: 800; color: var(--telus-purple); }
+    
+      #section-chile .qc-hero{ display:grid; grid-template-columns:1fr 2fr; gap:20px; margin-bottom:28px; }
+      #section-chile .qc-f1{ background:var(--bg-card); border:2px solid var(--telus-purple); border-radius:10px; padding:24px 20px; text-align:center; display:flex; flex-direction:column; justify-content:center; }
+      #section-chile .qc-f1 .qc-f1-label{ font-size:11px; font-weight:800; color:var(--telus-purple); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
+      #section-chile .qc-f1 .qc-f1-score{ font-size:60px; font-weight:800; color:var(--telus-purple); line-height:1; }
+      #section-chile .qc-f1 .qc-f1-caption{ font-size:11px; font-weight:600; color:var(--text-muted); margin-top:6px; }
+      #section-chile .qc-f1 .qc-f1-target{ display:inline-block; background:var(--telus-light-green,#D4F7B0); color:var(--telus-accessible-green); font-size:10px; font-weight:800; padding:3px 8px; border-radius:4px; margin-top:10px; letter-spacing:0.6px; }
+      #section-chile .qc-summary{ background:var(--bg-card); border-left:4px solid var(--telus-purple); border-radius:10px; padding:18px 20px; }
+      #section-chile .qc-summary .qc-summary-title{ font-size:11px; font-weight:800; color:var(--telus-purple); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:14px; }
+      #section-chile .qc-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+      #section-chile .qc-stat{ text-align:center; padding:10px 6px; background:var(--bg-white); border-radius:6px; }
+      #section-chile .qc-stat .qc-num{ font-size:24px; font-weight:800; color:var(--telus-purple); line-height:1; }
+      #section-chile .qc-stat .qc-lbl{ font-size:10px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.4px; margin-top:4px; }
+
+      #section-chile .qc-dist-table{ width:100%; border-collapse:collapse; margin-bottom:28px; font-size:12px; }
+      #section-chile .qc-dist-table thead th{ background:var(--telus-purple); color:#fff; font-weight:700; padding:10px 12px; text-align:center; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; }
+      #section-chile .qc-dist-table thead th:first-child{ text-align:left; }
+      #section-chile .qc-dist-table tbody td{ padding:10px 12px; border-bottom:1px solid var(--border-light); text-align:center; font-weight:600; color:var(--text-body); }
+      #section-chile .qc-dist-table tbody td:first-child{ text-align:left; font-weight:700; color:var(--telus-thunder-grey,#2C2E30); }
+      #section-chile .qc-dist-table .band-header{ font-size:10px; font-weight:800; display:block; margin-top:2px; opacity:0.85; }
+      #section-chile .qc-dist-table tr.total-row td{ background:var(--bg-section); font-weight:800; color:var(--telus-purple); border-bottom:none; }
+      #section-chile .cell-strong{ color:var(--telus-accessible-green); }
+      #section-chile .cell-warn{ color:#E65100; }
+      #section-chile .cell-low{ color:#D32F2F; }
+      #section-chile .cell-zero{ color:var(--text-subtle); }
+
+      #section-chile .qc-findings-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:24px; }
+      #section-chile .qc-finding{ background:var(--bg-card); border-left:3px solid var(--telus-light-purple,#7C53A5); border-radius:6px; padding:10px 12px; }
+      #section-chile .qc-finding-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
+      #section-chile .qc-finding-title{ font-size:12px; font-weight:700; color:var(--telus-purple); }
+      #section-chile .qc-finding-count{ background:var(--telus-purple); color:#fff; font-size:10px; font-weight:800; padding:2px 8px; border-radius:10px; letter-spacing:0.4px; }
+      #section-chile .qc-finding-desc{ font-size:11px; color:var(--text-body); line-height:1.45; }
+
+      #section-chile .qc-outlook{ background:var(--bg-card); border:2px solid var(--telus-purple); border-radius:10px; padding:18px 20px; margin-bottom:24px; }
+      #section-chile .qc-outlook-title{ font-size:12px; font-weight:800; color:var(--telus-purple); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px; }
+      #section-chile .qc-outlook-lead{ font-size:12px; color:var(--text-body); margin-bottom:12px; font-weight:500; }
+      #section-chile .qc-outlook-list{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+      #section-chile .qc-outlook-item{ background:#fff; padding:10px; border-radius:6px; border-left:3px solid var(--telus-green); }
+      #section-chile .qc-outlook-item .icon{ font-size:14px; font-weight:800; color:var(--telus-accessible-green); }
+      #section-chile .qc-outlook-item .txt{ font-size:11px; font-weight:600; color:var(--telus-thunder-grey,#2C2E30); margin-top:4px; line-height:1.4; }
     
 </style>
 
@@ -1439,6 +1477,40 @@ body {
 
   @media print { }
 
+    #section-nhs .nhs-tab-nav{
+      display: flex;
+      gap: 4px;
+      border-bottom: 2px solid var(--border-light);
+      margin-bottom: 24px;
+    }
+    #section-nhs .nhs-tab-btn{
+      background: transparent;
+      border: none;
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: color 0.15s ease, border-color 0.15s ease;
+      letter-spacing: 0.2px;
+    }
+    #section-nhs .nhs-tab-btn:hover{
+      color: var(--telus-purple);
+    }
+    #section-nhs .nhs-tab-btn.active{
+      color: var(--telus-purple);
+      border-bottom-color: var(--telus-purple);
+    }
+    #section-nhs .nhs-tab-panel{
+      display: none;
+    }
+    #section-nhs .nhs-tab-panel.active{
+      display: block;
+    }
+  
     #section-nhs .status-next-wrap{
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1537,6 +1609,16 @@ body {
       color: var(--telus-accessible-green);
       font-weight: 700;
     }
+    #section-nhs .status-next-row.status-recent .status-next-dot{
+      background: var(--telus-green);
+    }
+    #section-nhs .status-next-row.status-recent .status-next-text{
+      color: var(--telus-accessible-green);
+      font-weight: 600;
+    }
+    #section-nhs .status-next-row.status-recent .status-next-date{
+      color: var(--telus-accessible-green);
+    }
   
     #section-nhs .project-bg-title{
       font-size: 20px;
@@ -1548,6 +1630,164 @@ body {
       border-bottom: 2px solid var(--telus-purple);
     }
   
+      #section-nhs .raci-intro{
+        margin-bottom: 18px;
+      }
+      #section-nhs .raci-intro-title{
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--telus-purple);
+        letter-spacing: -0.2px;
+        margin-bottom: 4px;
+      }
+      #section-nhs .raci-intro-sub{
+        font-size: 12px;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+      #section-nhs .raci-table-wrap{
+        border: 1.5px solid var(--border-light);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 24px;
+      }
+      #section-nhs .raci-table{
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+      #section-nhs .raci-table thead th{
+        background: var(--bg-section);
+        padding: 12px 14px;
+        text-align: left;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        color: var(--telus-purple);
+        border-bottom: 2px solid var(--telus-purple);
+      }
+      #section-nhs .raci-table thead th.party{
+        text-align: center;
+        width: 110px;
+      }
+      #section-nhs .raci-table thead th.num{
+        width: 40px;
+        text-align: center;
+      }
+      #section-nhs .raci-table .group-row td{
+        background: var(--telus-purple);
+        color: white;
+        padding: 8px 14px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+      }
+      #section-nhs .raci-table tbody td{
+        padding: 11px 14px;
+        border-bottom: 1px solid var(--border-light);
+        vertical-align: middle;
+      }
+      #section-nhs .raci-table tbody tr:last-child td{
+        border-bottom: none;
+      }
+      #section-nhs .raci-table .num-cell{
+        text-align: center;
+        color: var(--text-muted);
+        font-weight: 700;
+        font-size: 12px;
+      }
+      #section-nhs .raci-table .task-cell{
+        color: var(--text-body);
+        font-weight: 500;
+        line-height: 1.45;
+      }
+      #section-nhs .raci-table .role-cell{
+        text-align: center;
+      }
+      #section-nhs .raci-chip{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 32px;
+        height: 24px;
+        padding: 0 7px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.3px;
+      }
+      #section-nhs .raci-chip.R{ background: #E3F2D4; color: #2B6E00; }
+      #section-nhs .raci-chip.A{ background: #F0E8F5; color: #4B286D; }
+      #section-nhs .raci-chip.C{ background: #FFF3E0; color: #C75300; }
+      #section-nhs .raci-chip.I{ background: #EEEEEE; color: #555555; }
+      #section-nhs .raci-chip.RA{ background: linear-gradient(135deg, #E3F2D4 0%, #E3F2D4 50%, #F0E8F5 50%, #F0E8F5 100%); color: #4B286D; border: 1px solid #4B286D; }
+      #section-nhs .raci-note-row td{
+        background: #FAFAFA;
+        padding: 0 !important;
+        border-bottom: 1px solid var(--border-light);
+      }
+      #section-nhs .raci-note{
+        padding: 8px 14px 10px 58px;
+        font-size: 11.5px;
+        line-height: 1.5;
+        color: var(--text-body);
+        border-left: 3px solid var(--telus-light-purple);
+        margin-left: 14px;
+      }
+      #section-nhs .raci-note-label{
+        display: inline-block;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: var(--telus-light-purple);
+        margin-right: 6px;
+      }
+
+      #section-nhs .raci-legend{
+        background: var(--bg-section);
+        border: 1px solid var(--border-light);
+        border-radius: 10px;
+        padding: 18px 22px;
+        margin-bottom: 24px;
+      }
+      #section-nhs .raci-legend-title{
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--telus-purple);
+        margin-bottom: 12px;
+      }
+      #section-nhs .raci-legend-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 24px;
+      }
+      #section-nhs .raci-legend-item{
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+      #section-nhs .raci-legend-item strong{
+        color: var(--text-body);
+        margin-right: 4px;
+      }
+      #section-nhs .raci-legend-item span.desc{
+        color: var(--text-muted);
+      }
+
+      #section-nhs .raci-meta{
+        font-size: 11px;
+        color: var(--text-muted);
+        font-style: italic;
+        margin-bottom: 14px;
+      }
+    
 </style>
 
 <!-- Froneri section CSS -->
@@ -2595,14 +2835,14 @@ body {
   <div class="banner-stack">
 
     <!-- 1. NESTLÉ CHILE TIR -->
-    <a class="banner green" href="#section-chile" onclick="navTo('section-chile'); return false;">
+    <a class="banner warning" href="#section-chile" onclick="navTo('section-chile'); return false;">
       <div class="banner-inner">
         <div class="banner-left">
           <div class="banner-top">
             <div class="banner-title">Nestlé Chile TIR</div>
-            <span class="status-badge green">
+            <span class="status-badge warning">
               <span class="dot"></span>
-              On Track
+              Delay in Batch 1
             </span>
           </div>
           <div class="banner-summary">
@@ -2637,7 +2877,7 @@ body {
                 </td>
                 <td class="phase-date">23 Jun</td>
                 <td class="phase-status">
-                  <span class="pill in-progress"><span class="dot"></span>In Progress</span>
+                  <span class="pill in-progress-warning"><span class="dot"></span>In Progress</span>
                 </td>
               </tr>
               <tr>
@@ -2657,7 +2897,7 @@ body {
                 </td>
                 <td class="phase-date">24 Aug</td>
                 <td class="phase-status">
-                  <span class="pill not-started"><span class="dot"></span>Not Started</span>
+                  <span class="pill not-started-neutral"><span class="dot"></span>Not Started</span>
                 </td>
               </tr>
               <tr>
@@ -2667,7 +2907,7 @@ body {
                 </td>
                 <td class="phase-date">16 Sep</td>
                 <td class="phase-status">
-                  <span class="pill not-started"><span class="dot"></span>Not Started</span>
+                  <span class="pill not-started-neutral"><span class="dot"></span>Not Started</span>
                 </td>
               </tr>
             </tbody>
@@ -2675,7 +2915,7 @@ body {
           <div class="rollout-legend">
             <span class="rollout-legend-item"><span class="rollout-legend-dot" style="background: var(--telus-purple);"></span>Complete</span>
             <span class="rollout-legend-item"><span class="rollout-legend-dot" style="background: var(--telus-green);"></span>In Progress</span>
-            <span class="rollout-legend-item"><span class="rollout-legend-dot" style="background: var(--phase-upcoming);"></span>Not Started</span>
+            <span class="rollout-legend-item"><span class="rollout-legend-dot" style="background: #AAAAAA;"></span>Not Started</span>
           </div>
         </div>
       </div>
@@ -2786,7 +3026,7 @@ body {
     </div>
     <div class="header-right">
       <div class="as-of">As of</div>
-      <div class="date-val">May 25, 2026</div>
+      <div class="date-val">June 2, 2026</div>
     </div>
   </div>
 
@@ -2798,6 +3038,7 @@ body {
     <button class="tab-btn" onclick="showTab_chile('gantt', this)">Gantt Chart</button>
     <button class="tab-btn" onclick="showTab_chile('batch1', this)">Batch 1 Planner</button>
     <button class="tab-btn" onclick="showTab_chile('batch2', this)">Batch 2 Planner</button>
+    <button class="tab-btn" onclick="showTab_chile('qc', this)">QC</button>
   </div>
 
   <!-- ======================== TAB 1: EXECUTIVE SUMMARY ======================== -->
@@ -2814,7 +3055,7 @@ body {
       </div>
       <div style="display:flex; flex-direction:column; gap:2px;">
         <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; color:var(--text-muted);">Reporting Period</span>
-        <span style="font-size:13px; font-weight:700; color:var(--text-primary);">Week Ending 25 May 2026</span>
+        <span style="font-size:13px; font-weight:700; color:var(--text-primary);">Week Ending 2 Jun 2026</span>
       </div>
       <div style="display:flex; flex-direction:column; gap:2px;">
         <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; color:var(--text-muted);">Prepared By</span>
@@ -2870,10 +3111,19 @@ body {
       <div class="es-item-row">
         <span class="es-check">✔</span>
         <div class="es-item-body">
-          <div class="es-item-text">Completed Batch 2 activities — preparation of base catalogue and dataset (photos) per category</div>
+          <div class="es-item-text">Decision made to pause Batch 1 training activities to capture additional on-shelf photos for products that did not meet the 100-photo minimum</div>
         </div>
-        <span class="es-item-owner">TELUS</span>
-        <span class="es-item-date">23 May</span>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">29 May</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body">
+          <div class="es-item-text">80% completion of "Defining business rules of the categories" for Batch 2 — Cafe &amp; Culinarios</div>
+        </div>
+        <span class="es-item-owner">All</span>
+        <span class="es-item-date">2 Jun</span>
       </div>
 
     </div>
@@ -2885,20 +3135,51 @@ body {
       <div class="es-item-row">
         <span class="es-arrow">▸</span>
         <div class="es-item-body">
-          <div class="es-item-text">Batch 1 — Chocolates &amp; Galletas: Data annotation (labeling, model training and results)</div>
+          <div class="es-item-text">Batch 1 — Chocolates &amp; Galletas</div>
+        </div>
+      </div>
+
+      <div class="es-item-row" style="padding-left:28px;">
+        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">1.</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Nestlé Chile field users to capture additional on-shelf photos for products that did not reach the 100-photo minimum</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">10 Jun</span>
+      </div>
+
+      <div class="es-item-row" style="padding-left:28px;">
+        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">2.</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Delivery of competitor SKU dimensions</div>
         </div>
         <span class="es-item-owner">TELUS</span>
-        <span class="es-item-date">3 Jun</span>
+        <span class="es-item-date">17 Jun</span>
       </div>
 
       <div class="es-item-row">
         <span class="es-arrow">▸</span>
         <div class="es-item-body">
-          <div class="es-item-text">Batch 2 — Cafe &amp; Culinarios: Defining business rules of the categories</div>
-          <div style="margin-top:6px; font-size:12px; color:#E65100; font-weight:600;">In progress — completion ETA 29 May.</div>
+          <div class="es-item-text">Batch 2 — Cafe &amp; Culinarios</div>
         </div>
-        <span class="es-item-owner">All</span>
-        <span class="es-item-date">29 May</span>
+      </div>
+
+      <div class="es-item-row" style="padding-left:28px;">
+        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">1.</span>
+        <div class="es-item-body">
+          <div class="es-item-text">TELUS vendor to perform product catalogue analysis</div>
+        </div>
+        <span class="es-item-owner">SoftServe</span>
+        <span class="es-item-date">9 Jun</span>
+      </div>
+
+      <div class="es-item-row" style="padding-left:28px;">
+        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">2.</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Joaquin to provide feedback for "Defining business rules of the categories" for Culinarios products</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">2 Jun</span>
       </div>
 
     </div>
@@ -2910,34 +3191,9 @@ body {
       <div class="es-item-row">
         <span class="es-warn">⚠</span>
         <div class="es-item-body">
-          <div class="es-item-text">Decision required: some products do not have the minimum number of on-shelf photos for accurate training. These are competitor products, not Nestlé SKUs. Two options are available:</div>
+          <div class="es-item-text">Apply full pressure and escalation to ensure sales representatives capture the additional on-shelf photos required for products that have not yet reached the 100-photo minimum</div>
         </div>
         <span class="es-item-owner">Nestlé Chile</span>
-      </div>
-
-      <div class="es-item-row" style="padding-left:28px;">
-        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">1.</span>
-        <div class="es-item-body">
-          <div class="es-item-text">Pause training to capture more photos now — products in scope will be recognized, but puts the current go-live date at risk.</div>
-        </div>
-      </div>
-
-      <div class="es-item-row" style="padding-left:28px;">
-        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">2.</span>
-        <div class="es-item-body">
-          <div class="es-item-text">Go live on schedule with products that have enough on-shelf photos, then run a second training round later in the project.</div>
-        </div>
-      </div>
-
-      <div style="margin: 8px 0 0 46px; padding: 12px 14px; background: #FFF3E0; border-left: 4px solid #E65100; border-radius: 0 6px 6px 0;">
-        <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase; color: #C75300; margin-bottom: 6px;">TELUS Recommendation &middot; Update</div>
-        <div style="font-size: 12px; color: #8B3A00; line-height: 1.55; font-weight: 500;">
-          Following Nestlé Chile's request to train products with fewer than the 100-photo minimum, we engaged with our vendor on technical feasibility and recommended a hybrid approach back to the market. Training at a lower count (down to approximately 80 photos) is technically possible, however accuracy cannot be guaranteed in advance, and proceeding below the threshold would require an SOW amendment excluding affected products from the 95% contractual accuracy commitment, a direction we do not recommend.
-          <br><br>
-          Instead, we proposed a short-term collaborative effort: Nestlé identifies the priority products for Batch 1, José Luis (with TELUS support) creates a simple field collection tool, and all 47 field users capture photos of the chocolate shelf during normal store visits. This is expected to close the photo gap within approximately one week and would extend Batch 1 go-live by the same period, in exchange for delivering at the contractually committed accuracy level and avoiding downstream recognition issues.
-          <br><br>
-          <strong>Awaiting Nestlé Chile's response.</strong>
-        </div>
       </div>
 
     </div>
@@ -2953,16 +3209,16 @@ body {
       <div class="section-title">Key Risks</div>
 
       <div class="es-item-row">
-        <span class="es-warn">⚠</span>
+        <span class="es-check">✔</span>
         <div class="es-item-body">
           <div class="es-item-text"><strong style="color:var(--telus-purple);">Batch 1 — Insufficient on-shelf photos for competitor SKUs</strong></div>
           <div style="margin-top:6px; font-size:12px; color:var(--text-body); line-height:1.6;">
-            <strong>Status:</strong> Open &nbsp;|&nbsp; <strong>Impact:</strong> Low<br>
-            <strong>Description:</strong> 20% of Batch 1 SKUs do not have the minimum 100 on-shelf photos required for product training. This could impact Batch 1 Go Live date, currently scheduled on 23 Jun. All affected products are competitor SKUs, not Nestlé SKUs. Next week we will work with the market to determine how they want to proceed.<br><br>
-            <strong>Mitigation:</strong> TELUS to work with SSBS to determine if we can proceed with training of products with less than 100 photos, and if yes, what the minimum photo count would be to achieve an acceptable level of accuracy. Once David has this information, he will share it with Nestlé Chile and they will make a decision from there. ETA: Wednesday 26 May.
+            <strong>Status:</strong> Closed &nbsp;|&nbsp; <strong>Impact:</strong> Medium<br>
+            <strong>Description:</strong> 20% of Batch 1 SKUs did not have the minimum 100 on-shelf photos required for product training. This could have impacted the Batch 1 Go-Live date, currently scheduled for 23 Jun. All affected products were competitor SKUs, not Nestlé SKUs.<br><br>
+            <strong>Mitigation:</strong> Nestlé Chile will have their field users capture additional photos via a dedicated form over a period of one week.
           </div>
         </div>
-        <span style="background:#FFF3E0; color:#E65100; font-size:10px; font-weight:800; padding:2px 7px; border-radius:3px; white-space:nowrap; align-self:flex-start; margin-top:2px;">Open</span>
+        <span style="background:#E8F5E9; color:var(--telus-accessible-green); font-size:10px; font-weight:800; padding:2px 7px; border-radius:3px; white-space:nowrap; align-self:flex-start; margin-top:2px;">Closed</span>
       </div>
 
     </div>
@@ -2981,90 +3237,50 @@ body {
     <div class="page-header">
       <div class="left">
         <h1>Nestlé Chile TIR | Go-Live Activity Dashboard</h1>
-        <div class="sub">Go-Live Activity Report &nbsp;|&nbsp; Apr 15 – May 25, 2026</div>
+        <div class="sub">Go-Live Activity Report &nbsp;|&nbsp; Apr 15 – Jun 1, 2026</div>
       </div>
     </div>
 
     <!-- WEEKLY SUMMARY CARDS -->
-    <div style="display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-bottom:28px;">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px;">
 
-      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-purple);border-radius:10px;padding:10px;">
-        <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">Week 1 &nbsp;<span style="font-weight:500;color:var(--text-muted);">Apr 15–17</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">74</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-accessible-green);">99%</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Done</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">69</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:#E65100;">1</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Prog</div></div>
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-purple);border-radius:10px;padding:16px;">
+        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--telus-purple);margin-bottom:10px;">April &nbsp;<span style="font-weight:500;color:var(--text-muted);">Apr 15–30</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">221</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-accessible-green);">99%</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Complete</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">211</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:#E65100;">1</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Progress</div></div>
         </div>
       </div>
 
-      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:10px;">
-        <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">Week 2 &nbsp;<span style="font-weight:500;color:var(--text-muted);">Apr 20–24</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">88</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Done</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">83</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Prog</div></div>
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:16px;">
+        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--telus-purple);margin-bottom:10px;">May 4–22 &nbsp;<span style="font-weight:500;color:var(--text-muted);">Early May</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">280</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Complete</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">272</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:#E65100;">1</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Progress</div></div>
         </div>
       </div>
 
-      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:10px;">
-        <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">Week 3 &nbsp;<span style="font-weight:500;color:var(--text-muted);">Apr 27–30</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">59</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Done</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">59</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Prog</div></div>
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:16px;">
+        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--telus-purple);margin-bottom:10px;">Week &nbsp;<span style="font-weight:500;color:var(--text-muted);">May 25–29</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">90</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Complete</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">90</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Progress</div></div>
         </div>
       </div>
 
-      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:10px;">
-        <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">Week 4 &nbsp;<span style="font-weight:500;color:var(--text-muted);">May 4–7</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">48</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Done</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">47</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Prog</div></div>
-        </div>
-      </div>
-
-      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:10px;">
-        <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">Week 5 &nbsp;<span style="font-weight:500;color:var(--text-muted);">May 8–11</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">28</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Done</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">27</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Prog</div></div>
-        </div>
-      </div>
-
-      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-purple);border-radius:10px;padding:10px;">
-        <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">Week 6 &nbsp;<span style="font-weight:500;color:var(--text-muted);">May 12–15</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">77</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-accessible-green);">96%</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Done</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">75</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:#E65100;">1</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Prog</div></div>
-        </div>
-      </div>
-
-      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:10px;">
-        <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">Week 7 &nbsp;<span style="font-weight:500;color:var(--text-muted);">May 18–22</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">126</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Done</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">122</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Prog</div></div>
-        </div>
-      </div>
-
-      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-green);border-radius:10px;padding:10px;">
-        <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">Week 8 &nbsp;<span style="font-weight:500;color:var(--text-muted);">May 25</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">13</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Done</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--telus-purple);">13</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
-          <div><div style="font-size:16px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:8px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Prog</div></div>
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-purple);border-radius:10px;padding:16px;">
+        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--telus-purple);margin-bottom:10px;">Week &nbsp;<span style="font-weight:500;color:var(--text-muted);">Jun 1</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">6</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Visits</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-accessible-green);">100%</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Complete</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--telus-purple);">6</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">Customers</div></div>
+          <div><div style="font-size:22px;font-weight:800;color:var(--text-subtle);">0</div><div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;">In Progress</div></div>
         </div>
       </div>
 
@@ -3088,80 +3304,40 @@ body {
         </thead>
         <tbody>
           <tr style="background:#F5F0FA;">
-            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">April &mdash; Apr 15–30 (Weeks 1–3 Combined)</td>
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">April &mdash; Apr 15–30</td>
           </tr>
           <tr style="font-style:italic;">
             <td>Apr 15–30</td><td>211</td><td>221</td><td>221</td><td>220</td><td class="in-progress-val">1</td><td>119</td><td>332</td>
           </tr>
           <tr style="background:#F5F0FA;">
-            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week 4 &mdash; May 4–7</td>
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">May (Early) &mdash; May 4–22</td>
           </tr>
-          <tr><td>May 4</td><td>11</td><td>11</td><td>11</td><td>11</td><td class="zero-val">0</td><td>6</td><td>16</td></tr>
-          <tr><td>May 5</td><td>11</td><td>11</td><td>11</td><td>11</td><td class="zero-val">0</td><td>6</td><td>18</td></tr>
-          <tr><td>May 6</td><td>16</td><td>17</td><td>17</td><td>17</td><td class="zero-val">0</td><td>8</td><td>29</td></tr>
-          <tr><td>May 7</td><td>9</td><td>9</td><td>9</td><td>9</td><td class="zero-val">0</td><td>7</td><td>15</td></tr>
-          <tr style="background:#F5F0FA;">
-            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week 5 &mdash; May 8–11</td>
+          <tr style="font-style:italic;">
+            <td>May 4–22</td><td>272</td><td>280</td><td>280</td><td>278</td><td class="in-progress-val">1</td><td>156</td><td>459</td>
           </tr>
-          <tr><td>May 8</td><td>8</td><td>8</td><td>8</td><td>8</td><td class="zero-val">0</td><td>8</td><td>17</td></tr>
-          <tr><td>May 11</td><td>19</td><td>20</td><td>20</td><td>19</td><td class="zero-val">0</td><td>8</td><td>29</td></tr>
           <tr style="background:#F5F0FA;">
-            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week 6 &mdash; May 12–15</td>
-          </tr>
-          <tr><td>May 12</td><td>16</td><td>16</td><td>16</td><td>16</td><td class="zero-val">0</td><td>10</td><td>26</td></tr>
-          <tr><td>May 13</td><td>17</td><td>17</td><td>17</td><td>17</td><td class="zero-val">0</td><td>13</td><td>28</td></tr>
-          <tr><td>May 14</td><td>20</td><td>20</td><td>20</td><td>20</td><td class="zero-val">0</td><td>15</td><td>27</td></tr>
-          <tr><td>May 15</td><td>22</td><td>24</td><td>24</td><td>23</td><td class="in-progress-val">1</td><td>13</td><td>30</td></tr>
-          <tr style="background:#F5F0FA;">
-            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week 7 &mdash; May 18–22</td>
-          </tr>
-          <tr><td>May 18</td><td>29</td><td>33</td><td>33</td><td>33</td><td class="zero-val">0</td><td>16</td><td>50</td></tr>
-          <tr><td>May 19</td><td>49</td><td>49</td><td>49</td><td>49</td><td class="zero-val">0</td><td>21</td><td>93</td></tr>
-          <tr><td>May 20</td><td>30</td><td>30</td><td>30</td><td>30</td><td class="zero-val">0</td><td>18</td><td>56</td></tr>
-          <tr><td>May 22</td><td>14</td><td>14</td><td>14</td><td>14</td><td class="zero-val">0</td><td>8</td><td>23</td></tr>
-          <tr style="background:#F5F0FA;">
-            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week 8 &mdash; May 25</td>
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week &mdash; May 25–29</td>
           </tr>
           <tr><td>May 25</td><td>13</td><td>13</td><td>13</td><td>13</td><td class="zero-val">0</td><td>8</td><td>20</td></tr>
+          <tr><td>May 26</td><td>26</td><td>26</td><td>26</td><td>26</td><td class="zero-val">0</td><td>14</td><td>38</td></tr>
+          <tr><td>May 27</td><td>21</td><td>21</td><td>21</td><td>21</td><td class="zero-val">0</td><td>7</td><td>30</td></tr>
+          <tr><td>May 28</td><td>24</td><td>24</td><td>24</td><td>24</td><td class="zero-val">0</td><td>10</td><td>38</td></tr>
+          <tr><td>May 29</td><td>6</td><td>6</td><td>6</td><td>6</td><td class="zero-val">0</td><td>5</td><td>8</td></tr>
+          <tr style="background:#F5F0FA;">
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">Week &mdash; Jun 1</td>
+          </tr>
+          <tr><td>Jun 1</td><td>6</td><td>6</td><td>6</td><td>6</td><td class="zero-val">0</td><td>6</td><td>10</td></tr>
         </tbody>
       </table>
     </div>
 
     <!-- MONTHLY PACE -->
     <div class="section-label">Monthly Visit Pace vs Target</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+    <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;">
 
-      <!-- APRIL (CLOSED) -->
+      <!-- JUNE (IN PROGRESS) -->
       <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-radius:10px;padding:20px;">
-        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.7px;color:var(--telus-purple);margin-bottom:14px;">April (Closed) &mdash; Pro-Rated from Apr 15</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;">
-          <div style="text-align:center;">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Pro-Rated Target</div>
-            <div style="font-size:28px;font-weight:800;color:var(--telus-purple);">245</div>
-            <div style="font-size:10px;color:var(--text-muted);">12 of 22 working days</div>
-          </div>
-          <div style="text-align:center;">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Actual Visits</div>
-            <div style="font-size:28px;font-weight:800;color:#E65100;">220</div>
-            <div style="font-size:10px;color:var(--text-muted);">90% of target</div>
-          </div>
-          <div style="text-align:center;">
-            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Gap</div>
-            <div style="font-size:28px;font-weight:800;color:#D32F2F;">-25</div>
-            <div style="font-size:10px;color:var(--text-muted);">visits short</div>
-          </div>
-        </div>
-        <div style="background:var(--border-light);border-radius:6px;height:20px;overflow:hidden;">
-          <div style="height:100%;width:90%;background:var(--telus-purple);border-radius:6px;display:flex;align-items:center;padding-left:8px;">
-            <span style="font-size:10px;font-weight:800;color:#fff;">220 visits</span>
-          </div>
-        </div>
-        <div style="margin-top:6px;font-size:11px;color:var(--text-muted);">90% of 245 pro-rated target &mdash; 25 visits short at month close.</div>
-      </div>
-
-      <!-- MAY (IN PROGRESS) -->
-      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-radius:10px;padding:20px;">
-        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.7px;color:var(--telus-purple);margin-bottom:14px;">May (In Progress) &mdash; 15 Days Recorded</div>
+        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.7px;color:var(--telus-purple);margin-bottom:14px;">June (In Progress) &mdash; 1 Day Recorded</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;">
           <div style="text-align:center;">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Full Month Target</div>
@@ -3170,21 +3346,19 @@ body {
           </div>
           <div style="text-align:center;">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Visits So Far</div>
-            <div style="font-size:28px;font-weight:800;color:var(--telus-purple);">292</div>
-            <div style="font-size:10px;color:var(--text-muted);">15 of 21 working days</div>
+            <div style="font-size:28px;font-weight:800;color:var(--telus-purple);">6</div>
+            <div style="font-size:10px;color:var(--text-muted);">1 of 21 working days</div>
           </div>
           <div style="text-align:center;">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Daily Avg Needed</div>
-            <div style="font-size:28px;font-weight:800;color:#E65100;">26.3</div>
+            <div style="font-size:28px;font-weight:800;color:var(--telus-accessible-green);">22.2</div>
             <div style="font-size:10px;color:var(--text-muted);">visits/day to hit 450</div>
           </div>
         </div>
         <div style="background:var(--border-light);border-radius:6px;height:20px;overflow:hidden;">
-          <div style="height:100%;width:64.9%;background:var(--telus-purple);border-radius:6px;display:flex;align-items:center;padding-left:8px;">
-            <span style="font-size:10px;font-weight:800;color:#fff;">292 visits</span>
-          </div>
+          <div style="height:100%;width:1.3%;background:var(--telus-purple);border-radius:6px;min-width:6px;"></div>
         </div>
-        <div style="margin-top:6px;font-size:11px;color:var(--text-muted);">Need 26.3 visits/day across remaining 6 days to hit 450 target. Current avg: 19.5/day.</div>
+        <div style="margin-top:6px;font-size:11px;color:var(--text-muted);">Too early to project. Need 22.2 visits/day across remaining 20 days to hit 450 target.</div>
       </div>
 
     </div>
@@ -3214,10 +3388,10 @@ body {
     <!-- SUMMARY METRICS -->
     <div class="section-label">Summary</div>
     <div class="ua-metric-grid">
-      <div class="ua-metric-card"><div class="ua-metric-val">47</div><div class="ua-metric-lbl">Total users</div><div class="ua-metric-sub">Provisioned in system</div></div>
-      <div class="ua-metric-card green"><div class="ua-metric-val">44</div><div class="ua-metric-lbl">Live users</div><div class="ua-metric-sub">At least 1 visit recorded</div></div>
-      <div class="ua-metric-card amber"><div class="ua-metric-val">3</div><div class="ua-metric-lbl">Zero visits</div><div class="ua-metric-sub">No activity recorded</div></div>
-      <div class="ua-metric-card"><div class="ua-metric-val">520</div><div class="ua-metric-lbl">Total visits</div><div class="ua-metric-sub">223 April &nbsp;|&nbsp; 297 May</div></div>
+      <div class="ua-metric-card"><div class="ua-metric-val">44</div><div class="ua-metric-lbl">Total users</div><div class="ua-metric-sub">Provisioned in system</div></div>
+      <div class="ua-metric-card green"><div class="ua-metric-val">43</div><div class="ua-metric-lbl">Live users</div><div class="ua-metric-sub">At least 1 visit recorded</div></div>
+      <div class="ua-metric-card amber"><div class="ua-metric-val">1</div><div class="ua-metric-lbl">Zero visits</div><div class="ua-metric-sub">No activity recorded</div></div>
+      <div class="ua-metric-card"><div class="ua-metric-val">599</div><div class="ua-metric-lbl">Total visits</div><div class="ua-metric-sub">223 Apr &nbsp;|&nbsp; 370 May &nbsp;|&nbsp; 6 Jun</div></div>
     </div>
 
     <!-- USER ADOPTION GAUGES -->
@@ -3226,51 +3400,52 @@ body {
       <div class="ua-gauge-card">
         <div class="ua-gauge-card-title">% of total users live</div>
         <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:10px;">
-          <span class="ua-gauge-big purple">94%</span>
+          <span class="ua-gauge-big purple">98%</span>
         </div>
-        <div class="ua-gauge-sub">44 of 47 provisioned users have recorded at least one visit</div>
-        <div class="ua-gauge-track"><div class="ua-gauge-fill purple" style="width:94%"></div></div>
+        <div class="ua-gauge-sub">43 of 44 provisioned users have recorded at least one visit</div>
+        <div class="ua-gauge-track"><div class="ua-gauge-fill purple" style="width:98%"></div></div>
       </div>
       <div class="ua-gauge-card">
         <div class="ua-gauge-card-title">Users with zero visits</div>
         <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:10px;">
-          <span class="ua-gauge-big amber">6%</span>
+          <span class="ua-gauge-big amber">2%</span>
         </div>
-        <div class="ua-gauge-sub">3 users provisioned but have no recorded visit activity</div>
-        <div class="ua-gauge-track"><div class="ua-gauge-fill amber" style="width:6%"></div></div>
+        <div class="ua-gauge-sub">1 user provisioned but has no recorded visit activity</div>
+        <div class="ua-gauge-track"><div class="ua-gauge-fill amber" style="width:2%"></div></div>
       </div>
     </div>
 
     <!-- TOP 10 USERS -->
     <!-- USERS WITH NO VISITS -->
     <div class="section-label">Users with No Visits</div>
-    <div class="ua-table-wrap" style="margin-bottom:28px;">
+    <div class="ua-table-wrap" style="margin-bottom:10px;">
       <table>
         <thead>
-          <tr><th>Name</th><th>April</th><th>May</th><th>Total Visits</th></tr>
+          <tr><th>Name</th><th>Apr</th><th>May</th><th>Jun</th><th>Total Visits</th></tr>
         </thead>
         <tbody>
-          <tr class="zero-row"><td>Farias, Cecilia</td><td class="zero-val">0</td><td class="zero-val">0</td><td>0</td></tr>
-          <tr class="zero-row"><td>Pineda, Walter</td><td class="zero-val">0</td><td class="zero-val">0</td><td>0</td></tr>
-          <tr class="zero-row"><td>Torrejon, Laura</td><td class="zero-val">0</td><td class="zero-val">0</td><td>0</td></tr>
+          <tr class="zero-row"><td>Torrejon, Laura</td><td class="zero-val">0</td><td class="zero-val">0</td><td class="zero-val">0</td><td>0</td></tr>
         </tbody>
       </table>
+    </div>
+    <div style="font-size:11px; color:var(--text-muted); font-style:italic; margin-bottom:28px; padding:8px 12px; background:var(--bg-section); border-radius:6px; border-left:3px solid var(--border-light);">
+      Note: Cecilia Farias has a user ID but is an admin and is not included in the total users list.
     </div>
 
     <!-- TOP 10 USERS -->
     <div class="section-label">Top 10 users by total visits</div>
     <div class="ua-progress-card">
       <div class="ua-progress-card-title">Visit distribution — active users</div>
-      <div class="ua-progress-row"><div class="ua-progress-label">Brebi, Samuel</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:100%"></div></div><div class="ua-progress-count">35</div></div>
-      <div class="ua-progress-row"><div class="ua-progress-label">Jerez, Nolfa</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:83%"></div></div><div class="ua-progress-count">29</div></div>
-      <div class="ua-progress-row"><div class="ua-progress-label">Castillo, Luis</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:69%"></div></div><div class="ua-progress-count">24</div></div>
-      <div class="ua-progress-row"><div class="ua-progress-label">Ogaz, Cristian</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:63%"></div></div><div class="ua-progress-count">22</div></div>
-      <div class="ua-progress-row"><div class="ua-progress-label">Muñoz Hidalgo, Cesar</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:60%"></div></div><div class="ua-progress-count">21</div></div>
-      <div class="ua-progress-row"><div class="ua-progress-label">Ulloa, Daniel</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:60%"></div></div><div class="ua-progress-count">21</div></div>
-      <div class="ua-progress-row"><div class="ua-progress-label">Carvallo Escobar, W.</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:51%"></div></div><div class="ua-progress-count">18</div></div>
-      <div class="ua-progress-row"><div class="ua-progress-label">Campos, Juan</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:49%"></div></div><div class="ua-progress-count">17</div></div>
-      <div class="ua-progress-row"><div class="ua-progress-label">Duran Sanhueza, C.</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:49%"></div></div><div class="ua-progress-count">17</div></div>
-      <div class="ua-progress-row"><div class="ua-progress-label">Rios, Raul</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:46%"></div></div><div class="ua-progress-count">16</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Brebi, Samuel</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:100%"></div></div><div class="ua-progress-count">39</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Jerez, Nolfa</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:82%"></div></div><div class="ua-progress-count">32</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Castillo, Luis</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:64%"></div></div><div class="ua-progress-count">25</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Ogaz, Cristian</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:56%"></div></div><div class="ua-progress-count">22</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Duran Sanhueza, C.</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:56%"></div></div><div class="ua-progress-count">22</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Muñoz Hidalgo, Cesar</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:54%"></div></div><div class="ua-progress-count">21</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Ulloa, Daniel</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:54%"></div></div><div class="ua-progress-count">21</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Carvallo Escobar, W.</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:46%"></div></div><div class="ua-progress-count">18</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Diaz, Norka Andrea</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:46%"></div></div><div class="ua-progress-count">18</div></div>
+      <div class="ua-progress-row"><div class="ua-progress-label">Rios, Raul</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:41%"></div></div><div class="ua-progress-count">16</div></div>
     </div>
 
     <!-- FULL USER TABLE -->
@@ -3284,56 +3459,54 @@ body {
     <div class="ua-table-wrap">
       <table>
         <thead>
-          <tr><th>Name</th><th>April</th><th>May</th><th>Total Visits</th></tr>
+          <tr><th>Name</th><th>Apr</th><th>May</th><th>Jun</th><th>Total Visits</th></tr>
         </thead>
         <tbody>
-          <tr><td>Alarcon, Miguel</td><td>5</td><td>10</td><td>15</td></tr>
-          <tr><td>Armijo, Katherine</td><td class="zero-val">0</td><td>5</td><td>5</td></tr>
-          <tr><td>Baeza, Jorge</td><td>3</td><td>4</td><td>7</td></tr>
-          <tr><td>Barria Sandoval, Juan Marcelo</td><td>1</td><td>8</td><td>9</td></tr>
-          <tr><td>Barrientos, Marcelo</td><td>4</td><td>10</td><td>14</td></tr>
-          <tr><td>Brebi, Samuel</td><td>19</td><td>16</td><td>35</td></tr>
-          <tr><td>Campos, Juan</td><td>6</td><td>11</td><td>17</td></tr>
-          <tr><td>Canas, Guillermo</td><td>1</td><td>13</td><td>14</td></tr>
-          <tr><td>Carvallo Escobar, Williams Eduardo</td><td>8</td><td>10</td><td>18</td></tr>
-          <tr><td>Castillo, Luis</td><td>11</td><td>13</td><td>24</td></tr>
-          <tr><td>Chacon, Andreina</td><td>6</td><td class="zero-val">0</td><td>6</td></tr>
-          <tr><td>Cisterna Marchesani, Marcela</td><td class="zero-val">0</td><td>2</td><td>2</td></tr>
-          <tr><td>Diaz, Norka Andrea</td><td>10</td><td>4</td><td>14</td></tr>
-          <tr><td>Díaz Calderón, Arturo David</td><td class="zero-val">0</td><td>5</td><td>5</td></tr>
-          <tr><td>Duran Sanhueza, Claudio</td><td>10</td><td>7</td><td>17</td></tr>
-          <tr><td>Espinoza Vega, Mario Fernando</td><td>1</td><td>6</td><td>7</td></tr>
-          <tr><td>Flores, Claudio</td><td>5</td><td>9</td><td>14</td></tr>
-          <tr><td>Gallegos, Hector</td><td>6</td><td>6</td><td>12</td></tr>
-          <tr><td>Gonzalez, Carlos</td><td class="zero-val">0</td><td>6</td><td>6</td></tr>
-          <tr><td>Gonzalez Moya, Marcelo Eduardo</td><td>1</td><td>7</td><td>8</td></tr>
-          <tr><td>Heger Artega, Hans Cristian</td><td>8</td><td>1</td><td>9</td></tr>
-          <tr><td>Jaspe, Maria</td><td>3</td><td>8</td><td>11</td></tr>
-          <tr><td>Jerez, Nolfa</td><td>17</td><td>12</td><td>29</td></tr>
-          <tr><td>Martínez Gutiérrez, Carlos Patricio</td><td>6</td><td>8</td><td>14</td></tr>
-          <tr><td>Miranda, Carlos</td><td>5</td><td>6</td><td>11</td></tr>
-          <tr><td>Muñoz Hidalgo, Cesar Antonio</td><td>15</td><td>6</td><td>21</td></tr>
-          <tr><td>Ocares, Raul</td><td class="zero-val">0</td><td>7</td><td>7</td></tr>
-          <tr><td>Ogaz, Cristian</td><td>13</td><td>9</td><td>22</td></tr>
-          <tr><td>Pasten, Miguel</td><td class="zero-val">0</td><td>9</td><td>9</td></tr>
-          <tr><td>Pereira, Marcelo</td><td>2</td><td>8</td><td>10</td></tr>
-          <tr><td>Reyes, Mariana</td><td>8</td><td class="zero-val">0</td><td>8</td></tr>
-          <tr><td>Rios, Raul</td><td>7</td><td>9</td><td>16</td></tr>
-          <tr><td>Rodriguez, Maravithova</td><td>2</td><td>8</td><td>10</td></tr>
-          <tr><td>Rozas, David</td><td>7</td><td>8</td><td>15</td></tr>
-          <tr><td>Sepulveda, Alberto</td><td>9</td><td>2</td><td>11</td></tr>
-          <tr><td>Silva Leiva, Yesenia Ximena</td><td class="zero-val">0</td><td>4</td><td>4</td></tr>
-          <tr><td>Soto, Catherine Andrea del Carmen</td><td class="zero-val">0</td><td>2</td><td>2</td></tr>
-          <tr><td>Soza Navarro, Rodrigo Javier</td><td>8</td><td class="zero-val">0</td><td>8</td></tr>
-          <tr><td>Torres, Oscar</td><td>2</td><td>9</td><td>11</td></tr>
-          <tr><td>Ulloa, Daniel</td><td>12</td><td>9</td><td>21</td></tr>
-          <tr><td>Ulloa Moscoso, Cristian Alejandro</td><td class="zero-val">0</td><td>6</td><td>6</td></tr>
-          <tr><td>Vega, Carlos</td><td class="zero-val">0</td><td>9</td><td>9</td></tr>
-          <tr><td>Vega, Jocelyn</td><td>2</td><td>5</td><td>7</td></tr>
-          <tr class="zero-row"><td>Farias, Cecilia</td><td class="zero-val">0</td><td class="zero-val">0</td><td>0</td></tr>
-          <tr class="zero-row"><td>Pineda, Walter</td><td class="zero-val">0</td><td class="zero-val">0</td><td>0</td></tr>
-          <tr class="zero-row"><td>Torrejon, Laura</td><td class="zero-val">0</td><td class="zero-val">0</td><td>0</td></tr>
-          <tr class="total-row"><td>Total</td><td>223</td><td>297</td><td>520</td></tr>
+          <tr><td>Alarcon, Miguel</td><td>5</td><td>10</td><td>1</td><td>16</td></tr>
+          <tr><td>Armijo, Katherine</td><td class="zero-val">0</td><td>6</td><td class="zero-val">0</td><td>6</td></tr>
+          <tr><td>Baeza, Jorge</td><td>3</td><td>6</td><td class="zero-val">0</td><td>9</td></tr>
+          <tr><td>Barria Sandoval, Juan Marcelo</td><td>1</td><td>8</td><td class="zero-val">0</td><td>9</td></tr>
+          <tr><td>Barrientos, Marcelo</td><td>4</td><td>10</td><td class="zero-val">0</td><td>14</td></tr>
+          <tr><td>Brebi, Samuel</td><td>19</td><td>19</td><td>1</td><td>39</td></tr>
+          <tr><td>Campos, Juan</td><td>6</td><td>11</td><td class="zero-val">0</td><td>17</td></tr>
+          <tr><td>Canas, Guillermo</td><td>1</td><td>13</td><td class="zero-val">0</td><td>14</td></tr>
+          <tr><td>Carvallo Escobar, Williams Eduardo</td><td>8</td><td>9</td><td>1</td><td>18</td></tr>
+          <tr><td>Castillo, Luis</td><td>11</td><td>13</td><td>1</td><td>25</td></tr>
+          <tr><td>Chacon, Andreina</td><td>6</td><td class="zero-val">0</td><td class="zero-val">0</td><td>6</td></tr>
+          <tr><td>Cisterna Marchesani, Marcela</td><td class="zero-val">0</td><td>2</td><td class="zero-val">0</td><td>2</td></tr>
+          <tr><td>Diaz, Norka Andrea</td><td>10</td><td>8</td><td class="zero-val">0</td><td>18</td></tr>
+          <tr><td>Díaz Calderón, Arturo David</td><td class="zero-val">0</td><td>10</td><td class="zero-val">0</td><td>10</td></tr>
+          <tr><td>Duran Sanhueza, Claudio</td><td>10</td><td>12</td><td class="zero-val">0</td><td>22</td></tr>
+          <tr><td>Espinoza Vega, Mario Fernando</td><td>1</td><td>9</td><td class="zero-val">0</td><td>10</td></tr>
+          <tr><td>Flores, Claudio</td><td>5</td><td>10</td><td class="zero-val">0</td><td>15</td></tr>
+          <tr><td>Gallegos, Hector</td><td>6</td><td>11</td><td class="zero-val">0</td><td>17</td></tr>
+          <tr><td>Gonzalez, Carlos</td><td class="zero-val">0</td><td>7</td><td class="zero-val">0</td><td>7</td></tr>
+          <tr><td>Gonzalez Moya, Marcelo Eduardo</td><td>1</td><td>10</td><td class="zero-val">0</td><td>11</td></tr>
+          <tr><td>Heger Artega, Hans Cristian</td><td>8</td><td>7</td><td class="zero-val">0</td><td>15</td></tr>
+          <tr><td>Jaspe, Maria</td><td>3</td><td>8</td><td class="zero-val">0</td><td>11</td></tr>
+          <tr><td>Jerez, Nolfa</td><td>17</td><td>14</td><td>1</td><td>32</td></tr>
+          <tr><td>Martínez Gutiérrez, Carlos Patricio</td><td>6</td><td>8</td><td class="zero-val">0</td><td>14</td></tr>
+          <tr><td>Miranda, Carlos</td><td>5</td><td>6</td><td class="zero-val">0</td><td>11</td></tr>
+          <tr><td>Muñoz Hidalgo, Cesar Antonio</td><td>15</td><td>6</td><td class="zero-val">0</td><td>21</td></tr>
+          <tr><td>Ocares, Raul</td><td class="zero-val">0</td><td>7</td><td class="zero-val">0</td><td>7</td></tr>
+          <tr><td>Ogaz, Cristian</td><td>13</td><td>9</td><td class="zero-val">0</td><td>22</td></tr>
+          <tr><td>Pasten, Miguel</td><td class="zero-val">0</td><td>10</td><td class="zero-val">0</td><td>10</td></tr>
+          <tr><td>Pereira, Marcelo</td><td>2</td><td>8</td><td class="zero-val">0</td><td>10</td></tr>
+          <tr><td>Reyes, Mariana</td><td>8</td><td>8</td><td class="zero-val">0</td><td>16</td></tr>
+          <tr><td>Rios, Raul</td><td>7</td><td>9</td><td class="zero-val">0</td><td>16</td></tr>
+          <tr><td>Rodriguez, Maravithova</td><td>2</td><td>8</td><td class="zero-val">0</td><td>10</td></tr>
+          <tr><td>Rozas, David</td><td>7</td><td>10</td><td class="zero-val">0</td><td>17</td></tr>
+          <tr><td>Sepulveda, Alberto</td><td>9</td><td>2</td><td class="zero-val">0</td><td>11</td></tr>
+          <tr><td>Silva Leiva, Yesenia Ximena</td><td class="zero-val">0</td><td>8</td><td class="zero-val">0</td><td>8</td></tr>
+          <tr><td>Soto, Catherine Andrea del Carmen</td><td class="zero-val">0</td><td>8</td><td class="zero-val">0</td><td>8</td></tr>
+          <tr><td>Soza Navarro, Rodrigo Javier</td><td>8</td><td>8</td><td class="zero-val">0</td><td>16</td></tr>
+          <tr><td>Torres, Oscar</td><td>2</td><td>9</td><td class="zero-val">0</td><td>11</td></tr>
+          <tr><td>Ulloa, Daniel</td><td>12</td><td>9</td><td class="zero-val">0</td><td>21</td></tr>
+          <tr><td>Ulloa Moscoso, Cristian Alejandro</td><td class="zero-val">0</td><td>7</td><td class="zero-val">0</td><td>7</td></tr>
+          <tr><td>Vega, Carlos</td><td class="zero-val">0</td><td>10</td><td>1</td><td>11</td></tr>
+          <tr><td>Vega, Jocelyn</td><td>2</td><td>7</td><td class="zero-val">0</td><td>9</td></tr>
+          <tr class="zero-row"><td>Torrejon, Laura</td><td class="zero-val">0</td><td class="zero-val">0</td><td class="zero-val">0</td><td>0</td></tr>
+          <tr class="total-row"><td>Total</td><td>223</td><td>370</td><td>6</td><td>599</td></tr>
         </tbody>
       </table>
     </div>
@@ -3375,7 +3548,7 @@ body {
       </table>
     </div>
     <div style="margin-top:10px; font-size:11px; color:var(--text-muted); display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
-      <span>Today: <span style="color:var(--telus-accessible-green); font-weight:700;">May 25, 2026</span></span>
+      <span>Today: <span style="color:var(--telus-accessible-green); font-weight:700;">Jun 2, 2026</span></span>
       <span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:4px;background:var(--telus-purple);border-radius:2px;opacity:0.85;"></span> Complete</span>
       <span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:4px;background:var(--telus-green);border-radius:2px;"></span> In Progress</span>
       <span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:4px;background:var(--phase-upcoming);border-radius:2px;opacity:0.75;"></span> Upcoming</span>
@@ -3388,7 +3561,7 @@ body {
     <div class="batch-section">
       <div class="batch-header">
         <div class="b-name">Batch 1 — Chocolates + Galletas</div>
-        <div class="b-dates">Mar 19, 2026 – Jun 23, 2026 &nbsp;|&nbsp; Status: In Progress</div>
+        <div class="b-dates">19 Mar 2026 – 23 Jun 2026 &nbsp;|&nbsp; Status: In Progress</div>
       </div>
       <div class="batch-body">
 
@@ -3396,122 +3569,128 @@ body {
         <div class="batch-task-row">
           <div class="dot dot-complete"></div>
           <div class="bt-name" style="font-weight:700;">Market Categories Analysis</div>
-          <div class="bt-dates">Mar 19 – Apr 24, 2026</div>
+          <div class="bt-dates">19 Mar – 24 Apr 2026</div>
           <span class="bt-assigned">NESTLE / TELUS / SS</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-complete"></div>
-          <div class="bt-name">Preparation of base catalog per category</div>
-          <div class="bt-dates">Mar 19, 2026</div>
+          <div class="bt-name">Preparation of base catalogue per category — final SKU list and competitors</div>
+          <div class="bt-dates">19 Mar 2026</div>
           <span class="bt-assigned">ALL</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-complete"></div>
-          <div class="bt-name">Dataset preparation per category</div>
-          <div class="bt-dates">Mar 19, 2026</div>
+          <div class="bt-name">Dataset preparation per category for batch</div>
+          <div class="bt-dates">19 Mar 2026</div>
           <span class="bt-assigned">ALL</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-complete"></div>
-          <div class="bt-name">Defining business rules of the categories</div>
-          <div class="bt-dates">Apr 8 – 24, 2026</div>
+          <div class="bt-name">Defining the business rules of the categories in a batch</div>
+          <div class="bt-dates">8 – 24 Apr 2026</div>
           <span class="bt-assigned">ALL</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-complete"></div>
           <div class="bt-name">KPI validation per category</div>
-          <div class="bt-dates">Apr 24, 2026</div>
+          <div class="bt-dates">24 Apr 2026</div>
           <span class="bt-assigned">ALL</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-complete"></div>
           <div class="bt-name">Category for batch plan sign-off</div>
-          <div class="bt-dates">Apr 24, 2026</div>
+          <div class="bt-dates">24 Apr 2026</div>
           <span class="bt-assigned">ALL</span>
         </div>
 
         <!-- Scope Definition -->
         <div class="batch-task-row" style="background:#f9f9f9;">
-          <div class="dot dot-active"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name" style="font-weight:700;">Batch 1 — Scope Definition &amp; Category Analysis</div>
-          <div class="bt-dates">Apr 27 – Jun 10, 2026</div>
+          <div class="bt-dates">27 Apr – 10 Jun 2026</div>
           <span class="bt-assigned">SS / TELUS</span>
         </div>
         <div class="batch-task-row sub">
-          <div class="dot dot-active"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">Scope for NN Model Training</div>
-          <div class="bt-dates">Apr 27 – May 5, 2026</div>
+          <div class="bt-dates">27 Apr – 5 May 2026</div>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-complete"></div>
           <div class="bt-name">Provide SKU catalogue</div>
-          <div class="bt-dates">Apr 27, 2026</div>
+          <div class="bt-dates">27 Apr 2026</div>
           <span class="bt-assigned">TELUS</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-complete"></div>
-          <div class="bt-name">Provide Photos for training</div>
-          <div class="bt-dates">Apr 27 – 28, 2026</div>
+          <div class="bt-name">Provide photos for training</div>
+          <div class="bt-dates">27 – 28 Apr 2026</div>
           <span class="bt-assigned">TELUS</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-complete"></div>
           <div class="bt-name">Product catalogue analysis</div>
-          <div class="bt-dates">Apr 27 – May 1, 2026</div>
+          <div class="bt-dates">27 Apr – 1 May 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-complete"></div>
-          <div class="bt-name">Review changes in product catalogue scope</div>
-          <div class="bt-dates">May 4 – 5, 2026</div>
+          <div class="bt-name">Review changes in product catalogue scope — catalogue sign-off</div>
+          <div class="bt-dates">4 – 5 May 2026</div>
           <span class="bt-assigned">ALL</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-complete"></div>
           <div class="bt-name">Scope freeze for Batch 1</div>
-          <div class="bt-dates">May 5, 2026</div>
+          <div class="bt-dates">5 May 2026</div>
           <span class="bt-assigned">NESTLE / TELUS</span>
         </div>
         <div class="batch-task-row sub">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-active"></div>
           <div class="bt-name">NN Model Training — First Iteration</div>
-          <div class="bt-dates">May 6 – Jun 10, 2026</div>
+          <div class="bt-dates">6 May – 10 Jun 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-complete"></div>
           <div class="bt-name">Dataset Preparation for Training</div>
-          <div class="bt-dates">May 6, 2026</div>
+          <div class="bt-dates">6 May 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-active"></div>
-          <div class="bt-name">Data Annotation (Labeling, model training, results)</div>
-          <div class="bt-dates">May 7 – Jun 3, 2026</div>
+          <div class="bt-name">Data Annotation (Labeling, model training, statistic results)</div>
+          <div class="bt-dates">7 May – 3 Jun 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
+        </div>
+        <div class="batch-task-row sub2">
+          <div class="dot dot-active"></div>
+          <div class="bt-name">Capture photos for products not meeting 100 minimum facings</div>
+          <div class="bt-dates">3 – 9 Jun 2026</div>
+          <span class="bt-assigned">NESTLE CHILE</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Internal recognition testing</div>
-          <div class="bt-dates">Jun 4, 2026</div>
+          <div class="bt-dates">4 Jun 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Model prepared for 1st iteration</div>
-          <div class="bt-dates">Jun 4, 2026</div>
+          <div class="bt-dates">4 Jun 2026</div>
           <span class="bt-assigned">NESTLE / TELUS</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-not-started"></div>
-          <div class="bt-name">Error Analysis &amp; Scope Update + Next Steps</div>
-          <div class="bt-dates">Jun 5 – 9, 2026</div>
+          <div class="bt-name">Error Analysis &amp; Scope Update + Next Steps Definition</div>
+          <div class="bt-dates">5 – 9 Jun 2026</div>
           <span class="bt-assigned">NESTLE / SS / TELUS</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Next Iteration Planning</div>
-          <div class="bt-dates">Jun 10, 2026</div>
+          <div class="bt-dates">10 Jun 2026</div>
           <span class="bt-assigned">SS / NESTLE / TELUS</span>
         </div>
 
@@ -3519,49 +3698,49 @@ body {
         <div class="batch-task-row" style="background:#f9f9f9;">
           <div class="dot dot-not-started"></div>
           <div class="bt-name" style="font-weight:700;">Model Testing in UAT and Approval</div>
-          <div class="bt-dates">Jun 11 – 17, 2026</div>
+          <div class="bt-dates">11 – 17 Jun 2026</div>
           <span class="bt-assigned">NESTLE CHILE</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
-          <div class="bt-name">Deploy Model to UAT</div>
-          <div class="bt-dates">Jun 11, 2026</div>
+          <div class="bt-name">Deploy SSBS Model to UAT</div>
+          <div class="bt-dates">11 Jun 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Master Data Update (Product Category Setup)</div>
-          <div class="bt-dates">Jun 11 – 12, 2026</div>
+          <div class="bt-dates">11 – 12 Jun 2026</div>
           <span class="bt-assigned">TELUS / NESTLE CHILE</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
-          <div class="bt-name">Integration Testing from SOFTSERVE</div>
-          <div class="bt-dates">Jun 15, 2026</div>
+          <div class="bt-name">Integration Testing from SSBS</div>
+          <div class="bt-dates">15 Jun 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Integration Testing from TELUS</div>
-          <div class="bt-dates">Jun 15, 2026</div>
+          <div class="bt-dates">15 Jun 2026</div>
           <span class="bt-assigned">TELUS</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">FE Full Cycle Testing</div>
-          <div class="bt-dates">Jun 16, 2026</div>
+          <div class="bt-dates">16 Jun 2026</div>
           <span class="bt-assigned">TELUS</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
-          <div class="bt-name">Release Batch for Nestle Verification</div>
-          <div class="bt-dates">Jun 16, 2026</div>
+          <div class="bt-name">Release Batch for Nestlé Verification</div>
+          <div class="bt-dates">16 Jun 2026</div>
           <span class="bt-assigned">TELUS</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
-          <div class="bt-name">Nestle Chile Testing and Sign Off</div>
-          <div class="bt-dates">Jun 17, 2026</div>
+          <div class="bt-name">Nestlé Chile Testing and Sign-Off</div>
+          <div class="bt-dates">17 Jun 2026</div>
           <span class="bt-assigned">NESTLE CHILE</span>
         </div>
 
@@ -3569,38 +3748,36 @@ body {
         <div class="batch-task-row" style="background:#f9f9f9;">
           <div class="dot dot-not-started"></div>
           <div class="bt-name" style="font-weight:700;">Production Deployment</div>
-          <div class="bt-dates">Jun 18 – 22, 2026</div>
+          <div class="bt-dates">18 – 22 Jun 2026</div>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
-          <div class="bt-name">Confirm Go Live Date</div>
-          <div class="bt-dates">Jun 18, 2026</div>
+          <div class="bt-name">Confirm Go-Live Date</div>
+          <div class="bt-dates">18 Jun 2026</div>
           <span class="bt-assigned">NESTLE CHILE</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
-          <div class="bt-name">Deploy Model to Production</div>
-          <div class="bt-dates">Jun 19, 2026</div>
-          <span class="bt-assigned">TELUS / SS</span>
+          <div class="bt-name">Deploy SSBS Model to Production</div>
+          <div class="bt-dates">19 Jun 2026</div>
+          <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Master Data Update — Production</div>
-          <div class="bt-dates">Jun 19 – 22, 2026</div>
+          <div class="bt-dates">19 – 22 Jun 2026</div>
           <span class="bt-assigned">TELUS / NESTLE CHILE</span>
         </div>
 
-        <!-- Go-Live -->
         <div class="batch-golive">
           <span>🚀</span> Go-Live — Batch 1 &nbsp;
-          <span style="font-size:13px; color:var(--telus-accessible-green);">June 23, 2026</span>
+          <span style="font-size:13px; color:var(--telus-accessible-green);">23 Jun 2026</span>
           <span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLE</span>
         </div>
 
       </div>
     </div>
   </div>
-
   <!-- ======================== TAB 4: BATCH 2 PLANNER ======================== -->
   <div id="tab-batch2" class="tab-panel">
     <div class="batch-section">
@@ -3630,13 +3807,13 @@ body {
           <span class="bt-assigned">ALL</span>
         </div>
         <div class="batch-task-row sub">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-active"></div>
           <div class="bt-name">Defining business rules of the categories</div>
           <div class="bt-dates">21 – 25 May 2026</div>
           <span class="bt-assigned">ALL</span>
         </div>
         <div class="batch-task-row sub">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">KPI validation per category</div>
           <div class="bt-dates">26 May 2026</div>
           <span class="bt-assigned">NESTLE CHILE</span>
@@ -3650,24 +3827,24 @@ body {
 
         <!-- Scope Definition -->
         <div class="batch-task-row" style="background:#f9f9f9;">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-active"></div>
           <div class="bt-name" style="font-weight:700;">Batch 2 — Scope Definition &amp; Category Analysis</div>
           <div class="bt-dates">1 Jun – 17 Jul 2026</div>
           <span class="bt-assigned">SS / TELUS</span>
         </div>
         <div class="batch-task-row sub">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-active"></div>
           <div class="bt-name">Scope for NN Model Training</div>
           <div class="bt-dates">1 – 11 Jun 2026</div>
         </div>
         <div class="batch-task-row sub2">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">Provide SKU catalogue</div>
           <div class="bt-dates">1 Jun 2026</div>
           <span class="bt-assigned">TELUS</span>
         </div>
         <div class="batch-task-row sub2">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">Provide photos for training</div>
           <div class="bt-dates">1 – 2 Jun 2026</div>
           <span class="bt-assigned">TELUS</span>
@@ -3818,6 +3995,158 @@ body {
     </div>
   </div>
 
+  <!-- ======================== TAB 6: QC ======================== -->
+  <div id="tab-qc" class="tab-panel">
+
+    <div class="page-header">
+      <div class="left">
+        <h1>Nestlé Chile TIR | Monthly Quality Report</h1>
+        <div class="sub">Image Recognition Quality Report &nbsp;|&nbsp; 15 Apr – 15 May 2026</div>
+      </div>
+      <div class="right">
+        <div class="badge">TELUS ACG</div>
+        <div>F1 Score Target: ≥ 95%</div>
+        <div>Status: Above Target</div>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="qc-hero">
+      <div class="qc-f1">
+        <div class="qc-f1-label">Overall F1 Score</div>
+        <div class="qc-f1-score">97%</div>
+        <div class="qc-f1-caption">Recognition accuracy across all SKUs</div>
+        <div class="qc-f1-target">Above 95% target</div>
+      </div>
+      <div class="qc-summary">
+        <div class="qc-summary-title">SKU Performance Distribution</div>
+        <div class="qc-stats">
+          <div class="qc-stat"><div class="qc-num">78</div><div class="qc-lbl">Total SKUs</div></div>
+          <div class="qc-stat"><div class="qc-num" style="color:var(--telus-accessible-green);">55</div><div class="qc-lbl">Above 95%</div></div>
+          <div class="qc-stat"><div class="qc-num">17</div><div class="qc-lbl">80% to 94%</div></div>
+          <div class="qc-stat"><div class="qc-num" style="color:#D32F2F;">6</div><div class="qc-lbl">Below 80%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Distribution table -->
+    <div class="section-label">SKU Distribution by Performance Band</div>
+    <table class="qc-dist-table">
+      <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Total SKUs</th>
+          <th>&gt; 95%</th>
+          <th>90% – 94%</th>
+          <th>80% – 89%</th>
+          <th>&lt; 80%</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nestlé SKUs</td>
+          <td>21</td>
+          <td class="cell-strong">20</td>
+          <td class="cell-zero">0</td>
+          <td class="cell-zero">0</td>
+          <td class="cell-low">1</td>
+        </tr>
+        <tr>
+          <td>Competitor SKUs</td>
+          <td>57</td>
+          <td class="cell-strong">35</td>
+          <td class="cell-warn">15</td>
+          <td class="cell-warn">2</td>
+          <td class="cell-low">5</td>
+        </tr>
+        <tr class="total-row">
+          <td>Total</td>
+          <td>78</td>
+          <td>55</td>
+          <td>15</td>
+          <td>2</td>
+          <td>6</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Findings -->
+    <div class="section-label">Drivers of Lower Performance Cases</div>
+    <div class="qc-findings-grid">
+
+      <div class="qc-finding">
+        <div class="qc-finding-header">
+          <div class="qc-finding-title">Shelf Visibility</div>
+          <div class="qc-finding-count">8 SKUs</div>
+        </div>
+        <div class="qc-finding-desc">Products partially covered by neighboring items in shelf photos. Score improves as more facings are collected.</div>
+      </div>
+
+      <div class="qc-finding">
+        <div class="qc-finding-header">
+          <div class="qc-finding-title">Similar Design, Different Volumes</div>
+          <div class="qc-finding-count">8 SKUs</div>
+        </div>
+        <div class="qc-finding-desc">SKUs share visual identity with same-line products in different volumes. Reviewed individually and addressed in the next iteration.</div>
+      </div>
+
+      <div class="qc-finding">
+        <div class="qc-finding-header">
+          <div class="qc-finding-title">Outside QC Photo Sample</div>
+          <div class="qc-finding-count">3 SKUs</div>
+        </div>
+        <div class="qc-finding-desc">SKUs did not appear in the QC photo sample for this iteration. Sampling artifact, not a model performance issue.</div>
+      </div>
+
+      <div class="qc-finding">
+        <div class="qc-finding-header">
+          <div class="qc-finding-title">Rare Edge Cases</div>
+          <div class="qc-finding-count">2 SKUs</div>
+        </div>
+        <div class="qc-finding-desc">Uncommon recognition scenarios with limited examples. Performance improves as additional samples are collected.</div>
+      </div>
+
+      <div class="qc-finding">
+        <div class="qc-finding-header">
+          <div class="qc-finding-title">Back Side Packaging</div>
+          <div class="qc-finding-count">1 SKU</div>
+        </div>
+        <div class="qc-finding-desc">Product appeared from its back side on the shelf. Recognition improves as more back-facing samples are added.</div>
+      </div>
+
+      <div class="qc-finding">
+        <div class="qc-finding-header">
+          <div class="qc-finding-title">New Products</div>
+          <div class="qc-finding-count">1 SKU</div>
+        </div>
+        <div class="qc-finding-desc">Recently introduced design with a smaller sample base at this stage. Score normalises as photo coverage expands.</div>
+      </div>
+
+    </div>
+
+    <!-- Outlook -->
+    <div class="qc-outlook">
+      <div class="qc-outlook-title">Outlook</div>
+      <div class="qc-outlook-lead">No structural issues identified with the model or the data collection process. Performance is expected to improve naturally as the dataset matures.</div>
+      <div class="qc-outlook-list">
+        <div class="qc-outlook-item"><div class="icon">→</div><div class="txt">More shelf photos collected from the field</div></div>
+        <div class="qc-outlook-item"><div class="icon">→</div><div class="txt">Dataset coverage continues to expand</div></div>
+        <div class="qc-outlook-item"><div class="icon">→</div><div class="txt">Edge cases become better represented</div></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-left">
+        <div class="footer-badge">TELUS ACG</div>
+        <div class="footer-tagline">Let's make the future friendly</div>
+      </div>
+      <div class="footer-right">
+        Nestlé Chile TIR Implementation &nbsp;|&nbsp; TELUS Agriculture &amp; Consumer Goods
+      </div>
+    </div>
+
+  </div>
+
   <!-- FOOTER -->
   <div class="footer">
     <div class="footer-left">
@@ -3855,6 +4184,15 @@ body {
     </div>
   </div>
 
+  <!-- NHS TAB NAV -->
+  <div class="nhs-tab-nav">
+    <button class="nhs-tab-btn active" data-nhs-tab="nhs-tab-summary" onclick="showNhsTab('nhs-tab-summary')">Executive Summary</button>
+    <button class="nhs-tab-btn" data-nhs-tab="nhs-tab-raci" onclick="showNhsTab('nhs-tab-raci')">RACI Chart</button>
+  </div>
+
+  <!-- NHS TAB: EXECUTIVE SUMMARY -->
+  <div id="nhs-tab-summary" class="nhs-tab-panel active">
+
   <!-- STATUS & NEXT STEPS -->
   <div class="status-next-wrap">
     <div class="status-next-card">
@@ -3875,6 +4213,17 @@ body {
           <div class="status-next-text">Internal resourcing assignment</div>
           <div class="status-next-date">Complete &middot; 20 May</div>
         </div>
+        <div class="status-next-row status-recent">
+          <div class="status-next-dot"></div>
+          <div class="status-next-text">
+            Internal Nestlé Globe &amp; Europe / TELUS Ways of Working alignment and project start call was held. RACI was shared and agreed. Important point established:
+            <ul style="margin: 6px 0 0 0; padding-left: 18px;">
+              <li style="margin-bottom: 3px;">For Technical Questions, TELUS can reach out to the Market directly, with CC to ZEUR.</li>
+              <li>For other matters, TELUS will reach out to ZEUR and they will communicate with the Market.</li>
+            </ul>
+          </div>
+          <div class="status-next-date">1 Jun</div>
+        </div>
       </div>
     </div>
     <div class="status-next-card next">
@@ -3882,10 +4231,8 @@ body {
       <div class="status-next-body">
         <div class="status-next-row">
           <div class="status-next-dot"></div>
-          <div class="status-next-text">
-            Internal Nestlé Europe / TELUS Ways of Working alignment and project start call
-            <div class="status-next-comment"><span class="comment-label">Comment</span>David reached out to Matuesz on 20th (no response) and 26th May. <span class="comment-update">Update: Call scheduled for 1st June 2026</span></div>
-          </div>
+          <div class="status-next-text">Nestlé ZEUR to meet with the Market on 8th June to align on scope. Matuesz to follow up afterwards with TELUS.</div>
+          <div class="status-next-date">8 Jun</div>
         </div>
         <div class="status-next-row">
           <div class="status-next-dot"></div>
@@ -3958,8 +4305,7 @@ body {
         </div>
       </div>
     </div>
-
-  
+  </div>
 
   <!-- METRICS -->
   <div class="section-label">Key Metrics</div>
@@ -4052,6 +4398,205 @@ body {
     </tbody>
   </table>
 
+  </div>
+  <!-- END NHS TAB: EXECUTIVE SUMMARY -->
+
+  <!-- NHS TAB: RACI CHART -->
+  <div id="nhs-tab-raci" class="nhs-tab-panel">
+
+    <div class="raci-intro">
+      <div class="raci-intro-title">Nestlé UK&amp;I TIR — RACI Matrix</div>
+      <div class="raci-intro-sub">Roles and responsibilities across Nestlé Globe, Nestlé ZEUR, Nestlé UK&amp;I, and TELUS</div>
+    </div>
+
+    <div class="raci-meta">Working draft — to be confirmed by ZEUR, once aligned internally</div>
+
+    <div class="raci-table-wrap">
+      <table class="raci-table">
+        <thead>
+          <tr>
+            <th class="num">#</th>
+            <th>Task</th>
+            <th class="party">Nestlé Globe</th>
+            <th class="party">Nestlé ZEUR</th>
+            <th class="party">Nestlé UK&amp;I</th>
+            <th class="party">TELUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="group-row"><td colspan="6">Governance and Reporting</td></tr>
+          <tr>
+            <td class="num-cell">1</td>
+            <td class="task-cell">Schedule status meetings</td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip A">A</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip R">R</span></td>
+          </tr>
+          <tr>
+            <td class="num-cell">2</td>
+            <td class="task-cell">Schedule ad hoc meetings</td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip A">A</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip R">R</span></td>
+          </tr>
+          <tr>
+            <td class="num-cell">3</td>
+            <td class="task-cell">Maintain and update the Project Plan</td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip RA">R/A</span></td>
+          </tr>
+          <tr>
+            <td class="num-cell">4</td>
+            <td class="task-cell">Create status reports</td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip RA">R/A</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+          </tr>
+          <tr class="raci-note-row">
+            <td colspan="6"><div class="raci-note"><span class="raci-note-label">Note</span>To meet expectations of both stakeholders, separate Status Reports will be created by Mateusz and TELUS. However, both teams will be aligned with status before it is shared.</div></td>
+          </tr>
+          <tr>
+            <td class="num-cell">5</td>
+            <td class="task-cell">Distribute status reports</td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip RA">R/A</span></td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+          </tr>
+          <tr>
+            <td class="num-cell">6</td>
+            <td class="task-cell">Escalate issues to Nestlé Globe</td>
+            <td class="role-cell"><span class="raci-chip A">A</span></td>
+            <td class="role-cell"><span class="raci-chip R">R</span></td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+          </tr>
+          <tr>
+            <td class="num-cell">7</td>
+            <td class="task-cell">Risk and issue log ownership</td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip A">A</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip R">R</span></td>
+          </tr>
+          <tr>
+            <td class="num-cell">8</td>
+            <td class="task-cell">Document repository ownership</td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip A">A</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip R">R</span></td>
+          </tr>
+
+          <tr class="group-row"><td colspan="6">Market Engagement</td></tr>
+          <tr>
+            <td class="num-cell">9</td>
+            <td class="task-cell">Request information from the market</td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip RA">R/A</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+          </tr>
+          <tr class="raci-note-row">
+            <td colspan="6"><div class="raci-note"><span class="raci-note-label">Note</span>Technical questions — OK to reach out to the Market directly, with CC of ZEUR. Organization / Go Live Planning / Project Management — go to ZEUR directly (no market CC).</div></td>
+          </tr>
+          <tr>
+            <td class="num-cell">10</td>
+            <td class="task-cell">Email communication plan with the market</td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip RA">R/A</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+          </tr>
+          <tr>
+            <td class="num-cell">11</td>
+            <td class="task-cell">Provide key decisions required from the market</td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip RA">R/A</span></td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+          </tr>
+          <tr>
+            <td class="num-cell">12</td>
+            <td class="task-cell">Provide required approvals from the market</td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip RA">R/A</span></td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+          </tr>
+
+          <tr class="group-row"><td colspan="6">Delivery Decisions</td></tr>
+          <tr>
+            <td class="num-cell">13</td>
+            <td class="task-cell">Change request approval</td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip A">A</span></td>
+            <td class="role-cell"><span class="raci-chip R">R</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+          </tr>
+          <tr>
+            <td class="num-cell">14</td>
+            <td class="task-cell">UAT sign-off per batch</td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip RA">R/A</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+          </tr>
+          <tr>
+            <td class="num-cell">15</td>
+            <td class="task-cell">Go-live approval per batch</td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip RA">R/A</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+          </tr>
+          <tr>
+            <td class="num-cell">16</td>
+            <td class="task-cell">NN model training approval</td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip RA">R/A</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+          </tr>
+          <tr>
+            <td class="num-cell">17</td>
+            <td class="task-cell">KPI validation sign-off</td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip RA">R/A</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+          </tr>
+          <tr>
+            <td class="num-cell">18</td>
+            <td class="task-cell">Commercial escalations to TELUS Sales / PDM</td>
+            <td class="role-cell"><span class="raci-chip I">I</span></td>
+            <td class="role-cell"><span class="raci-chip R">R</span></td>
+            <td class="role-cell"><span class="raci-chip C">C</span></td>
+            <td class="role-cell"><span class="raci-chip A">A</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="raci-legend">
+      <div class="raci-legend-title">Legend</div>
+      <div class="raci-legend-grid">
+        <div class="raci-legend-item"><span class="raci-chip R">R</span><div><strong>Responsible</strong><br><span class="desc">Does the work.</span></div></div>
+        <div class="raci-legend-item"><span class="raci-chip A">A</span><div><strong>Accountable</strong><br><span class="desc">Owns the outcome (one per task).</span></div></div>
+        <div class="raci-legend-item"><span class="raci-chip C">C</span><div><strong>Consulted</strong><br><span class="desc">Two-way input before decision.</span></div></div>
+        <div class="raci-legend-item"><span class="raci-chip I">I</span><div><strong>Informed</strong><br><span class="desc">One-way update after decision.</span></div></div>
+        <div class="raci-legend-item"><span class="raci-chip RA">R/A</span><div><strong>Responsible + Accountable</strong><br><span class="desc">Same party does the work and owns it.</span></div></div>
+      </div>
+    </div>
+
+  </div>
+  <!-- END NHS TAB: RACI CHART -->
+
   <!-- FOOTER -->
   <div class="page-footer">
     <div class="footer-left">
@@ -4113,7 +4658,7 @@ body {
           <div class="status-next-text">
             Commencement of Project Activities
             <div class="status-next-owner">Owner: TELUS</div>
-            <div class="status-next-comment"><span class="comment-label">Comment</span>Awaiting next steps from Patricia. David reached out to Patricia on 18th, 26th without responses.</div>
+            <div class="status-next-comment"><span class="comment-label">Comment</span>Awaiting next steps from Patricia. David reached out to Patricia on 18th, 26th, 1st June without responses. <strong>Meeting with Patricia will be scheduled this week and this topic will be discussed.</strong></div>
           </div>
           <div class="status-next-date">18 May</div>
         </div>
@@ -4412,6 +4957,7 @@ body {
             Obtain detailed scope from Patricia
             <div class="status-next-comment"><span class="comment-label">Comment</span>TELUS reached out to Patricia on the 25th for more detail on scope. No response received yet.</div>
             <div class="status-next-comment"><span class="comment-label">Update 5/27</span>Patricia responded that her team has some capacity constraints at the moment and wants to review the project scope with Rogério before committing to any dates. Rogério is back from vacation on Monday (1st June), so she will follow up with us shortly after.</div>
+            <div class="status-next-comment"><span class="comment-label">Update 6/1</span>Meeting with Patricia will be scheduled this week and this topic will be discussed.</div>
             <div class="status-next-requested">
               <div class="requested-label">Requested Information</div>
               <ul>
@@ -4469,24 +5015,18 @@ body {
 <script>
 
 function navTo(sectionId) {
-  // Hide all sections
   document.querySelectorAll('.portfolio-section').forEach(s => s.classList.remove('active'));
-  // Show the target
   const target = document.getElementById(sectionId);
   if (target) target.classList.add('active');
-  // Update nav active state
   document.querySelectorAll('.portfolio-nav-link').forEach(l => l.classList.remove('active'));
   const link = document.querySelector('.portfolio-nav-link[data-target="' + sectionId + '"]');
   if (link) link.classList.add('active');
-  // Update hash without triggering jump
   if (history.replaceState) {
     history.replaceState(null, '', '#' + sectionId);
   }
-  // Scroll to top of viewport
   window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
-// On load, honor the hash
 document.addEventListener('DOMContentLoaded', function() {
   const hash = window.location.hash.substring(1);
   const valid = ['section-home', 'section-chile', 'section-nhs', 'section-froneri', 'section-brazil'];
@@ -4532,7 +5072,7 @@ const MONTHS = [
 
 const PROJECT_START = new Date(2025, 10, 1);
 const PROJECT_END   = new Date(2026, 8, 30);
-const TODAY         = new Date(2026, 4, 25);
+const TODAY         = new Date(2026, 5, 2);
 const TOTAL_DAYS    = (PROJECT_END - PROJECT_START) / 86400000;
 
 const GANTT_TASKS = [
@@ -4548,14 +5088,15 @@ const GANTT_TASKS = [
   { label: 'Market Go Live — Production',            start: '2026-04-15', end: '2026-04-15', status: 'Complete' },
   { label: 'Batch 1 — Chocolates + Galletas',        start: '2026-03-19', end: '2026-06-23', status: 'In Progress',  isPhase: true },
   { label: 'Categories Analysis (B1)',               start: '2026-03-19', end: '2026-04-24', status: 'Complete' },
-  { label: 'Scope Definition &amp; Catalogue Analysis', start: '2026-04-27', end: '2026-05-05', status: 'Complete' },
+  { label: 'Scope Definition & Catalogue Analysis', start: '2026-04-27', end: '2026-05-05', status: 'Complete' },
   { label: 'NN Model Training — First Iteration',    start: '2026-05-06', end: '2026-06-10', status: 'In Progress' },
   { label: 'Model Testing in UAT',                   start: '2026-06-11', end: '2026-06-17', status: 'Not Started' },
   { label: 'Production Deployment',                  start: '2026-06-18', end: '2026-06-22', status: 'Not Started' },
   { label: '🚀 Go-Live — Batch 1',                   start: '2026-06-23', end: '2026-06-23', status: 'Not Started',  isPhase: true },
-  { label: 'Batch 2 — Cafe + Culinarios',            start: '2026-05-20', end: '2026-07-30', status: 'Not Started',  isPhase: true },
-  { label: 'Categories Analysis + Scope (B2)',       start: '2026-05-20', end: '2026-07-17', status: 'Not Started' },
-  { label: 'Model Testing & Deployment (B2)',        start: '2026-07-20', end: '2026-07-29', status: 'Not Started' },
+  { label: 'Batch 2 — Cafe + Culinarios',            start: '2026-05-20', end: '2026-07-30', status: 'In Progress',  isPhase: true },
+  { label: 'Market Categories Analysis (B2)',        start: '2026-05-20', end: '2026-05-29', status: 'In Progress' },
+  { label: 'Scope Definition & Catalogue (B2)',  start: '2026-06-01', end: '2026-07-17', status: 'In Progress' },
+  { label: 'Model Testing & Deployment (B2)',    start: '2026-07-20', end: '2026-07-29', status: 'Not Started' },
   { label: '🚀 Go-Live — Batch 2',                   start: '2026-07-30', end: '2026-07-30', status: 'Not Started',  isPhase: true },
   { label: 'Batch 3 — 6 Categories',                 start: '2026-06-12', end: '2026-08-24', status: 'Not Started',  isPhase: true },
   { label: 'Categories Analysis + Scope (B3)',       start: '2026-06-12', end: '2026-08-11', status: 'Not Started' },
@@ -4648,6 +5189,15 @@ function buildGantt() {
 }
 
 
+    function showNhsTab(tabId) {
+      document.querySelectorAll('.nhs-tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nhs-tab-btn').forEach(b => b.classList.remove('active'));
+      const panel = document.getElementById(tabId);
+      if (panel) panel.classList.add('active');
+      const btn = document.querySelector('.nhs-tab-btn[data-nhs-tab="' + tabId + '"]');
+      if (btn) btn.classList.add('active');
+    }
+  
 
 
 </script>
