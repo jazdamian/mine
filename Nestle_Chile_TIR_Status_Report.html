@@ -45,7 +45,6 @@ body {
   padding: 32px 36px 40px;
 }
 
-/* HEADER */
 .header {
   display: flex;
   justify-content: space-between;
@@ -81,7 +80,6 @@ body {
   margin-top: 2px;
 }
 
-/* TAB NAV */
 .tab-nav {
   display: flex;
   gap: 4px;
@@ -111,7 +109,6 @@ body {
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 
-/* STATUS DOTS */
 .dot {
   display: inline-block;
   width: 9px;
@@ -125,7 +122,6 @@ body {
 .dot-upcoming  { background: var(--phase-upcoming); }
 .dot-not-started { background: #CCCCCC; }
 
-/* BADGES */
 .phase-badge {
   font-size: 10px;
   font-weight: 800;
@@ -142,7 +138,6 @@ body {
 .badge-upcoming   { background: #FFF3E0; color: var(--phase-upcoming); }
 .badge-not-started { background: #F5F5F5; color: #999; }
 
-/* GO-LIVE GRID */
 .golive-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -180,7 +175,6 @@ body {
   margin-top: 1px;
 }
 
-/* SECTION TITLE */
 .section-title {
   font-size: 13px;
   font-weight: 800;
@@ -192,7 +186,6 @@ body {
   border-bottom: 1px solid var(--border-light);
 }
 
-/* TABLE WRAP (Go-Live Activity) */
 .table-wrap {
   border-radius: 10px;
   overflow: hidden;
@@ -221,7 +214,6 @@ body {
 .in-progress-val { font-weight: 700; color: #E65100; }
 .zero-val { color: var(--text-subtle); }
 
-/* GANTT */
 .gantt-wrap { overflow-x: auto; }
 .gantt-table { width: 100%; min-width: 900px; border-collapse: collapse; }
 .gantt-table th {
@@ -272,7 +264,6 @@ body {
 }
 .gantt-cell-wrap { position: relative; width: 100%; height: 26px; }
 
-/* BATCH PLANNER */
 .batch-section { margin-bottom: 28px; }
 .batch-header {
   display: flex;
@@ -331,7 +322,6 @@ body {
   font-size: 12px;
 }
 
-/* FOOTER */
 .footer {
   margin-top: 36px;
   padding-top: 14px;
@@ -373,21 +363,53 @@ body {
 </style>
 </head>
 <body>
+<style>
+  .telus-home-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #4B286D;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    box-shadow: 0 2px 8px rgba(75, 40, 109, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .telus-home-btn:hover {
+    background: #7C53A5;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(75, 40, 109, 0.35);
+  }
+  .telus-home-btn svg { width: 14px; height: 14px; }
+  @media print { .telus-home-btn { display: none; } }
+</style>
+<a href="index.html" class="telus-home-btn" aria-label="Back to portfolio home">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+  Portfolio Home
+</a>
+
 <div class="page-wrap">
 
-  <!-- HEADER -->
   <div class="header">
     <div class="header-left">
       <h1>Nestlé Chile — TIR Implementation</h1>
-      <div class="subtitle"></div>
+      <div class="subtitle">Project Status Report for Nestle Chile TIR</div>
     </div>
     <div class="header-right">
       <div class="as-of">As of</div>
-      <div class="date-val">July 14, 2026</div>
+      <div class="date-val">July 21, 2026</div>
     </div>
   </div>
 
-  <!-- TAB NAV -->
   <div class="tab-nav">
     <button class="tab-btn active" onclick="showTab('golive', this)">Executive Summary</button>
     <button class="tab-btn" onclick="showTab('activity', this)">Go-Live Activity</button>
@@ -400,11 +422,9 @@ body {
     <button class="tab-btn" onclick="showTab('qc', this)">QC</button>
   </div>
 
-  <!-- ======================== TAB 1: EXECUTIVE SUMMARY ======================== -->
   <div id="tab-golive" class="tab-panel active">
 
     <style>
-      /* Executive Summary specific styles */
       .es-header-block {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -492,10 +512,8 @@ body {
       .es-warn  { color: #E65100; font-size: 13px; flex-shrink: 0; padding-top: 1px; }
     </style>
 
-    <!-- Header Information -->
     <div class="section-title">Executive Summary</div>
 
-    <!-- Project meta row -->
     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:16px; background:var(--bg-section); border:1px solid var(--border-light); border-radius:8px; padding:14px 20px;">
       <div style="display:flex; flex-direction:column; gap:2px;">
         <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; color:var(--text-muted);">Project Name</span>
@@ -503,7 +521,7 @@ body {
       </div>
       <div style="display:flex; flex-direction:column; gap:2px;">
         <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; color:var(--text-muted);">Reporting Period</span>
-        <span style="font-size:13px; font-weight:700; color:var(--text-primary);">Week Ending 14 Jul 2026</span>
+        <span style="font-size:13px; font-weight:700; color:var(--text-primary);">Week Ending 21 Jul 2026</span>
       </div>
       <div style="display:flex; flex-direction:column; gap:2px;">
         <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; color:var(--text-muted);">Prepared By</span>
@@ -511,7 +529,6 @@ body {
       </div>
     </div>
 
-    <!-- Go-Live Date Cards -->
     <div class="section-title">Go-Live Schedule</div>
     <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:28px;">
 
@@ -522,18 +539,18 @@ body {
         <div style="margin-top:8px; display:inline-block; background:#E8F5E9; color:var(--telus-accessible-green); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">✔ Complete</div>
       </div>
 
-      <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-purple); border-radius:10px; padding:14px 12px; text-align:center;">
-        <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-purple); margin-bottom:6px;">Batch 1</div>
-        <div style="font-size:18px; font-weight:800; color:var(--telus-purple); line-height:1.1;">14 Jul</div>
+      <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-accessible-green); border-radius:10px; padding:14px 12px; text-align:center;">
+        <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-accessible-green); margin-bottom:6px;">Batch 1</div>
+        <div style="font-size:18px; font-weight:800; color:var(--telus-accessible-green); line-height:1.1;">14 Jul</div>
         <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Chocolates + Galletas</div>
-        <div style="margin-top:8px; display:inline-block; background:#EDE8F3; color:var(--telus-purple); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">In Progress</div>
+        <div style="margin-top:8px; display:inline-block; background:#E8F5E9; color:var(--telus-accessible-green); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">&#10004; Complete</div>
       </div>
 
       <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid #E65100; border-radius:10px; padding:14px 12px; text-align:center;">
         <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-purple); margin-bottom:6px;">Batch 2</div>
-        <div style="font-size:18px; font-weight:800; color:var(--telus-purple); line-height:1.1;">19 Aug</div>
+        <div style="font-size:18px; font-weight:800; color:var(--telus-purple); line-height:1.1;">4 Sep</div>
         <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Cafe + Culinarios</div>
-        <div style="margin-top:8px; display:inline-block; background:#FFF3E0; color:#E65100; font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">Delayed, New Date Required</div>
+        <div style="margin-top:8px; display:inline-block; background:#FFF3E0; color:#E65100; font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">Date adjusted due to Nestle Chile Delays with feedback, Previous date was 19 Aug</div>
       </div>
 
       <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-purple); border-radius:10px; padding:14px 12px; text-align:center;">
@@ -547,117 +564,123 @@ body {
         <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-purple); margin-bottom:6px;">Batch 4</div>
         <div style="font-size:18px; font-weight:800; color:var(--telus-purple); line-height:1.1;">30 Sep</div>
         <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Purina</div>
-        <div style="margin-top:8px; display:inline-block; background:#F0EDF4; color:var(--text-muted); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">Not Started</div>
+        <div style="margin-top:8px; display:inline-block; background:#EDE8F3; color:var(--telus-purple); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">In Progress</div>
       </div>
 
     </div>
 
-    <!-- Accomplishments -->
     <div class="es-section">
       <div class="section-title">Accomplishments This Week</div>
 
       <div class="es-item-row">
         <span class="es-check">&#10004;</span>
         <div class="es-item-body">
-          <div class="es-item-text">Batch 1: Testing before Go-Live</div>
+          <div class="es-item-text">Batch 1: Successful Go Live</div>
         </div>
-        <span class="es-item-owner">Nestl&eacute; Chile</span>
-        <span class="es-item-date">6 &ndash; 10 Jul</span>
+        <span class="es-item-owner">All</span>
+        <span class="es-item-date">14 July</span>
       </div>
 
       <div class="es-item-row">
         <span class="es-check">&#10004;</span>
         <div class="es-item-body">
-          <div class="es-item-text">Batch 1: Master Data entry into Production</div>
+          <div class="es-item-text">Batch 2: Completed additional Questions</div>
         </div>
-        <span class="es-item-owner">Jose Luis</span>
-        <span class="es-item-date">6 &ndash; 10 Jul</span>
+        <span class="es-item-owner">Nestle Chile</span>
+        <span class="es-item-date">15 July</span>
       </div>
 
       <div class="es-item-row">
         <span class="es-check">&#10004;</span>
         <div class="es-item-body">
-          <div class="es-item-text">Batch 1: Go-Live date confirmation</div>
+          <div class="es-item-text">Batch 2: Scope freeze for Batch 2</div>
         </div>
-        <span class="es-item-owner">Jose Luis</span>
-        <span class="es-item-date">10 Jul</span>
+        <span class="es-item-owner">All</span>
+        <span class="es-item-date">16 July</span>
       </div>
 
       <div class="es-item-row">
         <span class="es-check">&#10004;</span>
         <div class="es-item-body">
-          <div class="es-item-text">Batch 1: Production configuration</div>
+          <div class="es-item-text">Batch 3: Product Catalogue Analysis</div>
         </div>
-        <span class="es-item-owner">Softserve</span>
-        <span class="es-item-date">13 Jul</span>
+        <span class="es-item-owner">SoftServe</span>
+        <span class="es-item-date">17 July</span>
       </div>
 
       <div class="es-item-row">
         <span class="es-check">&#10004;</span>
         <div class="es-item-body">
-          <div class="es-item-text">Batch 2: Started feedback for Batch 2 product analysis to Nestl&eacute; Chile</div>
+          <div class="es-item-text">Batch 4: Provide final SKU list and packshot photos for each category in the batch</div>
         </div>
-        <span class="es-item-owner">TELUS / SoftServe</span>
-        <span class="es-item-date">10 Jul</span>
+        <span class="es-item-owner">Nestle Chile</span>
+        <span class="es-item-date">20 July</span>
       </div>
 
     </div>
 
-    <!-- Discussion Topics -->
     <div class="es-section">
       <div class="section-title">Discussion Topics</div>
 
       <div class="es-item-row">
         <span class="es-arrow">&#9658;</span>
         <div class="es-item-body">
-          <div class="es-item-text">Batch 1: This week&#39;s Go-Live activities</div>
+          <div class="es-item-text">Batch 1: Feedback Go Live</div>
         </div>
-        <span class="es-item-owner">All</span>
+        <span class="es-item-owner">Nestle Chile</span>
       </div>
 
       <div class="es-item-row">
         <span class="es-arrow">&#9658;</span>
         <div class="es-item-body">
-          <div class="es-item-text">Batch 2: Collect 3 pack shot / catalogue photos, and complete 13 additional questions</div>
+          <div class="es-item-text">Batch 2: Next Steps &amp; Time Line</div>
         </div>
-        <span class="es-item-owner">Nestl&eacute; Chile</span>
+        <span class="es-item-owner">ALL</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-arrow">&#9658;</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Batch 3: Product Catalogue Analysis Answers</div>
+        </div>
+        <span class="es-item-owner">Nestle Chile</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-arrow">&#9658;</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Batch 4: Purina – Final SKU list</div>
+        </div>
+        <span class="es-item-owner">Nestle Chile</span>
       </div>
 
     </div>
 
-    <!-- Key Market Actions -->
     <div class="es-section">
       <div class="section-title">Key Market Actions</div>
 
       <div class="es-item-row">
-        <span class="es-warn">&#9888;</span>
+        <span class="es-arrow">&#9658;</span>
         <div class="es-item-body">
-          <div class="es-item-text">Bach 2: Send 3 pending Café Pack Shot / Catalogue Photos and answer 13 additional questions.</div>
+          <div class="es-item-text">Attend 22nd July meeting to finalize answers for Batch 3 analysis. This action is already delayed.</div>
         </div>
-        <span class="es-item-owner">Nestl&eacute; Chile</span>
+        <span class="es-item-owner">Nestle Chile/TELUS</span>
+        <span class="es-item-date">22 Jul</span>
       </div>
-
-    </div>
-
-    <!-- Upcoming Activities -->
-    <div class="es-section">
-      <div class="section-title">Upcoming Activities</div>
 
       <div class="es-item-row">
         <span class="es-arrow">&#9658;</span>
         <div class="es-item-body">
-          <div class="es-item-text">Batch 1 &mdash; Chocolates &amp; Galletas</div>
+          <div class="es-item-text">Batch 4: Deliver answers and missing information about Batch 4 product list and packshot photos.</div>
         </div>
+        <span class="es-item-owner">Jose Luis</span>
+        <span class="es-item-date">22 Jul</span>
       </div>
 
-      <div class="es-item-row" style="padding-left:28px;">
-        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">1.</span>
-        <div class="es-item-body">
-          <div class="es-item-text">Go-Live</div>
-        </div>
-        <span class="es-item-owner">Nestl&eacute; Chile</span>
-        <span class="es-item-date">14 Jul</span>
-      </div>
+    </div>
+
+    <div class="es-section">
+      <div class="section-title">Upcoming Activities</div>
 
       <div class="es-item-row">
         <span class="es-arrow">&#9658;</span>
@@ -669,28 +692,10 @@ body {
       <div class="es-item-row" style="padding-left:28px;">
         <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">1.</span>
         <div class="es-item-body">
-          <div class="es-item-text">Final answers for product catalogue scope</div>
-          <div style="margin-top:4px; font-size:12px; color:#D32F2F; font-weight:600;">Delayed: information required from the market is outstanding. It was shared partial information on Jul 9, Nestle informed will send 3 additional Catalogue Photos for Café category on Jul 10 but still open, also 13 additional questions requiring answer.</div>
-        </div>
-        <span class="es-item-owner">Nestl&eacute; Chile</span>
-      </div>
-
-      <div class="es-item-row" style="padding-left:28px;">
-        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">2.</span>
-        <div class="es-item-body">
-          <div class="es-item-text">Scope freeze for Batch 2</div>
-        </div>
-        <span class="es-item-owner">Nestl&eacute; / TELUS</span>
-        <span class="es-item-date">TBD</span>
-      </div>
-
-      <div class="es-item-row" style="padding-left:28px;">
-        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">3.</span>
-        <div class="es-item-body">
           <div class="es-item-text">Model training</div>
         </div>
         <span class="es-item-owner">SoftServe</span>
-        <span class="es-item-date">TBD</span>
+        <span class="es-item-date">18 Aug</span>
       </div>
 
       <div class="es-item-row">
@@ -703,37 +708,19 @@ body {
       <div class="es-item-row" style="padding-left:28px;">
         <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">1.</span>
         <div class="es-item-body">
-          <div class="es-item-text">Product catalogue analysis</div>
+          <div class="es-item-text">Product catalogue analysis answers</div>
         </div>
-        <span class="es-item-owner">SoftServe</span>
-        <span class="es-item-date">16 Jul</span>
-      </div>
-
-      <div class="es-item-row">
-        <span class="es-arrow">&#9658;</span>
-        <div class="es-item-body">
-          <div class="es-item-text">Batch 4 &mdash; Purina</div>
-        </div>
-      </div>
-
-      <div class="es-item-row" style="padding-left:28px;">
-        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">1.</span>
-        <div class="es-item-body">
-          <div class="es-item-text">Provide final SKU list and packshot photos for each category in the batch</div>
-        </div>
-        <span class="es-item-owner">Nestl&eacute; Chile</span>
-        <span class="es-item-date">15 Jul</span>
+        <span class="es-item-owner">Nestle Chile</span>
+        <span class="es-item-date">22 Jul</span>
       </div>
 
     </div>
 
-    <!-- Key Risks -->
     <div class="es-section">
       <div class="section-title">Key Risks</div>
       <div class="es-empty-row">None at this time.</div>
     </div>
 
-    <!-- Key Issues -->
     <div class="es-section">
       <div class="section-title">Key Issues</div>
       <div class="es-empty-row">None at this time.</div>
@@ -741,7 +728,6 @@ body {
 
   </div>
 
-  <!-- ======================== TAB 2: GO-LIVE ACTIVITY DASHBOARD ======================== -->
   <div id="tab-activity" class="tab-panel">
 
     <div class="page-header">
@@ -751,7 +737,6 @@ body {
       </div>
     </div>
 
-    <!-- WEEKLY SUMMARY CARDS -->
     <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:28px;">
 
       <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-purple);border-radius:10px;padding:12px;">
@@ -806,7 +791,6 @@ body {
 
     </div>
 
-    <!-- DAILY BREAKDOWN -->
     <div class="section-label">Daily Breakdown</div>
     <div class="table-wrap">
       <table>
@@ -857,11 +841,9 @@ body {
       </table>
     </div>
 
-    <!-- MONTHLY PACE -->
     <div class="section-label">Monthly Visit Pace vs Target</div>
     <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;">
 
-      <!-- JUNE (CLOSED) -->
       <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-radius:10px;padding:20px;">
         <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.7px;color:var(--telus-purple);margin-bottom:14px;">June (In Progress) &mdash; 18 Days Recorded</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;">
@@ -897,13 +879,12 @@ body {
         <div class="footer-tagline">Let's make the future friendly</div>
       </div>
       <div class="footer-right">
-        Nestlé Chile TIR Implementation &nbsp;|&nbsp; TELUS Agriculture &amp; Consumer Goods | Confidential
+        Nestlé Chile TIR Implementation &nbsp;|&nbsp; TELUS Agriculture &amp; Consumer Goods
       </div>
     </div>
 
   </div>
 
-  <!-- ======================== TAB 3: USER ACTIVITY ======================== -->
   <div id="tab-useractivity" class="tab-panel">
 
     <style>
@@ -965,7 +946,6 @@ body {
       </div>
     </div>
 
-    <!-- SUMMARY METRICS -->
     <div class="section-label">Summary</div>
     <div class="ua-metric-grid">
       <div class="ua-metric-card"><div class="ua-metric-val">44</div><div class="ua-metric-lbl">Total users</div><div class="ua-metric-sub">Provisioned in system</div></div>
@@ -974,7 +954,6 @@ body {
       <div class="ua-metric-card"><div class="ua-metric-val">895</div><div class="ua-metric-lbl">Total visits</div><div class="ua-metric-sub">223 Apr &nbsp;|&nbsp; 373 May &nbsp;|&nbsp; 299 Jun</div></div>
     </div>
 
-    <!-- USER ADOPTION GAUGES -->
     <div class="section-label">User adoption</div>
     <div class="ua-gauge-grid">
       <div class="ua-gauge-card">
@@ -995,7 +974,6 @@ body {
       </div>
     </div>
 
-    <!-- USERS WITH NO VISITS -->
     <div class="section-label">Users with No Visits</div>
     <div class="ua-table-wrap" style="margin-bottom:10px;">
       <table>
@@ -1011,7 +989,6 @@ body {
       Note: Cecilia Farias has a user ID but is an admin and is not included in the total users list. &nbsp;|&nbsp; Laura Torrejon is awaiting a new device before she can start using TIR.
     </div>
 
-    <!-- TOP 10 USERS -->
     <div class="section-label">Top 10 users by total visits</div>
     <div class="ua-progress-card">
       <div class="ua-progress-card-title">Visit distribution — active users</div>
@@ -1027,7 +1004,6 @@ body {
       <div class="ua-progress-row"><div class="ua-progress-label">Campos, Juan</div><div class="ua-progress-bar-bg"><div class="ua-progress-bar-fill" style="width:53%"></div></div><div class="ua-progress-count">25</div></div>
     </div>
 
-    <!-- FULL USER TABLE -->
     <div class="section-label">Full user breakdown</div>
     <div class="ua-legend-row">
       <div class="ua-legend-item">
@@ -1096,13 +1072,12 @@ body {
         <div class="footer-tagline">Let's make the future friendly</div>
       </div>
       <div class="footer-right">
-        Nestlé Chile TIR Implementation &nbsp;|&nbsp; TELUS Agriculture &amp; Consumer Goods | Confidential
+        Nestlé Chile TIR Implementation &nbsp;|&nbsp; TELUS Agriculture &amp; Consumer Goods
       </div>
     </div>
 
   </div>
 
-  <!-- ======================== TAB 3: GANTT CHART ======================== -->
   <div id="tab-gantt" class="tab-panel">
     <div class="gantt-wrap">
       <table class="gantt-table">
@@ -1128,12 +1103,11 @@ body {
     </div>
   </div>
 
-  <!-- ======================== TAB 3: BATCH 1 PLANNER ======================== -->
   <div id="tab-batch1" class="tab-panel">
     <div class="batch-section">
       <div class="batch-header">
         <div class="b-name">Batch 1 &mdash; Chocolates + Galletas</div>
-        <div class="b-dates">19 Mar 2026 &ndash; 14 Jul 2026 &nbsp;|&nbsp; Status: In Progress</div>
+        <div class="b-dates">19 Mar 2026 &ndash; 14 Jul 2026 &nbsp;|&nbsp; Status: Complete</div>
       </div>
       <div class="batch-body">
 
@@ -1265,7 +1239,7 @@ body {
         </div>
 
         <div class="batch-task-row" style="background:#f9f9f9;">
-          <div class="dot dot-active"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name" style="font-weight:700;">Model Testing in UAT and Approval</div>
           <div class="bt-dates">30 Jun &ndash; 10 Jul 2026</div>
           <span class="bt-assigned">NESTLE CHILE</span>
@@ -1313,31 +1287,31 @@ body {
           <span class="bt-assigned">TELUS</span>
         </div>
         <div class="batch-task-row sub">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">Nestl&eacute; Chile Testing and Sign-Off</div>
           <div class="bt-dates">7 &ndash; 10 Jul 2026</div>
           <span class="bt-assigned">NESTLE CHILE</span>
         </div>
 
         <div class="batch-task-row" style="background:#f9f9f9;">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name" style="font-weight:700;">Production Deployment</div>
           <div class="bt-dates">7 &ndash; 13 Jul 2026</div>
         </div>
         <div class="batch-task-row sub">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">Confirm Go-Live Date</div>
           <div class="bt-dates">10 Jul 2026</div>
           <span class="bt-assigned">NESTLE CHILE</span>
         </div>
         <div class="batch-task-row sub">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">Deploy SSBS Model to Production</div>
           <div class="bt-dates">13 Jul 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">Master Data Update &mdash; Production</div>
           <div class="bt-dates">7 &ndash; 10 Jul 2026</div>
           <span class="bt-assigned">TELUS / NESTLE CHILE</span>
@@ -1345,20 +1319,18 @@ body {
 
         <div class="batch-golive">
           <span>&#128640;</span> Go-Live &mdash; Batch 1 &nbsp;
-          <span style="font-size:13px; color:var(--telus-accessible-green);">14 Jul 2026</span>
+          <span style="font-size:13px; color:var(--telus-accessible-green);">14 Jul 2026 &#10004; Complete</span>
           <span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLE</span>
         </div>
 
       </div>
     </div>
   </div>
-
-  <!-- ======================== TAB 4: BATCH 2 PLANNER ======================== -->
   <div id="tab-batch2" class="tab-panel">
     <div class="batch-section">
       <div class="batch-header" style="background:var(--telus-purple);">
         <div class="b-name">Batch 2 &mdash; Cafe + Culinarios</div>
-        <div class="b-dates">20 May 2026 &ndash; 19 Aug 2026 &nbsp;|&nbsp; Status: In Progress</div>
+        <div class="b-dates">20 May 2026 &ndash; 4 Sep 2026 &nbsp;|&nbsp; Status: In Progress</div>
       </div>
       <div class="batch-body">
 
@@ -1402,13 +1374,13 @@ body {
         <div class="batch-task-row" style="background:#f9f9f9;">
           <div class="dot dot-active"></div>
           <div class="bt-name" style="font-weight:700;">Batch 2 &mdash; Scope Definition &amp; Category Analysis</div>
-          <div class="bt-dates">1 Jun &ndash; 6 Aug 2026</div>
+          <div class="bt-dates">1 Jun &ndash; 24 Aug 2026</div>
           <span class="bt-assigned">SS / TELUS</span>
         </div>
         <div class="batch-task-row sub">
-          <div class="dot dot-active"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">Scope for NN Model Training</div>
-          <div class="bt-dates">1 Jun &ndash; 1 Jul 2026</div>
+          <div class="bt-dates">1 Jun &ndash; 17 Jul 2026</div>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-complete"></div>
@@ -1429,154 +1401,148 @@ body {
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub2">
-          <div class="dot dot-active"></div>
-          <div class="bt-name" style="color:#D32F2F;">Review changes in product catalogue scope &mdash; catalogue sign-off</div>
-          <div class="bt-dates">18 Jun &ndash; 1 Jul 2026</div>
+          <div class="dot dot-complete"></div>
+          <div class="bt-name">Review changes in product catalogue scope &mdash; catalogue sign-off</div>
+          <div class="bt-dates">18 Jun &ndash; 16 Jul 2026</div>
           <span class="bt-assigned">ALL</span>
         </div>
-        <div class="batch-task-row sub2" style="background:#FFF5F5;">
-          <div style="width:12px; min-width:12px;"></div>
-          <div class="bt-name" style="color:#D32F2F; font-size:11px; font-weight:600;">Delayed: information required from the market is outstanding. It was shared partial information on Jul 9, Nestle informed will send 3 additional Catalogue Photos for Café category on Jul 10 but still open, also 13 additional questions requiring answer.</div>
-        </div>
         <div class="batch-task-row sub2">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">Scope freeze for Batch 2</div>
-          <div class="bt-dates">TBD</div>
+          <div class="bt-dates">17 Jul 2026</div>
           <span class="bt-assigned">NESTLE / TELUS</span>
         </div>
         <div class="batch-task-row sub">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-active"></div>
           <div class="bt-name">NN Model Training &mdash; First Iteration</div>
-          <div class="bt-dates">TBD &ndash; 6 Aug 2026</div>
+          <div class="bt-dates">20 Jul &ndash; 24 Aug 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub2">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">Dataset Preparation for Training</div>
-          <div class="bt-dates">TBD</div>
+          <div class="bt-dates">20 Jul 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub2">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-active"></div>
           <div class="bt-name">Data Annotation (Labeling, model training, statistic results)</div>
-          <div class="bt-dates">3 Jul &ndash; 30 Jul 2026</div>
+          <div class="bt-dates">21 Jul &ndash; 17 Aug 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Internal recognition testing</div>
-          <div class="bt-dates">31 Jul 2026</div>
+          <div class="bt-dates">18 Aug 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Model prepared for 1st iteration</div>
-          <div class="bt-dates">31 Jul 2026</div>
+          <div class="bt-dates">18 Aug 2026</div>
           <span class="bt-assigned">NESTLE / TELUS</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Error Analysis &amp; Scope Update + Next Steps Definition</div>
-          <div class="bt-dates">3 &ndash; 5 Aug 2026</div>
+          <div class="bt-dates">19 &ndash; 21 Aug 2026</div>
           <span class="bt-assigned">NESTLE / SS / TELUS</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Next Iteration Planning</div>
-          <div class="bt-dates">6 Aug 2026</div>
+          <div class="bt-dates">24 Aug 2026</div>
           <span class="bt-assigned">SS / NESTLE / TELUS</span>
         </div>
 
         <div class="batch-task-row" style="background:#f9f9f9;">
           <div class="dot dot-not-started"></div>
           <div class="bt-name" style="font-weight:700;">Model Testing and Approval</div>
-          <div class="bt-dates">7 &ndash; 13 Aug 2026</div>
+          <div class="bt-dates">25 &ndash; 31 Aug 2026</div>
           <span class="bt-assigned">NESTLE CHILE</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Deploy SSBS Model to UAT</div>
-          <div class="bt-dates">7 Aug 2026</div>
+          <div class="bt-dates">25 Aug 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Master Data Update (Product Category Setup)</div>
-          <div class="bt-dates">7 &ndash; 10 Aug 2026</div>
+          <div class="bt-dates">25 &ndash; 26 Aug 2026</div>
           <span class="bt-assigned">TELUS / NESTLE CHILE</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Provide Product Category Mapping file to SSBS</div>
-          <div class="bt-dates">11 Aug 2026</div>
+          <div class="bt-dates">27 Aug 2026</div>
           <span class="bt-assigned">TELUS</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Integration Testing from SSBS</div>
-          <div class="bt-dates">11 Aug 2026</div>
+          <div class="bt-dates">27 Aug 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Integration Testing from TELUS</div>
-          <div class="bt-dates">11 Aug 2026</div>
+          <div class="bt-dates">27 Aug 2026</div>
           <span class="bt-assigned">TELUS</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">FE Full Cycle Testing</div>
-          <div class="bt-dates">12 Aug 2026</div>
+          <div class="bt-dates">28 Aug 2026</div>
           <span class="bt-assigned">TELUS</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Release Batch for Nestl&eacute; Verification</div>
-          <div class="bt-dates">12 Aug 2026</div>
+          <div class="bt-dates">28 Aug 2026</div>
           <span class="bt-assigned">TELUS</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Nestl&eacute; Chile Testing and Sign-Off</div>
-          <div class="bt-dates">13 Aug 2026</div>
+          <div class="bt-dates">31 Aug 2026</div>
           <span class="bt-assigned">NESTLE CHILE</span>
         </div>
 
         <div class="batch-task-row" style="background:#f9f9f9;">
           <div class="dot dot-not-started"></div>
           <div class="bt-name" style="font-weight:700;">Production Deployment</div>
-          <div class="bt-dates">14 &ndash; 18 Aug 2026</div>
+          <div class="bt-dates">1 &ndash; 3 Sep 2026</div>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Confirm Go-Live Date</div>
-          <div class="bt-dates">14 Aug 2026</div>
+          <div class="bt-dates">1 Sep 2026</div>
           <span class="bt-assigned">NESTLE CHILE</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Deploy SSBS Model to Production</div>
-          <div class="bt-dates">17 Aug 2026</div>
+          <div class="bt-dates">2 Sep 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Master Data Update &mdash; Production</div>
-          <div class="bt-dates">17 &ndash; 18 Aug 2026</div>
+          <div class="bt-dates">2 &ndash; 3 Sep 2026</div>
           <span class="bt-assigned">TELUS / NESTLE CHILE</span>
         </div>
 
         <div class="batch-golive">
           <span>&#128640;</span> Go-Live &mdash; Batch 2 &nbsp;
-          <span style="font-size:13px; color:var(--telus-purple);">19 Aug 2026</span>
+          <span style="font-size:13px; color:var(--telus-purple);">4 Sep 2026</span>
           <span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLE</span>
         </div>
 
       </div>
     </div>
   </div>
-
-  <!-- ======================== TAB 5: BATCH 3 PLANNER ======================== -->
   <div id="tab-batch3" class="tab-panel">
     <div class="batch-section">
       <div class="batch-header" style="background:var(--telus-purple);">
@@ -1640,25 +1606,25 @@ body {
           <div class="bt-dates">7 &ndash; 20 Jul 2026</div>
         </div>
         <div class="batch-task-row sub2">
-          <div class="dot dot-active"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">Provide SKU catalogue</div>
           <div class="bt-dates">7 Jul 2026</div>
           <span class="bt-assigned">TELUS</span>
         </div>
         <div class="batch-task-row sub2">
-          <div class="dot dot-active"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">Provide photos for training</div>
           <div class="bt-dates">7 &ndash; 8 Jul 2026</div>
           <span class="bt-assigned">TELUS</span>
         </div>
         <div class="batch-task-row sub2">
-          <div class="dot dot-active"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">Product catalogue analysis</div>
           <div class="bt-dates">9 &ndash; 16 Jul 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub2">
-          <div class="dot dot-not-started"></div>
+          <div class="dot dot-active"></div>
           <div class="bt-name">Review changes in product catalogue scope &mdash; catalogue sign-off</div>
           <div class="bt-dates">17 &ndash; 20 Jul 2026</div>
           <span class="bt-assigned">ALL</span>
@@ -1800,31 +1766,29 @@ body {
       </div>
     </div>
   </div>
-
-  <!-- ======================== TAB 6: BATCH 4 PLANNER ======================== -->
   <div id="tab-batch4" class="tab-panel">
     <div class="batch-section">
       <div class="batch-header" style="background:var(--telus-purple);">
-        <div class="b-name">Batch 4 — Purina</div>
-        <div class="b-dates">6 Jul 2026 – 30 Sep 2026 &nbsp;|&nbsp; Status: Not Started</div>
+        <div class="b-name">Batch 4 &mdash; Purina</div>
+        <div class="b-dates">6 Jul 2026 &ndash; 30 Sep 2026 &nbsp;|&nbsp; Status: In Progress</div>
       </div>
       <div class="batch-body">
 
         <div class="batch-task-row">
           <div class="dot dot-active"></div>
           <div class="bt-name" style="font-weight:700;">Market Categories Analysis</div>
-          <div class="bt-dates">6 Jul – 30 Jul 2026</div>
+          <div class="bt-dates">6 &ndash; 30 Jul 2026</div>
           <span class="bt-assigned">NESTLE / TELUS / SS</span>
         </div>
         <div class="batch-task-row sub">
-          <div class="dot dot-active"></div>
+          <div class="dot dot-complete"></div>
           <div class="bt-name">Provide final SKU list and packshot photos for each category in the batch</div>
-          <div class="bt-dates">6 – 15 Jul 2026</div>
+          <div class="bt-dates">6 &ndash; 20 Jul 2026</div>
           <span class="bt-assigned">NESTLE CHILE</span>
         </div>
         <div class="batch-task-row sub">
-          <div class="dot dot-not-started"></div>
-          <div class="bt-name">Preparation of base catalogue per category — final SKU list and competitors</div>
+          <div class="dot dot-active"></div>
+          <div class="bt-name">Preparation of base catalogue per category &mdash; final SKU list and competitors</div>
           <div class="bt-dates">21 Jul 2026</div>
           <span class="bt-assigned">ALL</span>
         </div>
@@ -1837,7 +1801,7 @@ body {
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Defining the business rules of the categories in a batch</div>
-          <div class="bt-dates">22 – 24 Jul 2026</div>
+          <div class="bt-dates">22 &ndash; 24 Jul 2026</div>
           <span class="bt-assigned">ALL</span>
         </div>
         <div class="batch-task-row sub">
@@ -1849,20 +1813,20 @@ body {
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Category for batch plan sign-off</div>
-          <div class="bt-dates">28 – 30 Jul 2026</div>
+          <div class="bt-dates">28 &ndash; 30 Jul 2026</div>
           <span class="bt-assigned">ALL</span>
         </div>
 
         <div class="batch-task-row" style="background:#f9f9f9;">
           <div class="dot dot-not-started"></div>
-          <div class="bt-name" style="font-weight:700;">Batch 4 — Scope Definition &amp; Category Analysis</div>
-          <div class="bt-dates">31 Jul – 17 Sep 2026</div>
+          <div class="bt-name" style="font-weight:700;">Batch 4 &mdash; Scope Definition &amp; Category Analysis</div>
+          <div class="bt-dates">31 Jul &ndash; 17 Sep 2026</div>
           <span class="bt-assigned">SS / TELUS</span>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Scope for NN Model Training</div>
-          <div class="bt-dates">31 Jul – 12 Aug 2026</div>
+          <div class="bt-dates">31 Jul &ndash; 12 Aug 2026</div>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-not-started"></div>
@@ -1873,19 +1837,19 @@ body {
         <div class="batch-task-row sub2">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Provide photos for training</div>
-          <div class="bt-dates">31 Jul – 3 Aug 2026</div>
+          <div class="bt-dates">31 Jul &ndash; 3 Aug 2026</div>
           <span class="bt-assigned">TELUS</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Product catalogue analysis</div>
-          <div class="bt-dates">4 – 10 Aug 2026</div>
+          <div class="bt-dates">4 &ndash; 10 Aug 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub2">
           <div class="dot dot-not-started"></div>
-          <div class="bt-name">Review changes in product catalogue scope — catalogue sign-off</div>
-          <div class="bt-dates">11 – 12 Aug 2026</div>
+          <div class="bt-name">Review changes in product catalogue scope &mdash; catalogue sign-off</div>
+          <div class="bt-dates">11 &ndash; 12 Aug 2026</div>
           <span class="bt-assigned">ALL</span>
         </div>
         <div class="batch-task-row sub2">
@@ -1896,8 +1860,8 @@ body {
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
-          <div class="bt-name">NN Model Training — First Iteration</div>
-          <div class="bt-dates">13 Aug – 17 Sep 2026</div>
+          <div class="bt-name">NN Model Training &mdash; First Iteration</div>
+          <div class="bt-dates">13 Aug &ndash; 17 Sep 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub2">
@@ -1909,7 +1873,7 @@ body {
         <div class="batch-task-row sub2">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Data Annotation (Labeling, model training, statistic results)</div>
-          <div class="bt-dates">14 Aug – 10 Sep 2026</div>
+          <div class="bt-dates">14 Aug &ndash; 10 Sep 2026</div>
           <span class="bt-assigned">SOFTSERVE</span>
         </div>
         <div class="batch-task-row sub2">
@@ -1927,7 +1891,7 @@ body {
         <div class="batch-task-row sub2">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Error Analysis &amp; Scope Update + Next Steps Definition</div>
-          <div class="bt-dates">14 – 16 Sep 2026</div>
+          <div class="bt-dates">14 &ndash; 16 Sep 2026</div>
           <span class="bt-assigned">NESTLE / SS / TELUS</span>
         </div>
         <div class="batch-task-row sub2">
@@ -1940,7 +1904,7 @@ body {
         <div class="batch-task-row" style="background:#f9f9f9;">
           <div class="dot dot-not-started"></div>
           <div class="bt-name" style="font-weight:700;">Model Testing and Approval</div>
-          <div class="bt-dates">18 – 24 Sep 2026</div>
+          <div class="bt-dates">18 &ndash; 24 Sep 2026</div>
           <span class="bt-assigned">NESTLE CHILE</span>
         </div>
         <div class="batch-task-row sub">
@@ -1952,7 +1916,7 @@ body {
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
           <div class="bt-name">Master Data Update (Product Category Setup)</div>
-          <div class="bt-dates">18 – 21 Sep 2026</div>
+          <div class="bt-dates">18 &ndash; 21 Sep 2026</div>
           <span class="bt-assigned">TELUS / NESTLE CHILE</span>
         </div>
         <div class="batch-task-row sub">
@@ -1995,7 +1959,7 @@ body {
         <div class="batch-task-row" style="background:#f9f9f9;">
           <div class="dot dot-not-started"></div>
           <div class="bt-name" style="font-weight:700;">Production Deployment</div>
-          <div class="bt-dates">25 – 29 Sep 2026</div>
+          <div class="bt-dates">25 &ndash; 29 Sep 2026</div>
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
@@ -2011,13 +1975,13 @@ body {
         </div>
         <div class="batch-task-row sub">
           <div class="dot dot-not-started"></div>
-          <div class="bt-name">Master Data Update — Production</div>
-          <div class="bt-dates">28 – 29 Sep 2026</div>
+          <div class="bt-name">Master Data Update &mdash; Production</div>
+          <div class="bt-dates">28 &ndash; 29 Sep 2026</div>
           <span class="bt-assigned">TELUS / NESTLE CHILE</span>
         </div>
 
         <div class="batch-golive">
-          <span>&#128640;</span> Go-Live — Batch 4 &nbsp;
+          <span>&#128640;</span> Go-Live &mdash; Batch 4 &nbsp;
           <span style="font-size:13px; color:var(--telus-purple);">30 Sep 2026</span>
           <span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLE</span>
         </div>
@@ -2025,8 +1989,6 @@ body {
       </div>
     </div>
   </div>
-
-  <!-- ======================== TAB 8: QC ======================== -->
   <div id="tab-qc" class="tab-panel">
     <style>
       *{box-sizing:border-box;margin:0;padding:0}
@@ -2050,7 +2012,6 @@ body {
       .tab-content{display:none}
       .tab-content.active{display:block}
 
-      /* EXECUTIVE SUMMARY */
       .f1-hero{display:flex;align-items:center;gap:24px;background:#F5F0FA;border-left:5px solid var(--tp);border-radius:0 10px 10px 0;padding:18px 26px;margin-bottom:22px}
       .f1-score{font-size:56px;font-weight:800;color:var(--tp);line-height:1}
       .f1-label{font-size:13px;font-weight:800;color:var(--tp);text-transform:uppercase;letter-spacing:0.8px}
@@ -2082,7 +2043,6 @@ body {
       .coverage-note{background:var(--bsect);border-radius:8px;padding:13px 16px;font-size:12px;color:var(--muted);margin-bottom:22px;display:flex;align-items:center;gap:9px;line-height:1.5}
       .coverage-note strong{color:var(--tp);font-weight:700}
 
-      /* SKU DETAIL TAB */
       .detail-table{width:100%;border-collapse:collapse;font-size:11.5px;margin-bottom:22px}
       .detail-table th{background:var(--tp);color:#fff;padding:9px 11px;text-align:left;font-weight:700;font-size:10.5px;letter-spacing:0.4px;white-space:nowrap}
       .detail-table th.ctr{text-align:center}
@@ -2095,7 +2055,6 @@ body {
       .provider-c{font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.4px}
       .provider-n{font-size:10px;font-weight:700;color:var(--tp);text-transform:uppercase;letter-spacing:0.4px}
 
-      /* FULL DATASET TAB */
       .filter-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
       .filter-row label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.4px}
       .filter-row select,.filter-row input{font-size:12px;padding:6px 9px;border:1px solid var(--bl);border-radius:6px;color:var(--body);background:#fff;font-family:'Plus Jakarta Sans',-apple-system,sans-serif}
@@ -2116,7 +2075,6 @@ body {
       .sort-arrow{font-size:9px;margin-left:3px;opacity:0.7}
       .nestle-badge{font-size:9px;font-weight:800;color:var(--tp);text-transform:uppercase;letter-spacing:.4px;background:#E8DFF4;padding:1px 5px;border-radius:3px;margin-left:4px}
 
-      /* FOOTER */
       .footer-bar{border-top:2px solid var(--bl);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;margin-top:4px;background:#fff}
       .telus-badge{background:var(--tp);color:#fff;font-size:11px;font-weight:800;letter-spacing:1px;padding:4px 12px;border-radius:4px;text-transform:uppercase}
       .footer-right{font-size:11px;color:var(--subtle);text-align:right;line-height:1.5}
@@ -2158,7 +2116,6 @@ body {
             <button class="tab-btn" onclick="switchTab('full',this)">Full Dataset</button>
           </div>
 
-          <!-- TAB 1: EXECUTIVE SUMMARY -->
           <div id="tab-summary" class="tab-content active">
             <div class="f1-hero">
               <div class="f1-score">98%</div>
@@ -2240,7 +2197,6 @@ body {
             </div>
           </div>
 
-          <!-- TAB 2: SKU DETAIL -->
           <div id="tab-detail" class="tab-content">
             <div class="section-title" style="margin-bottom:16px">SKU Detail Review &nbsp;<span style="font-size:11px;color:var(--muted);font-weight:500;text-transform:none;letter-spacing:0">20 SKUs &nbsp;|&nbsp; May 15 – June 15, 2026</span></div>
             <table class="detail-table">
@@ -2262,7 +2218,6 @@ body {
             </div>
           </div>
 
-          <!-- TAB 3: FULL DATASET -->
           <div id="tab-full" class="tab-content">
             <div class="section-title" style="margin-bottom:16px">Full Dataset &nbsp;<span style="font-size:11px;color:var(--muted);font-weight:500;text-transform:none;letter-spacing:0">78 SKUs &nbsp;|&nbsp; May 15 – June 15, 2026</span></div>
             <div class="stat-strip" id="full-stats"></div>
@@ -2308,7 +2263,7 @@ body {
             </div>
           </div>
 
-        </div><!-- /wrap -->
+        </div>
 
         <div class="page-bar" style="border-top:2px solid var(--bl);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;background:#fff">
           <div style="display:flex;align-items:center">
@@ -2316,7 +2271,7 @@ body {
             <span class="footer-tagline">Let's make the future friendly</span>
           </div>
           <div class="footer-right">
-            TELUS TIR Quality Check Report for Nestlé Chile &nbsp;|&nbsp; Confidential<br>
+            TELUS TIR Quality Check Report for Nestlé Chile<br>
             May 15 – June 15, 2026
           </div>
         </div>
@@ -2584,7 +2539,6 @@ function showTab(name, btn) {
   if (name === 'gantt') buildGantt();
 }
 
-// GANTT
 const MONTHS = [
   { year: 2025, month: 11, label: 'Nov 25' },
   { year: 2025, month: 12, label: 'Dec 25' },
@@ -2601,7 +2555,7 @@ const MONTHS = [
 
 const PROJECT_START = new Date(2025, 10, 1);
 const PROJECT_END   = new Date(2026, 8, 30);
-const TODAY         = new Date(2026, 6, 7);
+const TODAY         = new Date(2026, 6, 20);
 const TOTAL_DAYS    = (PROJECT_END - PROJECT_START) / 86400000;
 
 const GANTT_TASKS = [
@@ -2615,24 +2569,24 @@ const GANTT_TASKS = [
   { label: 'Pilot Review & Sign Off',                start: '2026-04-07', end: '2026-04-07', status: 'Complete' },
   { label: 'Full Rollout — Lacteous Culinaros',      start: '2026-04-08', end: '2026-04-21', status: 'Complete',     isPhase: true },
   { label: 'Market Go Live — Production',            start: '2026-04-15', end: '2026-04-15', status: 'Complete' },
-  { label: 'Batch 1 — Chocolates + Galletas',        start: '2026-03-19', end: '2026-07-14', status: 'In Progress',  isPhase: true },
+  { label: 'Batch 1 — Chocolates + Galletas',        start: '2026-03-19', end: '2026-07-14', status: 'Complete',     isPhase: true },
   { label: 'Categories Analysis (B1)',               start: '2026-03-19', end: '2026-04-24', status: 'Complete' },
   { label: 'Scope Definition & Catalogue Analysis', start: '2026-04-27', end: '2026-06-29', status: 'Complete' },
-  { label: 'Model Testing in UAT',                   start: '2026-06-30', end: '2026-07-08', status: 'In Progress' },
-  { label: 'Production Deployment',                  start: '2026-07-09', end: '2026-07-13', status: 'Not Started' },
-  { label: '🚀 Go-Live — Batch 1',                   start: '2026-07-14', end: '2026-07-14', status: 'Not Started',  isPhase: true },
-  { label: 'Batch 2 — Cafe + Culinarios',            start: '2026-05-20', end: '2026-08-19', status: 'In Progress',  isPhase: true },
+  { label: 'Model Testing in UAT',                   start: '2026-06-30', end: '2026-07-10', status: 'Complete' },
+  { label: 'Production Deployment',                  start: '2026-07-07', end: '2026-07-13', status: 'Complete' },
+  { label: '🚀 Go-Live — Batch 1',                   start: '2026-07-14', end: '2026-07-14', status: 'Complete',     isPhase: true },
+  { label: 'Batch 2 — Cafe + Culinarios',            start: '2026-05-20', end: '2026-09-04', status: 'In Progress',  isPhase: true },
   { label: 'Market Categories Analysis (B2)',        start: '2026-05-20', end: '2026-05-29', status: 'Complete' },
-  { label: 'Scope Definition & Catalogue (B2)',      start: '2026-06-01', end: '2026-08-06', status: 'In Progress' },
-  { label: 'Model Testing & Deployment (B2)',        start: '2026-08-07', end: '2026-08-18', status: 'Not Started' },
-  { label: '🚀 Go-Live — Batch 2',                   start: '2026-08-19', end: '2026-08-19', status: 'Not Started',  isPhase: true },
+  { label: 'Scope Definition & Catalogue (B2)',      start: '2026-06-01', end: '2026-08-24', status: 'In Progress' },
+  { label: 'Model Testing & Deployment (B2)',        start: '2026-08-25', end: '2026-09-03', status: 'Not Started' },
+  { label: '🚀 Go-Live — Batch 2',                   start: '2026-09-04', end: '2026-09-04', status: 'Not Started',  isPhase: true },
   { label: 'Batch 3 — 5 Categories',                 start: '2026-06-12', end: '2026-09-07', status: 'In Progress',  isPhase: true },
-  { label: 'Categories Analysis (B3)',               start: '2026-06-12', end: '2026-07-06', status: 'In Progress' },
-  { label: 'Scope Definition & Catalogue (B3)',      start: '2026-07-07', end: '2026-08-24', status: 'In Progress' },
-  { label: 'Model Testing & Deployment (B3)',        start: '2026-08-25', end: '2026-09-03', status: 'Not Started' },
+  { label: 'Categories Analysis (B3)',               start: '2026-06-12', end: '2026-07-06', status: 'Complete' },
+  { label: 'Scope Definition & Catalogue (B3)',      start: '2026-07-07', end: '2026-08-25', status: 'In Progress' },
+  { label: 'Model Testing & Deployment (B3)',        start: '2026-08-26', end: '2026-09-04', status: 'Not Started' },
   { label: '🚀 Go-Live — Batch 3',                   start: '2026-09-07', end: '2026-09-07', status: 'Not Started',  isPhase: true },
-  { label: 'Batch 4 — Purina',                       start: '2026-07-06', end: '2026-09-30', status: 'Not Started',  isPhase: true },
-  { label: 'Categories Analysis + Scope (B4)',       start: '2026-07-06', end: '2026-09-17', status: 'Not Started' },
+  { label: 'Batch 4 — Purina',                       start: '2026-07-06', end: '2026-09-30', status: 'In Progress',  isPhase: true },
+  { label: 'Categories Analysis + Scope (B4)',       start: '2026-07-06', end: '2026-09-17', status: 'In Progress' },
   { label: 'Model Testing & Deployment (B4)',        start: '2026-09-18', end: '2026-09-29', status: 'Not Started' },
   { label: '🚀 Go-Live — Batch 4 (Final)',            start: '2026-09-30', end: '2026-09-30', status: 'Not Started',  isPhase: true },
 ];
@@ -2659,13 +2613,11 @@ function buildGantt() {
     const s = Math.max(0, (start - PROJECT_START) / 86400000);
     const e = Math.min(TOTAL_DAYS, (end - PROJECT_START) / 86400000 + 1);
 
-    // label cell
     const labelTd = document.createElement('td');
     labelTd.innerHTML = t.label;
     labelTd.style.paddingLeft = t.isPhase ? '8px' : '16px';
     tr.appendChild(labelTd);
 
-    // done cell
     const doneTd = document.createElement('td');
     doneTd.style.textAlign = 'center';
     doneTd.style.fontSize = '10px';
@@ -2673,7 +2625,6 @@ function buildGantt() {
     doneTd.textContent = t.status === 'Complete' ? '✓' : '';
     tr.appendChild(doneTd);
 
-    // month cells
     MONTHS.forEach(m => {
       const td = document.createElement('td');
       td.className = 'month-cell';
@@ -2687,7 +2638,6 @@ function buildGantt() {
       const wrap = document.createElement('div');
       wrap.className = 'gantt-cell-wrap';
 
-      // today line
       if (todayOffset >= cellStart && todayOffset <= cellEnd) {
         const pct = ((todayOffset - cellStart) / cellSpan) * 100;
         const line = document.createElement('div');
@@ -2696,7 +2646,6 @@ function buildGantt() {
         wrap.appendChild(line);
       }
 
-      // bar segment
       const barStart = Math.max(cellStart, s);
       const barEnd   = Math.min(cellEnd, e);
       if (barEnd > barStart) {
