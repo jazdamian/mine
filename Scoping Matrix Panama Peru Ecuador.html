@@ -1,0 +1,744 @@
+<title>LATAM IR Scoping Matrix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --telus-purple: #4B286D;
+    --telus-light-purple: #7C53A5;
+    --telus-green: #66CC00;
+    --telus-accessible-green: #2B8000;
+    --telus-light-green: #D4F7B0;
+    --telus-thunder-grey: #2C2E30;
+    --phase-upcoming: #E65100;
+    --phase-critical: #D32F2F;
+    --bg-white: #FFFFFF;
+    --bg-card: #FAFAFA;
+    --bg-section: #F5F5F5;
+    --border-light: #EEEEEE;
+    --text-body: #333333;
+    --text-muted: #888888;
+    --text-subtle: #AAAAAA;
+    --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --page-max: 960px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 40px 32px 56px;
+    background: var(--bg-white);
+    color: var(--telus-thunder-grey);
+    font-family: var(--font);
+    font-size: 13px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
+
+  /* Header */
+  header.masthead {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 14px;
+    border-bottom: 3px solid var(--telus-purple);
+  }
+  .masthead h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--telus-purple);
+    letter-spacing: -0.4px;
+    text-wrap: balance;
+  }
+  .eyebrow {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--telus-light-purple);
+    margin-bottom: 6px;
+  }
+  .masthead .meta {
+    text-align: right;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .masthead .meta strong {
+    display: block;
+    font-weight: 800;
+    color: var(--telus-thunder-grey);
+    font-size: 12px;
+  }
+
+  /* Section headings */
+  .section-title {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--telus-purple);
+    margin: 0 0 14px;
+  }
+  .section-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin: -8px 0 14px;
+  }
+
+  /* KPI row */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .kpi {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--telus-purple);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .kpi .value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--telus-purple);
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+  }
+  .kpi .label {
+    display: block;
+    margin-top: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+  .kpi .sub {
+    display: block;
+    margin-top: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-subtle);
+  }
+
+  /* Country cards */
+  .country-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 14px;
+  }
+  .country {
+    background: var(--bg-white);
+    border: 2px solid var(--telus-purple);
+    border-radius: 10px;
+    padding: 16px 18px 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .country h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--telus-purple);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex: none;
+    display: inline-block;
+  }
+  .dot.complete { background: var(--telus-purple); }
+  .dot.active { background: var(--telus-green); }
+  .dot.upcoming { background: var(--phase-upcoming); }
+
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .stat-row:last-of-type { border-bottom: none; }
+  .stat-row .k {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-body);
+  }
+  .stat-row .v {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--telus-thunder-grey);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .v.pending {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--phase-upcoming);
+  }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    min-width: 720px;
+  }
+  thead th {
+    background: var(--telus-purple);
+    color: #fff;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 10px 12px;
+  }
+  thead th.num { text-align: right; }
+  thead th:first-child { border-radius: 6px 0 0 0; }
+  thead th:last-child { border-radius: 0 6px 0 0; }
+  tbody td {
+    padding: 11px 12px;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) { background: var(--bg-section); }
+  td.q { font-weight: 600; color: var(--telus-thunder-grey); }
+  td.q .comment {
+    display: block;
+    margin-top: 4px;
+    font-weight: 500;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    max-width: 42ch;
+  }
+  td.num {
+    text-align: right;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  td.num .pending {
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--phase-upcoming);
+  }
+  td.num .no {
+    font-weight: 800;
+    color: var(--telus-accessible-green);
+  }
+  tfoot td {
+    padding: 11px 12px;
+    border-top: 2px solid var(--telus-purple);
+    font-weight: 800;
+    font-size: 12px;
+    color: var(--telus-purple);
+    background: var(--bg-white);
+  }
+  tfoot td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  /* Categories */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 14px;
+  }
+  .cat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--telus-light-purple);
+    border-radius: 10px;
+    padding: 14px 16px 16px;
+  }
+  .cat-card h4 {
+    margin: 0 0 4px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--telus-purple);
+  }
+  .cat-card .count {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 10px;
+  }
+  .cat-card ol {
+    margin: 0;
+    padding-left: 18px;
+  }
+  .cat-card li {
+    padding: 3px 0;
+    font-size: 12.5px;
+    font-weight: 500;
+  }
+  .cat-card li::marker { color: var(--text-subtle); font-weight: 800; }
+  .cat-card .gap {
+    margin-top: 10px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--phase-upcoming);
+  }
+  .cat-card .empty {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--phase-upcoming);
+    letter-spacing: 0.4px;
+  }
+
+  /* Qualitative responses */
+  .qual-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .qual {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--telus-light-purple);
+    border-radius: 10px;
+    padding: 14px 16px 16px;
+  }
+  .qual .qtext {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--telus-thunder-grey);
+    max-width: 68ch;
+  }
+  .qual .qtext em {
+    display: block;
+    margin-top: 3px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11.5px;
+    color: var(--text-muted);
+  }
+  .answers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .ans {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 9px 12px 10px;
+  }
+  .ans .m {
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--telus-light-purple);
+    margin-bottom: 3px;
+  }
+  .ans .a {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--telus-thunder-grey);
+  }
+  .ans .a small {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+  .ans.review { border-color: rgba(230,81,0,0.35); background: #FFFAF6; }
+  .ans.review .a { color: var(--phase-upcoming); }
+
+  .flagbox {
+    background: #FFFAF6;
+    border: 1px solid rgba(230,81,0,0.35);
+    border-left: 4px solid var(--phase-upcoming);
+    border-radius: 10px;
+    padding: 14px 16px 16px;
+  }
+  .flagbox h4 {
+    margin: 0 0 8px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--phase-upcoming);
+  }
+  .flagbox p {
+    margin: 0 0 7px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text-body);
+    max-width: 78ch;
+  }
+  .flagbox p:last-child { margin-bottom: 0; }
+  .flagbox b { font-weight: 800; color: var(--telus-thunder-grey); }
+
+  /* Open items */
+  .openbox {
+    background: var(--bg-card);
+    border: 2px solid var(--telus-purple);
+    border-radius: 10px;
+    padding: 18px 20px 20px;
+  }
+  .openbox h3 {
+    margin: 0 0 12px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--telus-purple);
+  }
+  .openbox ul { margin: 0; padding-left: 18px; }
+  .openbox li { padding: 4px 0; font-size: 12.5px; font-weight: 500; }
+  .openbox li b { font-weight: 800; }
+  .openbox li::marker { color: var(--phase-upcoming); }
+
+  /* Footer */
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 2px solid var(--border-light);
+  }
+  .footer-left { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .badge {
+    background: var(--telus-purple);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; }
+  .legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+  .footer-right {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-subtle);
+    text-align: right;
+  }
+  .tagline {
+    display: block;
+    font-weight: 800;
+    color: var(--telus-purple);
+    font-size: 11px;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 24px 16px 40px; }
+    .masthead .meta { text-align: left; }
+    .footer-right { text-align: left; }
+  }
+
+  @media print {
+    body { padding: 0; }
+    .page { max-width: none; gap: 22px; }
+    .country, .kpi, .cat-card, .openbox { break-inside: avoid; }
+    table { min-width: 0; font-size: 10px; }
+  }
+</style>
+
+<div class="page">
+
+  <header class="masthead">
+    <div>
+      <span class="eyebrow">Nestlé LATAM &middot; Image Recognition</span>
+      <h1>Scoping Matrix: Panama, Peru, Ecuador</h1>
+    </div>
+    <div class="meta">
+      <strong>Discovery questionnaire</strong>
+      11 questions asked &middot; 2 blank<br>
+      TELUS Agriculture &amp; Consumer Goods
+    </div>
+  </header>
+
+  <section>
+    <h2 class="section-title">Combined scope</h2>
+    <p class="section-note">Totals across the three markets, based on answers received. Peru has not confirmed its Image Recognition user count.</p>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="value">909</div>
+        <span class="label">Users live on Exceedra RE</span>
+        <span class="sub">352 / 314 / 243</span>
+      </div>
+      <div class="kpi">
+        <div class="value">340<span style="font-size:16px;">+</span></div>
+        <span class="label">IR users</span>
+        <span class="sub">Peru answer pending</span>
+      </div>
+      <div class="kpi">
+        <div class="value">1,082</div>
+        <span class="label">Nestlé SKUs in scope</span>
+        <span class="sub">530 / 252 / 300</span>
+      </div>
+      <div class="kpi">
+        <div class="value">1,681</div>
+        <span class="label">Competitor SKUs</span>
+        <span class="sub">200 / 681 / 800</span>
+      </div>
+      <div class="kpi">
+        <div class="value">6,750</div>
+        <span class="label">Visits per month</span>
+        <span class="sub">4,600 / 1,450 / 700</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">By market</h2>
+    <div class="country-grid">
+
+      <article class="country">
+        <h3><span class="dot complete"></span>Panama</h3>
+        <div class="stat-row"><span class="k">Users live on Exceedra RE</span><span class="v">352</span></div>
+        <div class="stat-row"><span class="k">Users on TELUS IR</span><span class="v">200</span></div>
+        <div class="stat-row"><span class="k">Nestlé SKUs</span><span class="v">530</span></div>
+        <div class="stat-row"><span class="k">Competitor SKUs</span><span class="v">200</span></div>
+        <div class="stat-row"><span class="k">Total SKUs</span><span class="v">730</span></div>
+        <div class="stat-row"><span class="k">Categories</span><span class="v">6</span></div>
+        <div class="stat-row"><span class="k">Visits per month</span><span class="v">4,600</span></div>
+        <div class="stat-row"><span class="k">Custom KPIs</span><span class="v" style="color:var(--telus-accessible-green);">None</span></div>
+      </article>
+
+      <article class="country">
+        <h3><span class="dot upcoming"></span>Peru</h3>
+        <div class="stat-row"><span class="k">Users live on Exceedra RE</span><span class="v">314</span></div>
+        <div class="stat-row"><span class="k">Users on TELUS IR</span><span class="v pending">Answer Pending</span></div>
+        <div class="stat-row"><span class="k">Nestlé SKUs</span><span class="v">252</span></div>
+        <div class="stat-row"><span class="k">Competitor SKUs</span><span class="v">681</span></div>
+        <div class="stat-row"><span class="k">Total SKUs</span><span class="v">933</span></div>
+        <div class="stat-row"><span class="k">Categories</span><span class="v">7</span></div>
+        <div class="stat-row"><span class="k">Visits per month</span><span class="v">1,450</span></div>
+        <div class="stat-row"><span class="k">Custom KPIs</span><span class="v" style="color:var(--telus-accessible-green);">None</span></div>
+      </article>
+
+      <article class="country">
+        <h3><span class="dot complete"></span>Ecuador</h3>
+        <div class="stat-row"><span class="k">Users live on Exceedra RE</span><span class="v">243</span></div>
+        <div class="stat-row"><span class="k">Users on TELUS IR</span><span class="v">140</span></div>
+        <div class="stat-row"><span class="k">Nestlé SKUs</span><span class="v">300</span></div>
+        <div class="stat-row"><span class="k">Competitor SKUs</span><span class="v">800</span></div>
+        <div class="stat-row"><span class="k">Total SKUs</span><span class="v">1,100</span></div>
+        <div class="stat-row"><span class="k">Categories</span><span class="v">22</span></div>
+        <div class="stat-row"><span class="k">Visits per month</span><span class="v">700</span></div>
+        <div class="stat-row"><span class="k">Custom KPIs</span><span class="v" style="color:var(--telus-accessible-green);">None</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Category names</h2>
+    <div class="cat-grid">
+
+      <article class="cat-card">
+        <h4>Panama</h4>
+        <span class="count">4 named of 6 declared</span>
+        <ol>
+          <li>Culinarios (derivados del tomate)</li>
+          <li>Leches culinarias</li>
+          <li>Caldos deshidratados</li>
+          <li>Sazonadores</li>
+        </ol>
+        <div class="gap">2 categories still unnamed</div>
+      </article>
+
+      <article class="cat-card">
+        <h4>Peru</h4>
+        <span class="count">7 declared</span>
+        <p class="empty">Answer Pending</p>
+      </article>
+
+      <article class="cat-card">
+        <h4>Ecuador</h4>
+        <span class="count">6 named of 22 declared</span>
+        <ol>
+          <li>Confitería</li>
+          <li>Culinario</li>
+          <li>Café</li>
+          <li>Petcare</li>
+          <li>Nutrición</li>
+          <li>Cereales</li>
+        </ol>
+        <div class="gap">16 categories still unnamed</div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Questionnaire responses</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th class="num">Panama</th>
+            <th class="num">Peru</th>
+            <th class="num">Ecuador</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="q">Users live with Exceedra RE
+              <span class="comment">All users are live with RE and use it to capture sample store photos, unless the territory is vacant or the user is a new starter.</span>
+            </td>
+            <td class="num">352</td>
+            <td class="num">314</td>
+            <td class="num">243</td>
+          </tr>
+          <tr>
+            <td class="q">Number of Nestlé SKUs in scope</td>
+            <td class="num">530</td>
+            <td class="num">252</td>
+            <td class="num">300</td>
+          </tr>
+          <tr>
+            <td class="q">Number of competitor SKUs in scope</td>
+            <td class="num">200</td>
+            <td class="num">681</td>
+            <td class="num">800</td>
+          </tr>
+          <tr>
+            <td class="q">Number of categories</td>
+            <td class="num">6</td>
+            <td class="num">7</td>
+            <td class="num">22</td>
+          </tr>
+          <tr>
+            <td class="q">Category names
+              <span class="comment">Full lists above. Panama named 4 of 6. Ecuador named 6 of 22.</span>
+            </td>
+            <td class="num">4 of 6 named</td>
+            <td class="num"><span class="pending">Answer Pending</span></td>
+            <td class="num">6 of 22 named</td>
+          </tr>
+          <tr>
+            <td class="q">Users that will use TELUS Image Recognition</td>
+            <td class="num">200</td>
+            <td class="num"><span class="pending">Answer Pending</span></td>
+            <td class="num">140</td>
+          </tr>
+          <tr>
+            <td class="q">Number of visits per month</td>
+            <td class="num">4,600</td>
+            <td class="num">1,450</td>
+            <td class="num">700</td>
+          </tr>
+          <tr>
+            <td class="q">Any expected custom KPIs to be created?</td>
+            <td class="num"><span class="no">No</span></td>
+            <td class="num"><span class="no">No</span></td>
+            <td class="num"><span class="no">No</span></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total SKUs in scope</td>
+            <td class="num">730</td>
+            <td class="num">933</td>
+            <td class="num">1,100</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Qualitative responses</h2>
+    <p class="section-note">Answers recorded as submitted by each market.</p>
+    <div class="qual-list">
+
+      <article class="qual">
+        <div class="qtext">Store category: Modern Trade, Traditional Trade, or a mix of both
+          <em>Sets the scene types the model has to recognise and the photo capture standard per channel.</em>
+        </div>
+        <div class="answers">
+          <div class="ans"><span class="m">Panama</span><span class="a">Both</span></div>
+          <div class="ans"><span class="m">Peru</span><span class="a">Both</span></div>
+          <div class="ans"><span class="m">Ecuador</span><span class="a">Both</span></div>
+        </div>
+      </article>
+
+      <article class="qual">
+        <div class="qtext">Image Recognition system used in the last two years, or on-shelf pictures taken through monitors or forms?
+          <em>Existing photo libraries shorten model training. Prior IR use also sets user expectations.</em>
+        </div>
+        <div class="answers">
+          <div class="ans"><span class="m">Panama</span><span class="a">Yes<small>Ran RIR previously.</small></span></div>
+          <div class="ans"><span class="m">Peru</span><span class="a">No</span></div>
+          <div class="ans"><span class="m">Ecuador</span><span class="a">No</span></div>
+        </div>
+      </article>
+
+      <article class="qual">
+        <div class="qtext">Do these countries share products? If so, is the packaging identical, and what percentage of products is shared?
+          <em>Shared packaging allows one image library across markets. This drives total training effort against the 2,763 SKUs in scope.</em>
+        </div>
+        <div class="answers">
+          <div class="ans"><span class="m">Panama</span><span class="a">Yes<small>Revision deferred to a later project stage. At least 6 more countries are expected to join the programme.</small></span></div>
+          <div class="ans"><span class="m">Peru</span><span class="a">No</span></div>
+          <div class="ans"><span class="m">Ecuador</span><span class="a">No</span></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-left">
+      <span class="badge">TELUS</span>
+      <div class="legend">
+        <span><i class="dot complete"></i>Data received</span>
+        <span><i class="dot upcoming"></i>Answer pending</span>
+      </div>
+    </div>
+    <div class="footer-right">
+      <span class="tagline">Let's make the future friendly</span>
+      TELUS Agriculture &amp; Consumer Goods | Confidential
+    </div>
+  </footer>
+
+</div>
