@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><script>window.isStandalone = true;</script><script>window.isStandalone = true;</script>
+<html lang="en"><head><script data-standalone-flag="true">window.isStandalone = true;</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nestlé and TELUS Project Portfolio Status</title>
@@ -340,116 +340,6 @@
     .sow-badge.confirmed { background: #2B8000; }
     .sow-body-text { font-size: 12.5px; color: #333333; line-height: 1.5; font-weight: 500; padding-left: 40px; }
 
-    /* CHILE TAB STYLING */
-    #section-chile {
-      --telus-purple: #4B286D;
-      --telus-accessible-green: #2B8000;
-      --telus-blue: #0066CC;
-      --telus-light-blue: #E3F2FD;
-      --telus-light-purple: #7C53A5;
-      --phase-complete: #2B8000;
-      --phase-active: #0066CC;
-      --phase-upcoming: #888888;
-      --bg-white: #FFFFFF;
-      --bg-card: #FAFAFA;
-      --bg-section: #F5F5F5;
-      --border-light: #EEEEEE;
-      --text-body: #333333;
-      --text-muted: #888888;
-      --page-max: 960px;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-    #section-chile .page-wrap { max-width: var(--page-max); margin: 0 auto; padding: 36px 40px; }
-    #section-chile .header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 16px; border-bottom: 2px solid var(--telus-purple); margin-bottom: 28px; }
-    #section-chile .header-left h1 { font-size: 26px; font-weight: 800; color: var(--telus-purple); line-height: 1.2; }
-    #section-chile .header-left .subtitle { font-size: 13px; color: var(--text-muted); margin-top: 4px; font-weight: 500; }
-    #section-chile .header-right { text-align: right; }
-    #section-chile .header-right .as-of { font-size: 11px; color: var(--text-muted); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
-    #section-chile .header-right .date-val { font-size: 14px; color: var(--telus-purple); font-weight: 700; margin-top: 2px; }
-
-    #section-chile .tab-nav { display: flex; gap: 4px; border-bottom: 2px solid var(--border-light); margin-bottom: 24px; }
-    #section-chile .tab-btn { padding: 10px 18px; font-size: 13px; font-weight: 700; color: var(--text-muted); background: transparent; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; cursor: pointer; letter-spacing: 0.2px; transition: color 0.15s ease, border-color 0.15s ease; }
-    #section-chile .tab-btn:hover { color: var(--telus-purple); }
-    #section-chile .tab-btn.active { color: var(--telus-purple); border-bottom-color: var(--telus-purple); }
-    #section-chile .tab-panel { display: none; }
-    #section-chile .tab-panel.active { display: block; }
-    #section-chile .section-title { font-size: 13px; font-weight: 800; color: var(--telus-purple); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border-light); }
-
-    #section-chile .es-section { margin-bottom: 24px; }
-    #section-chile .es-item-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 12px 16px;
-      border: 1px solid var(--border-light);
-      border-radius: 8px;
-      background: var(--bg-white);
-      margin-bottom: 10px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-    }
-    #section-chile .es-check, #section-chile .es-arrow, #section-chile .es-warn {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 800;
-      flex-shrink: 0;
-    }
-    #section-chile .es-check { background: #E8F5E9; color: var(--telus-accessible-green); }
-    #section-chile .es-arrow { background: #F1EBF8; color: var(--telus-purple); }
-    #section-chile .es-warn { background: #FFF3E0; color: #E65100; }
-    #section-chile .es-item-body { flex: 1; }
-    #section-chile .es-item-text { font-size: 13px; color: var(--text-body); font-weight: 600; line-height: 1.45; }
-    #section-chile .es-item-comment {
-      margin-top: 8px;
-      padding: 8px 12px;
-      background: #F8F6FA;
-      border-left: 3px solid var(--telus-light-purple);
-      border-radius: 0 6px 6px 0;
-      font-size: 12px;
-      line-height: 1.5;
-      color: var(--text-body);
-      font-weight: 500;
-    }
-    #section-chile .es-item-comment .es-comment-label { font-weight: 800; color: var(--telus-purple); text-transform: uppercase; letter-spacing: 0.5px; font-size: 10px; margin-right: 6px; }
-    #section-chile .es-item-owner {
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 3px 8px;
-      border-radius: 4px;
-      background: #E8F5E9;
-      color: var(--telus-accessible-green);
-      white-space: nowrap;
-      align-self: center;
-    }
-    #section-chile .es-item-date {
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 3px 8px;
-      border-radius: 4px;
-      background: #F1EBF8;
-      color: var(--telus-purple);
-      white-space: nowrap;
-      align-self: center;
-    }
-    #section-chile .es-empty-row {
-      padding: 12px 16px;
-      font-size: 12.5px;
-      color: var(--text-muted);
-      font-style: italic;
-      border: 1px solid var(--border-light);
-      border-radius: 8px;
-      background: var(--bg-card);
-    }
-
     /* NHS SECTION STYLES */
     #section-nhs {
       --telus-purple: #4B286D;
@@ -704,11 +594,23 @@
 <!-- Chile section CSS (from Chile status report 2026-08-18) -->
 <style>
 #section-chile {
-      --telus-purple: #4B286D; --telus-accessible-green: #2B8000; --telus-blue: #0066CC;
-      --telus-light-blue: #E3F2FD; --telus-light-purple: #7C53A5; --phase-complete: #2B8000;
-      --phase-active: #0066CC; --phase-upcoming: #888888; --bg-white: #FFFFFF; --bg-card: #FAFAFA;
-      --bg-section: #F5F5F5; --border-light: #EEEEEE; --text-body: #333333; --text-muted: #888888;
-      --page-max: 960px; font-size: 13px; line-height: 1.5;
+      --telus-purple: #4B286D;
+      --telus-accessible-green: #2B8000;
+      --telus-blue: #0066CC;
+      --telus-light-blue: #E3F2FD;
+      --telus-light-purple: #7C53A5;
+      --phase-complete: #2B8000;
+      --phase-active: #0066CC;
+      --phase-upcoming: #888888;
+      --bg-white: #FFFFFF;
+      --bg-card: #FAFAFA;
+      --bg-section: #F5F5F5;
+      --border-light: #EEEEEE;
+      --text-body: #333333;
+      --text-muted: #888888;
+      --page-max: 960px;
+      font-size: 13px;
+      line-height: 1.5;
     }
     #section-chile .page-wrap { max-width: var(--page-max); margin: 0 auto; padding: 36px 40px; }
     #section-chile .header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 16px; border-bottom: 2px solid var(--telus-purple); margin-bottom: 28px; }
@@ -717,6 +619,7 @@
     #section-chile .header-right { text-align: right; }
     #section-chile .header-right .as-of { font-size: 11px; color: var(--text-muted); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
     #section-chile .header-right .date-val { font-size: 14px; color: var(--telus-purple); font-weight: 700; margin-top: 2px; }
+
     #section-chile .tab-nav { display: flex; gap: 4px; border-bottom: 2px solid var(--border-light); margin-bottom: 24px; }
     #section-chile .tab-btn { padding: 10px 18px; font-size: 13px; font-weight: 700; color: var(--text-muted); background: transparent; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; cursor: pointer; letter-spacing: 0.2px; transition: color 0.15s ease, border-color 0.15s ease; }
     #section-chile .tab-btn:hover { color: var(--telus-purple); }
@@ -724,19 +627,80 @@
     #section-chile .tab-panel { display: none; }
     #section-chile .tab-panel.active { display: block; }
     #section-chile .section-title { font-size: 13px; font-weight: 800; color: var(--telus-purple); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border-light); }
+
     #section-chile .es-section { margin-bottom: 24px; }
-    #section-chile .es-item-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px; border: 1px solid var(--border-light); border-radius: 8px; background: var(--bg-white); margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); }
-    #section-chile .es-check, #section-chile .es-arrow, #section-chile .es-warn { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; flex-shrink: 0; }
+    #section-chile .es-item-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      background: var(--bg-white);
+      margin-bottom: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    #section-chile .es-check, #section-chile .es-arrow, #section-chile .es-warn {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
     #section-chile .es-check { background: #E8F5E9; color: var(--telus-accessible-green); }
     #section-chile .es-arrow { background: #F1EBF8; color: var(--telus-purple); }
     #section-chile .es-warn { background: #FFF3E0; color: #E65100; }
     #section-chile .es-item-body { flex: 1; }
     #section-chile .es-item-text { font-size: 13px; color: var(--text-body); font-weight: 600; line-height: 1.45; }
-    #section-chile .es-item-comment { margin-top: 8px; padding: 8px 12px; background: #F8F6FA; border-left: 3px solid var(--telus-light-purple); border-radius: 0 6px 6px 0; font-size: 12px; line-height: 1.5; color: var(--text-body); font-weight: 500; }
-    #section-chile .es-item-comment .es-comment-label { font-weight: 800; color: var(--telus-purple); text-transform: uppercase; letter-spacing: 0.5px; font-size: 10px; margin-right: 4px; }
-    #section-chile .es-item-owner { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 8px; border-radius: 4px; background: #E8F5E9; color: var(--telus-accessible-green); white-space: nowrap; align-self: center; }
-    #section-chile .es-item-date { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 8px; border-radius: 4px; background: #F1EBF8; color: var(--telus-purple); white-space: nowrap; align-self: center; }
-    #section-chile .es-empty-row { padding: 12px 16px; font-size: 12.5px; color: var(--text-muted); font-style: italic; border: 1px solid var(--border-light); border-radius: 8px; background: var(--bg-card); }
+    #section-chile .es-item-comment {
+      margin-top: 8px;
+      padding: 8px 12px;
+      background: #F8F6FA;
+      border-left: 3px solid var(--telus-light-purple);
+      border-radius: 0 6px 6px 0;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--text-body);
+      font-weight: 500;
+    }
+    #section-chile .es-item-comment .es-comment-label { font-weight: 800; color: var(--telus-purple); text-transform: uppercase; letter-spacing: 0.5px; font-size: 10px; margin-right: 6px; }
+    #section-chile .es-item-owner {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: #E8F5E9;
+      color: var(--telus-accessible-green);
+      white-space: nowrap;
+      align-self: center;
+    }
+    #section-chile .es-item-date {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: #F1EBF8;
+      color: var(--telus-purple);
+      white-space: nowrap;
+      align-self: center;
+    }
+    #section-chile .es-empty-row {
+      padding: 12px 16px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      font-style: italic;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      background: var(--bg-card);
+    }
 
     #section-chile .dot{ display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px; flex-shrink:0; }
     #section-chile .dot-complete{ background: var(--phase-complete); }
@@ -798,6 +762,60 @@
     .footer-right { text-align:right; font-size:11px; color:#888888; }
     .footer-right .tagline { font-style:italic; color:#4B286D; font-weight:600; margin-bottom:2px; }
 
+      #section-chile .f1-hero{display:flex;align-items:center;gap:24px;background:#F5F0FA;border-left:5px solid #4B286D;border-radius:0 10px 10px 0;padding:18px 26px;margin-bottom:22px}
+      #section-chile .f1-score{font-size:56px;font-weight:800;color:#4B286D;line-height:1}
+      #section-chile .f1-label{font-size:13px;font-weight:800;color:#4B286D;text-transform:uppercase;letter-spacing:0.8px}
+      #section-chile .f1-sub{font-size:12px;color:#888;margin-top:3px}
+      #section-chile .metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+      #section-chile .metric-card{background:#FAFAFA;border:1.5px solid #EEEEEE;border-radius:10px;padding:16px 20px;border-top:3px solid #4B286D}
+      #section-chile .metric-card .num{font-size:30px;font-weight:800;color:#4B286D}
+      #section-chile .metric-card .lbl{font-size:12px;color:#888;font-weight:600;margin-top:3px}
+      #section-chile .metric-card .sub{font-size:11px;color:#AAA;margin-top:7px}
+      #section-chile .sku-table{width:100%;border-collapse:collapse;margin-bottom:22px;font-size:12px}
+      #section-chile .sku-table th{background:#4B286D;color:#fff;padding:10px 14px;text-align:left;font-weight:700;font-size:11px;letter-spacing:0.5px}
+      #section-chile .sku-table th:not(:first-child){text-align:center}
+      #section-chile .sku-table td{padding:10px 14px;border-bottom:1px solid #EEEEEE;color:#333;font-weight:500}
+      #section-chile .sku-table td:not(:first-child){text-align:center}
+      #section-chile .sku-table tbody tr:last-child td{font-weight:700;background:#F5F0FA;color:#4B286D}
+      #section-chile .pct{display:inline-block;border-radius:4px;padding:2px 9px;font-size:11px;font-weight:700}
+      #section-chile .pct.g{background:#D4F7B0;color:#2B8000}
+      #section-chile .pct.y{background:#FFF3CD;color:#856404}
+      #section-chile .pct.o{background:#FFE0CC;color:#7A3800}
+      #section-chile .pct.r{background:#FFE0E0;color:#A32D2D}
+      #section-chile .pct.n{background:#f5f5f5;color:#888}
+      #section-chile .issue-table{width:100%;border-collapse:collapse;margin-bottom:22px;font-size:12px}
+      #section-chile .issue-table th{background:#888;color:#fff;padding:9px 14px;text-align:left;font-weight:700;font-size:11px;letter-spacing:0.4px}
+      #section-chile .issue-table th:last-child{text-align:center;width:64px}
+      #section-chile .issue-table td{padding:9px 14px;border-bottom:1px solid #EEEEEE;color:#333;vertical-align:top}
+      #section-chile .issue-table td:last-child{text-align:center;font-weight:700;color:#4B286D}
+      #section-chile .coverage-note{background:#F5F5F5;border-radius:8px;padding:13px 16px;font-size:12px;color:#888;margin-bottom:22px;display:flex;align-items:center;gap:9px;line-height:1.5}
+      #section-chile .coverage-note strong{color:#4B286D;font-weight:700}
+      #section-chile .detail-table{width:100%;border-collapse:collapse;font-size:11.5px;margin-bottom:22px}
+      #section-chile .detail-table th{background:#4B286D;color:#fff;padding:9px 11px;text-align:left;font-weight:700;font-size:10.5px;letter-spacing:0.4px;white-space:nowrap}
+      #section-chile .detail-table th.ctr{text-align:center}
+      #section-chile .detail-table td{padding:8px 11px;border-bottom:1px solid #EEEEEE;color:#333;vertical-align:top}
+      #section-chile .detail-table td.ctr{text-align:center}
+      #section-chile .detail-table tbody tr.nestle td{background:#F5F0FA}
+      #section-chile .score-pill{display:inline-block;border-radius:4px;padding:2px 9px;font-size:11px;font-weight:700}
+      #section-chile .cat-tag{display:inline-block;border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.3px;background:#F0EBF7;color:#4B286D}
+      #section-chile .provider-c{font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.4px}
+      #section-chile .provider-n{font-size:10px;font-weight:700;color:#4B286D;text-transform:uppercase;letter-spacing:0.4px}
+      #section-chile .filter-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+      #section-chile .filter-row label{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.4px}
+      #section-chile .filter-row select, #section-chile .filter-row input{font-size:12px;padding:6px 9px;border:1px solid #EEEEEE;border-radius:6px;color:#333;background:#fff;font-family:'Plus Jakarta Sans',-apple-system,sans-serif}
+      #section-chile .filter-row input{width:210px}
+      #section-chile .stat-strip{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+      #section-chile .stat-chip{background:#F5F5F5;border-radius:6px;padding:6px 13px;font-size:11px;font-weight:600;color:#888}
+      #section-chile .stat-chip strong{color:#4B286D;font-weight:800}
+      #section-chile .full-table{width:100%;border-collapse:collapse;font-size:11px;margin-bottom:22px}
+      #section-chile .full-table th{background:#4B286D;color:#fff;padding:9px 10px;font-weight:700;font-size:10.5px;letter-spacing:0.4px;text-align:left;cursor:pointer;white-space:nowrap;user-select:none}
+      #section-chile .full-table th.ctr{text-align:center}
+      #section-chile .full-table td{padding:7px 10px;border-bottom:1px solid #EEEEEE;color:#333;vertical-align:middle}
+      #section-chile .full-table td.ctr{text-align:center}
+      #section-chile .full-table tbody tr.nestle-row td{background:#F5F0FA}
+      #section-chile .full-table tbody tr.total-row td{background:#F5F0FA;font-weight:700;color:#4B286D;border-top:2px solid #4B286D}
+      #section-chile .sort-arrow{font-size:9px;margin-left:3px;opacity:0.7}
+      #section-chile .nestle-badge{font-size:9px;font-weight:800;color:#4B286D;text-transform:uppercase;letter-spacing:.4px;background:#E8DFF4;padding:1px 5px;border-radius:3px;margin-left:4px}
 
     /* ======== LATAM SECTION STYLES ======== */
     #section-latam {
@@ -1030,7 +1048,7 @@
         <div class="header-right">
           <div class="meta-row">
             <span class="meta-label">Date:</span>
-            <span class="meta-value" id="report-date">September 2, 2026</span>
+            <span class="meta-value" id="report-date">September 9, 2026</span>
           </div>
           <div class="meta-row">
             <span class="meta-label">Prepared by:</span>
@@ -1062,7 +1080,7 @@
               <div class="banner-summary">Implementation of TELUS Image Recognition at Nestlé Chile.</div>
               <div class="banner-exec-summary">
                 <span class="banner-exec-summary-label">Executive Summary</span>
-                Batch 1 is complete. Batch 2 model training is finished and go live holds at 16 Sep. Batch 3 approval to proceed with model training arrived on 1 Sep, moving go live to 21 Sep, with the date still to be aligned with the vendor. Batch 4 is waiting on additional on-shelf photos and catalog analysis answers from the market.
+                Progress improved across all batches this week. We cleared the milestones needed before Batch 2 and Batch 3 testing begins. Both go-live dates will move by days, not weeks, to absorb the earlier delays. We will confirm the revised dates once testing is underway.
               </div>
             </div>
             <div class="banner-right">
@@ -1077,7 +1095,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td><div class="phase-name">First Category</div><div class="phase-detail">Lacteous Culinarios</div></td>
+                    <td><div class="phase-name">First Category</div><div class="phase-detail">Lácteos y Culinarios</div></td>
                     <td class="phase-date">15 Apr</td>
                     <td class="phase-status"><span class="pill complete"><span class="dot"></span>Complete</span></td>
                   </tr>
@@ -1087,13 +1105,13 @@
                     <td class="phase-status"><span class="pill complete"><span class="dot"></span>Complete</span></td>
                   </tr>
                   <tr>
-                    <td><div class="phase-name">Batch 2</div><div class="phase-detail">Cafe + Culinarios</div></td>
-                    <td class="phase-date">16 Sep</td>
+                    <td><div class="phase-name">Batch 2</div><div class="phase-detail">Café y Culinarios</div></td>
+                    <td class="phase-date">16 Sep<div style="font-size:9px; font-weight:600; color:#E65100; margin-top:2px;">revision pending</div></td>
                     <td class="phase-status"><span class="pill in-progress"><span class="dot"></span>In Progress</span></td>
                   </tr>
                   <tr>
                     <td><div class="phase-name">Batch 3</div><div class="phase-detail">5 Categories</div></td>
-                    <td class="phase-date">21 Sep</td>
+                    <td class="phase-date">21 Sep<div style="font-size:9px; font-weight:600; color:#E65100; margin-top:2px;">revision pending</div></td>
                     <td class="phase-status"><span class="pill in-progress"><span class="dot"></span>In Progress</span></td>
                   </tr>
                   <tr>
@@ -1130,7 +1148,7 @@
               <div class="banner-summary">Implementation of TELUS Image Recognition at Nestlé NHS UK and Ireland.</div>
               <div class="banner-exec-summary">
                 <span class="banner-exec-summary-label">Executive Summary</span>
-                Packshot photos were received on 26 Aug. 36 SKUs still have no photos, or only a side angle, and TELUS is awaiting the rest from the market. The two open items for market follow‑up on the SSBS questionnaire are closed.
+                We completed the feasibility study prerequisites this week. They go to the vendor shortly. Scheduling of the feasibility study starts once the vendor has them.
               </div>
             </div>
             <div class="banner-right">
@@ -1165,7 +1183,7 @@
               <div class="banner-summary">Implementation of TELUS Image Recognition at Nestlé Brazil.</div>
               <div class="banner-exec-summary">
                 <span class="banner-exec-summary-label">Executive Summary</span>
-                Vendor prerequisites and feasibility study preparation are complete. Jaziel and Patricia are aligning meeting dates for the week of 7 Sep. The revised SOW goes out for review on 5 Sep.
+                Feasibility study activities started this week with a business rules definition session on 9 Sep. The session met its objectives. We are following up on the open items from it. Product catalog analysis starts shortly.
               </div>
             </div>
             <div class="banner-right">
@@ -1194,7 +1212,7 @@
               <div class="banner-summary">Implementation of TELUS Image Recognition at Ecuador, Panama, and Peru.</div>
               <div class="banner-exec-summary">
                 <span class="banner-exec-summary-label">Executive Summary</span>
-                Nestlé Ecuador activities are underway, currently under preparations for the Market Discovery. Approval pending to start projects for Panama and Peru.
+                Ecuador and Panama start this week. Market discovery sessions run Thursday 10 Sep and Friday 11 Sep.
               </div>
             </div>
             <div class="banner-right">
@@ -1241,11 +1259,11 @@
             </svg>
             <h1 style="margin: 0; font-size: 26px; font-weight: 800; color: #4B286D; line-height: 1.2;">Nestlé Chile — TIR Implementation</h1>
           </div>
-          <div class="subtitle">Project Status Report for Nestle Chile TIR</div>
+          <div class="subtitle">Project Status Report for Nestlé Chile TIR</div>
         </div>
         <div class="header-right">
           <div class="as-of">As of</div>
-          <div class="date-val">September 2, 2026</div>
+          <div class="date-val">9/9/2026</div>
         </div>
       </div>
 
@@ -1272,7 +1290,7 @@
       </div>
       <div style="display:flex; flex-direction:column; gap:2px;">
         <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; color:var(--text-muted);">Reporting Period</span>
-        <span style="font-size:13px; font-weight:700; color:var(--text-primary);">Week Ending 25 Aug 2026</span>
+        <span style="font-size:13px; font-weight:700; color:var(--text-primary);">Week Ending 9 Sep 2026</span>
       </div>
       <div style="display:flex; flex-direction:column; gap:2px;">
         <span style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; color:var(--text-muted);">Prepared By</span>
@@ -1286,7 +1304,7 @@
       <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-accessible-green); border-radius:10px; padding:14px 12px; text-align:center;">
         <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-accessible-green); margin-bottom:6px;">First Category</div>
         <div style="font-size:18px; font-weight:800; color:var(--telus-accessible-green); line-height:1.1;">15 Apr</div>
-        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Lacteous Culinaros</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Lácteos y Culinarios</div>
         <div style="margin-top:8px; display:inline-block; background:#E8F5E9; color:var(--telus-accessible-green); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">✔ Complete</div>
       </div>
 
@@ -1300,9 +1318,9 @@
       <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-blue); border-radius:10px; padding:14px 12px; text-align:center;">
         <div style="font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--telus-blue); margin-bottom:6px;">Batch 2</div>
         <div style="font-size:18px; font-weight:800; color:var(--telus-blue); line-height:1.1;">16 Sep</div>
-        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Cafe + Culinarios</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Café y Culinarios</div>
         <div style="margin-top:8px; display:inline-block; background:var(--telus-light-blue); color:var(--telus-blue); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">In Progress</div>
-        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:6px; line-height:1.4;">Go-live date revised to 16 Sep, following the delay in approval to complete model training.</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:6px; line-height:1.4;">Go-live revised to 16 Sep following the delay in Nestlé Chile approval to complete model training.</div>
       </div>
 
       <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-blue); border-radius:10px; padding:14px 12px; text-align:center;">
@@ -1310,7 +1328,7 @@
         <div style="font-size:18px; font-weight:800; color:var(--telus-blue); line-height:1.1;">21 Sep</div>
         <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">5 Categories</div>
         <div style="margin-top:8px; display:inline-block; background:var(--telus-light-blue); color:var(--telus-blue); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">In Progress</div>
-        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:6px; line-height:1.4;">Go-live date revised to 21 Sep. Nestlé Chile approval to proceed with model training was received 1 Sep. Date to be aligned with Vendor.</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:6px; line-height:1.4;">Go-live revised to 21 Sep. Nestlé Chile approval to proceed with model training was received 1 Sep. Date to be aligned with Vendor.</div>
       </div>
 
       <div style="background:var(--bg-card); border:1.5px solid var(--border-light); border-top:3px solid var(--telus-blue); border-radius:10px; padding:14px 12px; text-align:center;">
@@ -1318,43 +1336,81 @@
         <div style="font-size:18px; font-weight:800; color:var(--telus-blue); line-height:1.1;">15 Oct</div>
         <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:5px;">Purina</div>
         <div style="margin-top:8px; display:inline-block; background:var(--telus-light-blue); color:var(--telus-blue); font-size:10px; font-weight:800; padding:2px 8px; border-radius:4px; letter-spacing:0.3px;">In Progress</div>
-        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:6px; line-height:1.4;">Go Live Date moved due to Nestlé Chile delays with approval of Business Definitions.</div>
+        <div style="font-size:10px; color:var(--text-muted); font-weight:600; margin-top:6px; line-height:1.4;">Go-live moved due to Nestlé Chile delays approving business definitions.</div>
       </div>
 
     </div>
 
     <div class="es-section">
       <div class="section-title">Accomplishments This Week</div>
-
-      <div class="es-item-row">
-        <span class="es-check">✔</span>
-        <div class="es-item-body"><div class="es-item-text">Batch 4: Nestle Chile continue taking additional on-shelf photos</div></div>
-        <span class="es-item-owner">Nestle Chile</span>
-        <span class="es-item-date">28 Aug</span>
-      </div>
       
       <div class="es-item-row">
         <span class="es-check">✔</span>
-        <div class="es-item-body"><div class="es-item-text">Batch 2: Answer questions related to competitor dimensions, raised by Vendor</div></div>
-        <span class="es-item-owner">Nestle Chile</span>
-        <span class="es-item-date">28 Aug</span>
+        <div class="es-item-body"><div class="es-item-text">Batch 4: Nestlé Chile continued taking additional on-shelf photos</div></div>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">4 Sep</span>
       </div>
 
       <div class="es-item-row">
         <span class="es-check">✔</span>
-        <div class="es-item-body"><div class="es-item-text">Batch 3: completed labelling and analyzed the facings count statistics for the SKUs</div></div>
+        <div class="es-item-body"><div class="es-item-text">Batch 2: Completed model training and delivered model statistics</div></div>
         <span class="es-item-owner">TELUS VENDOR</span>
-        <span class="es-item-date">27 Aug</span>
+        <span class="es-item-date">Sep 4</span>
       </div>
-      
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body"><div class="es-item-text">Batch 3: Completed model training and delivered model statistics</div></div>
+        <span class="es-item-owner">TELUS VENDOR</span>
+        <span class="es-item-date">Sep 4</span>
+      </div>
+
       <div class="es-item-row">
         <span class="es-check">✔</span>
         <div class="es-item-body">
-          <div class="es-item-text">Batch 3: Decision to move forward with model training, and with additional training being performed late</div>
-          <div class="es-item-comment"><span class="es-comment-label">Note:</span> The information was shared with Nestle Chile on 27 Aug, and it was expected an answer on 28 Aug</div>
+          <div class="es-item-text">Batch 2: Product Group and master data Preparation</div>
+          <div class="es-item-comment" style="border-left-color:var(--telus-accessible-green);"><span class="es-comment-label" style="color:var(--telus-accessible-green);">Note:</span> <span style="color:var(--telus-accessible-green); font-weight:600;">9/8 update: Actions completed by Jose L.</span></div>
         </div>
-        <span class="es-item-owner">Nestle Chile</span>
-        <span class="es-item-date">1 Sep</span>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">8 Sep</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body"><div class="es-item-text">Batch 2: Confirmed to proceed with current model training to UAT and perform additional Data set collection and training after Go-Live</div></div>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">9 Sep</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body"><div class="es-item-text">Batch 3: Confirmed to proceed with current model training to UAT and perform additional Data set collection and training after Go-Live</div></div>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">9 Sep</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Batch 4 Purina: Answer Dataset Analysis Questions</div>
+          <div class="es-item-comment"><span class="es-comment-label">Note:</span> Delayed activity. Originally expected to complete 27 Aug.</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">9 Sep</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body"><div class="es-item-text">Batch 2: Complete Configuration for Testing</div></div>
+        <span class="es-item-owner">TELUS</span>
+        <span class="es-item-date">9 Sep</span>
+      </div>
+
+      <div class="es-item-row">
+        <span class="es-check">✔</span>
+        <div class="es-item-body"><div class="es-item-text">Batch 2: Provide Competitor Dimensions</div></div>
+        <span class="es-item-owner">TELUS</span>
+        <span class="es-item-date">9 Sep</span>
       </div>
 
     </div>
@@ -1364,22 +1420,7 @@
 
       <div class="es-item-row">
         <span class="es-arrow">►</span>
-        <div class="es-item-body">
-          <div class="es-item-text">Batch 2: Product Group and master data Preparation</div>
-        </div>
-      </div>
-
-      <div class="es-item-row">
-        <span class="es-arrow">►</span>
-        <div class="es-item-body">
-          <div class="es-item-text">Batch 4 - Purina: Answer Dataset Analysis Questions</div>
-        </div>
-      </div>
-
-      <div class="es-item-row">
-        <span class="es-arrow">►</span>
-        <div class="es-item-body"><div class="es-item-text">Competitive Product Dimensions for remaining Batches, Batch 2, Batch 3 &amp; Batch 4 next steps</div></div>
-        <span class="es-item-owner">All</span>
+        <div class="es-item-body"><div class="es-item-text">To be covered in Key Market Actions</div></div>
       </div>
 
     </div>
@@ -1390,21 +1431,35 @@
       <div class="es-item-row">
         <span class="es-arrow">►</span>
         <div class="es-item-body">
-          <div class="es-item-text">Batch 4 Purina: Nestle to provide additional Onshelf Photos</div>
-          <div class="es-item-comment"><span class="es-comment-label">Note:</span> Nestle Chile continue taking additional on-shelf photos</div>
+          <div class="es-item-text">Batch 2:</div>
         </div>
-        <span class="es-item-owner">Nestle Chile</span>
-        <span class="es-item-date">4 Sep</span>
       </div>
-      
+
+      <div class="es-item-row" style="padding-left:28px;">
+        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">-</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Answer questions on products with missing dimensions</div>
+          <div class="es-item-comment"><span class="es-comment-label">Note:</span> Email from Paulo on 9/9</div>
+        </div>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">10 Sep</span>
+      </div>
+
       <div class="es-item-row">
         <span class="es-arrow">►</span>
         <div class="es-item-body">
-          <div class="es-item-text">Batch 4 Purina: Answer Dataset Analysis Questions</div>
-          <div class="es-item-comment"><span class="es-comment-label" style="color:red;">Note:</span> <span style="color:red;">This is a delayed activity, originally it was expected to be completed 27 Aug</span></div>
+          <div class="es-item-text">Batch 3:</div>
         </div>
-        <span class="es-item-owner">Nestle Chile</span>
-        <span class="es-item-date">1 Sep</span>
+      </div>
+
+      <div class="es-item-row" style="padding-left:28px;">
+        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">-</span>
+        <div class="es-item-body">
+          <div class="es-item-text">Product Group and master data preparation</div>
+          <div class="es-item-comment" style="border-left-color:#E65100;"><span class="es-comment-label" style="color:#E65100;">Note:</span> <span style="color:#E65100; font-weight:600;">9/8: Jose will start working on this today</span></div>
+        </div>
+        <span class="es-item-owner">Jose Luis</span>
+        <span class="es-item-date">10 Sep</span>
       </div>
 
     </div>
@@ -1414,16 +1469,16 @@
 
       <div class="es-item-row">
         <span class="es-arrow">►</span>
-        <div class="es-item-body"><div class="es-item-text">Batch 2 — Cafe &amp; Culinarios</div></div>
+        <div class="es-item-body"><div class="es-item-text">Batch 2 — Café y Culinarios</div></div>
       </div>
 
       <div class="es-item-row" style="padding-left:28px;">
         <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">1.</span>
         <div class="es-item-body">
-          <div class="es-item-text">Model training</div>
+          <div class="es-item-text">Deploy model and integration to UAT for testing</div>
         </div>
         <span class="es-item-owner">TELUS VENDOR</span>
-        <span class="es-item-date">2 Sep</span>
+        <span class="es-item-date">11 Sep</span>
       </div>
 
       <div class="es-item-row">
@@ -1434,11 +1489,11 @@
       <div class="es-item-row" style="padding-left:28px;">
         <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">1.</span>
         <div class="es-item-body">
-          <div class="es-item-text">Model training</div>
-          <div class="es-item-comment"><span class="es-comment-label">Note:</span> Model training should be completed within two to three days after approval is provided. <span style="color:red;">Nestle required few more days and provided approval today Sep 1</span></div>
+          <div class="es-item-text">Complete Product Group and master data Preparation</div>
+          <div class="es-item-comment" style="border-left-color:#E65100;"><span class="es-comment-label" style="color:#E65100;">Note:</span> <span style="color:#E65100; font-weight:600;">9/8: Jose will start working on this today</span></div>
         </div>
-        <span class="es-item-owner">TELUS VENDOR</span>
-        <span class="es-item-date">TBC</span>
+        <span class="es-item-owner">Nestlé Chile</span>
+        <span class="es-item-date">10 Sep</span>
       </div>
 
       <div class="es-item-row">
@@ -1448,29 +1503,21 @@
 
       <div class="es-item-row" style="padding-left:28px;">
         <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">1.</span>
-        <div class="es-item-body"><div class="es-item-text">Nestle to provide additional Onshelf Photos</div></div>
-        <span class="es-item-owner">NESTLE CHILE</span>
-        <span class="es-item-date">4 Sep</span>
-      </div>
-
-      <div class="es-item-row" style="padding-left:28px;">
-        <span style="color:var(--telus-purple); font-size:11px; font-weight:800; min-width:18px;">2.</span>
         <div class="es-item-body">
-          <div class="es-item-text">Market to respond questions from the Catalog Analysis</div>
-          <div class="es-item-comment"><span class="es-comment-label">Note:</span> Most of the answers were completed in a joint session on 27th August. Awaiting final answers and completion</div>
+          <div class="es-item-text">Final review of questions and answers, then lock scope</div>
         </div>
-        <span class="es-item-owner">NESTLE CHILE</span>
-        <span class="es-item-date">1 Sep</span>
+        <span class="es-item-owner">TELUS VENDOR</span>
+        <span class="es-item-date">11 Sep</span>
       </div>
 
       <div class="es-item-row">
         <span class="es-arrow">►</span>
         <div class="es-item-body">
-          <div class="es-item-text">Batch 2,3 &amp; 4 Sign Off SOW for Calculation of Nestle Product Competitor Dimensions</div>
-          <div class="es-item-comment"><span class="es-comment-label">Note:</span> TELUS is awaiting feedback from the LATAM Market (email sent on 20th, 25th August)</div>
+          <div class="es-item-text">Batch 2, 3 and 4: Nestlé sign-off on SOW for competitor dimension calculation</div>
+          <div class="es-item-comment"><span class="es-comment-label">Note:</span> TELUS is awaiting feedback from the LATAM market. Emails sent 20 Aug and 25 Aug.</div>
         </div>
-        <span class="es-item-owner">TELUS &amp; NESTLE</span>
-        <span class="es-item-date">WEEK OF AUG 31</span>
+        <span class="es-item-owner">TELUS &amp; NESTLÉ</span>
+        <span class="es-item-date">Week of Sep 7</span>
       </div>
 
     </div>
@@ -1493,15 +1540,15 @@
     <div class="page-header">
       <div class="left">
         <h1>Nestlé Chile TIR | Go-Live Activity Dashboard</h1>
-        <div class="sub">Go-Live Activity Report &nbsp;|&nbsp; Apr 15 – Aug 28, 2026</div>
+        <div class="sub">Go-Live Activity Report &nbsp;|&nbsp; Apr 15 – Sep 4, 2026</div>
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:28px;">
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:28px;">
 
       <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-purple);border-radius:10px;padding:14px 12px;text-align:center;">
         <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">April</div>
-        <div style="font-size:26px;font-weight:800;color:var(--telus-purple);">223</div>
+        <div style="font-size:26px;font-weight:800;color:var(--telus-purple);">224</div>
         <div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;margin-top:4px;">Total Visits</div>
       </div>
 
@@ -1523,9 +1570,15 @@
         <div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;margin-top:4px;">Total Visits</div>
       </div>
 
+      <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-purple);border-radius:10px;padding:14px 12px;text-align:center;">
+        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-purple);margin-bottom:8px;">August</div>
+        <div style="font-size:26px;font-weight:800;color:var(--telus-purple);">386</div>
+        <div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;margin-top:4px;">Total Visits</div>
+      </div>
+      
       <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-top:3px solid var(--telus-blue);border-radius:10px;padding:14px 12px;text-align:center;">
-        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-blue);margin-bottom:8px;">August</div>
-        <div style="font-size:26px;font-weight:800;color:var(--telus-blue);">375</div>
+        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;color:var(--telus-blue);margin-bottom:8px;">September</div>
+        <div style="font-size:26px;font-weight:800;color:var(--telus-blue);">106</div>
         <div style="font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;margin-top:4px;">Total Visits (MTD)</div>
       </div>
 
@@ -1548,10 +1601,10 @@
         </thead>
         <tbody>
           <tr style="background:#F5F0FA;">
-            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">April — Apr 15–30</td>
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">April — Full month summary</td>
           </tr>
           <tr style="font-style:italic;">
-            <td>April</td><td>213</td><td>223</td><td>223</td><td>220</td><td class="in-progress-val">1</td><td>121</td><td>333</td>
+            <td>April</td><td>214</td><td>224</td><td>224</td><td>220</td><td class="in-progress-val">2</td><td>122</td><td>333</td>
           </tr>
           <tr style="background:#F5F0FA;">
             <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">May — Full month summary</td>
@@ -1572,29 +1625,18 @@
             <td>July</td><td>398</td><td>401</td><td>761</td><td>761</td><td class="zero-val">0</td><td>215</td><td>1408</td>
           </tr>
           <tr style="background:#F5F0FA;">
-            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">August — Current month (daily)</td>
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">August — Full month summary</td>
           </tr>
-          <tr><td>Aug 3</td><td>11</td><td>11</td><td>29</td><td>29</td><td class="zero-val">0</td><td>7</td><td>57</td></tr>
-          <tr><td>Aug 4</td><td>28</td><td>28</td><td>80</td><td>80</td><td class="zero-val">0</td><td>16</td><td>96</td></tr>
-          <tr><td>Aug 5</td><td>27</td><td>28</td><td>81</td><td>81</td><td class="zero-val">0</td><td>13</td><td>198</td></tr>
-          <tr><td>Aug 6</td><td>48</td><td>50</td><td>137</td><td>137</td><td class="zero-val">0</td><td>23</td><td>301</td></tr>
-          <tr><td>Aug 7</td><td>33</td><td>33</td><td>97</td><td>97</td><td class="zero-val">0</td><td>17</td><td>187</td></tr>
-          <tr><td>Aug 10</td><td>39</td><td>39</td><td>106</td><td>106</td><td class="zero-val">0</td><td>21</td><td>158</td></tr>
-          <tr><td>Aug 11</td><td>29</td><td>31</td><td>85</td><td>85</td><td class="zero-val">0</td><td>20</td><td>165</td></tr>
-          <tr><td>Aug 12</td><td>15</td><td>15</td><td>43</td><td>43</td><td class="zero-val">0</td><td>11</td><td>81</td></tr>
-          <tr><td>Aug 13</td><td>17</td><td>17</td><td>43</td><td>43</td><td class="zero-val">0</td><td>13</td><td>83</td></tr>
-          <tr><td>Aug 14</td><td>17</td><td>17</td><td>48</td><td>48</td><td class="zero-val">0</td><td>11</td><td>97</td></tr>
-          <tr><td>Aug 17</td><td>20</td><td>20</td><td>51</td><td>51</td><td class="zero-val">0</td><td>12</td><td>69</td></tr>
-          <tr><td>Aug 18</td><td>20</td><td>21</td><td>50</td><td>50</td><td class="zero-val">0</td><td>15</td><td>63</td></tr>
-          <tr><td>Aug 19</td><td>12</td><td>12</td><td>33</td><td>33</td><td class="zero-val">0</td><td>10</td><td>48</td></tr>
-          <tr><td>Aug 20</td><td>15</td><td>15</td><td>37</td><td>37</td><td class="zero-val">0</td><td>11</td><td>96</td></tr>
-          <tr><td>Aug 21</td><td>8</td><td>9</td><td>24</td><td>24</td><td class="zero-val">0</td><td>7</td><td>69</td></tr>
-          <tr><td>Aug 22</td><td>2</td><td>2</td><td>6</td><td>6</td><td class="zero-val">0</td><td>1</td><td>48</td></tr>
-          <tr><td>Aug 24</td><td>8</td><td>8</td><td>21</td><td>21</td><td class="zero-val">0</td><td>6</td><td>40</td></tr>
-          <tr><td>Aug 25</td><td>9</td><td>9</td><td>27</td><td>27</td><td class="zero-val">0</td><td>5</td><td>66</td></tr>
-          <tr><td>Aug 26</td><td>6</td><td>6</td><td>12</td><td>12</td><td class="zero-val">0</td><td>5</td><td>33</td></tr>
-          <tr><td>Aug 27</td><td>2</td><td>2</td><td>6</td><td>6</td><td class="zero-val">0</td><td>1</td><td>7</td></tr>
-          <tr><td>Aug 28</td><td>2</td><td>2</td><td>6</td><td>6</td><td class="zero-val">0</td><td>2</td><td>14</td></tr>
+          <tr style="font-style:italic;">
+            <td>August</td><td>379</td><td>386</td><td>1053</td><td>1053</td><td class="zero-val">0</td><td>233</td><td>2022</td>
+          </tr>
+          <tr style="background:#F5F0FA;">
+            <td colspan="8" style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--telus-purple);padding:8px 14px;">September — Current month (daily)</td>
+          </tr>
+          <tr><td>Sep 1</td><td>21</td><td>21</td><td>59</td><td>59</td><td class="zero-val">0</td><td>10</td><td>172</td></tr>
+          <tr><td>Sep 2</td><td>29</td><td>29</td><td>80</td><td>80</td><td class="zero-val">0</td><td>13</td><td>172</td></tr>
+          <tr><td>Sep 3</td><td>33</td><td>33</td><td>93</td><td>93</td><td class="zero-val">0</td><td>14</td><td>132</td></tr>
+          <tr><td>Sep 4</td><td>23</td><td>23</td><td>66</td><td>64</td><td class="in-progress-val">2</td><td>14</td><td>113</td></tr>
         </tbody>
       </table>
     </div>
@@ -1603,52 +1645,52 @@
     <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;">
 
       <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-radius:10px;padding:20px;">
-        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.7px;color:var(--telus-purple);margin-bottom:14px;">July (Complete) — 23 Working Days</div>
+        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.7px;color:var(--telus-purple);margin-bottom:14px;">August (Complete) — 23 Days Recorded</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;">
           <div style="text-align:center;">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Full Month Target</div>
             <div style="font-size:28px;font-weight:800;color:var(--telus-purple);">450</div>
-            <div style="font-size:10px;color:var(--text-muted);">23 working days</div>
+            <div style="font-size:10px;color:var(--text-muted);">23 days recorded</div>
           </div>
           <div style="text-align:center;">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Visits Achieved</div>
-            <div style="font-size:28px;font-weight:800;color:var(--telus-purple);">401</div>
-            <div style="font-size:10px;color:var(--text-muted);">23 of 23 working days</div>
+            <div style="font-size:28px;font-weight:800;color:var(--telus-purple);">386</div>
+            <div style="font-size:10px;color:var(--text-muted);">23 of 23 days</div>
           </div>
           <div style="text-align:center;">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Daily Average</div>
-            <div style="font-size:28px;font-weight:800;color:var(--telus-accessible-green);">17.4</div>
+            <div style="font-size:28px;font-weight:800;color:var(--telus-accessible-green);">16.8</div>
             <div style="font-size:10px;color:var(--text-muted);">visits/day across the month</div>
           </div>
         </div>
         <div style="background:var(--border-light);border-radius:6px;height:20px;overflow:hidden;">
-          <div style="height:100%;width:89.1%;background:var(--telus-purple);border-radius:6px;display:flex;align-items:center;padding-left:8px;">
-            <span style="font-size:10px;font-weight:800;color:#fff;">401 visits</span>
+          <div style="height:100%;width:85.8%;background:var(--telus-purple);border-radius:6px;display:flex;align-items:center;padding-left:8px;">
+            <span style="font-size:10px;font-weight:800;color:#fff;">386 visits</span>
           </div>
         </div>
-        <div style="margin-top:6px;font-size:11px;color:var(--text-muted);">July closed at 401 of the 450 target (89.1%). Volume was heavily concentrated mid-month (Jul 14–22) due to a spike in Batch 1 go-live activity.</div>
+        <div style="margin-top:6px;font-size:11px;color:var(--text-muted);">August closed at 386 of the 450 target (85.8%).</div>
       </div>
 
       <div style="background:var(--bg-card);border:1.5px solid var(--border-light);border-radius:10px;padding:20px;">
-        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.7px;color:var(--telus-blue);margin-bottom:14px;">August (In Progress) — 21 Days Recorded</div>
+        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.7px;color:var(--telus-blue);margin-bottom:14px;">September (In Progress) — 4 Days Recorded</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;">
           <div style="text-align:center;">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Visits So Far</div>
-            <div style="font-size:28px;font-weight:800;color:var(--telus-blue);">375</div>
-            <div style="font-size:10px;color:var(--text-muted);">Aug 3–28, 2026</div>
+            <div style="font-size:28px;font-weight:800;color:var(--telus-blue);">106</div>
+            <div style="font-size:10px;color:var(--text-muted);">Sep 1–4, 2026</div>
           </div>
           <div style="text-align:center;">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">Daily Average</div>
-            <div style="font-size:28px;font-weight:800;color:var(--telus-blue);">17.9</div>
+            <div style="font-size:28px;font-weight:800;color:var(--telus-blue);">26.5</div>
             <div style="font-size:10px;color:var(--text-muted);">visits/day so far</div>
           </div>
           <div style="text-align:center;">
             <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;">In Progress Monitorings</div>
-            <div style="font-size:28px;font-weight:800;color:#E65100;">0</div>
+            <div style="font-size:28px;font-weight:800;color:#E65100;">2</div>
             <div style="font-size:10px;color:var(--text-muted);">recorded so far this month</div>
           </div>
         </div>
-        <div style="font-size:11px;color:var(--text-muted);">21 days recorded so far in August (Aug 3–28); volume is currently pacing slightly below the 450 monthly target.</div>
+        <div style="font-size:11px;color:var(--text-muted);">4 days recorded so far in September (Sep 1–4); volume is currently pacing well against the 450 monthly target.</div>
       </div>
 
     </div>
@@ -1688,7 +1730,7 @@
         <div class="b-dates">19 Mar 2026 – 14 Jul 2026 &nbsp;|&nbsp; Status: Complete</div>
       </div>
       <div class="batch-body">
-        <div class="batch-task-row"><div class="dot dot-complete"></div><div class="bt-name" style="font-weight:700;">Market Categories Analysis</div><div class="bt-dates">19 Mar – 24 Apr 2026</div><span class="bt-assigned">NESTLE / TELUS / SS</span></div>
+        <div class="batch-task-row"><div class="dot dot-complete"></div><div class="bt-name" style="font-weight:700;">Market Categories Analysis</div><div class="bt-dates">19 Mar – 24 Apr 2026</div><span class="bt-assigned">NESTLÉ / TELUS / SS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Preparation of base catalogue per category — final SKU list and competitors</div><div class="bt-dates">19 Mar 2026</div><span class="bt-assigned">ALL</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Dataset preparation per category</div><div class="bt-dates">19 Mar 2026</div><span class="bt-assigned">ALL</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Defining the business rules of the categories in a batch</div><div class="bt-dates">8 – 24 Apr 2026</div><span class="bt-assigned">ALL</span></div>
@@ -1701,32 +1743,32 @@
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Provide photos for training</div><div class="bt-dates">27 – 28 Apr 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Product catalogue analysis</div><div class="bt-dates">27 Apr – 1 May 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Review changes in product catalogue scope — catalogue sign-off</div><div class="bt-dates">4 – 5 May 2026</div><span class="bt-assigned">ALL</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Scope freeze for Batch 1</div><div class="bt-dates">5 May 2026</div><span class="bt-assigned">NESTLE / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Scope freeze for Batch 1</div><div class="bt-dates">5 May 2026</div><span class="bt-assigned">NESTLÉ / TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">NN Model Training — First Iteration</div><div class="bt-dates">6 May – 29 Jun 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Dataset Preparation for Training</div><div class="bt-dates">6 May 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Capture photos for products not meeting 100 minimum facings</div><div class="bt-dates">3 – 10 Jun 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Capture photos for products not meeting 100 minimum facings</div><div class="bt-dates">3 – 10 Jun 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Data Annotation (Labeling, model training, statistic results)</div><div class="bt-dates">7 May – 19 Jun 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Internal recognition testing</div><div class="bt-dates">22 Jun 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Error Analysis &amp; Scope Update + Next Steps Definition</div><div class="bt-dates">23 – 25 Jun 2026</div><span class="bt-assigned">NESTLE / SS / TELUS</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Next Iteration Planning</div><div class="bt-dates">26 Jun 2026</div><span class="bt-assigned">SS / NESTLE / TELUS</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Model prepared for 1st iteration</div><div class="bt-dates">23 – 29 Jun 2026</div><span class="bt-assigned">NESTLE / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Error Analysis &amp; Scope Update + Next Steps Definition</div><div class="bt-dates">23 – 25 Jun 2026</div><span class="bt-assigned">NESTLÉ / SS / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Next Iteration Planning</div><div class="bt-dates">26 Jun 2026</div><span class="bt-assigned">SS / NESTLÉ / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Model prepared for 1st iteration</div><div class="bt-dates">23 – 29 Jun 2026</div><span class="bt-assigned">NESTLÉ / TELUS</span></div>
 
-        <div class="batch-task-row" style="background:#f9f9f9;"><div class="dot dot-complete"></div><div class="bt-name" style="font-weight:700;">Model Testing in UAT and Approval</div><div class="bt-dates">30 Jun – 10 Jul 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row" style="background:#f9f9f9;"><div class="dot dot-complete"></div><div class="bt-name" style="font-weight:700;">Model Testing in UAT and Approval</div><div class="bt-dates">30 Jun – 10 Jul 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Deploy SSBS Model to UAT</div><div class="bt-dates">30 Jun 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Master Data Update (Product Category Setup)</div><div class="bt-dates">30 Jun – 1 Jul 2026</div><span class="bt-assigned">TELUS / NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Master Data Update (Product Category Setup)</div><div class="bt-dates">30 Jun – 1 Jul 2026</div><span class="bt-assigned">TELUS / NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Provide Product Category Mapping file to SSBS</div><div class="bt-dates">2 Jul 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Integration Testing from SSBS</div><div class="bt-dates">3 Jul 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Integration Testing from TELUS</div><div class="bt-dates">3 Jul 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">FE Full Cycle Testing</div><div class="bt-dates">6 Jul 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Release Batch for Nestlé Verification</div><div class="bt-dates">6 Jul 2026</div><span class="bt-assigned">TELUS</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Nestlé Chile Testing and Sign-Off</div><div class="bt-dates">7 – 10 Jul 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Nestlé Chile Testing and Sign-Off</div><div class="bt-dates">7 – 10 Jul 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
 
         <div class="batch-task-row" style="background:#f9f9f9;"><div class="dot dot-complete"></div><div class="bt-name" style="font-weight:700;">Production Deployment</div><div class="bt-dates">7 – 13 Jul 2026</div></div>
-        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Confirm Go-Live Date</div><div class="bt-dates">10 Jul 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Confirm Go-Live Date</div><div class="bt-dates">10 Jul 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Deploy SSBS Model to Production</div><div class="bt-dates">13 Jul 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Master Data Update — Production</div><div class="bt-dates">7 – 10 Jul 2026</div><span class="bt-assigned">TELUS / NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Master Data Update — Production</div><div class="bt-dates">7 – 10 Jul 2026</div><span class="bt-assigned">TELUS / NESTLÉ CHILE</span></div>
 
-        <div class="batch-golive"><span>🚀</span> Go-Live — Batch 1 &nbsp;<span style="font-size:13px; color:var(--telus-accessible-green);">14 Jul 2026 ✔ Complete</span><span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLE</span></div>
+        <div class="batch-golive"><span>🚀</span> Go-Live — Batch 1 &nbsp;<span style="font-size:13px; color:var(--telus-accessible-green);">14 Jul 2026 ✔ Complete</span><span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLÉ</span></div>
       </div>
     </div>
   </div>
@@ -1734,15 +1776,15 @@
   <div id="tab-batch2" class="tab-panel">
     <div class="batch-section">
       <div class="batch-header" style="background:var(--telus-purple);">
-        <div class="b-name">Batch 2 — Cafe + Culinarios</div>
+        <div class="b-name">Batch 2 — Café y Culinarios</div>
         <div class="b-dates">20 May 2026 – 16 Sep 2026 &nbsp;|&nbsp; Status: In Progress</div>
       </div>
       <div class="batch-body">
-        <div class="batch-task-row"><div class="dot dot-active"></div><div class="bt-name" style="font-weight:700;">Market Categories Analysis</div><div class="bt-dates">20 May – 31 Jul 2026</div><span class="bt-assigned">NESTLE / TELUS / SS</span></div>
+        <div class="batch-task-row"><div class="dot dot-active"></div><div class="bt-name" style="font-weight:700;">Market Categories Analysis</div><div class="bt-dates">20 May – 31 Jul 2026</div><span class="bt-assigned">NESTLÉ / TELUS / SS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Preparation of base catalogue per category — final SKU list and competitors</div><div class="bt-dates">20 May 2026</div><span class="bt-assigned">ALL</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Dataset preparation per category</div><div class="bt-dates">20 May 2026</div><span class="bt-assigned">ALL</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Defining business rules of the categories</div><div class="bt-dates">21 – 25 May 2026</div><span class="bt-assigned">ALL</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">KPI validation per category</div><div class="bt-dates">26 May 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">KPI validation per category</div><div class="bt-dates">26 May 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-active"></div><div class="bt-name">Competitor dimensions change request creation</div><div class="bt-dates">31 Jul 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Category for batch plan sign-off</div><div class="bt-dates">27 – 29 May 2026</div><span class="bt-assigned">ALL</span></div>
 
@@ -1752,31 +1794,31 @@
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Provide photos for training</div><div class="bt-dates">1 – 2 Jun 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Product catalogue analysis</div><div class="bt-dates">3 – 17 Jun 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Review changes in product catalogue scope — catalogue sign-off</div><div class="bt-dates">18 Jun – 16 Jul 2026</div><span class="bt-assigned">ALL</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Scope freeze for Batch 2</div><div class="bt-dates">17 Jul 2026</div><span class="bt-assigned">NESTLE / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Scope freeze for Batch 2</div><div class="bt-dates">17 Jul 2026</div><span class="bt-assigned">NESTLÉ / TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">NN Model Training — First Iteration</div><div class="bt-dates">20 Jul – 3 Sep 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Dataset Preparation for Training</div><div class="bt-dates">20 Jul 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Data Annotation (Labeling, model training, statistic results)</div><div class="bt-dates">21 Jul – 27 Aug 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Internal recognition testing</div><div class="bt-dates">28 Aug 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Model prepared for 1st iteration</div><div class="bt-dates">28 Aug – 2 Sep 2026</div><span class="bt-assigned">NESTLE / TELUS</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Error Analysis &amp; Scope Update + Next Steps Definition</div><div class="bt-dates">31 Aug – 2 Sep 2026</div><span class="bt-assigned">NESTLE / SS / TELUS</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Next Iteration Planning</div><div class="bt-dates">3 Sep 2026</div><span class="bt-assigned">SS / NESTLE / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Model prepared for 1st iteration</div><div class="bt-dates">28 Aug – 2 Sep 2026</div><span class="bt-assigned">NESTLÉ / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Error Analysis &amp; Scope Update + Next Steps Definition</div><div class="bt-dates">31 Aug – 2 Sep 2026</div><span class="bt-assigned">NESTLÉ / SS / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Next Iteration Planning</div><div class="bt-dates">3 Sep 2026</div><span class="bt-assigned">SS / NESTLÉ / TELUS</span></div>
 
-        <div class="batch-task-row" style="background:#f9f9f9;"><div class="dot dot-not-started"></div><div class="bt-name" style="font-weight:700;">Model Testing and Approval</div><div class="bt-dates">4 – 10 Sep 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row" style="background:#f9f9f9;"><div class="dot dot-not-started"></div><div class="bt-name" style="font-weight:700;">Model Testing and Approval</div><div class="bt-dates">4 – 10 Sep 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Deploy SSBS Model to UAT</div><div class="bt-dates">4 Sep 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Master Data Update (Product Category Setup)</div><div class="bt-dates">4 – 7 Sep 2026</div><span class="bt-assigned">TELUS / NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Master Data Update (Product Category Setup)</div><div class="bt-dates">4 – 7 Sep 2026</div><span class="bt-assigned">TELUS / NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Provide Product Category Mapping file to SSBS</div><div class="bt-dates">8 Sep 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Integration Testing from SSBS</div><div class="bt-dates">8 Sep 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Integration Testing from TELUS</div><div class="bt-dates">8 Sep 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">FE Full Cycle Testing</div><div class="bt-dates">9 Sep 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Release Batch for Nestlé Verification</div><div class="bt-dates">9 Sep 2026</div><span class="bt-assigned">TELUS</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Nestlé Chile Testing and Sign-Off</div><div class="bt-dates">10 Sep 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Nestlé Chile Testing and Sign-Off</div><div class="bt-dates">10 Sep 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
 
         <div class="batch-task-row" style="background:#f9f9f9;"><div class="dot dot-not-started"></div><div class="bt-name" style="font-weight:700;">Production Deployment</div><div class="bt-dates">11 – 15 Sep 2026</div></div>
-        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Confirm Go-Live Date</div><div class="bt-dates">11 Sep 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Confirm Go-Live Date</div><div class="bt-dates">11 Sep 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Deploy SSBS Model to Production</div><div class="bt-dates">14 Sep 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Master Data Update — Production</div><div class="bt-dates">14 – 15 Sep 2026</div><span class="bt-assigned">TELUS / NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Master Data Update — Production</div><div class="bt-dates">14 – 15 Sep 2026</div><span class="bt-assigned">TELUS / NESTLÉ CHILE</span></div>
 
-        <div class="batch-golive"><span>🚀</span> Go-Live — Batch 2 &nbsp;<span style="font-size:13px; color:var(--telus-purple);">16 Sep 2026</span><span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLE</span></div>
+        <div class="batch-golive"><span>🚀</span> Go-Live — Batch 2 &nbsp;<span style="font-size:13px; color:var(--telus-purple);">16 Sep 2026</span><span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLÉ</span></div>
       </div>
     </div>
   </div>
@@ -1788,12 +1830,12 @@
         <div class="b-dates">12 Jun 2026 – 21 Sep 2026 &nbsp;|&nbsp; Status: In Progress</div>
       </div>
       <div class="batch-body">
-        <div class="batch-task-row"><div class="dot dot-active"></div><div class="bt-name" style="font-weight:700;">Market Categories Analysis</div><div class="bt-dates">12 Jun – 31 Jul 2026</div><span class="bt-assigned">NESTLE / TELUS / SS</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Provide final SKU list for each category in the batch</div><div class="bt-dates">12 – 17 Jun 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row"><div class="dot dot-active"></div><div class="bt-name" style="font-weight:700;">Market Categories Analysis</div><div class="bt-dates">12 Jun – 31 Jul 2026</div><span class="bt-assigned">NESTLÉ / TELUS / SS</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Provide final SKU list for each category in the batch</div><div class="bt-dates">12 – 17 Jun 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Preparation of base catalogue per category — final SKU list and competitors</div><div class="bt-dates">18 Jun 2026</div><span class="bt-assigned">ALL</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Dataset preparation per category</div><div class="bt-dates">18 Jun 2026</div><span class="bt-assigned">ALL</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Defining business rules of the categories</div><div class="bt-dates">19 Jun – 1 Jul 2026</div><span class="bt-assigned">ALL</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">KPI validation per category</div><div class="bt-dates">1 Jul 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">KPI validation per category</div><div class="bt-dates">1 Jul 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-active"></div><div class="bt-name">Competitor dimensions change request creation</div><div class="bt-dates">31 Jul 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Category for batch plan sign-off</div><div class="bt-dates">2 – 6 Jul 2026</div><span class="bt-assigned">ALL</span></div>
 
@@ -1803,31 +1845,31 @@
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Provide photos for training</div><div class="bt-dates">7 – 8 Jul 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Product catalogue analysis</div><div class="bt-dates">9 – 16 Jul 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Review changes in product catalogue scope — catalogue sign-off</div><div class="bt-dates">17 – 30 Jul 2026</div><span class="bt-assigned">ALL</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Scope freeze for Batch 3</div><div class="bt-dates">30 Jul 2026</div><span class="bt-assigned">NESTLE / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Scope freeze for Batch 3</div><div class="bt-dates">30 Jul 2026</div><span class="bt-assigned">NESTLÉ / TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-active"></div><div class="bt-name">NN Model Training — First Iteration</div><div class="bt-dates">31 Jul – 8 Sep 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Dataset Preparation for Training</div><div class="bt-dates">31 Jul 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-active"></div><div class="bt-name">Data Annotation (Labeling, model training, statistic results)<span class="bt-flag">Delayed</span></div><div class="bt-dates">3 Aug – 2 Sep 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Internal recognition testing</div><div class="bt-dates">3 Sep 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Model prepared for 1st iteration</div><div class="bt-dates">3 Sep 2026</div><span class="bt-assigned">NESTLE / TELUS</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Error Analysis &amp; Scope Update + Next Steps Definition</div><div class="bt-dates">4 – 8 Sep 2026</div><span class="bt-assigned">NESTLE / SS / TELUS</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Next Iteration Planning</div><div class="bt-dates">8 Sep 2026</div><span class="bt-assigned">SS / NESTLE / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Model prepared for 1st iteration</div><div class="bt-dates">3 Sep 2026</div><span class="bt-assigned">NESTLÉ / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Error Analysis &amp; Scope Update + Next Steps Definition</div><div class="bt-dates">4 – 8 Sep 2026</div><span class="bt-assigned">NESTLÉ / SS / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Next Iteration Planning</div><div class="bt-dates">8 Sep 2026</div><span class="bt-assigned">SS / NESTLÉ / TELUS</span></div>
 
-        <div class="batch-task-row" style="background:#f9f9f9;"><div class="dot dot-not-started"></div><div class="bt-name" style="font-weight:700;">Model Testing and Approval</div><div class="bt-dates">9 – 15 Sep 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row" style="background:#f9f9f9;"><div class="dot dot-not-started"></div><div class="bt-name" style="font-weight:700;">Model Testing and Approval</div><div class="bt-dates">9 – 15 Sep 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Deploy SSBS Model to UAT</div><div class="bt-dates">9 Sep 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Master Data Update (Product Category Setup)</div><div class="bt-dates">9 – 10 Sep 2026</div><span class="bt-assigned">TELUS / NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Master Data Update (Product Category Setup)</div><div class="bt-dates">9 – 10 Sep 2026</div><span class="bt-assigned">TELUS / NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Provide Product Category Mapping file to SSBS</div><div class="bt-dates">11 Sep 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Integration Testing from SSBS</div><div class="bt-dates">11 Sep 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Integration Testing from TELUS</div><div class="bt-dates">11 Sep 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">FE Full Cycle Testing</div><div class="bt-dates">14 Sep 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Release Batch for Nestlé Verification</div><div class="bt-dates">14 Sep 2026</div><span class="bt-assigned">TELUS</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Nestlé Chile Testing and Sign-Off</div><div class="bt-dates">15 Sep 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Nestlé Chile Testing and Sign-Off</div><div class="bt-dates">15 Sep 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
 
         <div class="batch-task-row" style="background:#f9f9f9;"><div class="dot dot-not-started"></div><div class="bt-name" style="font-weight:700;">Production Deployment</div><div class="bt-dates">16 – 18 Sep 2026</div></div>
-        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Confirm Go-Live Date</div><div class="bt-dates">16 Sep 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Confirm Go-Live Date</div><div class="bt-dates">16 Sep 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Deploy SSBS Model to Production</div><div class="bt-dates">17 Sep 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Master Data Update — Production</div><div class="bt-dates">17 – 18 Sep 2026</div><span class="bt-assigned">TELUS / NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Master Data Update — Production</div><div class="bt-dates">17 – 18 Sep 2026</div><span class="bt-assigned">TELUS / NESTLÉ CHILE</span></div>
 
-        <div class="batch-golive"><span>🚀</span> Go-Live — Batch 3 &nbsp;<span style="font-size:13px; color:var(--telus-purple);">21 Sep 2026</span><span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLE</span></div>
+        <div class="batch-golive"><span>🚀</span> Go-Live — Batch 3 &nbsp;<span style="font-size:13px; color:var(--telus-purple);">21 Sep 2026</span><span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLÉ</span></div>
       </div>
     </div>
   </div>
@@ -1839,12 +1881,12 @@
         <div class="b-dates">6 Jul 2026 – 15 Oct 2026 &nbsp;|&nbsp; Status: In Progress</div>
       </div>
       <div class="batch-body">
-        <div class="batch-task-row"><div class="dot dot-active"></div><div class="bt-name" style="font-weight:700;">Market Categories Analysis</div><div class="bt-dates">6 Jul – 14 Aug 2026</div><span class="bt-assigned">NESTLE / TELUS / SS</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Provide final SKU list and packshot photos for each category in the batch</div><div class="bt-dates">6 – 20 Jul 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row"><div class="dot dot-active"></div><div class="bt-name" style="font-weight:700;">Market Categories Analysis</div><div class="bt-dates">6 Jul – 14 Aug 2026</div><span class="bt-assigned">NESTLÉ / TELUS / SS</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Provide final SKU list and packshot photos for each category in the batch</div><div class="bt-dates">6 – 20 Jul 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Preparation of base catalogue per category — final SKU list and competitors</div><div class="bt-dates">31 Jul – 3 Aug 2026</div><span class="bt-assigned">ALL</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Dataset preparation per category</div><div class="bt-dates">31 Jul 2026</div><span class="bt-assigned">ALL</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Defining the business rules of the categories in a batch</div><div class="bt-dates">22 – 28 Jul 2026</div><span class="bt-assigned">ALL</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">KPI validation per category</div><div class="bt-dates">28 Jul 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">KPI validation per category</div><div class="bt-dates">28 Jul 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-active"></div><div class="bt-name">Competitor dimensions change request creation</div><div class="bt-dates">31 Jul 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-complete"></div><div class="bt-name">Category for batch plan sign-off</div><div class="bt-dates">29 Jul – 14 Aug 2026</div><span class="bt-assigned">ALL</span></div>
 
@@ -1854,31 +1896,31 @@
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Provide photos for training</div><div class="bt-dates">14 Aug 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-complete"></div><div class="bt-name">Product catalogue analysis</div><div class="bt-dates">17 – 25 Aug 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-active"></div><div class="bt-name">Review changes in product catalogue scope — catalogue sign-off<span class="bt-flag">Delayed</span></div><div class="bt-dates">26 – 27 Aug 2026</div><span class="bt-assigned">ALL</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Scope freeze for Batch 4</div><div class="bt-dates">27 Aug 2026</div><span class="bt-assigned">NESTLE / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Scope freeze for Batch 4</div><div class="bt-dates">27 Aug 2026</div><span class="bt-assigned">NESTLÉ / TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">NN Model Training — First Iteration</div><div class="bt-dates">28 Aug – 2 Oct 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Dataset Preparation for Training</div><div class="bt-dates">28 Aug 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Data Annotation (Labeling, model training, statistic results)</div><div class="bt-dates">31 Aug – 25 Sep 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Internal recognition testing</div><div class="bt-dates">28 Sep 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Model prepared for 1st iteration</div><div class="bt-dates">28 Sep 2026</div><span class="bt-assigned">NESTLE / TELUS</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Error Analysis &amp; Scope Update + Next Steps Definition</div><div class="bt-dates">29 Sep – 1 Oct 2026</div><span class="bt-assigned">NESTLE / SS / TELUS</span></div>
-        <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Next Iteration Planning</div><div class="bt-dates">2 Oct 2026</div><span class="bt-assigned">SS / NESTLE / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Model prepared for 1st iteration</div><div class="bt-dates">28 Sep 2026</div><span class="bt-assigned">NESTLÉ / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Error Analysis &amp; Scope Update + Next Steps Definition</div><div class="bt-dates">29 Sep – 1 Oct 2026</div><span class="bt-assigned">NESTLÉ / SS / TELUS</span></div>
+        <div class="batch-task-row sub2"><div class="dot dot-not-started"></div><div class="bt-name">Next Iteration Planning</div><div class="bt-dates">2 Oct 2026</div><span class="bt-assigned">SS / NESTLÉ / TELUS</span></div>
 
-        <div class="batch-task-row" style="background:#f9f9f9;"><div class="dot dot-not-started"></div><div class="bt-name" style="font-weight:700;">Model Testing and Approval</div><div class="bt-dates">5 – 9 Oct 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row" style="background:#f9f9f9;"><div class="dot dot-not-started"></div><div class="bt-name" style="font-weight:700;">Model Testing and Approval</div><div class="bt-dates">5 – 9 Oct 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Deploy SSBS Model to UAT</div><div class="bt-dates">5 Oct 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Master Data Update (Product Category Setup)</div><div class="bt-dates">5 – 6 Oct 2026</div><span class="bt-assigned">TELUS / NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Master Data Update (Product Category Setup)</div><div class="bt-dates">5 – 6 Oct 2026</div><span class="bt-assigned">TELUS / NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Provide Product Category Mapping file to SSBS</div><div class="bt-dates">7 Oct 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Integration Testing from SSBS</div><div class="bt-dates">7 Oct 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Integration Testing from TELUS</div><div class="bt-dates">7 Oct 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">FE Full Cycle Testing</div><div class="bt-dates">8 Oct 2026</div><span class="bt-assigned">TELUS</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Release Batch for Nestlé Verification</div><div class="bt-dates">8 Oct 2026</div><span class="bt-assigned">TELUS</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Nestlé Chile Testing and Sign-Off</div><div class="bt-dates">9 Oct 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Nestlé Chile Testing and Sign-Off</div><div class="bt-dates">9 Oct 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
 
         <div class="batch-task-row" style="background:#f9f9f9;"><div class="dot dot-not-started"></div><div class="bt-name" style="font-weight:700;">Production Deployment</div><div class="bt-dates">12 – 14 Oct 2026</div></div>
-        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Confirm Go-Live Date</div><div class="bt-dates">12 Oct 2026</div><span class="bt-assigned">NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Confirm Go-Live Date</div><div class="bt-dates">12 Oct 2026</div><span class="bt-assigned">NESTLÉ CHILE</span></div>
         <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Deploy SSBS Model to Production</div><div class="bt-dates">13 Oct 2026</div><span class="bt-assigned">TELUS VENDOR</span></div>
-        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Master Data Update — Production</div><div class="bt-dates">13 – 14 Oct 2026</div><span class="bt-assigned">TELUS / NESTLE CHILE</span></div>
+        <div class="batch-task-row sub"><div class="dot dot-not-started"></div><div class="bt-name">Master Data Update — Production</div><div class="bt-dates">13 – 14 Oct 2026</div><span class="bt-assigned">TELUS / NESTLÉ CHILE</span></div>
 
-        <div class="batch-golive"><span>🚀</span> Go-Live — Batch 4 &nbsp;<span style="font-size:13px; color:var(--telus-purple);">15 Oct 2026</span><span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLE</span></div>
+        <div class="batch-golive"><span>🚀</span> Go-Live — Batch 4 &nbsp;<span style="font-size:13px; color:var(--telus-purple);">15 Oct 2026</span><span style="margin-left:auto; font-size:10px; color:var(--text-muted); font-weight:400;">Owner: NESTLÉ</span></div>
       </div>
     </div>
   </div>
@@ -1915,7 +1957,7 @@
             <div class="metric-row">
               <div class="metric-card"><div class="num">78</div><div class="lbl">Total SKUs Evaluated</div><div class="sub">21 Nestlé &nbsp;|&nbsp; 57 Competitor</div></div>
               <div class="metric-card"><div class="num" style="color:#2B8000">74%</div><div class="lbl">SKUs Above 95%</div><div class="sub">58 of 78 meet target threshold</div></div>
-              <div class="metric-card"><div class="num" style="color:#A32D2D">9%</div><div class="lbl">SKUs Below 80%</div><div class="sub">7 of 78 require attention</div></div>
+              <div class="metric-card"><div class="num" style="color:#A32D2D">4%</div><div class="lbl">SKUs Below 80%</div><div class="sub">3 of 78 scored below threshold</div></div>
             </div>
 
             <div class="section-title">SKU Performance by Brand</div>
@@ -1949,7 +1991,7 @@
 
             <div class="coverage-note">
               <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#4B286D" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-              <span><strong>20 of 78 SKUs</strong> reviewed in detail (27% of evaluated catalog). Nestlé portfolio achieved 95% pass rate at the &gt;95% threshold.</span>
+              <span><strong>20 of 78 SKUs</strong> reviewed in detail (27% of evaluated catalog). Nestlé portfolio achieved 95% pass rate at the &gt;95% threshold. Of the 7 SKUs in the &lt;80% band, 3 scored below threshold and 4 could not be evaluated because they were not present in the QC image set.</span>
             </div>
           </div>
 
@@ -2039,8 +2081,7 @@
     </div>
   </section>
 
-  <!-- ======================== SECTION 3: NHS UK & I ======================== -->
-  <section id="section-nhs" class="portfolio-section">
+<section id="section-nhs" class="portfolio-section">
     <div class="page-wrap">
       <div class="page-header">
         <div class="header-left">
@@ -2058,7 +2099,7 @@
         </div>
         <div class="header-right">
           <div class="as-of">AS OF</div>
-          <div class="date-val">September 2, 2026</div>
+          <div class="date-val">September 9, 2026</div>
         </div>
       </div>
 
@@ -2089,12 +2130,12 @@
                 <div class="bzc-status">A 2 hour session was successfully held on Aug 11th.</div>
               </div>
             </div>
-            <div class="bzc-card none">
-              <div class="bzc-pill">Not Started</div>
+            <div class="bzc-card green">
+              <div class="bzc-pill">Complete</div>
               <div class="bzc-body">
                 <div class="bzc-name">Feasibility Study</div>
                 <div class="bzc-owner">Owner: Jaziel</div>
-                <div class="bzc-status">We are not in a position to schedule the Feasibility Study. Prerequisites are not ready.</div>
+                <div class="bzc-status">TELUS is ready to send the 3 pre requisites by Sep 9th</div>
               </div>
             </div>
           </div>
@@ -2103,12 +2144,12 @@
         <div class="bzc-group">
           <div class="bzc-group-title">Feasibility Study Prerequisites</div>
           <div class="bzc-grid">
-            <div class="bzc-card amber">
-              <div class="bzc-pill">In Progress</div>
+            <div class="bzc-card green">
+              <div class="bzc-pill">Complete</div>
               <div class="bzc-body">
                 <div class="bzc-name">Product Catalog</div>
                 <div class="bzc-owner">Owner: Mateusz</div>
-                <div class="bzc-status">The product SKU list was provided. Abby shared the packshot photos for Vital protein, Solgar and Pure categories. However, TELUS found 36 photos are missing.</div>
+                <div class="bzc-status">The product SKU list was provided. Abby shared the packshot photos for Vital protein, Solgar and Pure categories. Additionally all missing photos have been provided by Steve. Only the MSL updated list is missing</div>
               </div>
             </div>
             <div class="bzc-card green">
@@ -2135,14 +2176,6 @@
             <div class="status-next-hdr">CURRENT STATUS</div>
             <div class="status-next-body">
               <div style="font-size: 10px; font-weight: 800; color: #4B286D; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px;">Feasibility Study Preparation</div>
-              <div class="status-next-row">
-                <div class="status-next-dot"></div>
-                <div class="status-next-text">
-                  <div>Additional packshot photos were sent on 26 August. 36 SKUs still have no photos, or only a side angle. Awaiting additional photos from the market.</div>
-                  <div class="status-next-owner">OWNER: MATEUSZ</div>
-                </div>
-                <div class="status-next-date">26 Aug</div>
-              </div>
             </div>
           </div>
 
@@ -2150,14 +2183,6 @@
             <div class="status-next-hdr">NEXT STEPS</div>
             <div class="status-next-body">
               <div style="font-size: 10px; font-weight: 800; color: #0066CC; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px;">Feasibility Study Preparation</div>
-              <div class="status-next-row">
-                <div class="status-next-dot"></div>
-                <div class="status-next-text">
-                  <div>Receive photos and complete Vendor Prerequisites</div>
-                  <div class="status-next-owner">OWNER: MATEUSZ/JAZIEL</div>
-                </div>
-                <div class="status-next-date">4 Sep</div>
-              </div>
               <div class="status-next-row">
                 <div class="status-next-dot"></div>
                 <div class="status-next-text">
@@ -2556,7 +2581,7 @@
         </div>
         <div class="header-right">
           <div class="as-of">As of</div>
-          <div class="date-val">September 2, 2026</div>
+          <div class="date-val">September 9, 2026</div>
         </div>
       </div>
 
@@ -2564,127 +2589,99 @@
         <button class="brazil-tab-btn active" data-brazil-tab="brazil-tab-summary" onclick="window.showBrazilTab('brazil-tab-summary')">Executive Summary</button>
         <button class="brazil-tab-btn" data-brazil-tab="brazil-tab-raci" onclick="window.showBrazilTab('brazil-tab-raci')">RACI Chart</button>
         <button class="brazil-tab-btn" data-brazil-tab="brazil-tab-sessions" onclick="window.showBrazilTab('brazil-tab-sessions')">Onboarding Sessions</button>
+        <button class="brazil-tab-btn" data-brazil-tab="brazil-tab-feasibility" onclick="window.showBrazilTab('brazil-tab-feasibility')">Feasibility Plan</button>
         <button class="brazil-tab-btn" data-brazil-tab="brazil-tab-ooo" onclick="window.showBrazilTab('brazil-tab-ooo')">Holiday/OOO</button>
       </div>
 
       <!-- Brazil Sub-Tab 1: Executive Summary -->
       <div id="brazil-tab-summary" class="brazil-tab-panel active">
-        <div class="bzc-group">
-          <div class="bzc-group-title">Onboarding Sessions</div>
-          <div class="bzc-grid">
-            <div class="bzc-card green">
-              <div class="bzc-pill">Complete</div>
-              <div class="bzc-body">
-                <div class="bzc-name">Kick Off Meeting</div>
-                <div class="bzc-owner">Owner: Patricia</div>
-                <div class="bzc-status">Kick-off call held successfully on Aug 6th.</div>
-              </div>
-            </div>
-            <div class="bzc-card green">
-              <div class="bzc-pill">Complete</div>
-              <div class="bzc-body">
-                <div class="bzc-name">Discovery Workshop</div>
-                <div class="bzc-owner">Owner: Patricia/Jaziel</div>
-                <div class="bzc-status">A 2 hour session was held successfully on Aug 10th.</div>
-              </div>
-            </div>
-            <div class="bzc-card green">
-              <div class="bzc-pill">Complete</div>
-              <div class="bzc-body">
-                <div class="bzc-name">Feasibility Study</div>
-                <div class="bzc-owner">Owner: Jaziel</div>
-                <div class="bzc-status">Feasibility Study Prerequisites completed on 26th August, Vendor is currently preparing for sessions that can start during the week of 7th September.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bzc-group">
-          <div class="bzc-group-title">Feasibility Study Prerequisites</div>
-          <div class="bzc-grid">
-            <div class="bzc-card green">
-              <div class="bzc-pill">Complete</div>
-              <div class="bzc-body">
-                <div class="bzc-name">Product Catalog</div>
-                <div class="bzc-owner">Owner: Jaziel</div>
-                <div class="bzc-status">
-                  <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; list-style-type: disc;">
-                    <li><strong>Adopt product ID as the unique identifier</strong> — Market issued a revised list of 127 SKUs, the competitor SKUs remain pending creation in the system to ensure accuracy in the training model</li>
-                    <li><strong>Share competitor catalogue photos</strong> — Market provided the revised SKU list including competitor products, the photo links that were incorrect or inaccessible have been corrected.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="bzc-card green">
-              <div class="bzc-pill">Complete</div>
-              <div class="bzc-body">
-                <div class="bzc-name">On Shelf Photos</div>
-                <div class="bzc-owner">Owner: Patricia</div>
-                <div class="bzc-status">On Shelf Photos capture is complete. Patricia shared the Monitoring name to be used. TELUS found quality issues on these photos, and manually removed the unusable photos, as a one time exception.</div>
-              </div>
-            </div>
-            <div class="bzc-card green">
-              <div class="bzc-pill">Complete</div>
-              <div class="bzc-body">
-                <div class="bzc-name">SSBS Questionnaire</div>
-                <div class="bzc-owner">Owner: Jaziel / Patricia</div>
-                <div class="bzc-status">Questionnaire reviewed during the Discovery Workshop; all follow-up items have been completed and closed by the market.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-                <div class="status-next-wrap">
-          <div class="status-next-card current">
-            <div class="status-next-hdr">CURRENT STATUS</div>
+        <!-- 1. CURRENT STATUS & NEXT STEPS (SWAPPED TO TOP) -->
+        <div class="status-next-wrap" style="margin-bottom: 30px;">
+          <div class="status-next-card current" style="box-shadow: 0 2px 6px rgba(75, 40, 109, 0.06);">
+            <div class="status-next-hdr">Recent Accomplishments</div>
             <div class="status-next-body">
-              <div class="status-next-row">
-                <div class="status-next-dot"></div>
+              <div class="status-next-row" style="align-items: flex-start; padding: 14px 0;">
+                <div class="status-next-dot" style="margin-top: 5px;"></div>
                 <div class="status-next-text">
-                  <div>Vendor prerequisites and feasibility study preparation are complete. Jaziel and Patricia to align on meeting dates and times, targeting the week of 7 September.</div>
-                  <div class="status-next-owner">JAZIEL/PATRICIA</div>
+                  <div style="font-size: 13.5px; font-weight: 600; color: #2C2E30; line-height: 1.55;">
+                    TELUS, SSBS and market met on Sep 9th for a successful feasibility meeting. All edge cases pack were reviewed.
+                  </div>
+                  <div style="margin-top: 8px; display: flex; align-items: center; gap: 8px;">
+                    <span class="status-next-owner" style="background: #F0EDF3; color: #4B286D; padding: 2.5px 8px; border-radius: 4px; font-weight: 800; font-size: 9.5px; letter-spacing: 0.5px;">OWNER: JAZIEL / PATRICIA</span>
+                  </div>
                 </div>
-                <div class="status-next-date">1 Sep</div>
+                <div class="status-next-date" style="background: #F1EBF8; color: #4B286D; padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 800;">9 Sep</div>
+              </div>
+              <div class="status-next-row" style="align-items: flex-start; padding: 14px 0;">
+                <div class="status-next-dot" style="margin-top: 5px;"></div>
+                <div class="status-next-text">
+                  <div style="font-size: 13.5px; font-weight: 600; color: #2C2E30; line-height: 1.55;">
+                    Vendor prerequisites and feasibility study preparation are complete.
+                  </div>
+                  <div style="margin-top: 8px; display: flex; align-items: center; gap: 8px;">
+                    <span class="status-next-owner" style="background: #F0EDF3; color: #4B286D; padding: 2.5px 8px; border-radius: 4px; font-weight: 800; font-size: 9.5px; letter-spacing: 0.5px;">OWNER: JAZIEL / PATRICIA</span>
+                  </div>
+                </div>
+                <div class="status-next-date" style="background: #F1EBF8; color: #4B286D; padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 800;">1 Sep</div>
               </div>
             </div>
           </div>
 
-          <div class="status-next-card next">
+          <div class="status-next-card next" style="box-shadow: 0 2px 6px rgba(0, 102, 204, 0.06);">
             <div class="status-next-hdr">NEXT STEPS</div>
             <div class="status-next-body">
-              <div class="status-next-row">
-                <div class="status-next-dot"></div>
+              <div class="status-next-row" style="padding: 12px 0;">
+                <div class="status-next-dot" style="margin-top: 5px;"></div>
                 <div class="status-next-text">
-                  <div>Schedule Feasibility Study Meetings</div>
-                  <div class="status-next-owner">PATRICIA/JAZIEL/IR VENDOR</div>
+                  <div style="font-size: 13px; font-weight: 600; color: #2C2E30; line-height: 1.5;">Follow up on open points from the SSBS questionnaire discussed during the feasibility session</div>
+                  <div style="margin-top: 6px;">
+                    <span class="status-next-owner" style="background: #E3F2FD; color: #0066CC; padding: 2.5px 8px; border-radius: 4px; font-weight: 800; font-size: 9.5px; letter-spacing: 0.5px;">OWNER: JAZIEL</span>
+                  </div>
                 </div>
-                <div class="status-next-date">5 Sep</div>
+                <div class="status-next-date" style="background: #E3F2FD; color: #0066CC; padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 800;">11 Sep</div>
               </div>
-              <div class="status-next-row">
-                <div class="status-next-dot"></div>
+              <div class="status-next-row" style="padding: 12px 0;">
+                <div class="status-next-dot" style="margin-top: 5px;"></div>
                 <div class="status-next-text">
-                  <div>Send revised SOW for Rogerio’s review</div>
-                  <div class="status-next-owner">DAVID</div>
+                  <div style="font-size: 13px; font-weight: 600; color: #2C2E30; line-height: 1.5;">Mark and David to discuss SOW changes this week</div>
+                  <div style="margin-top: 6px;">
+                    <span class="status-next-owner" style="background: #E3F2FD; color: #0066CC; padding: 2.5px 8px; border-radius: 4px; font-weight: 800; font-size: 9.5px; letter-spacing: 0.5px;">OWNER: MARK / DAVID</span>
+                  </div>
                 </div>
-                <div class="status-next-date">5 Sep</div>
+                <div class="status-next-date" style="background: #E3F2FD; color: #0066CC; padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 800;">15 Sep</div>
+              </div>
+              <div class="status-next-row" style="padding: 12px 0;">
+                <div class="status-next-dot" style="margin-top: 5px;"></div>
+                <div class="status-next-text">
+                  <div style="font-size: 13px; font-weight: 600; color: #2C2E30; line-height: 1.5;">Nestle to approve the business rules</div>
+                  <div style="margin-top: 6px;">
+                    <span class="status-next-owner" style="background: #E3F2FD; color: #0066CC; padding: 2.5px 8px; border-radius: 4px; font-weight: 800; font-size: 9.5px; letter-spacing: 0.5px;">OWNER: PATRICIA</span>
+                  </div>
+                </div>
+                <div class="status-next-date" style="background: #E3F2FD; color: #0066CC; padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 800;">11 Sep</div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- 2. KEY RISKS -->
         <div class="bzc-group">
           <div class="bzc-group-title">Key Risks</div>
           <div class="bzc-grid" style="grid-template-columns: minmax(0, 1fr);">
             <div class="bzc-card amber">
-              <div class="bzc-pill">Open</div>
+              <div class="bzc-pill" style="display: flex; align-items: center; justify-content: space-between;">
+                <span>Open · Mitigation In Progress</span>
+                <span>▲</span>
+              </div>
               <div class="bzc-body">
-                <div class="bzc-name">On-shelf photo quality</div>
-                <div class="bzc-status">SSBS has reviewed the on-shelf photos supplied for Brazil and found quality problems: blurred images, glare, and shots taken at an angle rather than square to the shelf at the required distance. SSBS is preparing a findings pack with examples, and will share them during the Feasibility Study session.</div>
+                <div class="bzc-name" style="color: #B87503;">On-shelf photo quality</div>
+                <div class="bzc-status">SSBS reviewed the on-shelf photos supplied for Brazil and identified quality defects including blurred images, glare, and angled perspectives rather than square-to-shelf captures at the required distance. SSBS is preparing a findings pack with specific examples to share during the Feasibility Study session.</div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- 3. PROJECT BACKGROUND -->
         <div class="project-bg-title" style="margin-top: 28px !important;">Project Background</div>
         <div class="project-bg-divider"></div>
 
@@ -2723,6 +2720,72 @@
           <div class="info-cell"><div class="info-cell-label">CHANNELS</div><div class="info-cell-value">Modern Trade</div></div>
           <div class="info-cell"><div class="info-cell-label">PLATFORM</div><div class="info-cell-value">TELUS TIR</div></div>
           <div class="info-cell"><div class="info-cell-label">PROJECT MANAGER</div><div class="info-cell-value">Jaziel Damian</div></div>
+        </div>
+
+        <!-- 4. ONBOARDING SESSIONS -->
+        <div class="bzc-group" style="margin-top: 32px;">
+          <div class="bzc-group-title">Onboarding Sessions</div>
+          <div class="bzc-grid">
+            <div class="bzc-card green" style="transition: transform 0.15s ease, box-shadow 0.15s ease;">
+              <div class="bzc-pill">Complete</div>
+              <div class="bzc-body">
+                <div class="bzc-name">Kick Off Meeting</div>
+                <div class="bzc-owner">Owner: Patricia</div>
+                <div class="bzc-status">Kick-off call held successfully on Aug 6th. Alignment achieved on overall milestones and engagement scope.</div>
+              </div>
+            </div>
+            <div class="bzc-card green" style="transition: transform 0.15s ease, box-shadow 0.15s ease;">
+              <div class="bzc-pill">Complete</div>
+              <div class="bzc-body">
+                <div class="bzc-name">Discovery Workshop</div>
+                <div class="bzc-owner">Owner: Patricia / Jaziel</div>
+                <div class="bzc-status">A 2-hour session was held successfully on Aug 10th covering in-store processes, channel scope, and business objectives.</div>
+              </div>
+            </div>
+            <div class="bzc-card green" style="transition: transform 0.15s ease, box-shadow 0.15s ease;">
+              <div class="bzc-pill">Complete</div>
+              <div class="bzc-body">
+                <div class="bzc-name">Feasibility Study</div>
+                <div class="bzc-owner">Owner: Jaziel</div>
+                <div class="bzc-status">Feasibility Study Prerequisites completed on 26th August; vendor is currently preparing for sessions starting the week of 7th September.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. FEASIBILITY STUDY PREREQUISITES -->
+        <div class="bzc-group" style="margin-top: 32px;">
+          <div class="bzc-group-title">Feasibility Study Prerequisites</div>
+          <div class="bzc-grid">
+            <div class="bzc-card green" style="transition: transform 0.15s ease, box-shadow 0.15s ease;">
+              <div class="bzc-pill">Complete</div>
+              <div class="bzc-body">
+                <div class="bzc-name">Product Catalog</div>
+                <div class="bzc-owner">Owner: Jaziel</div>
+                <div class="bzc-status">
+                  <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; list-style-type: disc;">
+                    <li><strong>Adopt product ID as the unique identifier</strong> — Market issued a revised list of 127 SKUs, the competitor SKUs remain pending creation in the system to ensure accuracy in the training model.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="bzc-card green" style="transition: transform 0.15s ease, box-shadow 0.15s ease;">
+              <div class="bzc-pill">Complete</div>
+              <div class="bzc-body">
+                <div class="bzc-name">On Shelf Photos</div>
+                <div class="bzc-owner">Owner: Patricia</div>
+                <div class="bzc-status">On-shelf photo capture is complete. Patricia shared the Monitoring name to be used. TELUS identified quality issues on these photos and manually removed unusable photos as a one-time exception.</div>
+              </div>
+            </div>
+            <div class="bzc-card green" style="transition: transform 0.15s ease, box-shadow 0.15s ease;">
+              <div class="bzc-pill">Complete</div>
+              <div class="bzc-body">
+                <div class="bzc-name">SSBS Questionnaire</div>
+                <div class="bzc-owner">Owner: Jaziel / Patricia</div>
+                <div class="bzc-status">Questionnaire reviewed during the Discovery Workshop; all follow-up items have been completed and closed by the market.</div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -3104,6 +3167,610 @@
         </div>
       </div>
 
+      <!-- Brazil Sub-Tab: Feasibility Plan -->
+      <div id="brazil-tab-feasibility" class="brazil-tab-panel">
+        <style>
+          #brazil-tab-feasibility {
+            --telus-purple: #4B286D;
+            --telus-light-purple: #7C53A5;
+            --telus-green: #66CC00;
+            --telus-accessible-green: #2B8000;
+            --nestle-orange: #E65100;
+            --critical: #D32F2F;
+            --bg-white: #FFFFFF;
+            --bg-card: #FAFAFA;
+            --bg-section: #F5F5F5;
+            --border-light: #EEEEEE;
+            --text-primary: #2C2E30;
+            --text-body: #333333;
+            --text-muted: #888888;
+            --text-subtle: #AAAAAA;
+            --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --page-max: 1040px;
+            background: var(--bg-white);
+            color: var(--text-body);
+            font-family: var(--font);
+            font-size: 13px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+          }
+
+          #brazil-tab-feasibility * { box-sizing: border-box; }
+          #brazil-tab-feasibility .page { max-width: var(--page-max); margin: 0 auto; padding: 10px 0 56px; }
+
+          /* ---------- Header ---------- */
+          #brazil-tab-feasibility header.masthead {
+            display: flex; flex-wrap: wrap; gap: 16px;
+            align-items: flex-end; justify-content: space-between;
+            border-bottom: none; padding-bottom: 0;
+            margin-bottom: 0;
+          }
+          #brazil-tab-feasibility .masthead h1 {
+            margin: 0 0 4px 0; font-size: 20px; font-weight: 800;
+            color: var(--telus-purple); letter-spacing: -0.2px; text-wrap: balance;
+          }
+          #brazil-tab-feasibility .masthead .sub { margin: 0; font-size: 13px; color: var(--text-muted); font-weight: 500; }
+          #brazil-tab-feasibility .meta { text-align: right; font-size: 11px; color: var(--text-muted); font-weight: 600; line-height: 1.8; }
+          #brazil-tab-feasibility .meta strong { color: var(--text-primary); font-weight: 700; }
+
+          #brazil-tab-feasibility section { margin-top: 38px; }
+          #brazil-tab-feasibility .eyebrow { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+          #brazil-tab-feasibility .eyebrow h2 { margin: 0; font-size: 15px; font-weight: 800; color: var(--telus-purple); letter-spacing: 0.2px; }
+          #brazil-tab-feasibility .eyebrow .tag {
+            font-size: 10px; font-weight: 800; letter-spacing: 1px;
+            text-transform: uppercase; color: var(--text-subtle);
+          }
+          #brazil-tab-feasibility .lede { margin: 0 0 18px; font-size: 13.5px; color: var(--text-body); max-width: 72ch; }
+          #brazil-tab-feasibility p { margin: 0 0 12px; } #brazil-tab-feasibility p:last-child { margin-bottom: 0; }
+
+          /* ---------- Summary tiles ---------- */
+          #brazil-tab-feasibility .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+          #brazil-tab-feasibility .tile {
+            background: var(--bg-card); border: 1px solid var(--border-light);
+            border-left: 4px solid var(--telus-purple); border-radius: 10px; padding: 14px 16px;
+          }
+          #brazil-tab-feasibility .tile .k {
+            font-size: 10px; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 1px; color: var(--text-muted); margin-bottom: 5px;
+          }
+          #brazil-tab-feasibility .tile .v {
+            font-size: 22px; font-weight: 800; color: var(--telus-purple);
+            line-height: 1.2; margin-bottom: 4px; font-variant-numeric: tabular-nums;
+          }
+          #brazil-tab-feasibility .tile .d { font-size: 11.5px; color: var(--text-muted); }
+          #brazil-tab-feasibility .tile.green { border-left-color: var(--telus-green); }
+          #brazil-tab-feasibility .tile.green .v { color: var(--telus-accessible-green); }
+          #brazil-tab-feasibility .tile.orange { border-left-color: var(--nestle-orange); }
+          #brazil-tab-feasibility .tile.orange .v { color: var(--nestle-orange); }
+
+          /* ---------- Gantt ---------- */
+          #brazil-tab-feasibility .ganttwrap { overflow-x: auto; padding-bottom: 6px; }
+          #brazil-tab-feasibility .gantt { min-width: 760px; }
+          #brazil-tab-feasibility .gantt-head, #brazil-tab-feasibility .gantt-row {
+            display: grid;
+            grid-template-columns: 268px repeat(25, 1fr);
+            align-items: center;
+          }
+          #brazil-tab-feasibility .gantt-head { border-bottom: 2px solid var(--telus-purple); padding-bottom: 7px; margin-bottom: 4px; }
+          #brazil-tab-feasibility .gantt-head .wk {
+            grid-column: span 5;
+            font-size: 10px; font-weight: 800; letter-spacing: 0.6px;
+            text-transform: uppercase; color: var(--text-muted); text-align: center;
+            border-left: 1px solid var(--border-light);
+          }
+          #brazil-tab-feasibility .gantt-head .corner {
+            font-size: 10px; font-weight: 800; letter-spacing: 1px;
+            text-transform: uppercase; color: var(--telus-purple);
+          }
+          #brazil-tab-feasibility .gantt-row { border-bottom: 1px solid var(--border-light); min-height: 34px; }
+          #brazil-tab-feasibility .gantt-row:last-child { border-bottom: none; }
+          #brazil-tab-feasibility .gantt-row.grp { background: var(--bg-section); border-bottom: none; }
+          #brazil-tab-feasibility .gantt-row .lbl {
+            font-size: 12px; padding: 7px 12px 7px 0;
+            display: flex; align-items: center; gap: 8px;
+          }
+          #brazil-tab-feasibility .gantt-row .lbl .num {
+            font-size: 10px; font-weight: 800; color: var(--text-subtle);
+            font-variant-numeric: tabular-nums; min-width: 22px;
+          }
+          #brazil-tab-feasibility .gantt-row.grp .lbl {
+            font-size: 11px; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 0.8px; color: var(--telus-purple); padding: 7px 12px 7px 10px;
+          }
+          #brazil-tab-feasibility .cellbg { border-left: 1px solid #F7F7F7; height: 100%; grid-row: 1; }
+          #brazil-tab-feasibility .bar {
+            grid-row: 1; height: 17px; border-radius: 4px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 9.5px; font-weight: 800; color: #fff; letter-spacing: 0.3px;
+            z-index: 2; margin: 0 1px; overflow: hidden; white-space: nowrap;
+          }
+          #brazil-tab-feasibility .bar.ssbs { background: var(--telus-purple); }
+          #brazil-tab-feasibility .bar.telus { background: var(--telus-light-purple); }
+          #brazil-tab-feasibility .bar.nestle { background: var(--nestle-orange); }
+          #brazil-tab-feasibility .bar.meet { background: var(--telus-accessible-green); }
+          #brazil-tab-feasibility .bar.milestone {
+            background: var(--telus-green); color: #234400;
+            border: 2px solid var(--telus-accessible-green);
+          }
+          #brazil-tab-feasibility .gantt-row.grp .cellbg { border-left-color: #EDEDED; }
+
+          #brazil-tab-feasibility .legend-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 14px; }
+          #brazil-tab-feasibility .legend-row span {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 11px; font-weight: 700; color: var(--text-muted);
+          }
+          #brazil-tab-feasibility .sw { width: 22px; height: 10px; border-radius: 3px; flex: none; }
+
+          /* ---------- Table ---------- */
+          #brazil-tab-feasibility .tablewrap { overflow-x: auto; }
+          #brazil-tab-feasibility table { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 720px; }
+          #brazil-tab-feasibility thead th {
+            background: var(--telus-purple); color: #fff; text-align: left;
+            font-size: 10px; font-weight: 800; letter-spacing: 1px;
+            text-transform: uppercase; padding: 9px 12px; white-space: nowrap;
+          }
+          #brazil-tab-feasibility thead th:first-child { border-radius: 6px 0 0 0; }
+          #brazil-tab-feasibility thead th:last-child { border-radius: 0 6px 0 0; }
+          #brazil-tab-feasibility tbody td { padding: 11px 12px; border-bottom: 1px solid var(--border-light); vertical-align: top; }
+          #brazil-tab-feasibility tbody tr.grouprow td {
+            background: var(--bg-section); font-weight: 800; color: var(--telus-purple);
+            font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; padding: 9px 12px;
+          }
+          #brazil-tab-feasibility td.id { font-weight: 700; color: var(--text-subtle); font-variant-numeric: tabular-nums; white-space: nowrap; }
+          #brazil-tab-feasibility td.act { font-weight: 700; color: var(--text-primary); }
+          #brazil-tab-feasibility td.act small { display: block; font-weight: 400; color: var(--text-muted); margin-top: 3px; font-size: 12px; }
+          #brazil-tab-feasibility td.dur { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 700; }
+          #brazil-tab-feasibility td.dates { white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--text-muted); font-weight: 600; }
+
+          #brazil-tab-feasibility .own {
+            display: inline-block; font-size: 10px; font-weight: 800;
+            letter-spacing: 0.8px; text-transform: uppercase;
+            padding: 3px 8px; border-radius: 4px; white-space: nowrap;
+          }
+          #brazil-tab-feasibility .own.ssbs { background: #F3EEF8; color: var(--telus-purple); }
+          #brazil-tab-feasibility .own.telus { background: #EFE8F5; color: var(--telus-light-purple); }
+          #brazil-tab-feasibility .own.nestle { background: #FFE8D6; color: #8A3B00; }
+          #brazil-tab-feasibility .own.all { background: #E6F4DE; color: #245100; }
+
+          #brazil-tab-feasibility .mtg {
+            font-size: 10px; font-weight: 800; letter-spacing: 0.8px;
+            color: var(--telus-accessible-green); text-transform: uppercase;
+          }
+
+          /* ---------- Downstream milestone track ---------- */
+          #brazil-tab-feasibility .track {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+            gap: 0;
+            border-top: 2px solid var(--border-light);
+            padding-top: 0;
+          }
+          #brazil-tab-feasibility .ms { padding: 0 16px 4px 0; position: relative; }
+          #brazil-tab-feasibility .ms-dot {
+            width: 11px; height: 11px; border-radius: 50%;
+            background: var(--telus-purple); margin: -6px 0 10px;
+            box-shadow: 0 0 0 3px var(--bg-white);
+          }
+          #brazil-tab-feasibility .ms-dot.go { background: var(--telus-green); border: 2px solid var(--telus-accessible-green); width: 13px; height: 13px; margin-top: -7px; }
+          #brazil-tab-feasibility .ms-date {
+            font-size: 11px; font-weight: 800; letter-spacing: 0.6px;
+            text-transform: uppercase; color: var(--telus-purple);
+            font-variant-numeric: tabular-nums; margin-bottom: 3px;
+          }
+          #brazil-tab-feasibility .ms-date.go { color: var(--telus-accessible-green); }
+          #brazil-tab-feasibility .ms-name { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 3px; }
+          #brazil-tab-feasibility .ms-note { font-size: 11.5px; color: var(--text-muted); line-height: 1.45; }
+
+          /* ---------- Gate strip ---------- */
+          #brazil-tab-feasibility .gates { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+          #brazil-tab-feasibility .gate {
+            border: 2px solid var(--nestle-orange); border-radius: 10px;
+            padding: 14px 16px; background: #FFFBF7;
+          }
+          #brazil-tab-feasibility .gate .g {
+            font-size: 10px; font-weight: 800; letter-spacing: 1px;
+            text-transform: uppercase; color: var(--nestle-orange); margin-bottom: 5px;
+          }
+          #brazil-tab-feasibility .gate h3 { margin: 0 0 6px; font-size: 13.5px; font-weight: 700; color: var(--text-primary); }
+          #brazil-tab-feasibility .gate p { font-size: 12px; color: var(--text-body); margin: 0; }
+
+          /* ---------- Callouts ---------- */
+          #brazil-tab-feasibility .callout {
+            background: var(--bg-card); border: 2px solid var(--telus-purple);
+            border-radius: 10px; padding: 18px 20px;
+          }
+          #brazil-tab-feasibility .callout.alert { border-color: var(--critical); background: #FFFAFA; }
+          #brazil-tab-feasibility .callout h3 {
+            margin: 0 0 10px; font-size: 12px; font-weight: 800;
+            color: var(--telus-purple); text-transform: uppercase; letter-spacing: 0.8px;
+          }
+          #brazil-tab-feasibility .callout.alert h3 { color: var(--critical); }
+          #brazil-tab-feasibility ul.tight { margin: 0; padding-left: 18px; }
+          #brazil-tab-feasibility ul.tight li { margin-bottom: 7px; font-size: 12.5px; max-width: 76ch; }
+          #brazil-tab-feasibility ul.tight li:last-child { margin-bottom: 0; }
+          #brazil-tab-feasibility ul.tight li b { color: var(--text-primary); font-weight: 700; }
+
+          #brazil-tab-feasibility .twocol { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+
+          /* ---------- Footer ---------- */
+          #brazil-tab-feasibility footer {
+            margin-top: 46px; padding-top: 16px; border-top: 2px solid var(--border-light);
+            display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
+            justify-content: space-between; font-size: 11px; color: var(--text-subtle);
+          }
+          #brazil-tab-feasibility .badge {
+            background: var(--telus-purple); color: #fff; font-size: 11px;
+            font-weight: 800; letter-spacing: 1px; padding: 4px 9px; border-radius: 4px;
+          }
+
+          @media (max-width: 640px) {
+            #brazil-tab-feasibility .page { padding: 20px 14px 40px; }
+            #brazil-tab-feasibility .meta { text-align: left; }
+            #brazil-tab-feasibility .masthead h1 { font-size: 18px; }
+          }
+        </style>
+
+        <div class="page">
+          <header class="masthead">
+            <div>
+              <h1 style="margin-bottom: 4px;">Feasibility Plan</h1>
+            </div>
+          </header>
+
+          <p class="lede" style="margin-top: 4px;">The feasibility study runs in four stages and closes at scope freeze on 29 September. Nestlé Brazil approves at three points. Blueprint drafting starts straight after the second workshop and runs alongside the product catalogue analysis, so the two tracks do not queue behind each other. Neural network training begins once scope is frozen.</p>
+
+          <section style="margin-top:24px">
+            <div class="tiles">
+              <div class="tile">
+                <div class="k">Stages</div>
+                <div class="v">4</div>
+                <div class="d">Business rules, Blueprint, catalogue analysis, scope freeze</div>
+              </div>
+              <div class="tile orange">
+                <div class="k">Nestlé approvals</div>
+                <div class="v">3</div>
+                <div class="d">Business rules, Blueprint, product catalogue</div>
+              </div>
+              <div class="tile">
+                <div class="k">Workshop week</div>
+                <div class="v">8–9 Sep</div>
+                <div class="d">Two joint sessions, back to back</div>
+              </div>
+              <div class="tile green">
+                <div class="k">Scope freeze</div>
+                <div class="v">29 Sep</div>
+                <div class="d">Training starts immediately after</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ DEPENDENCY ALERT ============ -->
+          <section>
+            <div class="eyebrow">
+              <h2>Open dependency</h2>
+              <span class="tag">affects the schedule below</span>
+            </div>
+            <div class="callout alert">
+              <h3>On-shelf photo quality</h3>
+              <p style="font-size:12.5px;max-width:76ch">SSBS has reviewed the on-shelf photos supplied for Brazil and found quality problems: blurred images, glare, and shots taken at an angle rather than square to the shelf at the required distance. SSBS is preparing a findings pack with examples.</p>
+              <p style="font-size:12.5px;max-width:76ch">If a new or supplementary photo set is required, the field capture sits outside this plan and adds time before the 24 September catalogue approval can be given. The volume affected will be known when the findings pack is shared.</p>
+              <p style="font-size:12.5px;max-width:76ch;margin-bottom:0"><b>Next step:</b> review the findings pack with Nestlé Brazil, agree the photo standard, and confirm whether a re-capture is needed. Decide this before the workshops so the schedule reflects it.</p>
+            </div>
+          </section>
+
+          <!-- ============ GANTT ============ -->
+          <section>
+            <div class="eyebrow">
+              <h2>Schedule</h2>
+              <span class="tag">31 August to 28 September 2026</span>
+            </div>
+
+            <div class="ganttwrap">
+              <div class="gantt">
+                <div class="gantt-head">
+                  <div class="corner">Activity</div>
+                  <div class="wk">31 Aug</div>
+                  <div class="wk">7 Sep</div>
+                  <div class="wk">14 Sep</div>
+                  <div class="wk">21 Sep</div>
+                  <div class="wk">28 Sep</div>
+                </div>
+
+                <div class="gantt-row grp">
+                  <div class="lbl">1 · Business rules definition and approval</div>
+                  <div class="cellbg" style="grid-column:2 / span 25"></div>
+                </div>
+
+                <div class="gantt-row">
+                  <div class="lbl"><span class="num">1.1</span> Draft the business rules and edge case pack</div>
+                  <div class="cellbg" style="grid-column:2 / span 25"></div>
+                  <div class="bar ssbs" style="grid-column:2 / span 5">SSBS · 5d</div>
+                </div>
+
+                <div class="gantt-row">
+                  <div class="lbl"><span class="num">1.2</span> Workshop 1: review analysis and edge cases</div>
+                  <div class="cellbg" style="grid-column:2 / span 25"></div>
+                  <div class="bar meet" style="grid-column:8 / span 1"></div>
+                </div>
+
+                <div class="gantt-row">
+                  <div class="lbl"><span class="num">1.3</span> Workshop 2: close open points</div>
+                  <div class="cellbg" style="grid-column:2 / span 25"></div>
+                  <div class="bar meet" style="grid-column:9 / span 1"></div>
+                </div>
+
+                <div class="gantt-row">
+                  <div class="lbl"><span class="num">1.4</span> Nestlé approves the business rules</div>
+                  <div class="cellbg" style="grid-column:2 / span 25"></div>
+                  <div class="bar nestle" style="grid-column:10 / span 2">2d</div>
+                </div>
+
+                <div class="gantt-row grp">
+                  <div class="lbl">2 · Blueprint</div>
+                  <div class="cellbg" style="grid-column:2 / span 25"></div>
+                </div>
+
+                <div class="gantt-row">
+                  <div class="lbl"><span class="num">2.1</span> Draft the image recognition sections</div>
+                  <div class="cellbg" style="grid-column:2 / span 25"></div>
+                  <div class="bar ssbs" style="grid-column:10 / span 10">SSBS · 10d</div>
+                </div>
+
+                <div class="gantt-row">
+                  <div class="lbl"><span class="num">2.2</span> Merge TELUS sections and issue</div>
+                  <div class="cellbg" style="grid-column:2 / span 25"></div>
+                  <div class="bar telus" style="grid-column:17 / span 3">TELUS · 3d</div>
+                </div>
+
+                <div class="gantt-row">
+                  <div class="lbl"><span class="num">2.3</span> Nestlé approves the Blueprint</div>
+                  <div class="cellbg" style="grid-column:2 / span 25"></div>
+                  <div class="bar nestle" style="grid-column:20 / span 3">3d</div>
+                </div>
+
+                <div class="gantt-row grp">
+                  <div class="lbl">3 · Product catalogue analysis <span style="font-weight:600;text-transform:none;letter-spacing:0;color:var(--text-muted)">— parallel to stage 2</span></div>
+                  <div class="cellbg" style="grid-column:2 / span 25"></div>
+                </div>
+
+                <div class="gantt-row">
+                  <div class="lbl"><span class="num">3.1</span> Analyse the catalogue and photo dataset</div>
+                  <div class="cellbg" style="grid-column:2 / span 25"></div>
+                  <div class="bar ssbs" style="grid-column:12 / span 6">SSBS · 6d</div>
+                </div>
+
+                <div class="gantt-row">
+                  <div class="lbl"><span class="num">3.2</span> Nestlé reviews and approves the catalogue</div>
+                  <div class="cellbg" style="grid-column:2 / span 25"></div>
+                  <div class="bar nestle" style="grid-column:18 / span 3">3d</div>
+                </div>
+
+                <div class="gantt-row grp">
+                  <div class="lbl">4 · Scope freeze</div>
+                  <div class="cellbg" style="grid-column:2 / span 25"></div>
+                </div>
+
+                <div class="gantt-row">
+                  <div class="lbl"><span class="num">4.1</span> Confirm scope and freeze the SKU list</div>
+                  <div class="cellbg" style="grid-column:2 / span 25"></div>
+                  <div class="bar milestone" style="grid-column:23 / span 2">FREEZE</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="legend-row">
+              <span><i class="sw" style="background:#4B286D"></i>SSBS</span>
+              <span><i class="sw" style="background:#7C53A5"></i>TELUS</span>
+              <span><i class="sw" style="background:#E65100"></i>Nestlé Brazil</span>
+              <span><i class="sw" style="background:#2B8000"></i>Joint workshop</span>
+              <span><i class="sw" style="background:#66CC00;border:2px solid #2B8000"></i>Milestone</span>
+            </div>
+          </section>
+
+          <!-- ============ WHAT FOLLOWS ============ -->
+          <section>
+            <div class="eyebrow">
+              <h2>What follows scope freeze</h2>
+              <span class="tag">line of sight to go-live</span>
+            </div>
+            <p class="lede">The feasibility study sets the scope. Everything below depends on it, so the 29 September freeze is the date that carries the rest of the project.</p>
+            <div class="track">
+              <div class="ms">
+                <div class="ms-dot"></div>
+                <div class="ms-date">29 Sep</div>
+                <div class="ms-name">Scope freeze</div>
+                <div class="ms-note">SKU list and Blueprint locked</div>
+              </div>
+              <div class="ms">
+                <div class="ms-dot"></div>
+                <div class="ms-date">2 – 21 Oct</div>
+                <div class="ms-name">Model training</div>
+                <div class="ms-note">Labeling and annotation, 14 days</div>
+              </div>
+              <div class="ms">
+                <div class="ms-dot"></div>
+                <div class="ms-date">26 Oct</div>
+                <div class="ms-name">Model approved</div>
+                <div class="ms-note">Internal testing and error analysis complete</div>
+              </div>
+              <div class="ms">
+                <div class="ms-dot"></div>
+                <div class="ms-date">17 Nov</div>
+                <div class="ms-name">UAT sign-off</div>
+                <div class="ms-note">Nestlé testing in the pre-production environment</div>
+              </div>
+              <div class="ms">
+                <div class="ms-dot"></div>
+                <div class="ms-date">27 Nov</div>
+                <div class="ms-name">End user training</div>
+                <div class="ms-note">Production deployment complete</div>
+              </div>
+              <div class="ms last">
+                <div class="ms-dot go"></div>
+                <div class="ms-date go">30 Nov</div>
+                <div class="ms-name">Go-live and pilot</div>
+                <div class="ms-note">Pilot runs to 4 Dec, review 7 Dec, rollout 8 Dec</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ GATES ============ -->
+          <section>
+            <div class="eyebrow">
+              <h2>Where Nestlé Brazil decides</h2>
+              <span class="tag">three approvals</span>
+            </div>
+            <p class="lede">Each approval releases the next block of work. A late approval moves everything after it by the same number of days.</p>
+            <div class="gates">
+              <div class="gate">
+                <div class="g">Approval 1 · after the workshops</div>
+                <h3>Business rules and recognition approach</h3>
+                <p>Confirms how images are recognised: facings, facing groups, edge cases per category, and the agreed limitations. Releases both the Blueprint and the catalogue analysis.</p>
+              </div>
+              <div class="gate">
+                <div class="g">Approval 2 · stage 3</div>
+                <h3>Product catalogue analysis</h3>
+                <p>Nestlé reviews the SKU-level findings, answers open questions and confirms the catalogue is correct for training.</p>
+              </div>
+              <div class="gate">
+                <div class="g">Approval 3 · stage 2</div>
+                <h3>Blueprint</h3>
+                <p>Sign-off on the full solution document, TELUS and SSBS sections combined. This is the last approval before scope freeze.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ DETAIL TABLE ============ -->
+          <section>
+            <div class="eyebrow">
+              <h2>Activity detail</h2>
+              <span class="tag">owner, duration, dependency</span>
+            </div>
+            <div class="tablewrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Activity</th>
+                    <th>Owner</th>
+                    <th>Duration</th>
+                    <th>Indicative dates</th>
+                    <th>Starts after</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="grouprow"><td colspan="6">1 · Business rules definition and approval</td></tr>
+                  <tr>
+                    <td class="id">1.1</td>
+                    <td class="act">Draft the business rules and edge case pack
+                      <small>SSBS analyses the catalogue, on-shelf photos and questionnaire, then documents the recognition rules, edge cases and dataset limitations.</small></td>
+                    <td><span class="own ssbs">SSBS</span></td>
+                    <td class="dur">5 days</td>
+                    <td class="dates">31 Aug – 4 Sep</td>
+                    <td>Prerequisites delivered 28 Aug: catalogue, on-shelf photos, completed questionnaire</td>
+                  </tr>
+                  <tr>
+                    <td class="id">1.2</td>
+                    <td class="act">Workshop 1: review analysis and edge cases <span class="mtg">· meeting</span>
+                      <small>SSBS presents the pack. The group agrees the recognition logic and the open questionnaire answers that need discussion.</small></td>
+                    <td><span class="own all">Joint</span></td>
+                    <td class="dur">2 hours</td>
+                    <td class="dates">8 Sep</td>
+                    <td>1.1</td>
+                  </tr>
+                  <tr>
+                    <td class="id">1.3</td>
+                    <td class="act">Workshop 2: close open points <span class="mtg">· meeting</span>
+                      <small>Held in reserve. Finalises anything workshop 1 leaves open across the four categories.</small></td>
+                    <td><span class="own all">Joint</span></td>
+                    <td class="dur">1 hour</td>
+                    <td class="dates">9 Sep</td>
+                    <td>1.2</td>
+                  </tr>
+                  <tr>
+                    <td class="id">1.4</td>
+                    <td class="act">Nestlé approves the business rules
+                      <small>Nestlé responds to open feedback and signs off the recognition approach.</small></td>
+                    <td><span class="own nestle">Nestlé</span></td>
+                    <td class="dur">2 days</td>
+                    <td class="dates">10 – 11 Sep</td>
+                    <td>1.3</td>
+                  </tr>
+
+                  <tr class="grouprow"><td colspan="6">2 · Blueprint</td></tr>
+                  <tr>
+                    <td class="id">2.1</td>
+                    <td class="act">Draft the image recognition sections
+                      <small>SSBS documents the agreed rules, the recognition process, data requirements, limitations and gaps. IR content only.</small></td>
+                    <td><span class="own ssbs">SSBS</span></td>
+                    <td class="dur">10 days</td>
+                    <td class="dates">10 – 23 Sep</td>
+                    <td>1.3 · begins on the workshop outcomes</td>
+                  </tr>
+                  <tr>
+                    <td class="id">2.2</td>
+                    <td class="act">Merge TELUS sections and issue the Blueprint
+                      <small>TELUS applies the standard Blueprint format, adds the application and process content, and issues the combined document.</small></td>
+                    <td><span class="own telus">TELUS</span></td>
+                    <td class="dur">3 days</td>
+                    <td class="dates">21 – 23 Sep</td>
+                    <td>2.1</td>
+                  </tr>
+                  <tr>
+                    <td class="id">2.3</td>
+                    <td class="act">Nestlé approves the Blueprint</td>
+                    <td><span class="own nestle">Nestlé</span></td>
+                    <td class="dur">3 days</td>
+                    <td class="dates">24 – 28 Sep</td>
+                    <td>2.2</td>
+                  </tr>
+
+                  <tr class="grouprow"><td colspan="6">3 · Product catalogue analysis — runs in parallel with stage 2</td></tr>
+                  <tr>
+                    <td class="id">3.1</td>
+                    <td class="act">Analyse the product catalogue and photo dataset
+                      <small>New-product checks, design grouping, image quality and usability, non-trainable SKUs, catalogue and data mismatches. Output is a documented analysis.</small></td>
+                    <td><span class="own ssbs">SSBS</span></td>
+                    <td class="dur">6 days</td>
+                    <td class="dates">14 – 21 Sep</td>
+                    <td>1.4 · runs alongside 2.1</td>
+                  </tr>
+                  <tr>
+                    <td class="id">3.2</td>
+                    <td class="act">Nestlé reviews and approves the catalogue <span class="mtg">· meeting</span>
+                      <small>Nestlé reviews the analysis, answers the open SKU questions and signs off.</small></td>
+                    <td><span class="own nestle">Nestlé</span></td>
+                    <td class="dur">3 days</td>
+                    <td class="dates">22 – 24 Sep</td>
+                    <td>3.1</td>
+                  </tr>
+
+                  <tr class="grouprow"><td colspan="6">4 · Scope freeze</td></tr>
+                  <tr>
+                    <td class="id">4.1</td>
+                    <td class="act">Confirm scope and freeze the SKU list
+                      <small>Milestone. Confirms the Blueprint, the catalogue analysis and the final SKU list. Training cannot start before this point, and changes after it are handled as change requests.</small></td>
+                    <td><span class="own all">Joint</span></td>
+                    <td class="dur">1 day</td>
+                    <td class="dates">29 Sep</td>
+                    <td>2.3 and 3.2</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="margin-top:12px;font-size:12px;color:var(--text-muted);max-width:76ch">Durations are working days at full allocation. Meeting durations are session lengths.</p>
+          </section>
+
+          <footer>
+            <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+              <span class="badge">TELUS</span>
+              <span>Draft for alignment · dates from the Brazil TIR project plan</span>
+            </div>
+            <div>Nestlé Brazil TIR · TELUS Agriculture &amp; Consumer Goods | Confidential</div>
+          </footer>
+        </div>
+      </div>
+
       <!-- Brazil Sub-Tab 4: Holiday/OOO -->
       <div id="brazil-tab-ooo" class="brazil-tab-panel">
         <div class="ooo-container">
@@ -3114,25 +3781,111 @@
             </div>
             <div class="ooo-metrics">
               <div class="ooo-metric-card">
-                <div class="ooo-metric-val">0</div>
+                <div class="ooo-metric-val">1</div>
                 <div class="ooo-metric-lbl">PEOPLE OUT</div>
               </div>
               <div class="ooo-metric-card">
-                <div class="ooo-metric-val">—</div>
+                <div class="ooo-metric-val">15 Sep</div>
                 <div class="ooo-metric-lbl">FIRST OUT</div>
               </div>
               <div class="ooo-metric-card">
-                <div class="ooo-metric-val">—</div>
+                <div class="ooo-metric-val">18 Sep</div>
                 <div class="ooo-metric-lbl">ALL BACK</div>
               </div>
             </div>
           </div>
 
           <div class="ooo-calendar-card">
-            <div style="padding: 44px 24px; text-align: center;">
-              <div style="font-size: 13px; font-weight: 800; color: #4B286D; letter-spacing: 0.3px; margin-bottom: 6px;">No holidays or out-of-office scheduled</div>
-              <div style="font-size: 12px; font-weight: 500; color: #888888;">Entries appear here once team members book time away.</div>
+            <div class="ooo-timeline-scroll">
+              <table class="ooo-timeline-table">
+                <thead>
+                  <tr>
+                    <th class="member-col-hdr" rowspan="2">Team Member</th>
+                    <th colspan="19" class="month-hdr">September 2026</th>
+                  </tr>
+                  <tr class="date-num-row">
+                    <th>7</th><th>8</th><th>9</th><th>10</th><th>11</th>
+                    <th class="weekend">12</th><th class="weekend">13</th>
+                    <th>14</th><th>15</th><th>16</th><th>17</th><th>18</th>
+                    <th class="weekend">19</th><th class="weekend">20</th>
+                    <th>21</th><th>22</th><th>23</th><th>24</th><th>25</th>
+                  </tr>
+                  <tr class="date-day-row">
+                    <th>M</th><th>T</th><th>W</th><th>T</th><th>F</th>
+                    <th class="weekend">S</th><th class="weekend">S</th>
+                    <th>M</th><th>T</th><th>W</th><th>T</th><th>F</th>
+                    <th class="weekend">S</th><th class="weekend">S</th>
+                    <th>M</th><th>T</th><th>W</th><th>T</th><th>F</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="member-cell">
+                      <div class="member-info">
+                        <div class="member-avatar">JD</div>
+                        <div>
+                          <div class="member-name">Jaziel Damian</div>
+                          <div style="font-size: 10px; color: #888888; font-weight: 600;">Project Manager</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td></td><td></td><td></td><td></td><td></td>
+                    <td class="weekend"></td><td class="weekend"></td>
+                    <td></td>
+                    <td colspan="3" class="ooo-span-cell">
+                      <span class="ooo-bar-pill">PTO (15–17 Sep)</span>
+                    </td>
+                    <td></td>
+                    <td class="weekend"></td><td class="weekend"></td>
+                    <td></td><td></td><td></td><td></td><td></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+
+            <div class="ooo-legend">
+              <div class="ooo-legend-item">
+                <span class="ooo-swatch mm-swatch"></span>
+                <span>Jaziel Damian (PTO)</span>
+              </div>
+              <div class="ooo-legend-item">
+                <span class="ooo-swatch weekend-swatch"></span>
+                <span>Weekend</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-label" style="margin-top: 24px !important;">LEAVE DETAILS</div>
+          <div class="ooo-table-wrap">
+            <table class="ooo-detail-table">
+              <thead>
+                <tr>
+                  <th>Team Member</th>
+                  <th>Role / Org</th>
+                  <th>Leave Dates</th>
+                  <th>Duration</th>
+                  <th>Type</th>
+                  <th>Coverage / Contact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="member-info">
+                      <div class="member-avatar">JD</div>
+                      <div>
+                        <strong style="color: #4B286D;">Jaziel Damian</strong>
+                      </div>
+                    </div>
+                  </td>
+                  <td>TELUS Project Manager</td>
+                  <td><strong>15 Sep – 17 Sep 2026</strong></td>
+                  <td>3 working days</td>
+                  <td><span class="ooo-type-pill holiday">PTO</span></td>
+                  <td>David Kimm / TELUS Project Team</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -3168,7 +3921,7 @@
         </div>
         <div class="header-right">
           <div class="as-of">As of</div>
-          <div class="date-val">September 2, 2026</div>
+          <div class="date-val">September 9, 2026</div>
         </div>
       </div>
 
@@ -3185,10 +3938,18 @@
               <div class="status-next-row">
                 <div class="status-next-dot"></div>
                 <div class="status-next-text">
-                  <div>Nestlé Ecuador activities are underway, currently under preparations for the Market Discovery. Approval pending to start projects for Panama and Peru.</div>
+                  <div>Ecuador: Market discovery session scheduled for 10 Sep.</div>
                   <div class="status-next-owner">PATRICIA/MARCOS</div>
                 </div>
-                <div class="status-next-date">2 Sep</div>
+                <div class="status-next-date">9 Sep</div>
+              </div>
+              <div class="status-next-row">
+                <div class="status-next-dot"></div>
+                <div class="status-next-text">
+                  <div>Panama: Market discovery session scheduled for 11 Sep.</div>
+                  <div class="status-next-owner">MARCOS</div>
+                </div>
+                <div class="status-next-date">9 Sep</div>
               </div>
             </div>
           </div>
@@ -3199,24 +3960,16 @@
               <div class="status-next-row">
                 <div class="status-next-dot"></div>
                 <div class="status-next-text">
-                  <div>Complete Market Discovery preparations for Ecuador</div>
+                  <div>On completion of the market discovery sessions, assess and continue work on the feasibility study prerequisites</div>
                   <div class="status-next-owner">PATRICIA/MARCOS</div>
                 </div>
-                <div class="status-next-date">TBC</div>
+                <div class="status-next-date">11 Sep</div>
               </div>
               <div class="status-next-row">
                 <div class="status-next-dot"></div>
                 <div class="status-next-text">
                   <div>Secure Peru commitment to start</div>
                   <div class="status-next-owner">ROGERIO</div>
-                </div>
-                <div class="status-next-date">TBC</div>
-              </div>
-              <div class="status-next-row">
-                <div class="status-next-dot"></div>
-                <div class="status-next-text">
-                  <div>Confirm Panama approval of costs and benefits with the FRM</div>
-                  <div class="status-next-owner">MARCOS</div>
                 </div>
                 <div class="status-next-date">TBC</div>
               </div>
@@ -3232,16 +3985,14 @@
               <div class="body">
                 <h3>Ecuador</h3>
                 <span class="status-pill go">Committed</span>
-                <p>Patricia and Marcos are working on Market Discovery activities.</p>
                 <span class="owner">Patricia · Marcos</span>
               </div>
             </article>
-            <article class="status-card hold">
+            <article class="status-card go">
               <div class="stripe"></div>
               <div class="body">
                 <h3>Panama</h3>
-                <span class="status-pill hold">Decision Pending</span>
-                <p>Marcos wrote to the FRM on Friday and again today. She is with the CEO securing approval of costs and benefits.</p>
+                <span class="status-pill go">Committed</span>
                 <span class="owner">Marcos</span>
               </div>
             </article>
@@ -3266,7 +4017,7 @@
 
   <section>
     <h2 class="section-title">Start status</h2>
-    <p class="section-note">Commitment to start, by market. Ecuador committed, 2 markets pending decision.</p>
+    <p class="section-note">Commitment to start, by market. Ecuador and Panama committed, Peru pending decision.</p>
     <div class="status-grid">
 
       <article class="status-card go">
@@ -3274,7 +4025,6 @@
         <div class="body">
           <h3>Ecuador</h3>
           <span class="status-pill go">Committed</span>
-          <p>Patricia and Marcos are working on Market Discovery activities.</p>
           <span class="owner">Patricia · Marcos</span>
         </div>
       </article>
@@ -3289,12 +4039,11 @@
         </div>
       </article>
 
-      <article class="status-card hold">
+      <article class="status-card go">
         <div class="stripe"></div>
         <div class="body">
           <h3>Panama</h3>
-          <span class="status-pill hold">Decision Pending</span>
-          <p>Marcos wrote to the FRM on Friday and again today. She is with the CEO securing approval of costs and benefits.</p>
+          <span class="status-pill go">Committed</span>
           <span class="owner">Marcos</span>
         </div>
       </article>
@@ -3588,7 +4337,7 @@
 
 <script>
 
-        function showTab_chile(name, btn) {
+function showTab_chile(name, btn) {
       document.querySelectorAll('#section-chile .tab-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('#section-chile .tab-nav .tab-btn').forEach(b => b.classList.remove('active'));
       const panel = document.getElementById('tab-' + name);
@@ -3619,7 +4368,7 @@ const detailSkus=[
   [17,"Leche condensada sin azúcar Alusweet",0.00,"Competencia","Not present in QC image set","SKU not observed in the provided QC image set and could not be evaluated."],
   [18,"Cuisine&Co Crema 200ml",0.00,"Competencia","Not present in QC image set","SKU not observed in the provided QC image set and could not be evaluated."],
   [19,"Crema Surlat minibrik 200ml",0.00,"Competencia","Not present in QC image set","SKU not observed in the provided QC image set and could not be evaluated."],
-  [20,"Nestle Lec Cond Doypack 24x320 grs Cl",0.00,"Nestle","Not present in QC image set","SKU not observed in the provided QC image set and could not be evaluated."]
+  [20,"Nestlé Lec Cond Doypack 24x320 grs Cl",0.00,"Nestlé","Not present in QC image set","SKU not observed in the provided QC image set and could not be evaluated."]
 ];
 
 const fullData=[
@@ -3639,24 +4388,24 @@ const fullData=[
   {id:"7802900004446",name:"Leche condensada Soprole Tarro 396g",test:137,tp:136,fp:0,fn:1,tpr:99.3,prec:1.00,rec:0.99,f1:1.00,nestle:false},
   {id:"2000057015614",name:"SOPROLE ESPESA CTN UHT 1000ml SOPROLE",test:185,tp:184,fp:1,fn:1,tpr:99.5,prec:0.99,rec:0.99,f1:0.99,nestle:false},
   {id:"12461131",name:"Leche Condensada Sin lactosa tarro x397g",test:170,tp:170,fp:2,fn:0,tpr:100.0,prec:0.99,rec:1.00,f1:0.99,nestle:false},
-  {id:"12094273",name:"Nestle Crema de Leche Tarro 48x157 grs Cl",test:1586,tp:1569,fp:3,fn:17,tpr:98.9,prec:1.00,rec:0.99,f1:0.99,nestle:true},
-  {id:"12602583",name:"Nestle el Manjar Bolsa 24x270g Cl",test:139,tp:139,fp:2,fn:0,tpr:100.0,prec:0.99,rec:1.00,f1:0.99,nestle:true},
+  {id:"12094273",name:"Nestlé Crema de Leche Tarro 48x157 grs Cl",test:1586,tp:1569,fp:3,fn:17,tpr:98.9,prec:1.00,rec:0.99,f1:0.99,nestle:true},
+  {id:"12602583",name:"Nestlé el Manjar Bolsa 24x270g Cl",test:139,tp:139,fp:2,fn:0,tpr:100.0,prec:0.99,rec:1.00,f1:0.99,nestle:true},
   {id:"7802920010915",name:"Bolsa 1 Kilo",test:67,tp:67,fp:1,fn:0,tpr:100.0,prec:0.99,rec:1.00,f1:0.99,nestle:false},
   {id:"7808709501131",name:"LIDER CJ CTN LV 200",test:338,tp:334,fp:1,fn:4,tpr:98.8,prec:1.00,rec:0.99,f1:0.99,nestle:false},
   {id:"2000057152336",name:"Crema Colun la unión 1lt",test:238,tp:234,fp:0,fn:4,tpr:98.3,prec:1.00,rec:0.98,f1:0.99,nestle:false},
   {id:"7802920010298",name:"SIN LACTOSA",test:290,tp:286,fp:1,fn:4,tpr:98.6,prec:1.00,rec:0.99,f1:0.99,nestle:false},
   {id:"7807900005370",name:"LIDER LECHE CONDENSADA 395GR",test:230,tp:228,fp:2,fn:2,tpr:99.1,prec:0.99,rec:0.99,f1:0.99,nestle:false},
-  {id:"12483037",name:"Nestle El Manjar Doypack 24x400 grs Cl",test:377,tp:373,fp:3,fn:4,tpr:98.9,prec:0.99,rec:0.99,f1:0.99,nestle:true},
-  {id:"12001455",name:"Nestle Leche Cond Tr 48x397 grs Pr Litog Cl",test:1295,tp:1294,fp:26,fn:1,tpr:99.9,prec:0.98,rec:1.00,f1:0.99,nestle:true},
+  {id:"12483037",name:"Nestlé El Manjar Doypack 24x400 grs Cl",test:377,tp:373,fp:3,fn:4,tpr:98.9,prec:0.99,rec:0.99,f1:0.99,nestle:true},
+  {id:"12001455",name:"Nestlé Leche Cond Tr 48x397 grs Pr Litog Cl",test:1295,tp:1294,fp:26,fn:1,tpr:99.9,prec:0.98,rec:1.00,f1:0.99,nestle:true},
   {id:"2000057139366",name:"Dulce de leche soprole 400g pote",test:379,tp:376,fp:5,fn:3,tpr:99.2,prec:0.99,rec:0.99,f1:0.99,nestle:false},
-  {id:"12094276",name:"Nestle Crema de Leche Tarro 48x236 grs Cl",test:657,tp:648,fp:5,fn:9,tpr:98.6,prec:0.99,rec:0.99,f1:0.99,nestle:true},
+  {id:"12094276",name:"Nestlé Crema de Leche Tarro 48x236 grs Cl",test:657,tp:648,fp:5,fn:9,tpr:98.6,prec:0.99,rec:0.99,f1:0.99,nestle:true},
   {id:"12552939",name:"Manjar Tarro Tapa 375g",test:432,tp:427,fp:5,fn:5,tpr:98.8,prec:0.99,rec:0.99,f1:0.99,nestle:false},
   {id:"7802900105013",name:"SOPROLE ESPESA CTN UHT 200 SOPROLE",test:591,tp:583,fp:6,fn:8,tpr:98.6,prec:0.99,rec:0.99,f1:0.99,nestle:false},
   {id:"12598740",name:"Crema De Leche Caja 200 ml Nestlé",test:560,tp:553,fp:7,fn:7,tpr:98.8,prec:0.99,rec:0.99,f1:0.99,nestle:true},
   {id:"2000057126678",name:"Crema sin lactosa 1L Loncoleche",test:118,tp:117,fp:2,fn:1,tpr:99.2,prec:0.98,rec:0.99,f1:0.99,nestle:false},
   {id:"1822851",name:"Crema 200 ml",test:192,tp:188,fp:1,fn:4,tpr:97.9,prec:0.99,rec:0.98,f1:0.99,nestle:false},
   {id:"1430765",name:"Crema vegetal azucarada para batir 200 ml",test:183,tp:180,fp:2,fn:3,tpr:98.4,prec:0.99,rec:0.98,f1:0.99,nestle:false},
-  {id:"12406302",name:"NESTLE LIGHT Crema de Leche Tr48x157g CL",test:239,tp:233,fp:1,fn:6,tpr:97.5,prec:1.00,rec:0.97,f1:0.99,nestle:true},
+  {id:"12406302",name:"NESTLÉ LIGHT Crema de Leche Tr48x157g CL",test:239,tp:233,fp:1,fn:6,tpr:97.5,prec:1.00,rec:0.97,f1:0.99,nestle:true},
   {id:"7802920011523",name:"Pote 400 gr",test:200,tp:195,fp:1,fn:5,tpr:97.5,prec:0.99,rec:0.98,f1:0.98,nestle:false},
   {id:"8716200672610",name:"BELLA HOLANDESA CREMA TARRO 170 GRS",test:33,tp:32,fp:0,fn:1,tpr:97.0,prec:1.00,rec:0.97,f1:0.98,nestle:false},
   {id:"12559512",name:"Leche Sur Sucedaneo Lc Tarro 48x397g Cl",test:486,tp:483,fp:13,fn:3,tpr:99.4,prec:0.97,rec:0.99,f1:0.98,nestle:false},
@@ -3665,22 +4414,22 @@ const fullData=[
   {id:"2000057032352",name:"Crema sin lactosa 200ml Loncoleche",test:347,tp:339,fp:4,fn:8,tpr:97.7,prec:0.99,rec:0.98,f1:0.98,nestle:false},
   {id:"7802910000872",name:"CALO MANJAR BL PL 920",test:83,tp:82,fp:2,fn:1,tpr:98.8,prec:0.98,rec:0.99,f1:0.98,nestle:false},
   {id:"12594932",name:"Doypack 180 grs",test:136,tp:132,fp:1,fn:4,tpr:97.1,prec:0.99,rec:0.97,f1:0.98,nestle:false},
-  {id:"12617778",name:"NESTLE EL MANJAR Deslact doypack 350 gr",test:254,tp:252,fp:8,fn:2,tpr:99.2,prec:0.97,rec:0.99,f1:0.98,nestle:true},
+  {id:"12617778",name:"NESTLÉ EL MANJAR Deslact doypack 350 gr",test:254,tp:252,fp:8,fn:2,tpr:99.2,prec:0.97,rec:0.99,f1:0.98,nestle:true},
   {id:"7807910036197",name:"CUISINE&CO LECHE CONDENSADA 397 GR",test:52,tp:50,fp:0,fn:2,tpr:96.2,prec:1.00,rec:0.96,f1:0.98,nestle:false},
   {id:"594362",name:"POTE 400 GR",test:74,tp:72,fp:1,fn:2,tpr:97.3,prec:0.99,rec:0.97,f1:0.98,nestle:false},
-  {id:"12111270",name:"Nestle El Manjar 12x1kg N1 Cl",test:591,tp:569,fp:4,fn:22,tpr:96.3,prec:0.99,rec:0.96,f1:0.98,nestle:true},
-  {id:"12628530",name:"Nestle Manjar Rect Casera doypack 780 gr",test:208,tp:207,fp:9,fn:1,tpr:99.5,prec:0.96,rec:1.00,f1:0.98,nestle:true},
+  {id:"12111270",name:"Nestlé El Manjar 12x1kg N1 Cl",test:591,tp:569,fp:4,fn:22,tpr:96.3,prec:0.99,rec:0.96,f1:0.98,nestle:true},
+  {id:"12628530",name:"Nestlé Manjar Rect Casera doypack 780 gr",test:208,tp:207,fp:9,fn:1,tpr:99.5,prec:0.96,rec:1.00,f1:0.98,nestle:true},
   {id:"7802920010007",name:"Sin Azucar Pote 380 gr",test:160,tp:157,fp:5,fn:3,tpr:98.1,prec:0.97,rec:0.98,f1:0.98,nestle:false},
   {id:"2000057121494",name:"Crema Surlat 1000ml",test:39,tp:39,fp:2,fn:0,tpr:100.0,prec:0.95,rec:1.00,f1:0.98,nestle:false},
-  {id:"12433138",name:"Nestle El Manjar Doypack 12x800G Cl",test:338,tp:329,fp:8,fn:9,tpr:97.3,prec:0.98,rec:0.97,f1:0.97,nestle:true},
+  {id:"12433138",name:"Nestlé El Manjar Doypack 12x800G Cl",test:338,tp:329,fp:8,fn:9,tpr:97.3,prec:0.98,rec:0.97,f1:0.97,nestle:true},
   {id:"302925",name:"BOLSA 1 KILO",test:34,tp:33,fp:1,fn:1,tpr:97.1,prec:0.97,rec:0.97,f1:0.97,nestle:false},
   {id:"COM28",name:"Cuisine&Co pote 400",test:34,tp:32,fp:0,fn:2,tpr:94.1,prec:1.00,rec:0.94,f1:0.97,nestle:false},
   {id:"COM34",name:"Crema Surlat sin lactosa 200ml",test:102,tp:100,fp:5,fn:2,tpr:98.0,prec:0.95,rec:0.98,f1:0.97,nestle:false},
   {id:"1843158",name:"Leche evaporada 386 gr",test:101,tp:95,fp:1,fn:6,tpr:94.1,prec:0.99,rec:0.94,f1:0.96,nestle:false},
-  {id:"11260233",name:"Nestle El Manjar Bolsa 24x500 grs Cl",test:312,tp:303,fp:15,fn:9,tpr:97.1,prec:0.95,rec:0.97,f1:0.96,nestle:true},
+  {id:"11260233",name:"Nestlé El Manjar Bolsa 24x500 grs Cl",test:312,tp:303,fp:15,fn:9,tpr:97.1,prec:0.95,rec:0.97,f1:0.96,nestle:true},
   {id:"COM27",name:"Manjar Acuenta 1kg",test:20,tp:19,fp:1,fn:1,tpr:95.0,prec:0.95,rec:0.95,f1:0.95,nestle:false},
   {id:"7802920010557",name:"DOYPACK 800",test:160,tp:151,fp:7,fn:9,tpr:94.4,prec:0.96,rec:0.94,f1:0.95,nestle:false},
-  {id:"12456130",name:"Nestle El Manjar Bolsa 16x200G Cl",test:207,tp:196,fp:11,fn:11,tpr:94.7,prec:0.95,rec:0.95,f1:0.95,nestle:true},
+  {id:"12456130",name:"Nestlé El Manjar Bolsa 16x200G Cl",test:207,tp:196,fp:11,fn:11,tpr:94.7,prec:0.95,rec:0.95,f1:0.95,nestle:true},
   {id:"7802920777511",name:"COLUN DULCE DE LECHE POTE 200 COLUN",test:171,tp:169,fp:20,fn:2,tpr:98.8,prec:0.89,rec:0.99,f1:0.94,nestle:false},
   {id:"2000056812122",name:"Loncoleche Crema light 200ml",test:197,tp:174,fp:0,fn:23,tpr:88.3,prec:1.00,rec:0.88,f1:0.94,nestle:false},
   {id:"COM99",name:"Lider tarro 155 gr",test:60,tp:56,fp:4,fn:4,tpr:93.3,prec:0.93,rec:0.93,f1:0.93,nestle:false},
@@ -3700,7 +4449,7 @@ const fullData=[
   {id:"COM26",name:"Leche condensada sin azúcar Alusweet",test:0,tp:0,fp:0,fn:0,tpr:0.0,prec:0.00,rec:0.00,f1:0.00,nestle:false},
   {id:"COM33",name:"Cuisine&Co Crema 200ml",test:0,tp:0,fp:0,fn:0,tpr:0.0,prec:0.00,rec:0.00,f1:0.00,nestle:false},
   {id:"2000064910229",name:"Crema Surlat minibrik 200ml",test:0,tp:0,fp:0,fn:0,tpr:0.0,prec:0.00,rec:0.00,f1:0.00,nestle:false},
-  {id:"12446172",name:"Nestle Lec Cond Doypack 24x320 grs Cl",test:0,tp:0,fp:0,fn:0,tpr:0.0,prec:0.00,rec:0.00,f1:0.00,nestle:true}
+  {id:"12446172",name:"Nestlé Lec Cond Doypack 24x320 grs Cl",test:0,tp:0,fp:0,fn:0,tpr:0.0,prec:0.00,rec:0.00,f1:0.00,nestle:true}
 ];
 
 let sortCol='f1',sortDir=-1;
@@ -3811,7 +4560,7 @@ function switchTab(id,btn){
   var tbody=document.getElementById('detail-body');
   detailSkus.forEach(function(row){
     var n=row[0],name=row[1],score=row[2],prov=row[3],cat=row[4],desc=row[5];
-    var isN=prov==='Nestle';
+    var isN=prov==='Nestlé';
     var tr=document.createElement('tr');
     if(isN) tr.className='nestle';
     var pct;
@@ -3853,20 +4602,20 @@ const GANTT_TASKS = [
   { label: 'Testing Scope & Planning',              start: '2025-11-07', end: '2026-01-16', status: 'Complete',     isPhase: true },
   { label: 'PoC — NN Training (1 Category)',        start: '2025-11-03', end: '2025-12-09', status: 'Complete' },
   { label: 'UAT Environment Configuration',         start: '2026-01-05', end: '2026-01-30', status: 'Complete' },
-  { label: '1st Category Go Live (Pilot)',           start: '2026-01-28', end: '2026-04-07', status: 'Complete',     isPhase: true },
+  { label: '1st Category Go-Live (Pilot)',           start: '2026-01-28', end: '2026-04-07', status: 'Complete',     isPhase: true },
   { label: 'Market Training',                        start: '2026-02-11', end: '2026-02-13', status: 'Complete' },
-  { label: 'Nestle Chile Pilot Execution',           start: '2026-02-13', end: '2026-04-03', status: 'Complete' },
+  { label: 'Nestlé Chile Pilot Execution',           start: '2026-02-13', end: '2026-04-03', status: 'Complete' },
   { label: 'Market Prioritization',                  start: '2026-02-19', end: '2026-03-18', status: 'Complete' },
   { label: 'Pilot Review & Sign Off',                start: '2026-04-07', end: '2026-04-07', status: 'Complete' },
-  { label: 'Full Rollout — Lacteous Culinaros',      start: '2026-04-08', end: '2026-04-21', status: 'Complete',     isPhase: true },
-  { label: 'Market Go Live — Production',            start: '2026-04-15', end: '2026-04-15', status: 'Complete' },
+  { label: 'Full Rollout — Lácteos y Culinarios',      start: '2026-04-08', end: '2026-04-21', status: 'Complete',     isPhase: true },
+  { label: 'Market Go-Live — Production',            start: '2026-04-15', end: '2026-04-15', status: 'Complete' },
   { label: 'Batch 1 — Chocolates + Galletas',        start: '2026-03-19', end: '2026-07-14', status: 'Complete',     isPhase: true },
   { label: 'Categories Analysis (B1)',               start: '2026-03-19', end: '2026-04-24', status: 'Complete' },
   { label: 'Scope Definition & Catalogue Analysis', start: '2026-04-27', end: '2026-06-29', status: 'Complete' },
   { label: 'Model Testing in UAT',                   start: '2026-06-30', end: '2026-07-10', status: 'Complete' },
   { label: 'Production Deployment',                  start: '2026-07-07', end: '2026-07-13', status: 'Complete' },
   { label: '🚀 Go-Live — Batch 1',                   start: '2026-07-14', end: '2026-07-14', status: 'Complete',     isPhase: true },
-  { label: 'Batch 2 — Cafe + Culinarios',            start: '2026-05-20', end: '2026-09-16', status: 'In Progress',  isPhase: true },
+  { label: 'Batch 2 — Café y Culinarios',            start: '2026-05-20', end: '2026-09-16', status: 'In Progress',  isPhase: true },
   { label: 'Market Categories Analysis (B2)',        start: '2026-05-20', end: '2026-07-31', status: 'In Progress' },
   { label: 'Scope Definition & Catalogue (B2)',      start: '2026-06-01', end: '2026-09-03', status: 'Complete' },
   { label: 'Model Testing & Deployment (B2)',        start: '2026-09-04', end: '2026-09-15', status: 'Not Started' },
@@ -3958,7 +4707,6 @@ function buildGantt() {
   });
 }
 
-
 /* ===== Portfolio navigation ===== */
 function navTo(sectionId) {
   document.querySelectorAll('.portfolio-section').forEach(s => s.classList.remove('active'));
@@ -4024,7 +4772,7 @@ function updateLiveDates() {
 window.updateLiveDates = updateLiveDates;
 
 function downloadStandalone(sectionId) {
-  // Always update DOM date values to current date before cloning
+  // 1. Refresh live dates in the current DOM before capturing snapshot
   updateLiveDates();
 
   var d = new Date();
@@ -4047,10 +4795,11 @@ function downloadStandalone(sectionId) {
   if (sectionId === 'section-home') {
     // 1. Download Full Portfolio (Home Button)
     var cloneDoc = document.documentElement.cloneNode(true);
-    cloneDoc.querySelectorAll('script[data-bard-client-injected], script[ws-interception-config]').forEach(function(s) { s.remove(); });
+    cloneDoc.querySelectorAll('script[data-bard-client-injected], script[ws-interception-config], script[data-standalone-flag]').forEach(function(s) { s.remove(); });
     
-    // Inject flag script so standalone file freezes the date to the issue date
+    // Inject flag script so standalone file freezes the date to the issue date permanently
     var flagScript = document.createElement('script');
+    flagScript.setAttribute('data-standalone-flag', 'true');
     flagScript.textContent = 'window.isStandalone = true;';
     var headEl = cloneDoc.querySelector('head');
     if (headEl) {
@@ -4070,7 +4819,7 @@ function downloadStandalone(sectionId) {
       sectionId = 'section-' + sectionId;
       section = document.getElementById(sectionId);
     }
-    if (!section) { alert('Section not found: ' + sectionId); return; }
+    if (!section) { return; }
 
     var styles = '';
     document.querySelectorAll('style').forEach(function(el) { styles += el.textContent + '\n'; });
@@ -4098,21 +4847,30 @@ function downloadStandalone(sectionId) {
            CLOSE;
     } else if (sectionId === 'section-nhs') {
       js = OPEN + '\nwindow.isStandalone = true;\n' +
-        'function showNhsTab(tabId){' +
-        'document.querySelectorAll(".nhs-tab-panel").forEach(function(p){p.classList.remove("active");});' +
-        'document.querySelectorAll(".nhs-tab-btn").forEach(function(b){b.classList.remove("active");});' +
-        'var p=document.getElementById(tabId); if(p)p.classList.add("active");' +
+        'function showNhsTab(tabId){\n' +
+        'document.querySelectorAll(".nhs-tab-panel").forEach(function(p){p.classList.remove("active");});\n' +
+        'document.querySelectorAll(".nhs-tab-btn").forEach(function(b){b.classList.remove("active");});\n' +
+        'var p=document.getElementById(tabId); if(p)p.classList.add("active");\n' +
         'var b=document.querySelector(".nhs-tab-btn[data-nhs-tab=\\"" + tabId + "\\"]"); if(b)b.classList.add("active");}\n' +
         'window.showNhsTab=showNhsTab;\n' +
         'window.downloadStandalone=' + downloadStandalone.toString() + ';\n' + CLOSE;
     } else if (sectionId === 'section-brazil') {
       js = OPEN + '\nwindow.isStandalone = true;\n' +
-        'function showBrazilTab(tabId){' +
-        'document.querySelectorAll(".brazil-tab-panel").forEach(function(p){p.classList.remove("active");});' +
-        'document.querySelectorAll(".brazil-tab-btn").forEach(function(b){b.classList.remove("active");});' +
-        'var p=document.getElementById(tabId); if(p)p.classList.add("active");' +
+        'function showBrazilTab(tabId){\n' +
+        'document.querySelectorAll(".brazil-tab-panel").forEach(function(p){p.classList.remove("active");});\n' +
+        'document.querySelectorAll(".brazil-tab-btn").forEach(function(b){b.classList.remove("active");});\n' +
+        'var p=document.getElementById(tabId); if(p)p.classList.add("active");\n' +
         'var b=document.querySelector(".brazil-tab-btn[data-brazil-tab=\\"" + tabId + "\\"]"); if(b)b.classList.add("active");}\n' +
         'window.showBrazilTab=showBrazilTab;\n' +
+        'window.downloadStandalone=' + downloadStandalone.toString() + ';\n' + CLOSE;
+    } else if (sectionId === 'section-latam') {
+      js = OPEN + '\nwindow.isStandalone = true;\n' +
+        'function showLatamTab(tabId){\n' +
+        'document.querySelectorAll("#section-latam .latam-tab-panel").forEach(function(p){p.classList.remove("active");});\n' +
+        'document.querySelectorAll("#section-latam .latam-tab-btn").forEach(function(b){b.classList.remove("active");});\n' +
+        'var p=document.getElementById(tabId); if(p)p.classList.add("active");\n' +
+        'var b=document.querySelector("#section-latam .latam-tab-btn[data-latam-tab=\\"" + tabId + "\\"]"); if(b)b.classList.add("active");}\n' +
+        'window.showLatamTab=showLatamTab;\n' +
         'window.downloadStandalone=' + downloadStandalone.toString() + ';\n' + CLOSE;
     } else {
       js = OPEN + '\nwindow.isStandalone = true;\nwindow.navTo=function(){};\n' + CLOSE;
@@ -4160,7 +4918,6 @@ function downloadStandalone(sectionId) {
   if (!saved) {
     var w = window.open('', '_blank');
     if (w && w.document) { w.document.open(); w.document.write(doc); w.document.close(); }
-    else { alert('Download was blocked by the browser. Open this report in a new browser tab and try again.'); }
   }
 }
 window.downloadStandalone = downloadStandalone;
@@ -4170,11 +4927,10 @@ updateLiveDates();
 document.addEventListener('DOMContentLoaded', function() {
   updateLiveDates();
   const hash = window.location.hash.substring(1);
-  const valid = ['section-home', 'section-chile', 'section-nhs', 'section-brazil'];
+  const valid = ['section-home', 'section-chile', 'section-nhs', 'section-brazil', 'section-latam'];
   if (hash && valid.includes(hash)) { navTo(hash); } else { navTo('section-home'); }
 });
-
 </script>
 
 
-<a href="blob:https://43x2kehz9g3wm6pj3jnxt6yid7paamar4mhv74w4df75mraudu-h962836157.scf.usercontent.goog/e9229821-a3f3-4b9b-9ccf-8f0ca2914917" download="Nestle_Portfolio_Full_Report_8_16.html" rel="noopener" style="display: none;"></a><a href="blob:https://672d3lun6y9mp1a2sx1fw2mx9bh7nuk6c0y2iqgo3kpt8hywts-h966586903.scf.usercontent.goog/7652e7a8-dfc6-4341-9f98-bc0f35fd789b" download="Nestle_Portfolio_Full_Report_8_25.html" rel="noopener" style="display: none;"></a></body></html>
+<a href="blob:https://43x2kehz9g3wm6pj3jnxt6yid7paamar4mhv74w4df75mraudu-h962836157.scf.usercontent.goog/e9229821-a3f3-4b9b-9ccf-8f0ca2914917" download="Nestle_Portfolio_Full_Report_8_16.html" rel="noopener" style="display: none;"></a><a href="blob:https://672d3lun6y9mp1a2sx1fw2mx9bh7nuk6c0y2iqgo3kpt8hywts-h966586903.scf.usercontent.goog/7652e7a8-dfc6-4341-9f98-bc0f35fd789b" download="Nestle_Portfolio_Full_Report_8_25.html" rel="noopener" style="display: none;"></a><a href="blob:https://0d9kgx3snv3gfs7e2dhzxyc30cghat0a43crmcwiw1xj4k74em-h974493514.scf.usercontent.goog/d419bdcd-cbd4-415c-b5dd-a23979181d02" download="Nestle_and_TELUS_Project_Portfolio_Status_9_9.html" rel="noopener" style="display: none;"></a></body></html>
